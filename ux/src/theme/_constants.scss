@@ -1,0 +1,26 @@
+$color-base: #000C36;
+$color-text-light: #FAFAFA;
+
+$input-unfocused-color: #999999;
+$input-focused-color: #489CFF;
+$input-dirty-color: #333333;
+$input-focused-color-accent: #dddddd;
+$input-validated-color: #45B400;
+$input-error-color: #D30000;
+$input-transition-time: 250ms;
+$input-font-size: 20px;
+$input-label-font-size: 12px;
+$input-gutter-size: 6px;
+$input-max-width: 240px;
+$input-font-stack: sans, Helvetica;
+$input-height: $input-font-size + 2 * $input-label-font-size + 5 * $input-gutter-size; 
+
+$loading-start-color: #cccccc;
+$loading-end-color: #333333;
+$loading-loop-time: 500ms;
+
+$spin-duration: 500ms;
+
+$navbar-height: 48px;
+$navbar-padding-vertical: 8px;
+$navbar-padding-horizontal: 16px;

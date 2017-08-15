@@ -1,0 +1,96 @@
+{
+    "tokens": [
+        {
+            "id": "t-0",
+            "revision": 0,
+            "parts": [
+                {
+                    "id": "p-0",
+                    "variant": null,
+                    "fill": ["#FFFFFF"]
+                }
+            ],
+            "meta": {
+                "name": "Example Token",
+                "tags": ["swordsman", "sword"],
+                "description": "This is an example token",
+                "author": ""
+            },
+            "created": ""
+        }
+    ],
+    "parts": [
+        {
+            "id": "p-0",
+            "raw": {
+                "hash": "",
+                "document": ""
+            },
+            "optimized": {
+                "hash": "",
+                "document": ""
+            },
+            "layers": 4,
+            "meta": {
+                "name": "test-body",
+                "tags": [],
+                "description": "",
+                "author": ""
+            },
+            "rendering": {
+                "zIndex": 0,
+                "collisionSlots": 1
+            },
+            "availability": [null, null],
+            "variants": []
+        },
+        {
+            "id": "p-1",
+            "raw": {
+                "hash": "",
+                "document": ""
+            },
+            "optimized": {
+                "hash": "",
+                "document": ""
+            },
+            "layers": 4,
+            "meta": {
+                "name": "test-body-1",
+                "tags": [],
+                "description": "",
+                "author": ""
+            },
+            "rendering": {
+                "zIndex": 0,
+                "collisionSlots": 1
+            },
+            "availability": [null, null],
+            "variants": []
+        },
+        {
+            "id": "p-2",
+            "raw": {
+                "hash": "",
+                "document": ""
+            },
+            "optimized": {
+                "hash": "",
+                "document": ""
+            },
+            "layers": 2,
+            "meta": {
+                "name": "test-weapon",
+                "tags": [],
+                "description": "",
+                "author": ""
+            },
+            "rendering": {
+                "zIndex": 0,
+                "collisionSlots": 2
+            },
+            "availability": [null, null],
+            "variants": []
+        }
+    ]
+}

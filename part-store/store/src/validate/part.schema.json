@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Part for Tokenerator",
+    "type": "object",
+    "required": [ "id", "meta", "raw" ],
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "hash": {
+            "type": "string"
+        },
+        "meta": {
+            "type": "object",
+            "$ref": "#/definitions/meta"
+        },
+        "raw": {
+            "type": "string"
+        },
+        "optimized": {
+            "type": "string"
+        }
+    },
+    "definitions": {
+        "meta": {
+            "description": "Metadata for a token",
+            "type": "object",
+            "required": ["name", "tags", "description", "author", "available"],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "uniqueItems": true
+                },
+                "description": {
+                    "type": "string"
+                },
+                "author": {
+                    "type": "string"
+                },
+                "available": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            }
+        }
+    }
+}

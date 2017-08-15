@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "../dist/src",
+        "jsx": "react",
+        "target": "es3",
+        "module": "commonjs",
+        "lib": [
+            "es2015",
+            "dom",
+            "scripthost"
+        ],
+        "moduleResolution": "node"
+    },
+    "include": [
+        "../src/**/*"
+    ]
+}
