@@ -1,0 +1,31 @@
+{
+  "name": "@dougrich/tokenerator-cli",
+  "version": "0.1.0-beta.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "tsc",
+    "compile": "tsc",
+    "watch": "tsc -w"
+  },
+  "bin": {
+    "tokenerator": "bin/cli.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dougrich/tokenerator": "0.1.0-beta.9",
+    "cheerio": "^1.0.0-rc.2",
+    "colors": "^1.1.2",
+    "commander": "^2.11.0",
+    "glob": "^7.1.2",
+    "node-watch": "^0.5.5"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.2",
+    "@types/colors": "^1.1.3",
+    "@types/commander": "^2.9.1",
+    "@types/glob": "^5.0.30",
+    "typescript": "^2.4.2"
+  }
+}

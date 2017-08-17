@@ -1,12 +1,10 @@
 export interface Part {
     id: string;
-    raw: Part.SVG;
-    optimized: Part.SVG;
     meta: Part.Meta;
-    rendering: Part.Rendering;
     availability: Part.Availability;
-    variants: Array<Part.Variant>;
-    layers: number;
+    svg: Part.SVG;
+    variants: Part.VariantCollection;
+    zIndex: number;
 }
 
 export namespace Part {
@@ -20,17 +18,16 @@ export namespace Part {
     export type Availability = [string, string];
 
     export interface SVG {
-        hash: string;
-        document: string;
+        defs: Array<string>;
+        layers: Array<string>;
     }
 
-    export interface Rendering {
-        zIndex: number;
-        collisionSlots: number;
+    export interface VariantCollection {
+        [key: string]: Variant;
     }
 
     export interface Variant {
+        collisionSlots: number;
         transform: string;
-        rendering: Part.Rendering;
     }
 }

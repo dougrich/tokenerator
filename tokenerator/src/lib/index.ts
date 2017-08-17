@@ -1,8 +1,8 @@
 import { Token, Part } from '../../model';
-import { addPart } from './addPart';
 import { editPart } from './editPart';
 import { removePart } from './removePart';
 export * from '../../model';
+export * from './optimize';
 
 export interface PartContext {
     getPart: (id: string) => Part;
@@ -27,7 +27,6 @@ export class Tokenerator {
         }
     }
 
-    addPart = addPart;
     editPart = editPart;
     removePart = removePart;
 }

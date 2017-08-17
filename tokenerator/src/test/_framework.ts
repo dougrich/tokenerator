@@ -1,5 +1,5 @@
 import { Tokenerator } from '../lib';
-
+/*
 const instance = new Tokenerator([
     {
         id: 'p-0',
@@ -100,4 +100,4 @@ export function summarize() {
     } else {
         process.exit(0);
     }
-}
+}*/
