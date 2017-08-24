@@ -3,6 +3,7 @@ import { editPart } from './editPart';
 import { removePart } from './removePart';
 export * from '../../model';
 export * from './optimize';
+export * from './aggregate';
 
 export interface PartContext {
     getPart: (id: string) => Part;

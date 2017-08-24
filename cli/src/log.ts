@@ -29,7 +29,7 @@ export function summary(okay: string[], bad: string[], conflicts: { [id: string]
         }
     }
     for (let id in conflicts) {
-        if (conflicts[id].length > 1) {
+        if (conflicts[id].length > 1 || id === 'template') {
             errors++;
             console.log(`✗ part id "${id}" is used by multiple files`.red);
             let count = 0;

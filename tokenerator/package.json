@@ -1,12 +1,13 @@
 {
   "name": "@dougrich/tokenerator",
   "typings": "./dist/lib/index.d.ts",
-  "version": "0.1.0-beta.9",
+  "version": "0.1.0-beta.21",
   "description": "",
   "main": "./dist/lib/index.js",
   "scripts": {
     "prepublish": "tsc",
-    "compile": "tsc"
+    "compile": "tsc",
+    "watch": "tsc -w"
   },
   "author": "",
   "license": "ISC",

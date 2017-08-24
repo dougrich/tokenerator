@@ -15,11 +15,21 @@ export namespace Part {
         author: string;
     }
 
-    export type Availability = [string, string];
+    export type Availability = [number, number];
 
     export interface SVG {
-        defs: Array<string>;
-        layers: Array<string>;
+        defs: string;
+        layers: Layer[];
+    }
+
+    export interface Layer {
+        id: string;
+        markup: string;
+        defaultStyles: LayerDefaultStyles;
+    }
+
+    export interface LayerDefaultStyles {
+        fill?: string;
     }
 
     export interface VariantCollection {
