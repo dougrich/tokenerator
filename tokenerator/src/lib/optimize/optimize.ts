@@ -1,7 +1,7 @@
-import * as style from './optimize.style';
-import * as collision from './optimize.collision';
-import * as availability from './optimize.availability';
-import { Part } from '../../model';
+import * as style from './style';
+import * as collision from './collision';
+import * as availability from './availability';
+import { Part } from '../../../model';
 
 interface OptimizationSession {
     $: CheerioStatic;
@@ -156,6 +156,9 @@ function parseLayer(this: OptimizationSession, index: number, element: CheerioEl
 
     const legacyLayerId = element.attribs['class'];
     const id = element.attribs['id'];
+    if (id && id.startsWith('--')) {
+        return;
+    }
     const transform = element.attribs['transform'];
     const zIndex = element.attribs['data-z'];
     const layerSession: LayerSession = {

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prepublish": "tsc",
     "compile": "tsc",
     "watch": "tsc -w"
   },
@@ -14,13 +13,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dougrich/tokenerator": "0.1.0-beta.21",
+    "@dougrich/tokenerator": "0.1.0-beta.26",
     "cheerio": "^1.0.0-rc.2",
     "colors": "^1.1.2",
     "commander": "^2.11.0",
     "express": "^4.15.4",
     "glob": "^7.1.2",
-    "node-watch": "^0.5.5"
+    "node-watch": "^0.5.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.2",
@@ -28,6 +29,8 @@
     "@types/commander": "^2.9.1",
     "@types/express": "^4.0.36",
     "@types/glob": "^5.0.30",
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
     "typescript": "^2.4.2"
   }
 }

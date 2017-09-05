@@ -4,6 +4,7 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "outDir": "dist",
+        "jsx": "react",
         "declaration": true
     }
 }

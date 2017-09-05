@@ -16,7 +16,9 @@ export namespace Token {
 
     export interface Part {
         id: string;
-        variant?: number;
-        fill: string[];
+        variant?: string;
+        fill: {
+            [layerId: string]: string
+        };
     }
 }

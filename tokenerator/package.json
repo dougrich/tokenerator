@@ -1,7 +1,7 @@
 {
   "name": "@dougrich/tokenerator",
   "typings": "./dist/lib/index.d.ts",
-  "version": "0.1.0-beta.21",
+  "version": "0.1.0-beta.26",
   "description": "",
   "main": "./dist/lib/index.js",
   "scripts": {
@@ -14,6 +14,11 @@
   "devDependencies": {
     "@types/cheerio": "^0.22.2",
     "@types/node": "^8.0.19",
+    "@types/react": "^16.0.5",
+    "react": "^15.6.1",
     "typescript": "^2.4.2"
+  },
+  "peerDependencies": {
+    "react": "^15.6.1"
   }
 }

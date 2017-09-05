@@ -1,6 +1,6 @@
 import * as program from 'commander';
 import * as watch from 'node-watch';
-import { optimize, OptimizationResult, aggregate, Part } from '@dougrich/tokenerator';
+import { Optimize, Model, Component } from '@dougrich/tokenerator';
 import * as cheerio from 'cheerio';
 import * as glob from 'glob';
 import * as fs from 'fs';
@@ -8,6 +8,8 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 import * as log from './log';
 import * as express from 'express';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/server';
 
 const details = require("../package.json");
 
@@ -30,8 +32,8 @@ function shouldExamine(filename: string) {
     }
 }
 
-let okay: { [filename: string]: Part } = {};
-let bad: { [filename: string]: Part } = {};
+let okay: { [filename: string]: Model.Part } = {};
+let bad: { [filename: string]:  Model.Part } = {};
 const conflicts = {
     id: {},
     file: {}
@@ -60,13 +62,13 @@ function removePart(filename) {
     }
 }
 
-function updatePart(filename): Promise<OptimizationResult> {
+function updatePart(filename): Promise<Optimize.OptimizationResult> {
     return new Promise((resolve, reject) => {
         fs.readFile(filename, { encoding: 'utf8' }, (err, data) => {
             if (err) {
                 reject(err);
             } else {
-                const optimum = optimize(cheerio, data);
+                const optimum = Optimize.optimize(cheerio, data);
                 filename = unifyFilename(filename);
                 removePart(filename);
                 if (optimum.errors.length) {
@@ -100,32 +102,55 @@ glob('**/*.svg', (err: Error, matches: string[]) => {
 
 if (program.watch) {
     const app = express();
-    app.get('/part-sheet.svg', function (req, res, next) {
-        const svgs: string[] = [];
-        const parts: Part[] = [];
+    app.get('/part-sheet', function (req, res, next) {
+
+        const svgs: React.ReactNode[] = [];
+        const parts:  Model.Part[] = [];
         const keys = Object.keys(okay).sort();
         for (let i = 0; i < keys.length; i++) {
             const part = okay[keys[i]];
             parts.push(part);
             const variants = Object.keys(part.variants).sort();
             variants.forEach(v => {
-                const variant = part.variants[v];
-                svgs.push(`<svg viewBox="0 0 90 90">${part.svg.layers.map((part, i) => {
-                    const attributes = [
-                        `href="#${part.id}"`,
-                        `fill="${part.defaultStyles.fill || previewColors[i % previewColors.length]}"`,
-                    ];
-                    if (variant.transform) {
-                        attributes.push(`transform="${variant.transform}"`);
-                    }
-                    return `<use ${attributes.join(" ")}/>`
-                }).join('')}</svg>`); 
+                svgs.push(
+                    <svg viewBox="0 0 90 90">
+                        {part.svg.layers.map((layer, i) => {
+                            return <Component.PartLayer key={part.id + layer.id + v} part={part} variant={v} layer={layer} fill={layer.defaultStyles.fill || previewColors[i % previewColors.length]}/>
+                        })}
+                    </svg>
+                );
             });
         }
-        const markup = ['<html><style>#part-sheet { position: absolute; width: 0; height: 0; margin: 0; } svg { width: 200px; height: 200px; border: 1px solid #ddd; margin: 15px; background: repeating-linear-gradient(45deg, #eee, #eee 2px, #fff 2px, #fff 4px); }</style>', aggregate(parts), ...svgs, '</html>'].join('');
+        const markup = ReactDOM.renderToStaticMarkup(<html>
+            <style dangerouslySetInnerHTML={{ __html: 'svg { width: 200px; height: 200px; border: 1px solid #ddd; margin: 15px; background: repeating-linear-gradient(45deg, #eee, #eee 2px, #fff 2px, #fff 4px); }'}}/>
+            <Component.PartSheet id="part-sheet" parts={parts}/>
+            {svgs}
+        </html>);
         res.writeHead(200, 'OK');
         res.end(markup);
     });
+    app.get('/token', function (req, res, next) {
+        const parts:  Model.Part[] = [];
+        const lookup: { [partId: string]: Model.Part } = {};
+        const keys = Object.keys(okay).sort();
+        for (let i = 0; i < keys.length; i++) {
+            const part = okay[keys[i]];
+            parts.push(part);
+            lookup[part.id] = part;
+        }
+        const token: Model.Token = JSON.parse(fs.readFileSync(path.join(__dirname, '../token.json'), 'utf8'));
+
+        const markup = ReactDOM.renderToStaticMarkup(
+            <Component.Token token={token} parts={lookup}>
+                <Component.PartSheet.Defs id="part-sheet" parts={parts} token={token}/>
+            </Component.Token>
+        );
+
+        res.writeHead(200, 'OK', {
+            'Content-Type': 'image/svg+xml'
+        });
+        res.end(markup);
+    })
     app.listen(5000);
     watch('./', {
         recursive: true,
