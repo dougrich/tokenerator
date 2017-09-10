@@ -19,7 +19,9 @@ module.exports = merge(config, {
         new NodemonPlugin()
     ],
     externals: [
-        nodeExternals()
+        nodeExternals({
+            whitelist: ['@dougrich/tokenerator']
+        })
     ],
     target: 'node'
 });
