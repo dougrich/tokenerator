@@ -10,7 +10,7 @@ export class HeroLogo extends React.PureComponent<HeroLogo.Properties, void> {
   render() {
     return (
       <div {...cs(css.oHeaderHero)}>
-        <svg viewBox="0 0 90 90">
+        <svg viewBox="0 0 900 900">
           <defs>
             <filter id="o-logo-filter">
               <feColorMatrix in="SourceGraphic"
@@ -21,7 +21,7 @@ export class HeroLogo extends React.PureComponent<HeroLogo.Properties, void> {
             <mask id="o-logo-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
               <g filter="url(#o-logo-filter)">
                 <rect x="0" y="0" width="100%" height="100%" fill="white"/>
-                <use xlinkHref={this.context.config.staticFileNames['./static/logo.svg'] + '#--logo'}/>
+                <use xlinkHref={this.context.config.staticFileNames['./static/logo.svg'] + '#--logo'} transform="scale(10)"/>
               </g>
             </mask>
           </defs>
