@@ -1,4 +1,3 @@
-import { TokenStorage } from '@dougrich/tokenerator';
 import { StateAction } from './store.action';
 import { State } from './store.state';
 
@@ -50,8 +49,8 @@ export class Store {
      * Bootstraps a store inside of a given context
      * @param context Context to execute in - should match that of the mount behaviors
      */
-    public static async bootstrap(pathname: string, data: TokenStorage, initial?: State) {
-        const store = new Store(data, initial);
+    public static async bootstrap(pathname: string, initial?: State) {
+        const store = new Store(initial);
         await store.init(pathname);
         return store;
     }
@@ -80,8 +79,6 @@ export class Store {
         }
     }
 
-    public data: TokenStorage;
-
     /**
      * The current state
      */
@@ -102,14 +99,12 @@ export class Store {
      * @param context Anything - on the server, this will include the request, on the client, the initial state
      */
     private constructor(
-        data: TokenStorage,
         state: State = {
             details: null,
             browse: null
         }
     ) {
         this.state = state;
-        this.data = data;
     }
 
     async init(pathname: string) {

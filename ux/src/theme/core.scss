@@ -3,6 +3,8 @@
 @import "action-trigger";
 @import "browse-tile-container";
 @import "hero";
+@import "page";
+@import "details";
 
 body, label, button {
     font-family: 'Open Sans', sans-serif;
@@ -25,8 +27,4 @@ h1, h2, h3, h4, h5 {
     border-radius: 100%;
     background-color: #eee;
     display: block;
-}
-
-.o-test {
-    background-color: blue;
 }

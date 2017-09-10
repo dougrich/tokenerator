@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as Model from '../../../model';
 import { PartLayer } from './part-layer';
 
-export class Token extends React.Component<Token.Properties, any> {
+export class Token extends React.PureComponent<Token.Properties, any> {
     render() {
         const layers: Array<PartLayer.Properties & { key: string }> = 
             Array.prototype.concat.apply([], 
@@ -28,7 +28,7 @@ export class Token extends React.Component<Token.Properties, any> {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
             >
                 {this.props.children}
-                {layers.map(layer => <PartLayer {...layer}/>)}
+                {layers.map(layer => <PartLayer sheet={this.props.sheet} {...layer}/>)}
             </svg>
         );
     }
@@ -59,5 +59,10 @@ export namespace Token {
          * Lookup to get parts
          */
         parts: { [id: string]: Model.Part };
+
+        /**
+         * Sheet parts are located in
+         */
+        sheet?: string;
     }
 }

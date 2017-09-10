@@ -3,6 +3,7 @@ import { Switch, Route, match, withRouter } from 'react-router-dom';
 import { Location, History } from 'history';
 import './tokenDetails';
 import './home';
+import './browse';
 import './test';
 import './error404';
 import { CSSTransitionGroup } from 'react-transition-group';

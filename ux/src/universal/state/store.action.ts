@@ -1,4 +1,4 @@
-import { Token } from '@dougrich/tokenerator';
+import { Model } from '@dougrich/tokenerator';
 import { DataBound } from './store.state';
 
 export type StateAction = {
@@ -6,11 +6,11 @@ export type StateAction = {
     id: string;
 } | {
     type: 'load.details.result';
-    result: DataBound<Token>;
+    result: DataBound<Model.Token>;
 } | {
     type: 'load.browse';
     page: number;
 } | {
     type: 'load.browse.result';
-    result: DataBound<Token[]>;
+    result: DataBound<Model.Token[]>;
 }

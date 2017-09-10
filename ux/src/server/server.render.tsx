@@ -14,8 +14,19 @@ import Mount from './mount';
 import Page from './page';
 import { StaticRouter, Route } from 'react-router';
 import { getResources } from './resources';
-import { DataAccess } from './dataAccess';
 import { Store, StaticContext } from '../universal';
+import * as fs from 'fs';
+import { Model } from '@dougrich/tokenerator';
+
+const parts: Model.Part[] = JSON.parse(fs.readFileSync('./static/parts.json', 'utf8')).parts;
+const lookup: { [id: string]: Model.Part } = {};
+parts.forEach(part => {
+    lookup[part.id] = part;
+    delete part.svg.defs;
+    for (let i = 0; i < part.svg.layers.length; i++) {
+        delete part.svg.layers[i].markup;
+    }
+})
 
 const filenames = Object.keys(staticFiles);
 
@@ -37,11 +48,9 @@ export const renderHandler = async function(
             staticFileNames
         };
 
-        const data = new DataAccess();
-        const store = await Store.bootstrap(req.url, data);
-        await data.loaded;
+        const store = await Store.bootstrap(req.url);
         const dynamic = ReactDOM.renderToString(
-                <Mount resources={resources} store={store} config={config}>
+                <Mount resources={resources} store={store} config={config} parts={lookup}>
                     <StaticRouter location={parsedUrl.pathname} context={context}>
                         <App/>
                     </StaticRouter>
@@ -50,6 +59,7 @@ export const renderHandler = async function(
         const page = ReactDOM.renderToStaticMarkup(
             <Page
                 staticFiles={filenames}
+                parts={lookup}
                 dynamicContent={dynamic}
                 resources={resources}
                 state={store.state}

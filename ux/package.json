@@ -9,7 +9,8 @@
     "watch": "webpack --config ./build/webpack.config.js -w"
   },
   "devDependencies": {
-    "@dougrich/tokenerator": "0.1.0-beta.3",
+    "@dougrich/tokenerator": "0.1.0-beta.27",
+    "@types/cheerio": "^0.22.2",
     "@types/classnames": "^2.2.3",
     "@types/node": "^7.0.27",
     "@types/pino": "^3.0.1",

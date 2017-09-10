@@ -1,0 +1,7 @@
+@import "constants";
+
+.o-page {
+  margin-top: $navbar-height;
+  width: 100%;
+  height: calc(100vh - #{$navbar-height});
+}

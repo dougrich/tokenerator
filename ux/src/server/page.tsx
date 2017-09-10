@@ -2,11 +2,12 @@ import * as React from 'react';
 import { constants, Store, Resources, Configuration, State, StaticContext } from '../universal';
 import * as PropTypes from 'prop-types';
 import * as http from 'http';
-import * as fs from 'fs';
 import { origin } from './config';
+import { Model } from '@dougrich/tokenerator';
 
 export interface PageProperties {
     staticFiles: string[];
+    parts: { [id: string]: Model.Part };
     dynamicContent: string;
     resources: Resources;
     state: State;
@@ -44,6 +45,7 @@ export default class Page extends React.Component<PageProperties, void> {
                 <script type="application/json" id={constants.resourcesId} dangerouslySetInnerHTML={{ __html: JSON.stringify(this.props.resources) }}/>
                 <script type="application/json" id={constants.configId} dangerouslySetInnerHTML={{ __html: JSON.stringify(this.props.config) }}/>
                 <script type="application/json" id={constants.stateId} dangerouslySetInnerHTML={{ __html: JSON.stringify(this.props.state) }}/>
+                <script type="application/json" id={constants.partId} dangerouslySetInnerHTML={{ __html: JSON.stringify(this.props.parts) }}/>
             </head>
             <body>
                 {this.props.staticFiles

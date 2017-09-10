@@ -5,7 +5,7 @@ export function PartLayer(props: PartLayer.Properties) {
     const variant = props.part.variants[props.variant];
     return (
         <use
-            xlinkHref={'#' + props.layer.id}
+            xlinkHref={(props.sheet || '') + '#' + props.layer.id}
             fill={props.fill || props.layer.defaultStyles.fill || '#FFF'}
             transform={variant.transform}
         />
@@ -18,5 +18,6 @@ export namespace PartLayer {
         layer: Model.Part.Layer;
         fill: string;
         variant: string;
+        sheet?: string;
     }
 }

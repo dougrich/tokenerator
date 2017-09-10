@@ -1,5 +1,3 @@
-export * from './status';
+export * from './page-meta';
 export * from './nav-hero';
-export * from './icons';
-export * from './browseList';
 export * from './controls';

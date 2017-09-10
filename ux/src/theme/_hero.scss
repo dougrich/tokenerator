@@ -1,46 +1,46 @@
 @import "constants";
 
 .o-navbar {
-    height: $navbar-height;
-    background-color: $color-primary;
-    color: $color-text-light;
-    line-height: $navbar-height - $navbar-padding-vertical;
-    padding: $navbar-padding-vertical $navbar-padding-horizontal;
-    box-sizing: border-box;
-    overflow: hidden;
+  height: $navbar-height;
+  background-color: $color-primary;
+  color: $color-text-light;
+  line-height: $navbar-height - $navbar-padding-vertical;
+  padding: $navbar-padding-vertical $navbar-padding-horizontal;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: height 1500ms;
+
+  &.is-hero {
+    height: 100vh;
+  }
+
+  .o-header-background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    display: block;
+    height: 100vh;
+  }
+
+  .o-header-hero {
+    display: block;
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 45px;
+    color: white;
+    position: relative;
     z-index: 1;
-    transition: height 1500ms;
-
-    &.is-hero {
-      height: 100vh;
+    svg {
+        height: 20vw;
     }
-
-    .o-header-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: block;
-      height: 100vh;
-    }
-
-    .o-header-hero {
-      display: block;
-      width: 100%;
-      margin-top: 5%;
-      text-align: center;
-      font-size: 45px;
-      color: white;
-      position: relative;
-      z-index: 1;
-      svg {
-          height: 20vw;
-      }
-    }
+  }
 }
 
 .o-hero-actions-container {

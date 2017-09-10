@@ -1,29 +1,77 @@
 import { Store } from './store';
 
+const abcdef = {
+    "id": "abcdef",
+    "revision": 0,
+    "parts": [
+        {
+            "id": "demon-wings",
+            "variant": "$",
+            "fill": {
+                "p0demon-wingslayer1": "#D00",
+                "p1demon-wingslayer2": "#666"
+            }
+        },
+        {
+            "id": "basic-body",
+            "variant": "$",
+            "fill": {
+                "p0basic-bodylayer1": "#D00"
+            }
+        }
+    ],
+    "meta": {
+        "name": "Example",
+        "tags": [],
+        "description": "Neat",
+        "author": "Douglas Richardson"
+    },
+    "created": ""
+};
+
+const defghi = {
+    "id": "defghi",
+    "revision": 0,
+    "parts": [
+        {
+            "id": "demon-wings",
+            "variant": "$",
+            "fill": {
+                "p0demon-wingslayer1": "#D00",
+                "p1demon-wingslayer2": "#666"
+            }
+        },
+        {
+            "id": "basic-body",
+            "variant": "$",
+            "fill": {
+                "p0basic-bodylayer1": "#D00"
+            }
+        }
+    ],
+    "meta": {
+        "name": "Example",
+        "tags": [],
+        "description": "Neat",
+        "author": "Douglas Richardson"
+    },
+    "created": ""
+};
+
 Store.addReducer(function (store, action, state) {
     if (action.type === "load.details" && (!state.details || typeof(state.details) === "object" && state.details.id !== action.id)) {
         state = { ...state, details: null };
-        store.data.fetch.details(action.id)
-            .then(token => {
-                if (token === null) {
-                    store.dispatch({
-                        type: "load.details.result",
-                        result: "404:not-found"
-                    });
-                } else {
-                    store.dispatch({
-                        type: "load.details.result",
-                        result: token
-                    });
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                store.dispatch({
-                    type: "load.details.result",
-                    result: "500:error"
-                });
+        if (action.id === "abcdef") {
+            store.dispatch({
+                type: "load.details.result",
+                result: abcdef
             });
+        } else if (action.id === "defghi") {
+            store.dispatch({
+                type: "load.details.result",
+                result: defghi
+            });
+        }
     } else if (action.type === "load.details.result") {
         state = { ...state, details: action.result };
     }
@@ -38,19 +86,13 @@ Store.addReducer(function (store, action, state) {
             return state;
         }
         state = { ...state, browse: [...browse, null] };
-        store.data.fetch.browse(action.page)
-            .then(tokens => {
-                store.dispatch({
-                    type: "load.browse.result",
-                    result: tokens
-                });
-            })
-            .catch(err => {
-                store.dispatch({
-                    type: "load.browse.result",
-                    result: "500:error"
-                });
-            });
+        store.dispatch({
+            type: "load.browse.result",
+            result: [
+                abcdef,
+                defghi
+            ]
+        });
     } else if (action.type === "load.browse.result") {
         const browse = state.browse
             .slice(0, -1);

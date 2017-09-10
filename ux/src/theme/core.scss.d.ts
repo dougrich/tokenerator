@@ -30,5 +30,7 @@ export const oHeroTransitionEnter: string;
 export const oHeroTransitionEnterActive: string;
 export const oHeroTransitionLeave: string;
 export const oHeroTransitionLeaveActive: string;
+export const oPage: string;
+export const oDetails: string;
+export const oDetailsToken: string;
 export const oTokenPlaceholder: string;
-export const oTest: string;

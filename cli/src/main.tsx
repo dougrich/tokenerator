@@ -150,7 +150,19 @@ if (program.watch) {
             'Content-Type': 'image/svg+xml'
         });
         res.end(markup);
-    })
+    });
+
+    app.get('/parts', function (req, res, next) {
+        const keys = Object.keys(okay).sort();
+        const parts:  Model.Part[] = [];
+        for (let i = 0; i < keys.length; i++) {
+            const part = okay[keys[i]];
+            parts.push(part);
+        }
+        res.writeHead(200, 'OK', { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ parts }));
+    });
+
     app.listen(5000);
     watch('./', {
         recursive: true,
