@@ -6,13 +6,13 @@ import * as http from 'http';
 import * as url from 'url';
 import { CodedError, App } from '../universal';
 import { Server, RequestContext } from './server';
-import { staticFiles } from './config';
+import { staticFiles, staticFileNames } from './config';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/server';
 import * as zlib from 'zlib';
 import Mount from './mount';
 import Page from './page';
-import { StaticRouter } from 'react-router';
+import { StaticRouter, Route } from 'react-router';
 import { getResources } from './resources';
 import { DataAccess } from './dataAccess';
 import { Store, StaticContext } from '../universal';
@@ -33,11 +33,15 @@ export const renderHandler = async function(
 
         const resources = getResources("en-us");
 
+        const config = {
+            staticFileNames
+        };
+
         const data = new DataAccess();
         const store = await Store.bootstrap(req.url, data);
         await data.loaded;
         const dynamic = ReactDOM.renderToString(
-                <Mount resources={resources} store={store}>
+                <Mount resources={resources} store={store} config={config}>
                     <StaticRouter location={parsedUrl.pathname} context={context}>
                         <App/>
                     </StaticRouter>
@@ -50,6 +54,7 @@ export const renderHandler = async function(
                 resources={resources}
                 state={store.state}
                 context={context}
+                config={config}
             />);
 
         zlib.gzip(Buffer.from(page, 'utf8'), (err, result) => {

@@ -1,12 +1,4 @@
-const path = require('path');
-const webpack = require('webpack');
+const server = require('./webpack.config.server.js');
+const client = require('./webpack.config.client.js');
 
-const packDirectory = path.resolve(__dirname, '..', 'dist', 'packed');
-
-module.exports = {
-  output: {
-    filename: '[name].js',
-    path: packDirectory
-  },
-  plugins: []
-};
+module.exports = [server, client];

@@ -1,0 +1,71 @@
+@import "constants";
+
+.o-action-trigger-container {
+  display: inline-block;
+}
+
+@mixin m-action-trigger-color($classname, $color) {
+
+  &.#{$classname} {
+      color: $color;
+
+      .o-icon {
+          fill: $color;
+      }
+
+      &:hover, &:focus {
+          background-color: rgba($color, $opacity-hover-bg);
+      }
+
+      &:active {
+          transform: translate(0%, 2px);
+      }
+  }
+}
+
+.o-action-trigger {
+  display: inline-block;
+  padding: 6px 8px;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  
+  font-size: 16px;
+  text-transform: uppercase;
+
+  transition: background-color 100ms;
+
+  &+& {
+      margin-left: 8px;
+  }
+
+  .o-icon {
+      margin-right: 4px;
+  }
+
+  &>* {
+      display: inline-block;
+      vertical-align: middle;
+  }
+  
+  @include m-action-trigger-color(is-positive-action, $color-secondary);
+  @include m-action-trigger-color(is-negative-action, $color-accent-medium);
+  @include m-action-trigger-color(is-disabled-action, $color-gray-medium);
+
+  &.is-disabled-action{
+      pointer-events: none;
+
+      &::after {
+          content: '';
+          border-bottom: 1px solid $color-gray-medium;
+          position: absolute;
+          display: block;
+          height: 1px;
+          left: 3px;
+          right: 3px;
+          top: 50%;
+      }
+  }
+}

@@ -1,0 +1,98 @@
+$red: blue;
+
+body {
+  background-color: $red;
+}
+
+.class-test {
+  border: 1px solid black;
+}
+
+.token {
+  border-radius: 100%;
+  display: block;
+  background-color: orange;
+}
+
+.browse .token {
+  width: 100px;
+  height: 100px;
+}
+
+.details .token {
+  margin: 50px;
+  width: 200px;
+  height: 200px;
+}
+
+.browse, .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.enter {
+  &.browse .token {
+    transform: translate(0%, 50%);
+    opacity: 0;
+  }
+  &.details .token {
+    opacity: 0;
+  }
+}
+
+.enter-active {
+  &.browse .token {
+    transform: translate(0%, 0%);
+    opacity: 1;
+    transition-property: transform, opacity;
+    transition-duration: 500ms;
+    transition-delay: 500ms;
+    transition-timing-function: ease-out;
+  }
+  &.details .token {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 500ms;
+    transition-delay: 500ms;
+    transition-timing-function: step-start;
+  }
+}
+
+.leave {
+  &.browse .token {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 1;
+  }
+  &.details .token {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.leave-active {
+  &.browse .transitioning.token {
+    position: absolute;
+    top: 50px!important;
+    left: 50px!important;
+    transform:translate(50%, 50%) scale(2);
+    opacity: 1;
+    transition-property: transform, opacity, top, left;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+  }
+  &.browse .token {
+    transform:translate(50%, 0);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+  }
+  &.details .token {
+    transform: translate(50%, 0);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "experimental",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint --project ./build/tsconfig.json --config ./build/tslint.json",
+    "pack": "webpack --config ./build/webpack.config.js",
+    "hmr": "webpack-dev-server --open --config ./build/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.0.5",
+    "@types/react-custom-scrollbars": "^4.0.1",
+    "@types/react-dom": "^15.5.4",
+    "@types/react-router-dom": "^4.0.7",
+    "@types/react-transition-group": "^1.1.2",
+    "awesome-typescript-loader": "^3.2.3",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "react": "^15.6.1",
+    "react-custom-scrollbars": "^4.1.2",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.2.2",
+    "react-transition-group": "^1.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "tslint": "^5.7.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.5.2",
+    "typings-for-css-modules-loader": "^1.5.0",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
+  }
+}

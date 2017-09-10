@@ -1,0 +1,62 @@
+@import "constants";
+
+.o-browse-tile-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 25px;
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  color: $color-secondary;
+
+  &::before {
+      content: '';
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 200ms;
+      transition-timing-function: ease-in;
+      background-color: $color-secondary;
+      z-index: -1;
+      border-radius: 100%;
+  }
+
+  label {
+      position: absolute;
+      bottom: -15px;
+      left: 0px;
+      right: 0px;
+      z-index: 1;
+      text-align: center;
+      display: block;
+      opacity: 0;
+
+      font-size: 15px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+      transform: translate(0, 100%);
+      transition: transform 200ms, opacity 200ms;
+      transition-timing-function: ease-in;
+      pointer-events: none;
+  }
+
+  &:hover, &:focus {
+      &::before {
+          opacity: $opacity-hover-bg;
+          transform: scale(1);
+          transition-timing-function: ease-out;
+      }
+
+      label {
+          opacity: 1;
+          transform: translate(0, 0);
+          transition-timing-function: ease-out;
+      }
+  }
+}

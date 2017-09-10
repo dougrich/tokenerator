@@ -1,3 +1,5 @@
+import * as classnames from 'classnames';
+
 export function slugify(text)
 {
   return text.toString().toLowerCase()
@@ -6,4 +8,16 @@ export function slugify(text)
     .replace(/\-\-+/g, '-')         // Replace multiple - with single -
     .replace(/^-+/, '')             // Trim - from start of text
     .replace(/-+$/, '');            // Trim - from end of text
+}
+
+type ClassValue = string | number | ClassDictionary | undefined | null | false;
+
+interface ClassDictionary {
+	[id: string]: boolean | undefined | null;
+}
+
+export function cs(...classNames: ClassValue[]) {
+  return {
+    className: classnames(classNames)
+  };
 }

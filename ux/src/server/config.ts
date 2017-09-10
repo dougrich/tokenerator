@@ -6,6 +6,7 @@ import * as crypto from 'crypto';
 export const origin = "http://localhost";
 
 export const staticFiles = {};
+export const staticFileNames = {};
 
 function createZippedBuffer(filename, mimetype, format) {
     const start = Date.now();
@@ -21,10 +22,14 @@ function createZippedBuffer(filename, mimetype, format) {
             hash
         }
     });
-    staticFiles['/' + format.replace('[hash]', hash)] = [mimetype, gzipd];
+    const name = '/' + format.replace('[hash]', hash);
+    staticFiles[name] = [mimetype, gzipd];
+    staticFileNames[filename] = name;
     return gzipd;
 }
 
 createZippedBuffer('./dist/packed/client.js', 'text/javascript', 'c.[hash].js');
 createZippedBuffer('./dist/packed/theme.css', 'text/css', 't.[hash].css');
-createZippedBuffer('./static/preview.png', 'image/png', 'preview.png');
+createZippedBuffer('./static/parts.svg', 'image/svg+xml', 'parts.[hash].svg');
+createZippedBuffer('./static/thumbnail.png', 'image/png', 'thumbnail.[hash].png');
+createZippedBuffer('./static/logo.svg', 'image/svg+xml', 'logo.[hash].svg');
