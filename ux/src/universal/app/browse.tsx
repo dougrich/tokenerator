@@ -12,19 +12,21 @@ route({
 }, 
 dataLoad(
 async (store, props) => {
-    store.dispatch({
-        type: "load.browse",
-        page: 0
-    });
+  console.log('FETCHING DATA');
+  store.dispatch({
+    type: "load.browse",
+    page: 0
+  });
 },
 subscribes({
-    browse: 'browse'
+  browse: 'browse'
 },
 class Browse extends React.Component<Browse.Properties, void> {
   static contextTypes = contextTypes;
   context: Context;
 
   render() {
+    console.log(this.props.browse);
     const page0 = (this.props.browse || [])[0];
 
     if (!page0 || page0 === "404:not-found") {
