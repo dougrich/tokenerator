@@ -4,10 +4,11 @@ import { match, Route, Switch, withRouter } from "react-router-dom";
 import { CSSTransitionGroup } from "react-transition-group";
 
 import "./browse";
-import "./error404";
 import "./home";
 import "./test";
 import "./tokenDetails";
+
+import "./error404";
 
 import { NavHero } from "../components";
 import { IconSheet } from "../icons";
