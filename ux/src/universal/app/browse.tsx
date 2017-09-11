@@ -1,24 +1,25 @@
-import * as React from 'react';
-import { route } from '../route';
-import { Page, BrowseTileContainer } from '../components';
-import { dataLoad } from '../data';
-import { Model, Component } from '@dougrich/tokenerator';
-import { subscribes, DataBound } from '../state';
-import { Context, contextTypes } from '../context';
+import * as React from "react";
 
-export default 
+import { Component, Model } from "@dougrich/tokenerator";
+import { BrowseTileContainer, Page } from "../components";
+import { Context, contextTypes } from "../context";
+import { dataLoad } from "../data";
+import { route } from "../route";
+import { DataBound, subscribes } from "../state";
+
+export default
 route({
-  path: '/browse'
-}, 
+  path: "/browse",
+},
 dataLoad(
 async (store, props) => {
     store.dispatch({
+        page: 0,
         type: "load.browse",
-        page: 0
     });
 },
 subscribes({
-    browse: 'browse'
+    browse: "browse",
 },
 class Browse extends React.Component<Browse.Properties, void> {
   static contextTypes = contextTypes;
@@ -32,7 +33,7 @@ class Browse extends React.Component<Browse.Properties, void> {
         <Page
           statusCode={404}
           title={"Browse"}
-          canonical={'/browse'}
+          canonical={"/browse"}
         >
           No tokens found!
         </Page>
@@ -42,7 +43,7 @@ class Browse extends React.Component<Browse.Properties, void> {
         <Page
           statusCode={500}
           title={"Browse"}
-          canonical={'/browse'}
+          canonical={"/browse"}
         >
           Error occured loading tokens!
         </Page>
@@ -52,14 +53,14 @@ class Browse extends React.Component<Browse.Properties, void> {
         <Page
           statusCode={200}
           title={"Browse"}
-          canonical={'/browse'}
+          canonical={"/browse"}
         >
           {page0.map(token => (
             <BrowseTileContainer key={token.id} label={token.meta.name} tokenId={token.id}>
               <Component.Token
                 token={token}
                 parts={this.context.parts}
-                sheet={this.context.config.staticFileNames['./static/parts.svg']}
+                sheet={this.context.config.staticFileNames["./static/parts.svg"]}
               />
             </BrowseTileContainer>
           ))}

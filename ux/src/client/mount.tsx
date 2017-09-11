@@ -1,8 +1,9 @@
-import * as React from 'react';
-import { Store, App, constants, Resources, Configuration, Context, contextTypes } from '../universal';
-import * as PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Model } from '@dougrich/tokenerator';
+import * as PropTypes from "prop-types";
+import * as React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import { Model } from "@dougrich/tokenerator";
+import { App, Configuration, constants, Context, contextTypes, Resources, Store } from "../universal";
 
 export interface MountProperties {
   store: Store;
@@ -25,10 +26,10 @@ export default class Mount extends React.Component<MountProperties, void> {
 
   getChildContext() {
     return {
-      store: this.props.store,
-      resources: this.resources,
       config: this.configuration,
-      parts: this.parts
+      parts: this.parts,
+      resources: this.resources,
+      store: this.props.store,
     } as Context;
   }
 

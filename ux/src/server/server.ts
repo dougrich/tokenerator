@@ -1,10 +1,11 @@
-import { staticHandler } from './server.static';
-import { renderHandler } from './server.render';
-import * as http from 'http';
-import { CodedError } from '../universal';
-import * as os from 'os';
-import * as pino from 'pino';
-import { log } from './log';
+import * as http from "http";
+import * as os from "os";
+import * as pino from "pino";
+
+import { CodedError } from "../universal";
+import { log } from "./log";
+import { renderHandler } from "./server.render";
+import { staticHandler } from "./server.static";
 
 export function middlewareContinuation(
     this: Server,
@@ -13,21 +14,18 @@ export function middlewareContinuation(
     res: http.ServerResponse,
     continuation: Function,
     index: number,
-    error?: CodedError
+    error?: CodedError,
 ) {
     if (!!error) {
-        
         // handle errors by calling the error handler if we have one or throwing otherwise
         this.onerror(error, context, req, res);
 
     } else if (!!continuation) {
-        
         // we have a continuation function - call it!
         continuation();
 
     } else {
-        
-        // if we've exhausted our middleware then we don't know how to handle this request
+        // if we"ve exhausted our middleware then we don"t know how to handle this request
         // at this point, try to call our unknown handler if we have one; otherwise throw an error
         this.unhandled(context, req, res);
 
@@ -41,7 +39,7 @@ function middlewareReducer(
     res: http.ServerResponse,
     continuation: Function,
     current: Function,
-    index: number
+    index: number,
 ) {
     // bind the current function with the arguments it expects
     return current.bind(
@@ -78,7 +76,7 @@ function middlewareEvaluate<REQ, RES>(
 export class Server {
     private middleware: Function[] = [
         staticHandler,
-        renderHandler
+        renderHandler,
     ];
 
     private middlewareEvaluate = middlewareEvaluate;
@@ -87,25 +85,25 @@ export class Server {
     constructor() {
         this.server = http.createServer((req, res) => {
             const start = Date.now();
-            const correlation = req.headers['X-Correlation'] || Math.ceil(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
+            const correlation = req.headers["X-Correlation"] || Math.ceil(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
             const context = {
                 correlation,
                 log: log.child({
-                    cv: correlation
-                })
+                    cv: correlation,
+                }),
             };
             this.middlewareEvaluate(this.middleware, context, req, res);
-            res.on('finish', () => {
+            res.on("finish", () => {
                 context.log.info({
                     isr: {
-                        start,
-                        url: req.url,
                         end: Date.now(),
+                        message: res.statusMessage,
+                        start,
                         status: res.statusCode,
-                        message: res.statusMessage
-                    }
+                        url: req.url,
+                    },
                 });
-            })
+            });
         });
     }
 
@@ -113,7 +111,7 @@ export class Server {
         error: CodedError,
         context: RequestContext,
         req: http.IncomingMessage,
-        res: http.ServerResponse
+        res: http.ServerResponse,
     ) {
 
     }
@@ -121,7 +119,7 @@ export class Server {
     unhandled(
         context: RequestContext,
         req: http.IncomingMessage,
-        res: http.ServerResponse
+        res: http.ServerResponse,
     ) {
 
     }
@@ -129,12 +127,12 @@ export class Server {
     listen(): Promise<Server> {
         return new Promise<Server>((resolve, reject) => {
             this.server.listen(80, () => {
-                log.trace('Server started on port ' + 80);
+                log.trace("Server started on port " + 80);
             });
             this.loggingInterval = setInterval(() => {
                 log.info({
-                    memoryUsage: process.memoryUsage()
-                })
+                    memoryUsage: process.memoryUsage(),
+                });
             }, 10000);
             resolve(this);
         });
@@ -143,7 +141,7 @@ export class Server {
     stop() {
         return new Promise<void>((resolve, reject) => {
             this.server.close(() => {
-                log.trace('Server closed');
+                log.trace("Server closed");
                 clearTimeout(this.loggingInterval);
                 resolve();
             });

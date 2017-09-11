@@ -1,35 +1,36 @@
-import * as React from 'react';
-import { Link, match } from 'react-router-dom';
-import { subscribes, DataBound } from '../state';
-import { route } from '../route';
-import { dataLoad } from '../data';
-import { Page } from '../components';
-import { Model, Component } from '@dougrich/tokenerator';
-import { slugify } from '../util';
-import { Context, contextTypes } from '../context';
-import * as css from '../../theme/core.scss';
-import { cs } from '../util';
+import * as React from "react";
+import { Link, match } from "react-router-dom";
+
+import { Component, Model } from "@dougrich/tokenerator";
+import * as css from "../../theme/core.scss";
+import { Page } from "../components";
+import { Context, contextTypes } from "../context";
+import { dataLoad } from "../data";
+import { route } from "../route";
+import { DataBound, subscribes } from "../state";
+import { slugify } from "../util";
+import { cs } from "../util";
 
 export interface TokenDetailsProperties {
     match: match<{
         id: string;
     }>;
-    details: DataBound<Model.Token>
+    details: DataBound<Model.Token>;
 }
 
 export default
 route({
-    path: '/token/:id/:name?'
+    path: "/token/:id/:name?",
 },
 dataLoad(
 async (store, props) => {
     store.dispatch({
+        id: props.match.params.id,
         type: "load.details",
-        id: props.match.params.id
     });
 },
 subscribes({
-    details: 'details'
+    details: "details",
 },
 class TokenDetails extends React.Component<TokenDetailsProperties, void> {
     static contextTypes = contextTypes;
@@ -69,7 +70,7 @@ class TokenDetails extends React.Component<TokenDetailsProperties, void> {
                             {...cs(css.oDetailsToken)}
                             token={this.props.details}
                             parts={this.context.parts}
-                            sheet={this.context.config.staticFileNames['./static/parts.svg']}
+                            sheet={this.context.config.staticFileNames["./static/parts.svg"]}
                         />
                         <h1>{this.props.details.meta.name}</h1>
                     </div>

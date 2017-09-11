@@ -1,9 +1,10 @@
-import * as React from 'react';
-import { constants, Store, Resources, Configuration, State, StaticContext } from '../universal';
-import * as PropTypes from 'prop-types';
-import * as http from 'http';
-import { origin } from './config';
-import { Model } from '@dougrich/tokenerator';
+import * as http from "http";
+import * as PropTypes from "prop-types";
+import * as React from "react";
+
+import { Model } from "@dougrich/tokenerator";
+import { Configuration, constants, Resources, State, StaticContext, Store } from "../universal";
+import { origin } from "./config";
 
 export interface PageProperties {
     staticFiles: string[];
@@ -39,8 +40,8 @@ export default class Page extends React.Component<PageProperties, void> {
                     ? <link rel="canonical" href={origin + this.props.context.canonical}/>
                     : null}
                 {this.props.staticFiles
-                    .filter(s => s.endsWith('css'))
-                    .map(s => <link rel="stylesheet" type="text/css" href={s} key={s}/>)}
+                    .filter((s) => s.endsWith("css"))
+                    .map((s) => <link rel="stylesheet" type="text/css" href={s} key={s}/>)}
                 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:700" rel="stylesheet"/>
                 <script type="application/json" id={constants.resourcesId} dangerouslySetInnerHTML={{ __html: JSON.stringify(this.props.resources) }}/>
                 <script type="application/json" id={constants.configId} dangerouslySetInnerHTML={{ __html: JSON.stringify(this.props.config) }}/>
@@ -49,12 +50,12 @@ export default class Page extends React.Component<PageProperties, void> {
             </head>
             <body>
                 {this.props.staticFiles
-                    .filter(s => s.endsWith('svg'))
-                    .map(s => <object type="image/svg+xml" data={s} style={{ position: 'absolute', top: 0, left: 0, width: 0, height: 0, overflow: 'hidden', pointerEvents: 'none'}}/>)}
+                    .filter((s) => s.endsWith("svg"))
+                    .map((s) => <object type="image/svg+xml" data={s} style={{ position: "absolute", top: 0, left: 0, width: 0, height: 0, overflow: "hidden", pointerEvents: "none"}}/>)}
                 <div id={constants.mountId} dangerouslySetInnerHTML={{ __html: this.props.dynamicContent }}/>
                 {this.props.staticFiles
-                    .filter(s => s.endsWith('js'))
-                    .map(s => <script type="text/ecmascript" src={s} key={s}/>)}
+                    .filter((s) => s.endsWith("js"))
+                    .map((s) => <script type="text/ecmascript" src={s} key={s}/>)}
             </body>
         </html>;
     }

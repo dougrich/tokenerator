@@ -1,12 +1,13 @@
-import * as React from 'react';
-import { slugify, cs } from '../../util';
-import { Link } from 'react-router-dom';
-import * as css from '../../../theme/core.scss';
+import * as React from "react";
+import { Link } from "react-router-dom";
+
+import * as css from "../../../theme/core.scss";
+import { cs, slugify } from "../../util";
 
 export class BrowseTileContainer extends React.PureComponent<BrowseTileContainer.Properties, void> {
   render() {
     const { tokenId, className, label, children } = this.props;
-    const labelId = tokenId + '-label';
+    const labelId = tokenId + "-label";
 
     return (
       <Link

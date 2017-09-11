@@ -1,9 +1,10 @@
-import * as React from 'react';
-import { route } from '../route';
-import { Page } from '../components';
+import * as React from "react";
 
-export default 
-route({}, 
+import { Page } from "../components";
+import { route } from "../route";
+
+export default
+route({},
 class Error404 extends React.Component<any, void> {
     render() {
         return <Page statusCode={404}>
