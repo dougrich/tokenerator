@@ -4,7 +4,7 @@
   "main": "./build/start.js",
   "license": "MIT",
   "scripts": {
-    "lint": "tslint -c ./build/tslint.json 'src/**/*.{ts,tsx}'",
+    "lint": "tslint -c ./build/tslint.json 'src/**/*.{ts,tsx}' -e 'src/universal/icons/linear/**/*.tsx'",
     "compile": "webpack --config ./build/webpack.config.js",
     "watch": "webpack --config ./build/webpack.config.js -w"
   },

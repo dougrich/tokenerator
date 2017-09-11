@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as css from '../../theme/core.scss';
-import { cs } from '../util';
+import * as React from "react";
+import * as css from "../../theme/core.scss";
+import { cs } from "../util";
 
 export interface BaseIconProperties {
   iconId?: string;

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Context, contextTypes } from '../../context';
-import * as css from '../../../theme/core.scss';
-import { cs } from '../../util';
+import * as React from "react";
 
+import * as css from "../../../theme/core.scss";
+import { Context, contextTypes } from "../../context";
+import { cs } from "../../util";
 
 export class HeroBackground extends React.PureComponent<HeroBackground.Properties, void> {
   render() {
@@ -38,13 +38,13 @@ export class HeroBackground extends React.PureComponent<HeroBackground.Propertie
 
 export namespace HeroBackground {
   export interface Properties {
-    tokens?: Array<TrimmedDownToken>;
+    tokens?: TrimmedDownToken[];
   }
 
-  export type TrimmedDownToken = Array<string>;
+  export type TrimmedDownToken = string[];
 
-  export const DefaultTokens: Array<TrimmedDownToken> = [
-    ['#p0wolf-bodybody'],
+  export const DefaultTokens: TrimmedDownToken[] = [
+    ["#p0wolf-bodybody"],
     [
       "#p0basic-bodylayer1",
       "#p0winged-armorlayer1",
@@ -52,14 +52,14 @@ export namespace HeroBackground {
       "#p0winged-helmetlayer2",
       "#p1winged-helmetlayer1",
       "#p0pauldronslayer1",
-      "#p0greatswordlayer1"
+      "#p0greatswordlayer1",
     ],
     [
       "#p0basic-bodylayer1",
       "#p0robeslayer1",
       "#p0scarflayer1",
       "#p0book-leftlayer1",
-      "#p0old-man-hairlayer1"
+      "#p0old-man-hairlayer1",
     ],
     [
       "#p0simple-capelayer1",
@@ -67,13 +67,13 @@ export namespace HeroBackground {
       "#p0pocketed-shirtlayer1",
       "#p1pocketed-shirtlayer2",
       "#p1smooth-hoodlayer1",
-      "#p0scimitar-leftlayer1"
+      "#p0scimitar-leftlayer1",
     ],
     [
       "#p0mummylayer1",
       "#p1mummylayer2",
       "#p0minotaur-hornslayer1",
-      "#p0sickle-leftlayer1"
+      "#p0sickle-leftlayer1",
     ],
     [
       "#p0basic-bodylayer1",
@@ -81,14 +81,14 @@ export namespace HeroBackground {
       "#p1bound-maillayer2",
       "#p0plumed-helmetlayer1",
       "#p1plumed-helmetlayer2",
-      "#p0shortsword-leftlayer1"
+      "#p0shortsword-leftlayer1",
     ],
     [
       "#p0elflayer1",
       "#p0scale-maillayer1",
       "#p0pretty-boy-hairlayer1",
       "#p0spiky-pauldronslayer1",
-      "#p0small-axe-leftlayer1"
+      "#p0small-axe-leftlayer1",
     ],
     [
       "#p0demon-wingslayer1",
@@ -97,7 +97,7 @@ export namespace HeroBackground {
       "#p0elflayer1",
       "#p0minotaur-hornslayer1",
       "#p0cyclops-eyelayer1",
-      "#p1cyclops-eyelayer2"
+      "#p1cyclops-eyelayer2",
     ],
     [
       "#p0basic-bodylayer1",
@@ -107,26 +107,32 @@ export namespace HeroBackground {
       "#p0bandanalayer1",
       "#p0musketlayer2",
       "#p1musketlayer1",
-      "#p2musketlayer3"
-    ]
-  ]
-  
+      "#p2musketlayer3",
+    ],
+  ];
+
   export class InlineToken extends React.PureComponent<InlineToken.Properties, void> {
     static contextTypes = contextTypes;
     context: Context;
 
+    renderPart = (link: string) => {
+      return (
+        <use
+          xlinkHref={this.context.config.staticFileNames["./static/parts.svg"] + link}
+          key={link}
+          fill="#fff"
+        />
+      );
+    }
+
     render() {
       const left = this.props.position % 3;
       const top = (this.props.position - left) / 3;
-      const transform = `translate(${left*90},${top*90})`;
+      const transform = `translate(${left * 90},${top * 90})`;
+
       return (
         <g transform={transform}>
-          {this.props.parts.map(link => (
-            <use
-              xlinkHref={this.context.config.staticFileNames['./static/parts.svg'] + link}
-              key={link}
-              fill="#fff"
-            />))}
+          {this.props.parts.map(this.renderPart)}
         </g>
       );
     }

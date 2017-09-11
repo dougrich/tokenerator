@@ -1,7 +1,7 @@
 export const constants = {
-    mountId: 'm',
-    resourcesId: 'r',
-    configId: 'c',
-    stateId: 's',
-    partId: 'p'
+  configId: "c",
+  mountId: "m",
+  partId: "p",
+  resourcesId: "r",
+  stateId: "s",
 };

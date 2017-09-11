@@ -1,9 +1,14 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended", "tslint-react"
-    ],
-    "jsRules": {},
-    "rules": {},
-    "rulesDirectory": []
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended", "tslint-react"
+  ],
+  "jsRules": {},
+  "rules": {
+    "interface-name": [false],
+    "no-namespace": [false],
+    "member-access": [true, "no-public"],
+    "max-classes-per-file": [false]
+  },
+  "rulesDirectory": []
 }

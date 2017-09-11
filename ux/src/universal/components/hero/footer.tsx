@@ -1,10 +1,11 @@
-import * as React from 'react';
-import * as Icon from '../../icons';
-import { Link } from 'react-router-dom';
-import * as css from '../../../theme/core.scss';
-import { cs } from '../../util';
+import * as React from "react";
+import { Link } from "react-router-dom";
 
-export class HeroFooter extends React.PureComponent<HeroFooter.Properties, void> {
+import * as css from "../../../theme/core.scss";
+import * as Icon from "../../icons";
+import { cs } from "../../util";
+
+export class HeroFooter extends React.PureComponent<{}, void> {
   render() {
     return (
       <div {...cs(css.oHeroFooter)}>
@@ -19,11 +20,5 @@ export class HeroFooter extends React.PureComponent<HeroFooter.Properties, void>
         </Link>
       </div>
     );
-  }
-}
-
-export namespace HeroFooter {
-  export interface Properties {
-
   }
 }
