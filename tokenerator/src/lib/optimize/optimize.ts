@@ -74,11 +74,11 @@ const transforms = [
             let style = element.style;
 
             if (style != null) {
-                if (style['stroke-opacity'] && style['stroke-opacity'].startsWith('1')) {
+                if (style['stroke-opacity'] && style['stroke-opacity'].indexOf('1') === 0) {
                     delete style['stroke-opacity'];
                 }
             
-                if (style['fill-opacity'] && style['fill-opacity'].startsWith('1')) {
+                if (style['fill-opacity'] && style['fill-opacity'].indexOf('1') === 0) {
                     delete style['fill-opacity'];
                 }
                 delete style['display'];
@@ -114,7 +114,7 @@ const transforms = [
                 delete element.attribs['href'];
             }
             attributes.forEach(attribute => {
-                if (attribute.startsWith('sodipodi') || attribute.startsWith('inkscape')) {
+                if (attribute.indexOf('sodipodi') === 0 || attribute.indexOf('inkscape') === 0) {
                     delete element.attribs[attribute];
                 }
             });
@@ -156,7 +156,7 @@ function parseLayer(this: OptimizationSession, index: number, element: CheerioEl
 
     const legacyLayerId = element.attribs['class'];
     const id = element.attribs['id'];
-    if (id && id.startsWith('--')) {
+    if (id && id.indexOf('--') === 0) {
         return;
     }
     const transform = element.attribs['transform'];

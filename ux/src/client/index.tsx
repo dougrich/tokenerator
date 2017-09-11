@@ -6,8 +6,9 @@ import { constants, Store } from "../universal";
 import Mount from "./mount";
 
 // dif
-(async function() {
-    const store = await Store.bootstrap(location.pathname, JSON.parse(document.getElementById(constants.stateId).innerText));
+(async () => {
+    const storeState = JSON.parse(document.getElementById(constants.stateId).innerText);
+    const store = await Store.bootstrap(location.pathname, storeState);
     const mount = document.getElementById(constants.mountId);
     ReactDOM.render(<Mount store={store}/>, mount);
 })();

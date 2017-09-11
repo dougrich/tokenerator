@@ -13,17 +13,29 @@ route({
 },
 dataLoad(
 async (store, props) => {
-    store.dispatch({
-        page: 0,
-        type: "load.browse",
-    });
+  store.dispatch({
+    page: 0,
+    type: "load.browse",
+  });
 },
 subscribes({
-    browse: "browse",
+  browse: "browse",
 },
 class Browse extends React.Component<Browse.Properties, void> {
   static contextTypes = contextTypes;
   context: Context;
+
+  renderToken = (token: Model.Token) => {
+    return (
+      <BrowseTileContainer key={token.id} label={token.meta.name} tokenId={token.id}>
+        <Component.Token
+          token={token}
+          parts={this.context.parts}
+          sheet={this.context.config.staticFileNames["./static/parts.svg"]}
+        />
+      </BrowseTileContainer>
+    );
+  }
 
   render() {
     const page0 = (this.props.browse || [])[0];
@@ -32,8 +44,8 @@ class Browse extends React.Component<Browse.Properties, void> {
       return (
         <Page
           statusCode={404}
-          title={"Browse"}
-          canonical={"/browse"}
+          title={this.context.resources.titleBrowse}
+          canonical="/browse"
         >
           No tokens found!
         </Page>
@@ -42,8 +54,8 @@ class Browse extends React.Component<Browse.Properties, void> {
       return (
         <Page
           statusCode={500}
-          title={"Browse"}
-          canonical={"/browse"}
+          title={this.context.resources.titleBrowse}
+          canonical="/browse"
         >
           Error occured loading tokens!
         </Page>
@@ -52,18 +64,10 @@ class Browse extends React.Component<Browse.Properties, void> {
       return (
         <Page
           statusCode={200}
-          title={"Browse"}
-          canonical={"/browse"}
+          title={this.context.resources.titleBrowse}
+          canonical="/browse"
         >
-          {page0.map(token => (
-            <BrowseTileContainer key={token.id} label={token.meta.name} tokenId={token.id}>
-              <Component.Token
-                token={token}
-                parts={this.context.parts}
-                sheet={this.context.config.staticFileNames["./static/parts.svg"]}
-              />
-            </BrowseTileContainer>
-          ))}
+          {page0.map(this.renderToken)}
         </Page>
       );
     }

@@ -20,10 +20,10 @@ export function dataLoad<P>(
     context: Context;
 
     componentDidMount() {
-      dataLoad(this.context.store, this.props);
       if (super.componentDidMount) {
         super.componentDidMount();
       }
+      dataLoad(this.context.store, this.props);
     }
 
     componentWillReceiveProps(nextProps: P, nextContext) {
