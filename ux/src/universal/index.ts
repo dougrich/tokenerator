@@ -1,5 +1,5 @@
 export * from "./constants";
-export * from "./codedError";
+export * from "./coded-error";
 export * from "./app";
 export * from "./state";
 export * from "./resources";

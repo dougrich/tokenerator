@@ -25,8 +25,19 @@ class Browse extends React.Component<Browse.Properties, void> {
   static contextTypes = contextTypes;
   context: Context;
 
+  renderToken = (token: Model.Token) => {
+    return (
+      <BrowseTileContainer key={token.id} label={token.meta.name} tokenId={token.id}>
+        <Component.Token
+          token={token}
+          parts={this.context.parts}
+          sheet={this.context.config.staticFileNames["./static/parts.svg"]}
+        />
+      </BrowseTileContainer>
+    );
+  }
+
   render() {
-    console.log(this.props.browse);
     const page0 = (this.props.browse || [])[0];
 
     if (!page0 || page0 === "404:not-found") {
@@ -56,15 +67,7 @@ class Browse extends React.Component<Browse.Properties, void> {
           title={this.context.resources.titleBrowse}
           canonical="/browse"
         >
-          {page0.map(token => (
-            <BrowseTileContainer key={token.id} label={token.meta.name} tokenId={token.id}>
-              <Component.Token
-                token={token}
-                parts={this.context.parts}
-                sheet={this.context.config.staticFileNames["./static/parts.svg"]}
-              />
-            </BrowseTileContainer>
-          ))}
+          {page0.map(this.renderToken)}
         </Page>
       );
     }

@@ -10,6 +10,7 @@ export interface MountProperties {
 }
 
 export default class Mount extends React.Component<MountProperties, void> {
+  static childContextTypes = contextTypes;
 
   private resources: Resources;
   private configuration: Configuration;
@@ -21,8 +22,6 @@ export default class Mount extends React.Component<MountProperties, void> {
     this.configuration = JSON.parse(document.getElementById(constants.configId).innerText);
     this.parts = JSON.parse(document.getElementById(constants.partId).innerText);
   }
-
-  static childContextTypes = contextTypes;
 
   getChildContext() {
     return {

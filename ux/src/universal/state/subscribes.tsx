@@ -30,8 +30,6 @@ class SubscribedComponent<P> extends React.Component<P, void> {
   }
 
   componentDidMount() {
-    console.log('SUBSCRIBING');
-    console.log(this.lookups);
     this.context.store.subscribe(this.onChange);
   }
 
@@ -40,7 +38,6 @@ class SubscribedComponent<P> extends React.Component<P, void> {
   }
 
   onChange() {
-    console.log('subscription change detection');
     const newState = {};
     for (const key of this.stateKeys) {
       newState[key] = this.lookups[key](this.context.store);

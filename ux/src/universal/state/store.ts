@@ -150,9 +150,7 @@ export class Store {
       // check if we have changed state; if so, notify our listeners
       if (next !== start) {
         this.state = next;
-        console.log(this.listeners);
         for (const listener of this.listeners) {
-          console.log(listener);
           listener();
         }
       }

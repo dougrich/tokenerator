@@ -8,6 +8,11 @@ export class BrowseTileContainer extends React.PureComponent<BrowseTileContainer
   render() {
     const { tokenId, className, label, children } = this.props;
     const labelId = tokenId + "-label";
+    const labelNode = (
+      <label id={labelId}>
+        {label}
+      </label>
+    );
 
     return (
       <Link
@@ -17,11 +22,7 @@ export class BrowseTileContainer extends React.PureComponent<BrowseTileContainer
         aria-labelledby={labelId}
       >
         {children}
-        {!!label && (
-          <label id={labelId}>
-            {label}
-          </label>
-        )}
+        {!!label && labelNode}
       </Link>
     );
   }

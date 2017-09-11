@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import * as css from "../../../theme/core.scss";
-import { Context, contextTypes } from '../../context';
+import { Context, contextTypes } from "../../context";
 import * as Icon from "../../icons";
 import { cs } from "../../util";
 

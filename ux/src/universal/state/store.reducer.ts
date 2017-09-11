@@ -32,7 +32,6 @@ Store.addReducer((store, action, state) => {
       return state;
     }
     state = { ...state, browse: [...browse, null] };
-    console.log('loading browse data');
     store.dispatch({
       result: [
         null,
@@ -41,7 +40,6 @@ Store.addReducer((store, action, state) => {
       type: "load.browse.result",
     });
   } else if (action.type === "load.browse.result") {
-    console.log('loaded browse data');
     const browse = state.browse
       .slice(0, -1);
     browse.push(action.result);
