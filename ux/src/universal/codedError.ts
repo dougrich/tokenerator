@@ -1,3 +1,3 @@
 export type CodedError = {
-    code: '404:static'
-}
+    code: "404:static",
+};

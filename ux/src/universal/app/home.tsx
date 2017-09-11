@@ -1,20 +1,21 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import * as PropTypes from 'prop-types';
-import { subscribes, DataBound } from '../state';
-import { route } from '../route';
-import { dataLoad } from '../data';
-import { Page } from '../components';
-import { Resources } from '../resources';
-import { Configuration } from '../config';
-import { Context, contextTypes } from '../context';
+import * as PropTypes from "prop-types";
+import * as React from "react";
+import { Link } from "react-router-dom";
 
-export default 
+import { Page } from "../components";
+import { Configuration } from "../config";
+import { Context, contextTypes } from "../context";
+import { dataLoad } from "../data";
+import { Resources } from "../resources";
+import { route } from "../route";
+import { DataBound, subscribes } from "../state";
+
+export default
 route({
-  path: '/',
-  exact: true
+  exact: true,
+  path: "/",
 },
-class Home extends React.Component<Home.Properties, void> {
+class Home extends React.Component<{}, void> {
   static contextTypes = contextTypes;
   context: Context;
 
@@ -29,9 +30,3 @@ class Home extends React.Component<Home.Properties, void> {
     );
   }
 });
-
-export namespace Home {
-  export interface Properties {
-
-  }
-}

@@ -1,6 +1,7 @@
-import * as React from 'react';
-import { cs } from '../../util';
-import * as css from '../../../theme/core.scss';
+import * as React from "react";
+
+import * as css from "../../../theme/core.scss";
+import { cs } from "../../util";
 
 export interface ActionTriggerContainerProperties {
   className?: string;
@@ -18,23 +19,23 @@ export class ActionTriggerContainer extends React.PureComponent<ActionTriggerCon
 
 export interface ActionTriggerProperties {
   className?: string;
-  type: ActionTriggerProperties.ActionType,
-  icon: React.ReactNode,
-  label: string
+  type: ActionTriggerProperties.ActionType;
+  icon: React.ReactNode;
+  label: string;
 }
 
 export namespace ActionTriggerProperties {
   export enum ActionType {
     Positive,
     Negative,
-    Disabled
+    Disabled,
   }
 
   export const ActionTypeClassName = {
     [ActionType.Positive]: css.isPositiveAction,
     [ActionType.Negative]: css.isNegativeAction,
-    [ActionType.Disabled]: css.isDisabledAction
-  }
+    [ActionType.Disabled]: css.isDisabledAction,
+  };
 }
 
 export class ActionTrigger extends React.PureComponent<ActionTriggerProperties, void> {

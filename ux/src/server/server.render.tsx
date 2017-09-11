@@ -2,23 +2,23 @@
  * Serves up static files - these should be heavily cached
  * If file is missing, falls through to the next handler
  */
-import * as http from 'http';
-import * as url from 'url';
-import { CodedError, App } from '../universal';
-import { Server, RequestContext } from './server';
-import { staticFiles, staticFileNames } from './config';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom/server';
-import * as zlib from 'zlib';
-import Mount from './mount';
-import Page from './page';
-import { StaticRouter, Route } from 'react-router';
-import { getResources } from './resources';
-import { Store, StaticContext } from '../universal';
-import * as fs from 'fs';
-import { Model } from '@dougrich/tokenerator';
+import * as fs from "fs";
+import * as http from "http";
+import * as React from "react";
+import * as ReactDOM from "react-dom/server";
+import { Route, StaticRouter } from "react-router";
+import * as url from "url";
+import * as zlib from "zlib";
 
-const parts: Model.Part[] = JSON.parse(fs.readFileSync('./static/parts.json', 'utf8')).parts;
+import { Model } from "@dougrich/tokenerator";
+import { App, CodedError, StaticContext, Store } from "../universal";
+import { staticFileNames, staticFiles } from "./config";
+import Mount from "./mount";
+import Page from "./page";
+import { getResources } from "./resources";
+import { RequestContext, Server } from "./server";
+
+const parts: Model.Part[] = JSON.parse(fs.readFileSync("./static/parts.json", "utf8")).parts;
 const lookup: { [id: string]: Model.Part } = {};
 parts.forEach(part => {
     lookup[part.id] = part;
@@ -26,7 +26,7 @@ parts.forEach(part => {
     for (let i = 0; i < part.svg.layers.length; i++) {
         delete part.svg.layers[i].markup;
     }
-})
+});
 
 const filenames = Object.keys(staticFiles);
 
@@ -35,17 +35,17 @@ export const renderHandler = async function(
     context: RequestContext,
     req: http.IncomingMessage,
     res: http.ServerResponse,
-    next: Function
+    next: Function,
 ): Promise<void> {
     const parsedUrl = url.parse(req.url, true);
-    if (req.method === 'GET') {
+    if (req.method === "GET") {
 
         const context: StaticContext = {};
 
         const resources = getResources("en-us");
 
         const config = {
-            staticFileNames
+            staticFileNames,
         };
 
         const store = await Store.bootstrap(req.url);
@@ -67,17 +67,17 @@ export const renderHandler = async function(
                 config={config}
             />);
 
-        zlib.gzip(Buffer.from(page, 'utf8'), (err, result) => {
-            res.writeHead(context.statusCode || 200, 'OK', {
-                'Content-Type': 'text/html',
-                'Content-Length': result.length,
-                'Cache-Control': 'no-cache, no-store, must-revalidate',
-                'Content-Encoding': 'gzip'
+        zlib.gzip(Buffer.from(page, "utf8"), (err, result) => {
+            res.writeHead(context.statusCode || 200, "OK", {
+                "Cache-Control": "no-cache, no-store, must-revalidate",
+                "Content-Encoding": "gzip",
+                "Content-Length": result.length,
+                "Content-Type": "text/html",
             });
             res.end(result);
         });
     } else {
-        res.writeHead(405, 'Method Not Allowed');
+        res.writeHead(405, "Method Not Allowed");
         res.end();
     }
-}
+};

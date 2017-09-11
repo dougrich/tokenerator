@@ -1,15 +1,17 @@
-import * as React from 'react';
-import { Switch, Route, match, withRouter } from 'react-router-dom';
-import { Location, History } from 'history';
-import './tokenDetails';
-import './home';
-import './browse';
-import './test';
-import './error404';
-import { CSSTransitionGroup } from 'react-transition-group';
-import { NavHero } from '../components';
-import { routes } from '../route';
-import { IconSheet } from '../icons';
+import { History, Location } from "history";
+import * as React from "react";
+import { match, Route, Switch, withRouter } from "react-router-dom";
+import { CSSTransitionGroup } from "react-transition-group";
+
+import "./browse";
+import "./error404";
+import "./home";
+import "./test";
+import "./tokenDetails";
+
+import { NavHero } from "../components";
+import { IconSheet } from "../icons";
+import { routes } from "../route";
 
 export const App = withRouter<{}>(
 class extends React.Component<App.Properties, void> {
@@ -24,7 +26,7 @@ class extends React.Component<App.Properties, void> {
       </div>
     );
   }
-})
+});
 
 export namespace App {
   export interface Properties {

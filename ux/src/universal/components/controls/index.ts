@@ -1,2 +1,2 @@
-export * from './action-trigger';
-export * from './browse-tile-container';
+export * from "./action-trigger";
+export * from "./browse-tile-container";

@@ -1,18 +1,19 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import { route } from '../route';
-import * as css from '../../theme/core.scss';
-import { ActionTriggerContainer, ActionTrigger, ActionTriggerProperties, BrowseTileContainer } from '../components';
-import * as Icon from '../icons';
+import * as React from "react";
+import { Link } from "react-router-dom";
 
-export default 
+import * as css from "../../theme/core.scss";
+import { ActionTrigger, ActionTriggerContainer, ActionTriggerProperties, BrowseTileContainer } from "../components";
+import * as Icon from "../icons";
+import { route } from "../route";
+
+export default
 route({
-  path: '/test'
+  path: "/test",
 },
 class TestPage extends React.Component<{}, void> {
   render() {
     return (
-      <div style={{margin: '20px'}}>
+      <div style={{margin: "20px"}}>
         <h1>Tokenerator UX</h1>
         <div>
           <h2>Typography</h2>
