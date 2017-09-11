@@ -31,8 +31,8 @@ class Browse extends React.Component<Browse.Properties, void> {
       return (
         <Page
           statusCode={404}
-          title={"Browse"}
-          canonical={'/browse'}
+          title={this.context.resources.titleBrowse}
+          canonical='/browse'
         >
           No tokens found!
         </Page>
@@ -41,8 +41,8 @@ class Browse extends React.Component<Browse.Properties, void> {
       return (
         <Page
           statusCode={500}
-          title={"Browse"}
-          canonical={'/browse'}
+          title={this.context.resources.titleBrowse}
+          canonical='/browse'
         >
           Error occured loading tokens!
         </Page>
@@ -51,8 +51,8 @@ class Browse extends React.Component<Browse.Properties, void> {
       return (
         <Page
           statusCode={200}
-          title={"Browse"}
-          canonical={'/browse'}
+          title={this.context.resources.titleBrowse}
+          canonical='/browse'
         >
           {page0.map(token => (
             <BrowseTileContainer key={token.id} label={token.meta.name} tokenId={token.id}>

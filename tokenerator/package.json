@@ -1,7 +1,7 @@
 {
   "name": "@dougrich/tokenerator",
   "typings": "./dist/lib/index.d.ts",
-  "version": "0.1.0-beta.27",
+  "version": "0.1.0-beta.28",
   "description": "",
   "main": "./dist/lib/index.js",
   "scripts": {
