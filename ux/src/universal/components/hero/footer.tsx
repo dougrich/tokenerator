@@ -13,11 +13,11 @@ export class HeroFooter extends React.PureComponent<{}, void> {
   render() {
     return (
       <div {...cs(css.oHeroFooter)}>
-        <Link to="/copyright">
-          {this.context.resources.titleCopyright}
-        </Link>
-        <Link to="/terms-of-service">
-          {this.context.resources.titleTermsOfService}
+        <span {...cs(css.oHeroFooterCopyright)}>
+          {this.context.resources.copyrightNotice}
+        </span>
+        <Link to="/legal">
+          {this.context.resources.titleLegal}
         </Link>
         <Link to="/contact">
           {this.context.resources.titleContact}

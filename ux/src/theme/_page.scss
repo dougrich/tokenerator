@@ -5,3 +5,25 @@
   width: 100%;
   height: calc(100vh - #{$navbar-height});
 }
+
+.o-page-container {
+  max-width: 1170px;
+  padding: 30px 15px;
+  margin: auto;
+
+  h1 {
+    color: #4b4b4b;
+    font-size: 42px;
+    margin: 25px 0px
+  }
+
+  a:link, a:visited {
+    color: #014968;
+    text-decoration: none;
+  }
+
+  a:hover, a:active {
+    color: #005072;
+    text-decoration: underline;
+  }
+}

@@ -99,6 +99,12 @@
   }
 }
 
+.o-hero-footer-copyright {
+  color: white;
+  font-size: 12px;
+  margin-right: 2rem;
+}
+
 .o-hero-container {
   position: relative;
   z-index: 1;
@@ -109,13 +115,6 @@
 .o-hero-scroll-thumb {
   background-color: white;
   border-radius: 3px;
-}
-
-.o-hero-footer {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
 }
 
 .o-hero-transition {

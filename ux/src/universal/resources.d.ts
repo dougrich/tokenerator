@@ -4,7 +4,11 @@ export interface Resources {
   "blankDescription": string;
   "titleBrowse": string;
   "titleBuild": string;
-  "titleCopyright": string;
-  "titleTermsOfService": string;
+  "copyrightNotice": string;
   "titleContact": string;
+  "titleLegal": string;
+  "titleLegalPages": string;
+  "titleTerms": string;
+  "titlePrivacy": string;
+  "titleAcknowledgements": string;
 }
