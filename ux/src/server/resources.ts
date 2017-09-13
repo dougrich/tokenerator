@@ -7,8 +7,12 @@ export function getResources(lang: string): Resources {
     titleBrowse: "Browse",
     titleBuild: "Build",
     titleContact: "Contact",
-    titleCopyright: "Copyright",
-    titleTermsOfService: "Terms of Service",
+    titleLegal: "Legal",
+    copyrightNotice: "© " + new Date().getFullYear() + " Douglas Richardson",
     tokenerator: "Tokenerator",
+    titleLegalPages: "Legal Pages",
+    titleTerms: "Terms of Use",
+    titlePrivacy: "Privacy Policy",
+    titleAcknowledgements: "Acknowledgements",
   };
 }

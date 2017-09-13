@@ -8,6 +8,9 @@ import "./home";
 import "./test";
 import "./tokenDetails";
 
+import "./legal";
+import "./contact"
+
 import "./error404";
 
 import { NavHero } from "../components";

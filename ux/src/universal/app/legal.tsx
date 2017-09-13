@@ -8,9 +8,9 @@ import { cs } from "../util";
 
 export default
 route({
-  path: "/contact",
+  path: "/legal",
 },
-class ContactPage extends React.Component<{}, void> {
+class LegalPage extends React.Component<{}, void> {
   static contextTypes = contextTypes;
   context: Context;
 
@@ -18,7 +18,12 @@ class ContactPage extends React.Component<{}, void> {
     return (
       <div {...cs(css.oPage)}>
         <div {...cs(css.oPageContainer)}>
-          <h1>Ways to get in touch</h1>
+          <h1>{this.context.resources.titleLegalPages}</h1>
+          <ul>
+            <li><Link to="terms-of-use">{this.context.resources.titleTerms}</Link></li>
+            <li><Link to="privacy">{this.context.resources.titlePrivacy}</Link></li>
+            <li><Link to="acknowledgements">{this.context.resources.titleAcknowledgements}</Link></li>
+          </ul>
         </div>
       </div>
     );
