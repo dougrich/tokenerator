@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import * as css from "../../theme/core.scss";
+import { Page } from "../components";
 import { Context, contextTypes } from "../context";
 import { route } from "../route";
 import { cs } from "../util";
@@ -16,7 +17,11 @@ class LegalPage extends React.Component<{}, void> {
 
   render() {
     return (
-      <div {...cs(css.oPage)}>
+      <Page
+        statusCode={200}
+        title={this.context.resources.titleLegal}
+        canonical="/legal"
+      >
         <div {...cs(css.oPageContainer)}>
           <h1>{this.context.resources.titleLegalPages}</h1>
           <ul>
@@ -25,7 +30,7 @@ class LegalPage extends React.Component<{}, void> {
             <li><Link to="acknowledgements">{this.context.resources.titleAcknowledgements}</Link></li>
           </ul>
         </div>
-      </div>
+      </Page>
     );
   }
 });

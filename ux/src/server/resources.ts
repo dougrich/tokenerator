@@ -1,5 +1,7 @@
 import { Resources } from "../universal";
 
+const year = new Date().getFullYear();
+
 export function getResources(lang: string): Resources {
   return {
     blankDescription: "With an untold backstory...",
@@ -8,7 +10,7 @@ export function getResources(lang: string): Resources {
     titleBuild: "Build",
     titleContact: "Contact",
     titleLegal: "Legal",
-    copyrightNotice: "© " + new Date().getFullYear() + " Douglas Richardson",
+    copyrightNotice: `© ${year} Douglas Richardson`,
     tokenerator: "Tokenerator",
     titleLegalPages: "Legal Pages",
     titleTerms: "Terms of Use",

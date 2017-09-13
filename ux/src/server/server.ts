@@ -135,7 +135,7 @@ export class Server {
 
   listen(): Promise<Server> {
     return new Promise<Server>((resolve, reject) => {
-      this.server.listen(80, () => {
+      this.server.listen(8081, () => {
         log.trace("Server started on port " + 80);
       });
       this.loggingInterval = setInterval(() => {
