@@ -8,19 +8,13 @@
 
 .o-page-container {
   max-width: 1170px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 30px 15px;
+  margin: auto;
 
   h1 {
     color: #4b4b4b;
     font-size: 42px;
-    font-weight: 300;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin: 25px 0px
   }
 
   a:link, a:visited {
