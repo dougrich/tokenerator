@@ -19,8 +19,9 @@ export interface PageProperties {
 export default class Page extends React.Component<PageProperties, void> {
 
   renderCss() {
-    return this.props.staticFiles
-      .filter((s) => s.endsWith("css"))
+    return [
+      this.props.config.staticFileNames["./dist/packed/theme.css"],
+    ]
       .map((s) => <link rel="stylesheet" type="text/css" href={s} key={s}/>);
   }
 

@@ -11,4 +11,5 @@ export interface Resources {
   "titleTerms": string;
   "titlePrivacy": string;
   "titleAcknowledgements": string;
+  "back": string;
 }

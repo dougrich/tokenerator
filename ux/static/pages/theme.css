@@ -1,0 +1,18 @@
+h1, h2, h3, h4, h5 {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+}
+
+h1 { font-size: 20px }
+h2 { font-size: 16px }
+h3 { font-size: 14px }
+h4, h5 { font-size: 12px }
+
+body {
+    font-family: serif;
+    font-size: 14px;
+    max-width: 600px;
+    margin: 3% auto;
+    padding: 20px;
+}

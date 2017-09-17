@@ -9,6 +9,7 @@ import { cs } from "../util";
 
 export default
 route({
+  exact: true,
   path: "/legal",
 },
 class LegalPage extends React.Component<{}, void> {
@@ -25,9 +26,9 @@ class LegalPage extends React.Component<{}, void> {
         <div {...cs(css.oPageContainer)}>
           <h1>{this.context.resources.titleLegalPages}</h1>
           <ul>
-            <li><Link to="terms-of-use">{this.context.resources.titleTerms}</Link></li>
-            <li><Link to="privacy">{this.context.resources.titlePrivacy}</Link></li>
-            <li><Link to="acknowledgements">{this.context.resources.titleAcknowledgements}</Link></li>
+            <li><Link to="/legal/terms-of-service">{this.context.resources.titleTerms}</Link></li>
+            <li><Link to="/legal/privacy">{this.context.resources.titlePrivacy}</Link></li>
+            <li><Link to="/legal/acknowledgements">{this.context.resources.titleAcknowledgements}</Link></li>
           </ul>
         </div>
       </Page>

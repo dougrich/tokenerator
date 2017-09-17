@@ -4,14 +4,13 @@ import { match, Route, Switch, withRouter } from "react-router-dom";
 import { CSSTransitionGroup } from "react-transition-group";
 
 import "./browse";
+import "./contact";
+import "./error404";
 import "./home";
+import "./legal";
+import "./static";
 import "./test";
 import "./tokenDetails";
-
-import "./legal";
-import "./contact"
-
-import "./error404";
 
 import { NavHero } from "../components";
 import { IconSheet } from "../icons";

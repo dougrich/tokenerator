@@ -36,3 +36,4 @@ export const oPageContainer: string;
 export const oDetails: string;
 export const oDetailsToken: string;
 export const oTokenPlaceholder: string;
+export const oBackLink: string;
