@@ -5,12 +5,14 @@ import { CSSTransitionGroup } from "react-transition-group";
 
 import "./browse";
 import "./contact";
-import "./error404";
 import "./home";
 import "./legal";
 import "./static";
 import "./test";
 import "./tokenDetails";
+
+// in a second block to avoid matching over other routes
+import "./error404";
 
 import { NavHero } from "../components";
 import { IconSheet } from "../icons";
