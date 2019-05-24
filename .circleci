@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build-api:
+    docker:
+    - image: circleci/docker
+    steps:
+    - checkout
+    - run: docker build ./api
