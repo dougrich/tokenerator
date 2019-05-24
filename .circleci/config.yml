@@ -1,22 +1,14 @@
 version: 2
 jobs:
   build-api:
-    docker:
-    - image: node:12
+    machine: true
     steps:
     - checkout
-    - setup_remote_docker:
-        docker_layer_caching: true
-    - run:
-        name: Install Docker client
-        command: |
-          set -x
-          VER="17.03.0-ce"
-          curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
-          tar -xz -C /tmp -f /tmp/docker-$VER.tgz
-          mv /tmp/docker/* /usr/bin
-    - run: |
-        docker build ./api
+    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenapi:$CIRCLE_SHA1 ./api
+    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+    - run: gcloud --quiet config set project ${GCP_PROJECT}
+    - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenapi:$CIRCLE_SHA1
 workflows:
   version: 2
   build:
