@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="rosy-cheeks.svg"
+   class="blush"
+   data-zindex="900"
+   data-slots="256"
+   data-visible="true">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient7154">
+      <stop
+         style="stop-color:#b4b4b4;stop-opacity:1;"
+         offset="0"
+         id="stop7156" />
+      <stop
+         style="stop-color:#b4b4b4;stop-opacity:0;"
+         offset="1"
+         id="stop7158" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7154"
+       id="radialGradient7160"
+       cx="25.200001"
+       cy="43.380001"
+       fx="25.200001"
+       fy="43.380001"
+       r="2.52"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7154-1"
+       id="radialGradient7160-4"
+       cx="25.200001"
+       cy="43.380001"
+       fx="25.200001"
+       fy="43.380001"
+       r="2.52"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient7154-1">
+      <stop
+         style="stop-color:#b4b4b4;stop-opacity:1;"
+         offset="0"
+         id="stop7156-5" />
+      <stop
+         style="stop-color:#b4b4b4;stop-opacity:0;"
+         offset="1"
+         id="stop7158-3" />
+    </linearGradient>
+    <radialGradient
+       r="2.52"
+       fy="43.380001"
+       fx="25.200001"
+       cy="43.380001"
+       cx="25.200001"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient7177"
+       xlink:href="#linearGradient7154-1"
+       inkscape:collect="always" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7154-8"
+       id="radialGradient7160-9"
+       cx="25.200001"
+       cy="43.380001"
+       fx="25.200001"
+       fy="43.380001"
+       r="2.52"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient7154-8">
+      <stop
+         style="stop-color:#b4b4b4;stop-opacity:1;"
+         offset="0"
+         id="stop7156-7" />
+      <stop
+         style="stop-color:#b4b4b4;stop-opacity:0;"
+         offset="1"
+         id="stop7158-6" />
+    </linearGradient>
+    <radialGradient
+       r="2.52"
+       fy="43.380001"
+       fx="25.200001"
+       cy="43.380001"
+       cx="25.200001"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient7211"
+       xlink:href="#linearGradient7154-8"
+       inkscape:collect="always" />
+    <filter
+       inkscape:collect="always"
+       id="filter7254"
+       x="-0.30022848"
+       width="1.600457"
+       y="-0.30022848"
+       height="1.600457"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.63047979"
+         id="feGaussianBlur7256" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter7262"
+       x="-0.30022848"
+       width="1.600457"
+       y="-0.30022848"
+       height="1.600457"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.63047979"
+         id="feGaussianBlur7264" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.9824051"
+     inkscape:cx="42.586593"
+     inkscape:cy="38.843113"
+     inkscape:document-units="in"
+     inkscape:current-layer="svg2"
+     showgrid="true"
+     units="in"
+     inkscape:window-width="1361"
+     inkscape:window-height="1030"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="in"
+       spacingx="0.014in"
+       spacingy="0.014in" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Flower Girl Hair</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <title
+     id="title6623">Flower Girl Hair</title>
+  <g
+     id="g7266"
+     class="rosy-cheeks">
+    <path
+       transform="matrix(2.3173815,0,0,2.1433877,-31.256245,-47.721028)"
+       d="m 27.720001,43.380001 a 2.52,2.52 0 1 1 -5.04,0 2.52,2.52 0 1 1 5.04,0 z"
+       sodipodi:ry="2.52"
+       sodipodi:rx="2.52"
+       sodipodi:cy="43.380001"
+       sodipodi:cx="25.200001"
+       id="path6644"
+       style="color:#000000;fill:url(#radialGradient7160);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.99000001;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter7254);enable-background:accumulate"
+       sodipodi:type="arc" />
+    <path
+       transform="matrix(2.3173815,0,0,2.1433877,3.1483352,-47.711498)"
+       d="m 27.720001,43.380001 a 2.52,2.52 0 1 1 -5.04,0 2.52,2.52 0 1 1 5.04,0 z"
+       sodipodi:ry="2.52"
+       sodipodi:rx="2.52"
+       sodipodi:cy="43.380001"
+       sodipodi:cx="25.200001"
+       id="path6644-7"
+       style="color:#000000;fill:url(#radialGradient7211);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.99000001;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter7262);enable-background:accumulate"
+       sodipodi:type="arc" />
+  </g>
+</svg>

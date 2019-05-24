@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="bulletproof-vest.svg"
+   class="bulletproof-vest">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.004662"
+     inkscape:cx="46.853047"
+     inkscape:cy="27.560616"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer2"
+     showgrid="true"
+     units="in"
+     inkscape:window-width="1920"
+     inkscape:window-height="1003"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="in"
+       spacingx="0.014in"
+       spacingy="0.014in" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Shirt"
+     inkscape:groupmode="layer"
+     id="layer1"
+     class="shirt"
+     transform="translate(0,-962.35975)"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       d="m 9.18,1011.1409 c 1.88688,18.1081 17.2051,32.2189 35.8125,32.2189 18.33498,0 33.47434,-13.7119 35.71875,-31.4375 -7.05244,2.6459 -19.97089,4.4375 -34.8125,4.4375 -16.28176,0 -30.28526,-2.1398 -36.71875,-5.2188 z"
+       id="path3829-1-5-74-4-9-0-7-87-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscsc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Tie"
+     class="tie"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 45.36,57.24005 -2.427025,0 -1.618016,13.9073 4.045041,6.9537 4.04504,-6.9537 -1.618016,-13.9073 z"
+       id="path3922"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 41.39866,53.90625 c -0.06399,1.2495 -0.04441,2.5875 0.295068,3.3438 0.759556,1.692 3.677004,2.5 3.677004,2.5 0,0 2.89475,-0.808 3.654306,-2.5 0.339569,-0.7565 0.35913,-2.094 0.295068,-3.3438 -1.169741,0.044 -2.354599,0.094 -3.563516,0.094 -1.478224,0 -2.938923,-0.029 -4.35793,-0.094 z"
+       id="path3920"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Jacket"
+     class="vest"
+     sodipodi:insensitive="true">
+    <path
+       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="M 28.96875,53.15625 C 28.9582,61.068145 24.95735,67.759806 19.375,70.28125 25.904945,76.895543 34.971467,81 45,81 55.058774,81 64.153856,76.87126 70.6875,70.21875 65.22035,67.657566 61.312437,61.077973 61.25,53.3125 c -2.649937,0.244314 -5.44345,0.417263 -8.34375,0.53125 -0.08813,4.671594 -3.411825,8.4375 -7.53125,8.4375 -4.128733,0 -7.48815,-3.782499 -7.5625,-8.46875 -3.079685,-0.139596 -6.062982,-0.370578 -8.84375,-0.65625 z"
+       id="rect3023"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Jacket Pads"
+     class="vest-pads"
+     sodipodi:insensitive="true">
+    <path
+       inkscape:connector-curvature="0"
+       style="color:#000000;fill:#b4b4b4;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 61.84375,58.3125 -4.28125,2.46875 c -2.10108,1.213059 -2.857528,3.848451 -1.6875,5.875 1.170028,2.026548 3.83642,2.681809 5.9375,1.46875 L 65.5,66 c -1.683503,-2.11687 -2.961989,-4.736957 -3.65625,-7.6875 z"
+       id="path3051" />
+    <path
+       inkscape:connector-curvature="0"
+       style="color:#000000;fill:#b4b4b4;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 28.1875,59.0625 c -0.795544,2.907472 -2.173314,5.471412 -3.9375,7.5 l 2.6875,1.5625 c 2.10108,1.213059 4.767472,0.557798 5.9375,-1.46875 1.170028,-2.026549 0.41358,-4.661941 -1.6875,-5.875 l -3,-1.71875 z"
+       id="path3051-4" />
+  </g>
+</svg>

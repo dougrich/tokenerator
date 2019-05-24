@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongo:
+    image: 'mongo:3.0.6'
+    volumes:
+    - ./test-data/data:/data/db
+  pipe:
+    image: us.gcr.io/rpg-dougrich-net/token-pipe:latest
+    build: .
+    environment:
+    - GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json
+    - MONGO_ENDPOINT=mongodb://mongo:27017/test
+    volumes:
+    - ../creds.json:/gcp/creds.json
+    - ./tokens:/tokens

@@ -1,0 +1,16 @@
+{
+  "result": "4321.zip",
+  "type": "ZIP",
+  "params": {
+    "size": 1200,
+    "page": "letter",
+    "name": "Goblins",
+    "tokens": [
+      {
+        "id": "XhOQacRh4x",
+        "count": 4,
+        "label": "alphabet"
+      }
+    ]
+  }
+}

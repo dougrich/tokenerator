@@ -1,0 +1,17 @@
+{
+  "name": "pipe",
+  "version": "1.0.0",
+  "description": "The legacy ensures that all the current tokens in the database exist in the actual data storage",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^2.0.0",
+    "mongodb": "^2.2.19",
+    "shortid": "^2.2.14"
+  }
+}

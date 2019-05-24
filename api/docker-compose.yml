@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api:
+    build: .
+    environment:
+    - GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json
+    volumes:
+    - ./dev.sh:/dev.sh
+    - ./src:/app/src
+    - ../creds.json:/gcp/creds.json
+    - ../config.json:/app/config.json
+    entrypoint: /dev.sh
+    ports:
+    - 80:80

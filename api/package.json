@@ -1,0 +1,30 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "OLD:",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^2.0.0",
+    "@google-cloud/pubsub": "^0.29.1",
+    "@google-cloud/storage": "^2.5.0",
+    "ajv": "^6.10.0",
+    "axios": "^0.18.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "nconf": "^0.10.0",
+    "query-string": "^6.5.0",
+    "shortid": "^2.2.14",
+    "slug": "^1.1.0",
+    "svg2img": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
