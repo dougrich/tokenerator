@@ -1,7 +1,8 @@
 version: 2
 jobs:
   build-tokens:
-    image: node:12
+    docker:
+      image: node:12
     steps:
     - checkout
     - run: |
