@@ -1,16 +1,46 @@
 version: 2
 jobs:
+  build-tokens:
+    image: node:12
+    steps:
+    - checkout
+    - run: |
+        cd ./token-parts
+        npm i
+        node ./bundle.js
+    - save_cache:
+        key: token-parts-{{ .Revision }}
+        paths:
+        - ./api/src/token-parts.js
   build-api:
     machine: true
     steps:
     - checkout
+    - restore_cache:
+        key: token-parts-{{ .Revision }}
+        paths:
+        - ./api/src/token-parts.js
+    - run: cat ./api/src/token-parts.js
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenapi:$CIRCLE_SHA1 ./api
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
     - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenapi:$CIRCLE_SHA1
+  build-batch:
+    machine: true
+    steps:
+    - checkout
+    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/batchprocess:$CIRCLE_SHA1 ./api
+    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+    - run: gcloud --quiet config set project ${GCP_PROJECT}
+    - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:$CIRCLE_SHA1
 workflows:
   version: 2
   build:
     jobs:
-    - build-api
+    - build-tokens
+    - build-api:
+        requires:
+        - build-tokens
+    - build-batch
