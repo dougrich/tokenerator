@@ -3,6 +3,7 @@ jobs:
   build-api:
     docker:
     - image: circleci/node:12
+    - image: google/cloud-sdk
     steps:
     - checkout
     - run: |
