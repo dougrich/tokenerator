@@ -1,28 +1,16 @@
 version: 2
 jobs:
-  build-tokens:
+  build-api:
     docker:
-    - image: node:12
+    - image: circleci/node:12
     steps:
     - checkout
     - run: |
         cd ./token-parts
         npm i
         node ./bundle.js
-        chmod 777 ../api/src/token-parts.js
-    - save_cache:
-        key: token-parts-{{ .Revision }}
-        paths:
-        - ./api/src/token-parts.js
-  build-api:
-    machine:
-      docker_layer_caching: true
-    steps:
-    - checkout
-    - restore_cache:
-        key: token-parts-{{ .Revision }}
-        paths:
-        - ./api/src/token-parts.js
+    - setup_remote_docker:
+        docker_layer_caching: true  # default - false
     - run: cat ./api/src/token-parts.js
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenapi:$CIRCLE_SHA1 ./api
@@ -43,8 +31,5 @@ workflows:
   version: 2
   build:
     jobs:
-    - build-tokens
-    - build-api:
-        requires:
-        - build-tokens
+    - build-api
     - build-batch
