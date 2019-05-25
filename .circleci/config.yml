@@ -9,6 +9,7 @@ jobs:
         cd ./token-parts
         npm i
         node ./bundle.js
+        chmod 777 ./api/src/token-parts.js
     - save_cache:
         key: token-parts-{{ .Revision }}
         paths:
