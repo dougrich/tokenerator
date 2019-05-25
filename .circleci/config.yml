@@ -22,7 +22,6 @@ jobs:
         key: token-parts-{{ .Revision }}
         paths:
         - ./api/src/token-parts.js
-    - run: cat ./api/src/token-parts.js
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenapi:$CIRCLE_SHA1 ./api
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
