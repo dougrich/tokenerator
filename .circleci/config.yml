@@ -53,6 +53,9 @@ jobs:
         usermod -aG docker cloudservice
 
         sudo -u cloudservice bash << EOF
+
+        echo \"${GOOGLE_AUTH}\" > /home/cloudservice/config.json
+
         docker-credential-gcr configure-docker
 
         docker run --restart=\"always\" --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
