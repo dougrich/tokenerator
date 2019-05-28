@@ -57,11 +57,14 @@ jobs:
           sudo -u cloudservice bash << EOF
 
           echo '${CONFIG}' > /home/cloudservice/config.json
+          echo '${PRODUCTION_CREDS}' > /home/cloudservice/creds.json
+
+          drun='docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json'
 
           docker-credential-gcr configure-docker
 
-          docker run --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -d --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
-          docker run --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -d -p 80:80 --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
+          $drun --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
+          $drun -p 80:80 --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
           EOF
 
           EOFF
