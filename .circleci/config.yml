@@ -23,20 +23,41 @@ jobs:
         paths:
         - ./api/src/token-parts.js
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
-    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenapi:$CIRCLE_SHA1 ./api
+    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenapi:${CRICLE_SHA1} ./api
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
     - run: gcloud --quiet config set project ${GCP_PROJECT}
-    - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenapi:$CIRCLE_SHA1
+    - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenapi:${CRICLE_SHA1}
   build-batch:
     machine:
       docker_layer_caching: true
     steps:
     - checkout
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
-    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/batchprocess:$CIRCLE_SHA1 ./api
+    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/batchprocess:${CRICLE_SHA1} ./api
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
     - run: gcloud --quiet config set project ${GCP_PROJECT}
-    - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:$CIRCLE_SHA1
+    - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:${CRICLE_SHA1}
+  deploy:
+    machine: true
+    steps:
+    - run: |
+        cat <<EOF
+        #/bin/bash
+
+        useradd cloudservice
+        usermod -aG docker cloudservice
+
+        sudo -u cloudservice bash << EOFF
+        docker-credential-gcr configure-docker
+
+        docker run \
+          --restart="always" \
+          -p 80:80 \
+          --name=gateway \
+          us.gcr.io/${GCP_PROJECT}/test-nginx:${CIRCLE_SHA1}
+        EOFF
+        EOF 2> startup-script.sh
+    - run: cat startup-script.sh
 workflows:
   version: 2
   build:
@@ -46,3 +67,7 @@ workflows:
         requires:
         - build-tokens
     - build-batch
+    - deploy:
+        requires:
+        - build-api
+        - build-batch
