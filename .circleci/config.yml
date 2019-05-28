@@ -42,6 +42,7 @@ jobs:
     steps:
     - checkout
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - run: gcloud config set project ${GCP_PROJECT}
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
     - run: |
         eval "cat <<EOFF
