@@ -38,7 +38,8 @@ jobs:
     - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
   deploy:
-    machine: true
+    docker:
+    - image: google/cloud-sdk
     steps:
     - checkout
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
