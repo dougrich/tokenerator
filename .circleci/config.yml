@@ -41,7 +41,7 @@ jobs:
     machine: true
     steps:
     - run: |
-        cat <<EOF
+        eval \"cat <<EOF
         #/bin/bash
 
         useradd cloudservice
@@ -50,13 +50,11 @@ jobs:
         sudo -u cloudservice bash << EOFF
         docker-credential-gcr configure-docker
 
-        docker run \
-          --restart="always" \
-          -p 80:80 \
-          --name=gateway \
-          us.gcr.io/${GCP_PROJECT}/test-nginx:${CIRCLE_SHA1}
+        docker run --restart=\\"always\\" -p 80:80 --name=gateway us.gcr.io/rpg-dougrich-net/test-nginx:${CIRCLE_SHA1}
         EOFF
-        EOF 2> startup-script.sh
+
+        EOF
+        \" > temp.sh
     - run: cat startup-script.sh
 workflows:
   version: 2
