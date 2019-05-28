@@ -33,7 +33,7 @@ jobs:
     steps:
     - checkout
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
-    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1} ./api
+    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1} ./batch
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
     - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
@@ -54,12 +54,12 @@ jobs:
 
         sudo -u cloudservice bash << EOF
 
-        echo \"${GOOGLE_AUTH}\" > /home/cloudservice/config.json
+        echo \'${CONFIG}\' > /home/cloudservice/config.json
 
         docker-credential-gcr configure-docker
 
-        docker run --restart=\"always\" --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
-        docker run --restart=\"always\" -p 80:80 --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
+        docker run --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
+        docker run --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -p 80:80 --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
         EOF
 
         EOFF
