@@ -40,22 +40,25 @@ jobs:
   deploy:
     machine: true
     steps:
+    - checkout
     - run: |
-        eval "cat <<EOF
+        eval "cat <<EOFF
         #/bin/bash
 
         useradd cloudservice
         usermod -aG docker cloudservice
 
-        sudo -u cloudservice bash << EOFF
+        sudo -u cloudservice bash << EOF
         docker-credential-gcr configure-docker
 
-        docker run --restart=\"always\" -p 80:80 --name=gateway us.gcr.io/rpg-dougrich-net/test-nginx:${CIRCLE_SHA1}
-        EOFF
-
+        docker run --restart=\"always\" --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
+        docker run --restart=\"always\" -p 80:80 --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
         EOF
+
+        EOFF
         " > startup-script.sh
-    - run: cat startup-script.sh
+    - run: ./deploy/create-gcr-template.sh ${CIRCLE_SHA1} startup-script.sh
+    - run: ./deploy/rolling-update.sh ${CIRCLE_SHA1}
 workflows:
   version: 2
   build:

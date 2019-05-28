@@ -12,6 +12,9 @@ const canonical = {
 
 function app() {
   const instance = express()
+  // health check
+  instance.get('/', (_, res) => res.status(200).end())
+  
   instance.use('/api/token/', token(config.get('buckets:cache'), canonical))
   instance.use('/api/account/', account(canonical))
   instance.use('/api/batch/', batch(config.get('buckets:batch'), config.get('topics:batch'), canonical))
