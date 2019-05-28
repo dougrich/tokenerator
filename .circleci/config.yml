@@ -64,8 +64,9 @@ jobs:
 
         EOFF
         " > startup-script.sh
-    - run: ./deploy/create-gcr-template.sh ${CIRCLE_SHA1} startup-script.sh
-    - run: ./deploy/rolling-update.sh ${CIRCLE_SHA1}
+    - run: BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_BUILD_NUM}
+    - run: ./deploy/create-gcr-template.sh ${BUILD_TAG} startup-script.sh
+    - run: ./deploy/rolling-update.sh ${BUILD_TAG}
 workflows:
   version: 2
   build:
