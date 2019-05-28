@@ -54,7 +54,7 @@ jobs:
         EOFF
 
         EOF
-        " > temp.sh
+        " > startup-script.sh
     - run: cat startup-script.sh
 workflows:
   version: 2
