@@ -108,4 +108,4 @@ async function poll(behavior, delay) {
   setTimeout(poll, delay, behavior, delay)
 }
 
-poll(pipe, 1000 * 60 * 60)
+poll(pipe, 1000 * 60 * 60 * 24)
