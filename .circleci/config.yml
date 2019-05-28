@@ -45,28 +45,38 @@ jobs:
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: gcloud config set project ${GCP_PROJECT}
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
-    - run: |
-        eval "cat <<EOFF
-        #/bin/bash
+    - run: 
+        name: Create startup-script
+        command: |
+          eval "cat <<EOFF
+          #/bin/bash
 
-        useradd cloudservice
-        usermod -aG docker cloudservice
+          useradd cloudservice
+          usermod -aG docker cloudservice
 
-        sudo -u cloudservice bash << EOF
+          sudo -u cloudservice bash << EOF
 
-        echo '${CONFIG}' > /home/cloudservice/config.json
+          echo '${CONFIG}' > /home/cloudservice/config.json
 
-        docker-credential-gcr configure-docker
+          docker-credential-gcr configure-docker
 
-        docker run --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -d --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
-        docker run --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -d -p 80:80 --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
-        EOF
+          docker run --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -d --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
+          docker run --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -d -p 80:80 --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
+          EOF
 
-        EOFF
-        " > startup-script.sh
-    - run: BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_BUILD_NUM}
-    - run: ./deploy/create-gcr-template.sh ${BUILD_TAG} startup-script.sh
-    - run: ./deploy/rolling-update.sh ${BUILD_TAG}
+          EOFF
+          " > startup-script.sh
+    - run:
+        name: Create build tag 
+        command: |
+          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_BUILD_NUM}
+          echo "export BUILD_TAG=\"${BUILD_TAG}\" >> $BASH_ENV
+    - run: 
+        name: Create build template
+        command: ./deploy/create-gcr-template.sh ${BUILD_TAG} startup-script.sh
+    - run: 
+        name: Apply rolling update
+        command: ./deploy/rolling-update.sh ${BUILD_TAG}
 workflows:
   version: 2
   build:

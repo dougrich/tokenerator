@@ -2,6 +2,8 @@
 
 TAG=$1
 
+echo "Creating instance template token-builder-$TAG"
+
 #gcloud compute instance-templates create token-builder-$TAG \
 #  --machine-type f1-micro \
 #  --metadata "environment"="TAG=$TAG" \
