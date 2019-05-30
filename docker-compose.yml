@@ -20,5 +20,12 @@ services:
     - ./api/dev.sh:/dev.sh
     - ./api/src:/app/src
     entrypoint: /dev.sh
+  ux:
+    build: ./ux
+    volumes:
+    - ./ux/src:/app/src
+    - ./ux/pages:/app/pages
+    - ./ux/components:/app/components
     ports:
-    - 80:80
+    - 80:3000
+    entrypoint: npm run dev
