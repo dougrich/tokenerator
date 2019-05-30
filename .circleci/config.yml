@@ -53,6 +53,9 @@ jobs:
     - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
   deploy:
+    branches:
+      only:
+      - master
     docker:
     - image: google/cloud-sdk
     steps:
