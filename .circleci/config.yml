@@ -53,9 +53,6 @@ jobs:
     - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
   deploy:
-    branches:
-      only:
-      - master
     docker:
     - image: google/cloud-sdk
     steps:
@@ -81,7 +78,7 @@ jobs:
 
           docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
           docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
-          docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json -p 80:80 --name=tokenux us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1}
+          docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json -p 80:3000 --name=tokenux us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1}
           EOF
 
           EOFF
