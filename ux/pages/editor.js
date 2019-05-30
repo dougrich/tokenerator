@@ -1,5 +1,5 @@
 import AppHead from '../components/head'
-import Header from '../components/header';
+import Header from '../components/header'
 import dynamic from 'next/dynamic'
 
 const FullEditor = dynamic(
@@ -8,14 +8,13 @@ const FullEditor = dynamic(
     loading: () => <p>Loading</p>
   })
 
-
 export default class extends React.Component {
-  render() {
+  render () {
     return (
       <React.Fragment>
-        <AppHead title='Editor'/>
-        <Header/>
-        <FullEditor/>
+        <AppHead title='Editor' />
+        <Header />
+        <FullEditor />
       </React.Fragment>
     )
   }

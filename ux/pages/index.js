@@ -1,13 +1,13 @@
 import AppHead from '../components/head'
-import Header from '../components/header';
+import Header from '../components/header'
 
-function Home() {
+function Home () {
   return (
     <React.Fragment>
-      <AppHead/>
-      <Header/>
+      <AppHead />
+      <Header />
     </React.Fragment>
   )
 }
 
-export default Home;
+export default Home

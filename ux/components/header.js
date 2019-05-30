@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import {
   Container,
   Title,
@@ -25,27 +23,27 @@ import {
  * - consistent experience anchor across multiple pages and backgrounds
  */
 export default class extends React.PureComponent {
-  render() {
+  render () {
     return (
       <Header>
         <Container>
-            <Title>
+          <Title>
               Token Builder
-            </Title>
-            <Navigation>
-              <NavigationLink href='/'>
+          </Title>
+          <Navigation>
+            <NavigationLink href='/'>
                 Home
-              </NavigationLink>
-              <NavigationLink href='/browse'>
+            </NavigationLink>
+            <NavigationLink href='/browse'>
                 Browse
-              </NavigationLink>
-              <NavigationLink prefetch href='/editor'>
+            </NavigationLink>
+            <NavigationLink prefetch href='/editor'>
                 Editor
-              </NavigationLink>
-              <NavigationLink href='/site'>
+            </NavigationLink>
+            <NavigationLink href='/site'>
                 Site
-              </NavigationLink>
-            </Navigation>
+            </NavigationLink>
+          </Navigation>
         </Container>
       </Header>
     )

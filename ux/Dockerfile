@@ -11,6 +11,6 @@ COPY src /app/src
 COPY pages /app/pages
 COPY components /app/components
 
-RUN npm run build
+RUN npm run lint && npm run build
 
 ENTRYPOINT npm run start

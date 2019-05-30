@@ -1,6 +1,6 @@
 const parts = require('./token-parts')
 
-export function tokenToSvg(token, decor) {
+export function tokenToSvg (token, decor) {
   let svg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">`
   for (const part of token.parts) {
     const template = parts[part.id]

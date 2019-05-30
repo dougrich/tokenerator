@@ -1,8 +1,7 @@
 import Head from 'next/head'
 
 export default class AppHead extends React.PureComponent {
-
-  renderTitle() {
+  renderTitle () {
     let { title } = this.props
     if (!title) {
       title = 'Token Builder'
@@ -15,11 +14,11 @@ export default class AppHead extends React.PureComponent {
     )
   }
 
-  render() {
+  render () {
     return (
       <Head>
         {this.renderTitle()}
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:700&display=swap" rel="stylesheet"></link>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald:700&display=swap' rel='stylesheet' />
       </Head>
     )
   }
