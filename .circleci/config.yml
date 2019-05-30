@@ -117,6 +117,7 @@ workflows:
     - build-ux:
         requires:
         - build-tokens
+    - build-gateway
     - build-batch
     - deploy:
         requires:
