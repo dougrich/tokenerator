@@ -26,7 +26,7 @@
   "license": "ISC",
   "standard": {
     "parser": "babel-eslint",
-    "ignore": "pages/**/*.js",
+    "ignore": ["pages/**/*.js", "src/token-parts.js"],
     "global": ["React"]
   }
 }
