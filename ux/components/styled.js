@@ -1,4 +1,4 @@
-import { jsx, css } from '@emotion/core'
+import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
@@ -134,7 +134,7 @@ const gridBreakpoints = [
   [1200, 300],
   [1600, 400],
   [2000, 500],
-  [2500, 500],
+  [2500, 500]
 ].map(([gridwidth, size]) => ({
   query: `@media (min-width: ${gridwidth}px)`,
   size: `${gridwidth}px`,
