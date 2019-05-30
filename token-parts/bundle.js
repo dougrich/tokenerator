@@ -117,6 +117,7 @@ async function processDirectory() {
 
   const js = 'module.exports = {\n  $schema: ' + JSON.stringify(combinedSchema) + ',\n  ' + templates.join(',\n  ') + '\n}'
   fs.writeFile('../api/src/token-parts.js', js)
+  fs.writeFile('../ux/src/token-parts.js', js)
 }
 
 processDirectory()

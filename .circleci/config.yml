@@ -13,6 +13,7 @@ jobs:
         key: token-parts-{{ .Revision }}
         paths:
         - ./api/src/token-parts.js
+        - ./ux/src/token-parts.js
   build-api:
     machine:
       docker_layer_caching: true
@@ -27,6 +28,20 @@ jobs:
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
     - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
+  build-ux:
+    machine:
+      docker_layer_caching: true
+    steps:
+    - checkout
+    - restore_cache:
+        key: token-parts-{{ .Revision }}
+        paths:
+        - ./ux/src/token-parts.js
+    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1} ./ux
+    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+    - run: gcloud --quiet config set project ${GCP_PROJECT}
+    - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1}
   build-batch:
     machine:
       docker_layer_caching: true
@@ -62,7 +77,8 @@ jobs:
           docker-credential-gcr configure-docker
 
           docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json --name=batchprocess us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
-          docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json -p 80:80 --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
+          docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json --name=tokenapi us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
+          docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json -p 80:3000 --name=tokenux us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1}
           EOF
 
           EOFF
@@ -86,8 +102,12 @@ workflows:
     - build-api:
         requires:
         - build-tokens
+    - build-ux:
+        requires:
+        - build-tokens
     - build-batch
     - deploy:
         requires:
         - build-api
         - build-batch
+        - build-ux

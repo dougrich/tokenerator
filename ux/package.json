@@ -1,0 +1,32 @@
+{
+  "name": "ux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.11",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "html-loader": "^0.5.5",
+    "markdown-loader": "^5.0.0",
+    "standard": "^12.0.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "lint": "standard",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC",
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": ["pages/**/*.js", "src/token-parts.js"],
+    "global": ["React"]
+  }
+}
