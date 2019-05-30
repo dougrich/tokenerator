@@ -124,6 +124,7 @@ workflows:
         - build-api
         - build-batch
         - build-ux
+        - build-gateway
         filters:
           branches:
             only: master
