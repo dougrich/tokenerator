@@ -26,6 +26,8 @@ services:
     - ./ux/src:/app/src
     - ./ux/pages:/app/pages
     - ./ux/components:/app/components
-    ports:
-    - 80:3000
     entrypoint: npm run dev
+  gateway:
+    build: ./gateway
+    ports:
+    - 80:80

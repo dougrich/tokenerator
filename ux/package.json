@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
+    "axios": "^0.19.0",
     "next": "^8.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -26,7 +27,12 @@
   "license": "ISC",
   "standard": {
     "parser": "babel-eslint",
-    "ignore": ["pages/**/*.js", "src/token-parts.js"],
-    "global": ["React"]
+    "ignore": [
+      "pages/**/*.js",
+      "src/token-parts.js"
+    ],
+    "global": [
+      "React"
+    ]
   }
 }

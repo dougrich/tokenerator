@@ -117,7 +117,7 @@ function tokenEndpoint(bucket, canonical) {
       next()
     },
     async (req, res, next) => {
-      const size = 20
+      const size = 60
 
       let query = firestore.collection('tokens')
         .where('private', '==', false)
