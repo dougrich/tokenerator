@@ -38,6 +38,7 @@ const row = css`
 
 export const Navigation = styled.nav`
   display: flex;
+  justify-content: space-around;
   ${row}
 `
 
@@ -54,16 +55,16 @@ export const Container = styled.div`
 `
 
 export const Header = styled.header`
-  width: calc(100vw - 4em);
   border-bottom: ${measure.border} solid ${colors.borderblack};
   margin: 0.5em 2em;
   position: relative;
   transition: ${timing.navigation} margin-top;
 `
 
-const NavigationLinkStyled = styled.a`
+export const NavigationLinkStyled = styled.a`
   ${typography.title}
   width: 100%;
+  max-width: 6em;
   cursor: pointer;  
   font-size: 1.5em;
   color: ${colors.borderblack};
@@ -190,8 +191,10 @@ export const TokenPreviewTitle = styled.div`
   ${typography.title}
 `
 
-export const DefaultTokenPreviewTitle = styled.div`
+export const DefaultText = styled.div`
   font-style: italic;
+  text-align: center;
+  opacity: 0.8;
 `
 
 export const TokenPreviewImage = styled.img`
@@ -201,4 +204,52 @@ export const TokenPreviewImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
+`
+
+export const TokenTitle = styled.h2`
+  ${typography.title}
+`
+
+export const TokenDescription = styled.p`
+  ${typography.body}
+`
+
+export const Button = styled.button`
+  ${typography.body}
+  position: relative;
+  background-color: black;
+  border-radius: 2px;
+  padding: 1em;
+  width: 6em;
+  color: white;
+  text-decoration: none;
+  transition: ${timing.navigation} color;
+  display: inline-block;
+  text-align: center;
+  margin: 1em;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    height: ${measure.border};
+    background-color: white;
+    transform: scale(0.5, 1);
+    transition: ${timing.navigation} transform, ${timing.navigation} background-color;
+  }
+
+  &:hover, &:focus {
+    color: ${colors.accent};
+  }
+
+  &:hover:after, &:focus:after {
+    transform: scale(0.75, 1);
+    background-color: ${colors.accent};
+  }
+
+  &:focus {
+    outline: ${measure.border} dashed ${colors.accent};
+  }
 `

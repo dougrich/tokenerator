@@ -15,4 +15,8 @@ apiclient.browseTokens = () => apiclient
   .get('/api/token/')
   .then(response => response.data)
 
+apiclient.getToken = (id) => apiclient
+  .get(`/api/token/${id}.json`)
+  .then(response => response.data)
+
 export default apiclient

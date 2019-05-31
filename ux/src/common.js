@@ -1,6 +1,10 @@
 import { IS_CLIENT } from './constants'
 
 function decodeUser (authToken) {
+  if (!authToken) {
+    return null
+  }
+
   const parts = authToken.split('.')
   const body = parts[1]
   const decoded =
@@ -14,7 +18,9 @@ export function getCookieProps (context) {
   let rawcookie =
     IS_CLIENT
       ? window.document.cookie
-      : context.req.headers.cookie
+      : context.req.headers.cookie || ''
+
+  rawcookie = rawcookie || ''
 
   const cookies = {}
   rawcookie.split(';').forEach(cookie => {

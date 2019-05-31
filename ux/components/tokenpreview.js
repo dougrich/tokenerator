@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { TokenPreviewContainer, TokenPreviewTitle, TokenPreviewImage, DefaultTokenPreviewTitle } from './styled'
+import { TokenPreviewContainer, TokenPreviewTitle, TokenPreviewImage, DefaultText } from './styled'
+import { DefaultTokenTitle } from '../src/constants'
 
 export default class TokenPreview extends React.PureComponent {
   render () {
@@ -9,8 +10,18 @@ export default class TokenPreview extends React.PureComponent {
         <TokenPreviewContainer as='a'>
           <TokenPreviewImage src={`/api/token/${id}.svg`} />
           {title
-            ? (<TokenPreviewTitle>{title}</TokenPreviewTitle>)
-            : (<TokenPreviewTitle><DefaultTokenPreviewTitle>Nameless Token</DefaultTokenPreviewTitle></TokenPreviewTitle>)
+            ? (
+              <TokenPreviewTitle>
+                {title}
+              </TokenPreviewTitle>
+            )
+            : (
+              <TokenPreviewTitle>
+                <DefaultText>
+                  {DefaultTokenTitle}
+                </DefaultText>
+              </TokenPreviewTitle>
+            )
           }
         </TokenPreviewContainer>
       </Link>

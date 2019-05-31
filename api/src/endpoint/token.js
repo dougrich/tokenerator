@@ -28,8 +28,9 @@ function loadToken(firestore) {
         return
       }
       const data = req.params.token = token.data()
+      req.params.slug = slug(data.title || 'token')
       res.setHeader('x-token-name', data.title.slice(0, 255))
-      res.setHeader('x-token-slug', slug(data.title || 'token'))
+      res.setHeader('x-token-slug', req.params.slug)
       next()
     } catch (err) {
       next(err)
@@ -204,6 +205,7 @@ function tokenEndpoint(bucket, canonical) {
     (req, res, next) => {
       const svg = tokenToSvg(req.params.token, req.params.decor)
       const size = parseInt(req.query.size || '180')
+      res.setHeader('Content-Disposition', `attachment; filename="${req.params.slug}@${size}.png"`)
       svg2img(svg,{format:'png', width: size, height: size}, (err, result) => {
         if (err) return next(err)
         res.end(result)
