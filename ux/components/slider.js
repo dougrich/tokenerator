@@ -32,16 +32,16 @@ export default class Slider extends React.PureComponent {
   }
 
   cleanup = () => {
-    document.removeEventListener('mouseup', this.onMouseUp)
+    document.removeEventListener('mouseup', this.cleanup)
     document.removeEventListener('mousemove', this.onMouseMove)
-    document.removeEventListener('touchend', this.onMouseUp)
+    document.removeEventListener('touchend', this.cleanup)
     document.removeEventListener('touchmove', this.onTouchMove)
   }
 
   onTouchStart = (e) => {
     this.bounded = e.target.getBoundingClientRect()
     e.target.focus()
-    document.addEventListener('touchend', this.onMouseUp)
+    document.addEventListener('touchend', this.cleanup)
     document.addEventListener('touchmove', this.onTouchMove)
     this.onTouchMove(e)
   }
@@ -65,10 +65,6 @@ export default class Slider extends React.PureComponent {
     }
     // update position
     this.onChange(d)
-  }
-
-  onMouseUp = (e) => {
-    this.cleanup()
   }
 
   onKeyDown = (e) => {
