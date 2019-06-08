@@ -253,3 +253,52 @@ export const Button = styled.button`
     outline: ${measure.border} dashed ${colors.accent};
   }
 `
+
+export const Label = styled.label({
+  fontFamily: "'Open Sans', sans-serif",
+  fontSize: '0.5em',
+  letterSpacing: '0.1em',
+  textTransform: 'uppercase',
+  color: '#444',
+  lineHeight: '1.2em',
+  display: 'block',
+  marginBottom: '0.25em'
+})
+
+export const TextInputUnderline = styled.div({
+  content: "''",
+  position: 'absolute',
+  bottom: -2,
+  left: 0,
+  right: 0,
+  height: 2,
+  backgroundColor: colors.borderblack,
+  transform: 'scale(0.5, 1)',
+  transformOrigin: 'bottom left',
+  transition: '200ms transform',
+  'input:hover+&,input:focus+&': {
+    transform: 'scale(1,1)',
+    backgroundColor: '#D00'
+  }
+})
+
+export const TextInput = styled.input({
+  fontFamily: "'Open Sans', sans-serif",
+  lineHeight: '2em',
+  display: 'block',
+  padding: '0.5em',
+  textAlign: 'left',
+  background: 'transparent',
+  border: 0,
+  width: 'calc(100% - 1em)',
+  position: 'relative',
+  outlineOffset: '0px',
+  '&:focus': {
+    outline: '2px dashed #D00'
+  }
+})
+
+export const TextContainer = styled.div({
+  position: 'relative',
+  marginBottom: '1em'
+})

@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import * as Color from 'color'
 import * as colortest from 'hex-color-regex'
 import Slider from './slider'
+import { TextInput, TextContainer, TextInputUnderline, Label } from './styled'
 
 const ColorPickerContainer = styled.div({
   width: '100%',
@@ -20,6 +21,11 @@ const PickerCircle = styled.circle({
   strokeWidth: 3,
   mixBlendMode: 'difference'
 })
+
+const step = {
+  x: 0.01,
+  y: 0.02
+}
 
 const generateHSLStop = (_, i, a) => {
   const p = i / (a.length - 1)
@@ -44,10 +50,6 @@ const defIds = {
 }
 
 class SaturationLightnessSlider extends React.PureComponent {
-  constructor (props, context) {
-    super(props, context)
-  }
-
   toCoords(saturation, lightness) {
     const x = saturation / 100
     const l = lightness / 100
@@ -83,6 +85,7 @@ class SaturationLightnessSlider extends React.PureComponent {
       <Slider
         x={x}
         y={y}
+        step={step}
         thumb={PickerCircle}
         onChange={this.onChange}
         height='8em'
@@ -96,10 +99,6 @@ class SaturationLightnessSlider extends React.PureComponent {
 }
 
 class HueSlider extends React.PureComponent {
-  constructor (props, context) {
-    super(props, context)
-  }
-
   onChange = ({ x }) => {
     this.props.onChange(x * 359.99)
   }
@@ -110,9 +109,10 @@ class HueSlider extends React.PureComponent {
       <Slider
         x={x}
         y={0.5}
+        step={step}
         thumb={PickerCircle}
         onChange={this.onChange}
-        height='2em'
+        height='1.2em'
       >
         <PickerRect width='100%' height='100%' fill={defIds.c.ref} />
       </Slider>
@@ -143,13 +143,16 @@ class ColorInput extends React.Component {
     const { current } = this.props
     const { value } = this.state
     return (
-      <input
-        type='text'
-        value={value == null ? current : value}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        onChange={this.onChange}
-      />
+      <TextContainer>
+        <TextInput
+          type='text'
+          value={value == null ? current : value}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          onChange={this.onChange}
+        />
+        <TextInputUnderline/>
+      </TextContainer>
     )
   }
 }
@@ -176,13 +179,16 @@ export default class ColorPicker extends React.Component {
     const currentHex = current.hex().toString()
     return (
       <ColorPickerContainer>
+        <Label>Saturation/Lightness</Label>
         <SaturationLightnessSlider
           hue={hue}
           saturation={saturation}
           lightness={lightness}
           onChange={this.onSaturationLightnessChange}
         />
+        <Label>Hue</Label>
         <HueSlider hue={hue} onChange={this.onHueChange}/>
+        <Label>Hex</Label>
         <ColorInput current={currentHex} onChange={this.onInputChange} />
       </ColorPickerContainer>
     )

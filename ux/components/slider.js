@@ -2,8 +2,10 @@ import styled from '@emotion/styled'
 
 const PickerContainer = styled.svg({
   display: 'block',
-  width: '100%',
-  marginBottom: '0.5em',
+  width: 'calc(100% - 1em)',
+  padding: '0.5em',
+  overflow: 'visible',
+  marginBottom: '1em',
   '&:focus': {
     outline: '2px dashed #D00',
   }
@@ -56,20 +58,20 @@ export default class Slider extends React.PureComponent {
   }
 
   onKeyDown = (e) => {
-    const { x, y } = this.props
-    const step = 0.05
+    const { x, y, step } = this.props
+    const m = e.shiftKey ? 10 : 1
     switch (e.keyCode) {
       case 37:
-        this.onChange({ x: x - step, y })
+        this.onChange({ x: x - step.x * m, y })
         break;
       case 38:
-        this.onChange({ x, y: y - step })
+        this.onChange({ x, y: y - step.y * m })
         break;
       case 39:
-        this.onChange({ x: x + step, y })
+        this.onChange({ x: x + step.x * m, y })
         break;
       case 40:
-        this.onChange({ x, y: y + step })
+        this.onChange({ x, y: y + step.y * m })
         break;
     }
   }
@@ -80,6 +82,7 @@ export default class Slider extends React.PureComponent {
       y,
       children,
       thumb: Thumb,
+      step,
       ...rest
     } = this.props
     return (
@@ -90,8 +93,62 @@ export default class Slider extends React.PureComponent {
         tabIndex='0'
       >
         {children}
-        <Thumb cx={toPercentage(x)} cy={toPercentage(y)} r={10} />
+        <Thumb cx={toPercentage(x)} cy={toPercentage(y)} r='0.5em' />
       </PickerContainer>
+    )
+  }
+}
+
+const Circle = styled.circle({
+  fill: 'black',
+  stroke: 'white',
+  strokeWidth: '0.2em',
+  pointerEvents: 'none'
+})
+
+const Track = styled.rect({
+  pointerEvents: 'none',
+  height: '0.0001em',
+  stroke: 'black',
+  strokeWidth: '0.25em'
+})
+
+Slider.Simple = class extends React.PureComponent {
+  onChange = ({ x }) => {
+    const {
+      max,
+      min,
+      step,
+      onChange
+    } = this.props
+
+    let value = x * (max - min) + min
+    value = Math.round(value / step) * step
+    value = Math.min(max, Math.max(min, value))
+    onChange(value)
+  }
+
+  render () {
+    const {
+      max,
+      min,
+      step,
+      value
+    } = this.props
+    return (
+      <Slider
+        x={(value - min) / (max - min)}
+        y={0.5}
+        height='1em'
+        step={{
+          x: step / (max - min),
+          y: 0
+        }}
+        thumb={Circle}
+        onChange={this.onChange}
+      >
+        <Track x='0%' y='50%' width='100%' />
+      </Slider>
     )
   }
 }
