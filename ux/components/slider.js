@@ -34,6 +34,20 @@ export default class Slider extends React.PureComponent {
   cleanup = () => {
     document.removeEventListener('mouseup', this.onMouseUp)
     document.removeEventListener('mousemove', this.onMouseMove)
+    document.removeEventListener('touchend', this.onMouseUp)
+    document.removeEventListener('touchmove', this.onTouchMove)
+  }
+
+  onTouchStart = (e) => {
+    this.bounded = e.target.getBoundingClientRect()
+    e.target.focus()
+    document.addEventListener('touchend', this.onMouseUp)
+    document.addEventListener('touchmove', this.onTouchMove)
+    this.onTouchMove(e)
+  }
+
+  onTouchMove = (e) => {
+    this.onMouseMove(e.touches[0])
   }
 
   onMouseDown = (e) => {
@@ -89,6 +103,7 @@ export default class Slider extends React.PureComponent {
       <PickerContainer
         {...rest}
         onMouseDown={this.onMouseDown}
+        onTouchStart={this.onTouchStart}
         onKeyDown={this.onKeyDown}
         tabIndex='0'
       >
