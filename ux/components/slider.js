@@ -6,6 +6,7 @@ const PickerContainer = styled.svg({
   padding: '0.5em',
   overflow: 'visible',
   marginBottom: '1em',
+  cursor: 'pointer',
   '&:focus': {
     outline: '2px dashed #D00',
   }
@@ -52,7 +53,7 @@ export default class Slider extends React.PureComponent {
 
   onMouseDown = (e) => {
     this.bounded = e.target.getBoundingClientRect()
-    document.addEventListener('mouseup', this.onMouseUp)
+    document.addEventListener('mouseup', this.cleanup)
     document.addEventListener('mousemove', this.onMouseMove)
     this.onMouseMove(e)
   }
@@ -70,6 +71,7 @@ export default class Slider extends React.PureComponent {
   onKeyDown = (e) => {
     const { x, y, step } = this.props
     const m = e.shiftKey ? 10 : 1
+    console.log(e.keyCode)
     switch (e.keyCode) {
       case 37:
         this.onChange({ x: x - step.x * m, y })

@@ -22,6 +22,29 @@ const PickerCircle = styled.circle({
   mixBlendMode: 'difference'
 })
 
+const ColorSwatchButton = styled.button({
+  display: 'inline-block',
+  width: '2em',
+  height: '2em',
+  padding: 0,
+  border: 0,
+  margin: '0.5em',
+  cursor: 'pointer',
+  border: '2px solid transparent',
+  '&:focus': {
+    outline: '2px dashed #D00'
+  }
+})
+
+const ColorSwatchContainer = styled.div({
+  display: 'block',
+  margin: '0 -0.5em'
+})
+
+const ColorSwatchSet = styled.div({
+  marginBottom: '1.0em'
+})
+
 const step = {
   x: 0.01,
   y: 0.02
@@ -48,6 +71,25 @@ const defIds = {
     ref: 'url(#colors)'
   }
 }
+
+const Swatches = [
+  {
+    name: 'Hair',
+    set: [
+      { name: 'Red', color: '#D00' },
+      { name: 'Green', color: '#0D0' },
+      { name: 'Blue', color: '#00D' },
+    ]
+  },
+  {
+    name: 'Skin',
+    set: [
+      { name: 'Red', color: '#D00' },
+      { name: 'Green', color: '#0D0' },
+      { name: 'Blue', color: '#00D' },
+    ]
+  }
+]
 
 class SaturationLightnessSlider extends React.PureComponent {
   toCoords(saturation, lightness) {
@@ -157,6 +199,22 @@ class ColorInput extends React.Component {
   }
 }
 
+class ColorSwatch extends React.PureComponent {
+  onClick = () => {
+    this.props.onChange(Color(this.props.color))
+  }
+
+  render() {
+    return (
+      <ColorSwatchButton
+        title={`${this.props.name} | ${this.props.color}`}
+        style={{ background: this.props.color }}
+        onClick={this.onClick}
+      />
+    )
+  }
+}
+
 
 export default class ColorPicker extends React.Component {
   onHueChange = hue => {
@@ -190,6 +248,28 @@ export default class ColorPicker extends React.Component {
         <HueSlider hue={hue} onChange={this.onHueChange}/>
         <Label>Hex</Label>
         <ColorInput current={currentHex} onChange={this.onInputChange} />
+        {
+          Swatches.map(({ name, set }, i) => {
+            return (
+              <ColorSwatchSet key={i}>
+                <Label>{name}</Label>
+                <ColorSwatchContainer>
+                  {
+                    set.map((props, i) => {
+                      return (
+                        <ColorSwatch
+                          key={i}
+                          onChange={this.props.onChange}
+                          {...props}
+                        />
+                      )
+                    })
+                  }
+                </ColorSwatchContainer>
+              </ColorSwatchSet>
+            )
+          })
+        }
       </ColorPickerContainer>
     )
   }

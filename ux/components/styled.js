@@ -58,7 +58,6 @@ export const Header = styled.header`
   border-bottom: ${measure.border} solid ${colors.borderblack};
   margin: 0.5em 2em;
   position: relative;
-  transition: ${timing.navigation} margin-top;
 `
 
 export const NavigationLinkStyled = styled.a`
@@ -301,4 +300,10 @@ export const TextInput = styled.input({
 export const TextContainer = styled.div({
   position: 'relative',
   marginBottom: '1em'
+})
+
+export const HiddenSvg = styled.svg({
+  height: '0',
+  position: 'absolute',
+  pointerEvents: 'none'
 })
