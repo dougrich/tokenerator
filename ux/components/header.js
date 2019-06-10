@@ -25,7 +25,7 @@ import {
 export default class extends React.PureComponent {
   render () {
     return (
-      <Header>
+      <Header {...this.props}>
         <Container>
           <Title>
               Token Builder

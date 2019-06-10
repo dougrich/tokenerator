@@ -3,6 +3,7 @@ import AppHead from '../components/head'
 import Header from '../components/header'
 import { Container, Article } from '../components/styled'
 import { getCookieProps } from '../src/common'
+import Page from '../components/page'
 
 export default class Site extends React.PureComponent {
   static getInitialProps(context) {
@@ -10,13 +11,13 @@ export default class Site extends React.PureComponent {
   }
   render() {
     return (
-      <React.Fragment>
+      <Page>
         <AppHead />
         <Header />
         <Container>
           <Article dangerouslySetInnerHTML={{ __html: SiteDetails }} />
         </Container>
-      </React.Fragment>
+      </Page>
     )
   }
 }
