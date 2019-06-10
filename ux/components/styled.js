@@ -318,3 +318,9 @@ export const HiddenSvg = styled.svg({
   position: 'absolute',
   pointerEvents: 'none'
 })
+
+export const Flex = styled.div({
+  display: 'flex',
+  maxWidth: '1200px',
+  margin: 'auto'
+})

@@ -1,27 +1,49 @@
 import AppHead from '../components/head'
 import Header from '../components/header'
 import ColorPicker from '../components/color-picker'
-import { HiddenSvg } from '../components/styled'
-import Slider from '../components/slider'
+import { Flex, HiddenSvg } from '../components/styled'
 import Page from '../components/page'
 import dynamic from 'next/dynamic'
 import * as Color from 'color'
-import TokenParts from '../components/token-parts';
+import TokenParts from '../components/token-part-list';
+import { bindActionCreators } from 'redux'
+import { connect, Provider } from 'react-redux'
+import store, { dispatchers } from '../src/editor-state-machine'
 
-const FullEditor = dynamic(
+const Display = dynamic(
   () => import('../components/editor'),
   {
     loading: () => <p>Loading</p>
   })
 
+const ConnectedColorPicker = connect(
+  state => ({
+    current: state.currentColor || Color('#000'),
+    enabled: !!state.currentColor
+  }),
+  dispatch => bindActionCreators({
+    onChange: dispatchers.SET_COLOR
+  }, dispatch)
+)(ColorPicker)
+
+const ConnectedTokenParts = connect(
+  state => ({
+    parts: state.parts,
+    active: state.active
+  }),
+  dispatch => bindActionCreators({
+    onActivate: dispatchers.SET_CHANNEL
+  }, dispatch)
+)(TokenParts)
+
+const ConnectedDisplay = connect(
+  state => ({
+    parts: state.parts
+  })
+)(Display)
+
 export default class extends React.Component {
-  constructor(props, context) {
-    super(props, context)
-    this.state = {
-      c: Color('#D00'),
-      v: 100
-    }
-  }
+
   render() {
     return (
       <Page>
@@ -30,15 +52,14 @@ export default class extends React.Component {
         <HiddenSvg>
           <ColorPicker.Defs />
         </HiddenSvg>
-        <ColorPicker current={this.state.c} onChange={(c) => this.setState({ c })}>
-          <TokenParts
-            parts={[
-              { "channels": { "body": { "color": "#FFFFFF" } }, "id": "elf" },
-              { "channels": { "hair": { "color": "#9e8fa5" } }, "id": "twin-strand-hair" },
-              { "channels": { "harp": { "color": "#713514" } }, "id": "harp-left" }
-            ]}
-          />
-        </ColorPicker>
+        <Provider store={store}>
+          <Flex>
+            <ConnectedDisplay/>
+            <ConnectedColorPicker>
+              <ConnectedTokenParts />
+            </ConnectedColorPicker>
+          </Flex>
+        </Provider>
       </Page>
     )
   }

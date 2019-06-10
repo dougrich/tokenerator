@@ -212,7 +212,7 @@ export default class ColorPicker extends React.Component {
   }
   render () {
     const { current, children } = this.props
-    const [hue, saturation, lightness] = Color(current.hsl()).color
+    const [hue, saturation, lightness] = current.hsl().color
     const currentHex = current.hex().toString()
     return (
       <ColorPickerContainer>
