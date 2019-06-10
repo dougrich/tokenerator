@@ -3,7 +3,8 @@ import * as Color from 'color'
 import * as colortest from 'hex-color-regex'
 import Slider from './slider'
 import { TextField } from './field'
-import { Label } from './styled'
+import { Label, Row } from './styled'
+import { ColorSwatchButton, ColorSwatchContainer } from './color-swatch'
 
 const ColorPickerContainer = styled.div({
   width: '100%',
@@ -21,28 +22,6 @@ const PickerCircle = styled.circle({
   stroke: 'white',
   strokeWidth: 3,
   mixBlendMode: 'difference'
-})
-
-const ColorSwatchButton = styled.button(props => ({
-  display: 'inline-block',
-  width: '2em',
-  height: '2em',
-  padding: 0,
-  margin: '0.5em',
-  cursor: 'pointer',
-  border: '2px solid transparent',
-  '&:focus': {
-    outline: `2px dashed ${props.theme.colors.accent}`
-  }
-}))
-
-const ColorSwatchContainer = styled.div({
-  display: 'block',
-  margin: '0 -0.5em'
-})
-
-const ColorSwatchSet = styled.div({
-  marginBottom: '1.0em'
 })
 
 const step = {
@@ -232,7 +211,7 @@ export default class ColorPicker extends React.Component {
     this.props.onChange(Color(hex))
   }
   render () {
-    const { current } = this.props
+    const { current, children } = this.props
     const [hue, saturation, lightness] = Color(current.hsl()).color
     const currentHex = current.hex().toString()
     return (
@@ -250,7 +229,7 @@ export default class ColorPicker extends React.Component {
         {
           Swatches.map(({ name, set }, i) => {
             return (
-              <ColorSwatchSet key={i}>
+              <Row key={i}>
                 <Label>{name}</Label>
                 <ColorSwatchContainer>
                   {
@@ -265,10 +244,11 @@ export default class ColorPicker extends React.Component {
                     })
                   }
                 </ColorSwatchContainer>
-              </ColorSwatchSet>
+              </Row>
             )
           })
         }
+        {children}
       </ColorPickerContainer>
     )
   }

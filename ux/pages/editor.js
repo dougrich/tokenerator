@@ -6,6 +6,7 @@ import Slider from '../components/slider'
 import Page from '../components/page'
 import dynamic from 'next/dynamic'
 import * as Color from 'color'
+import TokenParts from '../components/token-parts';
 
 const FullEditor = dynamic(
   () => import('../components/editor'),
@@ -21,15 +22,23 @@ export default class extends React.Component {
       v: 100
     }
   }
-  render () {
+  render() {
     return (
       <Page>
-        <AppHead title='Editor'/>
+        <AppHead title='Editor' />
         <Header />
         <HiddenSvg>
           <ColorPicker.Defs />
         </HiddenSvg>
-        <ColorPicker current={this.state.c} onChange={(c) => this.setState({ c })} />
+        <ColorPicker current={this.state.c} onChange={(c) => this.setState({ c })}>
+          <TokenParts
+            parts={[
+              { "channels": { "body": { "color": "#FFFFFF" } }, "id": "elf" },
+              { "channels": { "hair": { "color": "#9e8fa5" } }, "id": "twin-strand-hair" },
+              { "channels": { "harp": { "color": "#713514" } }, "id": "harp-left" }
+            ]}
+          />
+        </ColorPicker>
       </Page>
     )
   }
