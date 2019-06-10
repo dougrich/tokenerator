@@ -3,10 +3,10 @@
 This describes scenarios and high level flows that need to be able to be accomplished to reach parity with the previous version.
 
 - [ ] I can create a token using a selection of parts
-  - [ ] I can set specific colors of parts or parts of parts
-  - [ ] I can set colors from a color picker
-  - [ ] I can set colors from a set of logical color choices
-  - [ ] I can adjust colors and see the results immediately
+  - [x] I can set specific colors of parts or parts of parts
+  - [x] I can set colors from a color picker
+  - [x] I can set colors from a set of logical color choices
+  - [x] I can adjust colors and see the results immediately
     - [ ] I can adjust the hue of a _set_ of colors for fast color shifting
   - [ ] I can narrow the parts being browsed by type
   - [ ] parts collide with each other
