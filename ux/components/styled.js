@@ -20,11 +20,6 @@ const typography = {
     font-family: 'Oswald', sans-serif;
     text-align: center;
   `,
-  header: css`
-    font-family: 'Oswald', sans-serif;
-    text-align: left;
-    border-bottom: ${measure.border} solid ${colors.borderblack};
-  `,
   body: css`
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5em;
@@ -42,11 +37,14 @@ export const Navigation = styled.nav`
   ${row}
 `
 
-export const Title = styled.h1`
-  ${typography.title}
-  font-size: 3em;
-  margin: 0;
-`
+export const Row = styled.div(row)
+
+export const Title = styled.h1(props => [
+  props.theme.typography.title,
+  {
+    margin: 0
+  }
+])
 
 export const Container = styled.div`
   max-width: 500px;
@@ -111,21 +109,17 @@ export const NavigationLink = (props) => (
   </Link>
 )
 
-export const Article = styled.article`
-  h1, h2, h3, h4 {
-    ${typography.header};
+export const Article = styled.article(props => [
+  {
+    'h1, h2, h3, h4': props.theme.typography.header,
+    'pre': {
+      whiteSpace: 'pre-wrap',
+      backgroundColor: '#F3F3F3',
+      padding: '1em'
+    },
+    'p': props.theme.typography.body
   }
-
-  pre {
-    white-space: pre-wrap;
-    background-color: #F3F3F3;
-    padding: 1em;
-  }
-
-  p {
-    ${typography.body};
-  }
-`
+])
 
 const gridBreakpoints = [
   [400, 100],
@@ -209,10 +203,6 @@ export const TokenTitle = styled.h2`
   ${typography.title}
 `
 
-export const TokenDescription = styled.p`
-  ${typography.body}
-`
-
 export const Button = styled.button`
   ${typography.body}
   position: relative;
@@ -253,16 +243,15 @@ export const Button = styled.button`
   }
 `
 
-export const Label = styled.label({
-  fontFamily: "'Open Sans', sans-serif",
-  fontSize: '0.5em',
-  letterSpacing: '0.1em',
-  textTransform: 'uppercase',
-  color: '#444',
-  lineHeight: '1.2em',
-  display: 'block',
-  marginBottom: '0.25em'
-})
+export const Label = styled.label(props => [
+  props.theme.typography.subheader,
+  {
+    color: '#444',
+    display: 'block',
+    marginBottom: '0.25em',
+    marginRight: '1em'
+  }
+])
 
 export const TextInputUnderline = styled.div({
   content: "''",
@@ -281,25 +270,47 @@ export const TextInputUnderline = styled.div({
   }
 })
 
-export const TextInput = styled.input({
-  fontFamily: "'Open Sans', sans-serif",
-  lineHeight: '2em',
-  display: 'block',
+const TextInputPositioning = css({
   padding: '0.5em',
   textAlign: 'left',
-  background: 'transparent',
-  border: 0,
-  width: 'calc(100% - 1em)',
-  position: 'relative',
-  outlineOffset: '0px',
-  '&:focus': {
-    outline: '2px dashed #D00'
+  width: 'calc(100% - 1em)'
+})
+
+export const TextInput = styled.input(props => [
+  props.theme.typography.body,
+  TextInputPositioning,
+  {
+    display: 'block',
+    background: 'transparent',
+    border: 0,
+    position: 'relative',
+    outlineOffset: '0px',
+    '&:focus': {
+      outline: '2px dashed #D00'
+    }
   }
+])
+
+export const TextAddon = styled.div(props => [
+  props.theme.typography.body,
+  TextInputPositioning,
+  {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    opacity: props.theme.focused ? 0 : 0.5,
+    pointerEvents: 'none',
+    whiteSpace: 'nowrap'
+  }
+])
+
+export const TextMeasure = styled.span({
+  opacity: 0
 })
 
 export const TextContainer = styled.div({
   position: 'relative',
-  marginBottom: '1em'
+  width: '100%'
 })
 
 export const HiddenSvg = styled.svg({

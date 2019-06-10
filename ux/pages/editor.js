@@ -3,6 +3,7 @@ import Header from '../components/header'
 import ColorPicker from '../components/color-picker'
 import { HiddenSvg } from '../components/styled'
 import Slider from '../components/slider'
+import Page from '../components/page'
 import dynamic from 'next/dynamic'
 import * as Color from 'color'
 
@@ -22,14 +23,14 @@ export default class extends React.Component {
   }
   render () {
     return (
-      <React.Fragment>
+      <Page>
         <AppHead title='Editor'/>
         <Header />
         <HiddenSvg>
           <ColorPicker.Defs />
         </HiddenSvg>
         <ColorPicker current={this.state.c} onChange={(c) => this.setState({ c })} />
-      </React.Fragment>
+      </Page>
     )
   }
 }

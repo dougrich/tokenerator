@@ -2,7 +2,8 @@ import styled from '@emotion/styled'
 import * as Color from 'color'
 import * as colortest from 'hex-color-regex'
 import Slider from './slider'
-import { TextInput, TextContainer, TextInputUnderline, Label } from './styled'
+import { TextField } from './field'
+import { Label } from './styled'
 
 const ColorPickerContainer = styled.div({
   width: '100%',
@@ -22,7 +23,7 @@ const PickerCircle = styled.circle({
   mixBlendMode: 'difference'
 })
 
-const ColorSwatchButton = styled.button({
+const ColorSwatchButton = styled.button(props => ({
   display: 'inline-block',
   width: '2em',
   height: '2em',
@@ -31,9 +32,9 @@ const ColorSwatchButton = styled.button({
   cursor: 'pointer',
   border: '2px solid transparent',
   '&:focus': {
-    outline: '2px dashed #D00'
+    outline: `2px dashed ${props.theme.colors.accent}`
   }
-})
+}))
 
 const ColorSwatchContainer = styled.div({
   display: 'block',
@@ -75,17 +76,20 @@ const Swatches = [
   {
     name: 'Hair',
     set: [
-      { name: 'Red', color: '#D00' },
-      { name: 'Green', color: '#0D0' },
-      { name: 'Blue', color: '#00D' }
+      { name: 'Jet black', color: '#11110F' },
+      { name: 'Black', color: '#2F272F' },
+      { name: 'Brown', color: '#6F635B' }
     ]
   },
   {
     name: 'Skin',
     set: [
-      { name: 'Red', color: '#D00' },
-      { name: 'Green', color: '#0D0' },
-      { name: 'Blue', color: '#00D' }
+      { name: 'Pale', color: '#FCF0F0' },
+      { name: 'Light', color: '#FCDEC4' },
+      { name: 'Medium', color: '#E1C198' },
+      { name: 'Brown', color: '#9F856B' },
+      { name: 'Ashen', color: '#999' },
+      { name: 'Dark', color: '#555' }
     ]
   }
 ]
@@ -184,16 +188,14 @@ class ColorInput extends React.Component {
     const { current } = this.props
     const { value } = this.state
     return (
-      <TextContainer>
-        <TextInput
-          type='text'
-          value={value == null ? current : value}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onChange={this.onChange}
-        />
-        <TextInputUnderline />
-      </TextContainer>
+      <TextField
+        type='text'
+        value={value == null ? current : value}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+        onChange={this.onChange}
+        label='Hex'
+      />
     )
   }
 }
@@ -244,7 +246,6 @@ export default class ColorPicker extends React.Component {
         />
         <Label>Hue</Label>
         <HueSlider hue={hue} onChange={this.onHueChange} />
-        <Label>Hex</Label>
         <ColorInput current={currentHex} onChange={this.onInputChange} />
         {
           Swatches.map(({ name, set }, i) => {

@@ -1,12 +1,13 @@
 import AppHead from '../components/head'
 import Header from '../components/header'
+import Page from '../components/page'
 
 function Home () {
   return (
-    <React.Fragment>
+    <Page>
       <AppHead />
       <Header />
-    </React.Fragment>
+    </Page>
   )
 }
 

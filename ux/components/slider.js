@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { ThemeProvider } from 'emotion-theming'
 
 const PickerContainer = styled.svg({
   display: 'block',
@@ -12,11 +13,17 @@ const PickerContainer = styled.svg({
   }
 })
 
-const toPercentage = (v) => {
+export const toPercentage = (v) => {
   return `${Math.floor(v * 1000) / 10}%`
 }
 
 export default class Slider extends React.PureComponent {
+  constructor (props, context) {
+    super(props, context)
+    this.state = {
+      theme: { focused: false }
+    }
+  }
   getd = (page, bound, full) => {
     return (page - bound) / full
   }
@@ -67,7 +74,6 @@ export default class Slider extends React.PureComponent {
   onKeyDown = (e) => {
     const { x, y, step } = this.props
     const m = e.shiftKey ? 10 : 1
-    console.log(e.keyCode)
     switch (e.keyCode) {
       case 37:
         this.onChange({ x: x - step.x * m, y })
@@ -84,6 +90,30 @@ export default class Slider extends React.PureComponent {
     }
   }
 
+  updateTheme = (update) => {
+    const newtheme = {
+      ...this.state.theme,
+      ...update
+    }
+    this.setState({ theme: newtheme })
+  }
+
+  onFocus = () => {
+    this.updateTheme({ focused: true })
+  }
+
+  onBlur = () => {
+    this.updateTheme({ focused: false })
+  }
+
+  onMouseEnter = () => {
+    this.updateTheme({ hover: true })
+  }
+
+  onMouseLeave = () => {
+    this.updateTheme({ hover: false })
+  }
+
   render () {
     const {
       x,
@@ -94,70 +124,24 @@ export default class Slider extends React.PureComponent {
       ...rest
     } = this.props
     return (
-      <PickerContainer
-        {...rest}
-        onMouseDown={this.onMouseDown}
-        onTouchStart={this.onTouchStart}
-        onKeyDown={this.onKeyDown}
-        tabIndex='0'
-      >
-        {children}
-        <Thumb cx={toPercentage(x)} cy={toPercentage(y)} r='0.5em' />
-      </PickerContainer>
-    )
-  }
-}
-
-const Circle = styled.circle({
-  fill: 'black',
-  stroke: 'white',
-  strokeWidth: '0.2em',
-  pointerEvents: 'none'
-})
-
-const Track = styled.rect({
-  pointerEvents: 'none',
-  height: '0.0001em',
-  stroke: 'black',
-  strokeWidth: '0.25em'
-})
-
-Slider.Simple = class extends React.PureComponent {
-  onChange = ({ x }) => {
-    const {
-      max,
-      min,
-      step,
-      onChange
-    } = this.props
-
-    let value = x * (max - min) + min
-    value = Math.round(value / step) * step
-    value = Math.min(max, Math.max(min, value))
-    onChange(value)
-  }
-
-  render () {
-    const {
-      max,
-      min,
-      step,
-      value
-    } = this.props
-    return (
-      <Slider
-        x={(value - min) / (max - min)}
-        y={0.5}
-        height='1em'
-        step={{
-          x: step / (max - min),
-          y: 0
-        }}
-        thumb={Circle}
-        onChange={this.onChange}
-      >
-        <Track x='0%' y='50%' width='100%' />
-      </Slider>
+      <ThemeProvider theme={this.state.theme}>
+        <PickerContainer
+          {...rest}
+          onMouseDown={this.onMouseDown}
+          onTouchStart={this.onTouchStart}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          onMouseEnter={this.onMouseEnter}
+          onMouseLeave={this.onMouseLeave}
+          onKeyDown={this.onKeyDown}
+          tabIndex='0'
+        >
+          {children}
+          <svg x={toPercentage(x)} y={toPercentage(y)} style={{ overflow: 'visible', pointerEvents: 'none' }}>
+            <Thumb cx={0} cy={0} r='0.5em' />
+          </svg>
+        </PickerContainer>
+      </ThemeProvider>
     )
   }
 }

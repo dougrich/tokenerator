@@ -4,6 +4,8 @@ import { Grid } from '../components/styled'
 import { getCookieProps } from '../src/common'
 import api from '../src/api'
 import TokenPreview from '../components/tokenpreview';
+import Page from '../components/page'
+
 
 export default class Browse extends React.PureComponent {
   static getInitialProps(context) {
@@ -18,13 +20,13 @@ export default class Browse extends React.PureComponent {
   render() {
     const { tokens } = this.props
     return (
-      <React.Fragment>
+      <Page>
         <AppHead title='Browse' />
         <Header />
         <Grid>
           {tokens.map(x => <TokenPreview {...x} key={x.id}/>)}
         </Grid>
-      </React.Fragment>
+      </Page>
     )
   }
 }
