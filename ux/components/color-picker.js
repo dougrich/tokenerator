@@ -27,7 +27,6 @@ const ColorSwatchButton = styled.button({
   width: '2em',
   height: '2em',
   padding: 0,
-  border: 0,
   margin: '0.5em',
   cursor: 'pointer',
   border: '2px solid transparent',
@@ -78,7 +77,7 @@ const Swatches = [
     set: [
       { name: 'Red', color: '#D00' },
       { name: 'Green', color: '#0D0' },
-      { name: 'Blue', color: '#00D' },
+      { name: 'Blue', color: '#00D' }
     ]
   },
   {
@@ -86,13 +85,13 @@ const Swatches = [
     set: [
       { name: 'Red', color: '#D00' },
       { name: 'Green', color: '#0D0' },
-      { name: 'Blue', color: '#00D' },
+      { name: 'Blue', color: '#00D' }
     ]
   }
 ]
 
 class SaturationLightnessSlider extends React.PureComponent {
-  toCoords(saturation, lightness) {
+  toCoords (saturation, lightness) {
     const x = saturation / 100
     const l = lightness / 100
     return {
@@ -101,7 +100,7 @@ class SaturationLightnessSlider extends React.PureComponent {
     }
   }
 
-  fromCoords(x, y) {
+  fromCoords (x, y) {
     const l = (1 - y) / (x * 2 + (1 - x))
     return {
       saturation: x * 100,
@@ -114,7 +113,7 @@ class SaturationLightnessSlider extends React.PureComponent {
     this.props.onChange(saturation, lightness)
   }
 
-  render() {
+  render () {
     const {
       hue,
       saturation,
@@ -132,9 +131,9 @@ class SaturationLightnessSlider extends React.PureComponent {
         onChange={this.onChange}
         height='8em'
       >
-        <PickerRect width="100%" height="100%" fill={background.toString()} />
-        <PickerRect width="100%" height="100%" fill={defIds.h_w_t.ref} />
-        <PickerRect width="100%" height="100%" fill={defIds.v_t_b.ref} />
+        <PickerRect width='100%' height='100%' fill={background.toString()} />
+        <PickerRect width='100%' height='100%' fill={defIds.h_w_t.ref} />
+        <PickerRect width='100%' height='100%' fill={defIds.v_t_b.ref} />
       </Slider>
     )
   }
@@ -145,7 +144,7 @@ class HueSlider extends React.PureComponent {
     this.props.onChange(x * 359.99)
   }
 
-  render() {
+  render () {
     const x = this.props.hue / 359.99
     return (
       <Slider
@@ -163,7 +162,7 @@ class HueSlider extends React.PureComponent {
 }
 
 class ColorInput extends React.Component {
-  constructor(props, context) {
+  constructor (props, context) {
     super(props, context)
     this.state = {
       value: null
@@ -193,7 +192,7 @@ class ColorInput extends React.Component {
           onBlur={this.onBlur}
           onChange={this.onChange}
         />
-        <TextInputUnderline/>
+        <TextInputUnderline />
       </TextContainer>
     )
   }
@@ -204,7 +203,7 @@ class ColorSwatch extends React.PureComponent {
     this.props.onChange(Color(this.props.color))
   }
 
-  render() {
+  render () {
     return (
       <ColorSwatchButton
         title={`${this.props.name} | ${this.props.color}`}
@@ -214,7 +213,6 @@ class ColorSwatch extends React.PureComponent {
     )
   }
 }
-
 
 export default class ColorPicker extends React.Component {
   onHueChange = hue => {
@@ -245,7 +243,7 @@ export default class ColorPicker extends React.Component {
           onChange={this.onSaturationLightnessChange}
         />
         <Label>Hue</Label>
-        <HueSlider hue={hue} onChange={this.onHueChange}/>
+        <HueSlider hue={hue} onChange={this.onHueChange} />
         <Label>Hex</Label>
         <ColorInput current={currentHex} onChange={this.onInputChange} />
         {
@@ -276,23 +274,23 @@ export default class ColorPicker extends React.Component {
 }
 
 ColorPicker.Defs = class extends React.Component {
-  shouldComponentUpdate() { return false }
-  render() {
+  shouldComponentUpdate () { return false }
+  render () {
     return [
       <linearGradient
         id={defIds.h_w_t.id}
         key={defIds.h_w_t.id}
       >
-        <stop offset="0%"  stopColor="white" stopOpacity="1" />
-        <stop offset="100%" stopColor="white" stopOpacity="0" />
+        <stop offset='0%' stopColor='white' stopOpacity='1' />
+        <stop offset='100%' stopColor='white' stopOpacity='0' />
       </linearGradient>,
       <linearGradient
         id={defIds.v_t_b.id}
         key={defIds.v_t_b.id}
-        gradientTransform="rotate(90)"
+        gradientTransform='rotate(90)'
       >
-        <stop offset="0%"  stopColor="black" stopOpacity="0" />
-        <stop offset="100%" stopColor="black" stopOpacity="1" />
+        <stop offset='0%' stopColor='black' stopOpacity='0' />
+        <stop offset='100%' stopColor='black' stopOpacity='1' />
       </linearGradient>,
       <linearGradient
         id={defIds.c.id}

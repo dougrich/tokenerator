@@ -8,7 +8,7 @@ const PickerContainer = styled.svg({
   marginBottom: '1em',
   cursor: 'pointer',
   '&:focus': {
-    outline: '2px dashed #D00',
+    outline: '2px dashed #D00'
   }
 })
 
@@ -17,10 +17,6 @@ const toPercentage = (v) => {
 }
 
 export default class Slider extends React.PureComponent {
-  constructor(props, context) {
-    super(props, context)
-  }
-
   getd = (page, bound, full) => {
     return (page - bound) / full
   }
@@ -75,16 +71,16 @@ export default class Slider extends React.PureComponent {
     switch (e.keyCode) {
       case 37:
         this.onChange({ x: x - step.x * m, y })
-        break;
+        break
       case 38:
         this.onChange({ x, y: y - step.y * m })
-        break;
+        break
       case 39:
         this.onChange({ x: x + step.x * m, y })
-        break;
+        break
       case 40:
         this.onChange({ x, y: y + step.y * m })
-        break;
+        break
     }
   }
 
