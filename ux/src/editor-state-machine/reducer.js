@@ -1,4 +1,4 @@
-import { SET_COLOR, SET_CHANNEL, REMOVE_PART } from './actions'
+import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART } from './actions'
 import Color from 'color'
 import { combineReducers } from 'redux'
 
@@ -44,11 +44,7 @@ const active = createReducer(
 )
 
 const parts = createReducer(
-  [
-    { 'channels': { 'body': { 'color': '#FFFFFF' } }, 'id': 'elf' },
-    { 'channels': { 'hair': { 'color': '#9e8fa5' } }, 'id': 'twin-strand-hair' },
-    { 'channels': { 'harp': { 'color': '#713514' } }, 'id': 'harp-left' }
-  ],
+  [],
   {
     [SET_COLOR]: (current, { active, color }) => {
       if (!active) return current
@@ -67,6 +63,12 @@ const parts = createReducer(
       const updated = current.slice()
       updated.splice(index, 1)
       return updated
+    },
+    [ADD_PART]: (current, { id, channels }) => {
+      return [
+        ...current,
+        { id, channels }
+      ]
     }
   }
 )

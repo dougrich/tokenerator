@@ -6,9 +6,12 @@ This describes scenarios and high level flows that need to be able to be accompl
   - [x] I can set specific colors of parts or parts of parts
   - [x] I can set colors from a color picker
   - [x] I can set colors from a set of logical color choices
+  - [ ] I can select a color by eyedropping a relevant swatch
   - [x] I can adjust colors and see the results immediately
     - [ ] I can adjust the hue of a _set_ of colors for fast color shifting
+  - [x] I can add parts
   - [ ] I can narrow the parts being browsed by type
+  - [ ] parts are ordered by default
   - [ ] parts collide with each other
   - [x] I can remove parts from the token
 - [x] I can browse existing tokens

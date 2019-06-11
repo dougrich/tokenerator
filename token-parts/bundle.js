@@ -8,6 +8,7 @@ async function processFile(filename) {
   const contents = await fs.readFile(filename, 'utf8')
   const $ = cheerio.load(contents)
   const layers = []
+  const defaults = {}
   $('g').each((i, e) => {
     const className = e.attribs['class']
     if (className) {
@@ -28,7 +29,7 @@ async function processFile(filename) {
             }
           }
         }
-
+        defaults[className] = { color: fill }
         e.attribs['fill'] = '${context[\'' + className + '\'].color}'
 
       })
@@ -50,6 +51,8 @@ async function processFile(filename) {
     }
     const id = path.basename(filename).replace('.svg', '')
     return {
+      id,
+      defaults,
       schema: {
         type: 'object',
         additionalProperties: false,
@@ -109,13 +112,15 @@ async function processDirectory() {
       }
     }
   }
+  const allDefaults = {}
   const templates = []
-  for (const { schema, template } of contents) {
+  for (const { schema, template, defaults, id } of contents) {
     templates.push(template)
+    allDefaults[id] = defaults
     oneOf.push(schema)
   }
 
-  const js = 'module.exports = {\n  $schema: ' + JSON.stringify(combinedSchema) + ',\n  ' + templates.join(',\n  ') + '\n}'
+  const js = 'module.exports = {\n  $schema: ' + JSON.stringify(combinedSchema) + ',\n  $defaults: ' + JSON.stringify(allDefaults) + ',\n  ' + templates.join(',\n  ') + '\n}'
   fs.writeFile('../api/src/token-parts.js', js)
   fs.writeFile('../ux/src/token-parts.js', js)
 }

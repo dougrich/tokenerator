@@ -1,6 +1,7 @@
 export const SET_COLOR = 'set-color'
 export const SET_CHANNEL = 'set-channel'
 export const REMOVE_PART = 'remove-part'
+export const ADD_PART = 'add-part'
 
 export const dispatchers = {
   SET_COLOR: color => (dispatch, getState) => {
@@ -19,5 +20,6 @@ export const dispatchers = {
   REMOVE_PART: (index) => (dispatch, getState) => {
     const { active } = getState()
     dispatch({ type: REMOVE_PART, index, isActive: active && active.index === index })
-  }
+  },
+  ADD_PART: (id, channels) => ({ type: ADD_PART, id, channels })
 }

@@ -9,6 +9,7 @@ import TokenParts from '../components/token-part-list';
 import { bindActionCreators } from 'redux'
 import { connect, Provider } from 'react-redux'
 import store, { dispatchers } from '../src/editor-state-machine'
+import PartGrid from '../components/part-grid';
 
 const Display = dynamic(
   () => import('../components/editor'),
@@ -43,6 +44,13 @@ const ConnectedDisplay = connect(
   })
 )(Display)
 
+const ConnectedPartGrid = connect(
+  state => ({}),
+  dispatch => bindActionCreators({
+    onClick: dispatchers.ADD_PART
+  }, dispatch)
+)(PartGrid)
+
 export default class extends React.Component {
 
   render() {
@@ -60,6 +68,7 @@ export default class extends React.Component {
               <ConnectedTokenParts />
             </ConnectedColorPicker>
           </Flex>
+          <ConnectedPartGrid />
         </Provider>
       </Page>
     )
