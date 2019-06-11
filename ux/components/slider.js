@@ -45,9 +45,11 @@ export default class Slider extends React.PureComponent {
   onTouchStart = (e) => {
     this.bounded = e.target.getBoundingClientRect()
     e.target.focus()
-    document.addEventListener('touchend', this.cleanup)
-    document.addEventListener('touchmove', this.onTouchMove)
     this.onTouchMove(e)
+    if (!this.props.isStatic) {
+      document.addEventListener('touchend', this.cleanup)
+      document.addEventListener('touchmove', this.onTouchMove)
+    }
   }
 
   onTouchMove = (e) => {
@@ -56,9 +58,11 @@ export default class Slider extends React.PureComponent {
 
   onMouseDown = (e) => {
     this.bounded = e.target.getBoundingClientRect()
-    document.addEventListener('mouseup', this.cleanup)
-    document.addEventListener('mousemove', this.onMouseMove)
     this.onMouseMove(e)
+    if (!this.props.isStatic) {
+      document.addEventListener('mouseup', this.cleanup)
+      document.addEventListener('mousemove', this.onMouseMove)
+    }
   }
 
   onMouseMove = (e) => {

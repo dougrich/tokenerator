@@ -1,4 +1,4 @@
-import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART } from './actions'
+import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE } from './actions'
 import Color from 'color'
 import { combineReducers } from 'redux'
 
@@ -43,6 +43,27 @@ const active = createReducer(
   }
 )
 
+const title = createReducer(
+  '',
+  {
+    [SET_TITLE]: (_, { event }) => event.target.value
+  }
+)
+
+const description = createReducer(
+  '',
+  {
+    [SET_DESCRIPTION]: (_, { event }) => event.target.value
+  }
+)
+
+const isPrivate = createReducer(
+  false,
+  {
+    [SET_PRIVATE]: (_, { value }) => value
+  }
+)
+
 const parts = createReducer(
   [],
   {
@@ -75,6 +96,9 @@ const parts = createReducer(
 
 export default combineReducers({
   currentColor,
+  title,
+  description,
+  isPrivate,
   parts,
   active
 })
