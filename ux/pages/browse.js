@@ -3,7 +3,7 @@ import Header from '../components/header'
 import { Grid } from '../components/styled'
 import { getCookieProps } from '../src/common'
 import api from '../src/api'
-import TokenPreview from '../components/tokenpreview';
+import TokenPreview from '../components/token-preview';
 import Page from '../components/page'
 
 
