@@ -10,6 +10,7 @@ This describes scenarios and high level flows that need to be able to be accompl
     - [ ] I can adjust the hue of a _set_ of colors for fast color shifting
   - [ ] I can narrow the parts being browsed by type
   - [ ] parts collide with each other
+  - [x] I can remove parts from the token
 - [x] I can browse existing tokens
   - [x] only the ones that aren't marked as 'private'
   - [ ] only my own tokens, regardless of private or public

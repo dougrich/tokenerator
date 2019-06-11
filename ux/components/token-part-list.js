@@ -17,7 +17,8 @@ class TokenPart extends React.Component {
       id,
       channels,
       active,
-      onClick
+      onClick,
+      onRemove
     } = this.props
     const children = []
     for (const fieldname in channels) {
@@ -32,7 +33,7 @@ class TokenPart extends React.Component {
     }
     return (
       <TokenPartContainer>
-        <Label>{id}</Label>
+        <Label>{id}<button onClick={onRemove.bind(null, index)}>X</button></Label>
         <ColorSwatchContainer>
           {children}
         </ColorSwatchContainer>
@@ -51,6 +52,7 @@ export default class TokenParts extends React.Component {
           index={children.length}
           active={this.props.active}
           onClick={this.props.onActivate}
+          onRemove={this.props.onRemove}
           {...part}
         />
       )

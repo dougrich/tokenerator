@@ -1,52 +1,78 @@
-import { SET_COLOR, SET_CHANNEL } from './actions'
+import { SET_COLOR, SET_CHANNEL, REMOVE_PART } from './actions'
 import Color from 'color'
+import { combineReducers } from 'redux'
 
-const defaultState = {
-  currentColor: null,
-  parts: [
+/**
+ * createReducer creates a map reducer
+ * taken from https://redux.js.org/recipes/reducing-boilerplate#generating-reducers
+ */
+function createReducer (initial, handlers) {
+  return function reducer (state = initial, action) {
+    if (handlers.hasOwnProperty(action.type)) {
+      return handlers[action.type](state, action)
+    } else {
+      return state
+    }
+  }
+}
+
+const currentColor = createReducer(
+  null,
+  {
+    [SET_COLOR]: (_, { color }) => {
+      return color
+    },
+    [SET_CHANNEL]: (_, { activeColor }) => {
+      return Color(activeColor).hsl()
+    },
+    [REMOVE_PART]: (current, { isActive }) => {
+      return isActive ? null : current
+    }
+  }
+)
+
+const active = createReducer(
+  null,
+  {
+    [SET_CHANNEL]: (_, { index, channel }) => {
+      return { index, channel }
+    },
+    [REMOVE_PART]: (current, { isActive }) => {
+      return isActive ? null : current
+    }
+  }
+)
+
+const parts = createReducer(
+  [
     { 'channels': { 'body': { 'color': '#FFFFFF' } }, 'id': 'elf' },
     { 'channels': { 'hair': { 'color': '#9e8fa5' } }, 'id': 'twin-strand-hair' },
     { 'channels': { 'harp': { 'color': '#713514' } }, 'id': 'harp-left' }
   ],
-  active: null
-}
-
-export default (
-  state = defaultState,
-  action
-) => {
-  const { type } = action
-  switch (type) {
-    case SET_COLOR:
-      const { color } = action
-      const intermediate = {
-        ...state,
-        currentColor: color
-      }
-
-      if (state.active) {
-        const { index, channel } = state.active
-        intermediate.parts = intermediate.parts.slice()
-        const part = intermediate.parts[index] = { ...intermediate.parts[index] }
-        part.channels = {
-          ...part.channels,
-          [channel]: {
-            color: color.hex().toString()
-          }
+  {
+    [SET_COLOR]: (current, { active, color }) => {
+      if (!active) return current
+      const { index, channel } = active
+      const updated = current.slice()
+      const part = updated[index] = { ...updated[index] }
+      part.channels = {
+        ...part.channels,
+        [channel]: {
+          color: color.hex().toString()
         }
       }
-      return intermediate
-
-    case SET_CHANNEL:
-      const { index, channel } = action
-      return {
-        ...state,
-        active: {
-          index,
-          channel
-        },
-        currentColor: Color(state.parts[index].channels[channel].color).hsl()
-      }
+      return updated
+    },
+    [REMOVE_PART]: (current, { index }) => {
+      const updated = current.slice()
+      updated.splice(index, 1)
+      return updated
+    }
   }
-  return state
-}
+)
+
+export default combineReducers({
+  currentColor,
+  parts,
+  active
+})
