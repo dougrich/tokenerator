@@ -11,12 +11,12 @@ This describes scenarios and high level flows that need to be able to be accompl
     - [ ] I can adjust the hue of a _set_ of colors for fast color shifting
   - [x] I can add parts
   - [ ] I can narrow the parts being browsed by type
-  - [ ] parts are ordered by default
-  - [ ] parts collide with each other
+  - [x] parts are ordered by default
+  - [x] parts collide with each other
   - [x] I can set the title
   - [x] I can set the description
   - [x] I can mark as private
-  - [ ] I can save
+  - [x] I can save
   - [x] I can remove parts from the token
 - [x] I can browse existing tokens
   - [x] only the ones that aren't marked as 'private'
@@ -41,7 +41,7 @@ Additional goals:
 - [ ] I can see the progress of my set to binary conversion
 - [ ] I can save my own color selections
 - [ ] I can add saved colors to the editor
-- [ ] I can manually specify the hex color
+- [x] I can manually specify the hex color
 - [ ] I can add a background color
 - [ ] I can switch to advanced mode and:
   - [ ] I can group parts

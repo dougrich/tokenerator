@@ -97,7 +97,7 @@ function tokenEndpoint(bucket, canonical) {
       // populate id, redirect to token
       try {
         const id = await setToken(firestore, req.body)
-        res.redirect(303, canonical.token(id))
+        res.redirect(200, canonical.token(id))
       } catch (err) {
         next(err)
       }

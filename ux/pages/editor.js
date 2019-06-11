@@ -68,6 +68,11 @@ const ConnectedIsPrivate = connect(
   dispatch => bindActionCreators({ onChange: dispatchers.SET_PRIVATE }, dispatch)
 )(ToggleField)
 
+const ConnectedSave = connect(
+  state => ({}),
+  dispatch => bindActionCreators({ onClick: dispatchers.SAVE_TOKEN }, dispatch)
+)((props) => <button {...props}>{props.children}</button>)
+
 export default class extends React.Component {
 
   render() {
@@ -82,6 +87,9 @@ export default class extends React.Component {
           <ConnectedTitle label='Title'/>
           <ConnectedDescription label='Description'/>
           <ConnectedIsPrivate label='Private'/>
+          <ConnectedSave>
+            Save
+          </ConnectedSave>
           <Flex>
             <ConnectedDisplay/>
             <ConnectedColorPicker>

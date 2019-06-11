@@ -29,7 +29,7 @@ export default class PartGrid extends React.PureComponent {
         >
           <PartPreview
             viewBox='0 0 90 90'
-            dangerouslySetInnerHTML={{ __html: parts[part](parts.$defaults[part]) }}
+            dangerouslySetInnerHTML={{ __html: parts[part](parts.$defaults[part].channels) }}
           />
         </PartPreviewContainer>
       )

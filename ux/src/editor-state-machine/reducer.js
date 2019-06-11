@@ -85,11 +85,24 @@ const parts = createReducer(
       updated.splice(index, 1)
       return updated
     },
-    [ADD_PART]: (current, { id, channels }) => {
-      return [
-        ...current,
-        { id, channels }
-      ]
+    [ADD_PART]: (current, { id, z, slots, channels }) => {
+      const next = []
+      for (let i = 0; i < current.length; i++) {
+        const other = current[i]
+        // if they collide
+        if (slots & other.slots > 0) continue
+
+        if (other.z > z) {
+          next.push({ id, channels, z, slots })
+          z = -1
+        }
+
+        next.push(other)
+      }
+      if (z >= 0) {
+        next.push({ id, channels, z, slots })
+      }
+      return next
     }
   }
 )
