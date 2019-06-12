@@ -24,8 +24,8 @@ This describes scenarios and high level flows that need to be able to be accompl
 - [ ] I can sign in
 - [ ] I can sign out
 - [ ] I can see that I am signed in
-- [ ] I can look at the details for a specific token
-- [ ] I can download a specific token as a PNG at a specific resolution
+- [x] I can look at the details for a specific token
+- [x] I can download a specific token as a PNG at a specific resolution
 - [ ] I can fork a token to make a new token
 - [ ] I can add several tokens to a set
   - [ ] I can remove tokens from a set
