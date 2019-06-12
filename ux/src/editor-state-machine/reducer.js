@@ -39,7 +39,8 @@ const active = createReducer(
     },
     [REMOVE_PART]: (current, { isActive }) => {
       return isActive ? null : current
-    }
+    },
+    [ADD_PART]: () => null
   }
 )
 
