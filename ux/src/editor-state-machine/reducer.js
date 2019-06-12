@@ -39,7 +39,8 @@ const active = createReducer(
     },
     [REMOVE_PART]: (current, { isActive }) => {
       return isActive ? null : current
-    }
+    },
+    [ADD_PART]: () => null
   }
 )
 
@@ -90,16 +91,16 @@ const parts = createReducer(
       for (let i = 0; i < current.length; i++) {
         const other = current[i]
         // if they collide
-        if (slots & other.slots > 0) continue
+        if ((slots & other.slots) > 0) continue
 
         if (other.z > z) {
           next.push({ id, channels, z, slots })
-          z = -1
+          z = Infinity
         }
 
         next.push(other)
       }
-      if (z >= 0) {
+      if (z < Infinity) {
         next.push({ id, channels, z, slots })
       }
       return next

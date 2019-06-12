@@ -66,10 +66,11 @@ export default class Slider extends React.PureComponent {
   }
 
   onMouseMove = (e) => {
-    const { pageX, pageY } = e
+    const { clientX, clientY } = e
+    const bounds = this.bounded
     const d = {
-      x: this.getd(pageX, this.bounded.x, this.bounded.width),
-      y: this.getd(pageY, this.bounded.y, this.bounded.height)
+      x: this.getd(clientX, bounds.left, bounds.width),
+      y: this.getd(clientY, bounds.top, bounds.height)
     }
     // update position
     this.onChange(d)

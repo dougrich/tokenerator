@@ -2,6 +2,13 @@ import styled from '@emotion/styled'
 import { Label } from './styled'
 import { ColorSwatchButton, ColorSwatchContainer } from './color-swatch'
 
+const Container = styled.div({
+  width: '100%',
+  overflow: 'auto',
+  position: 'relative',
+  padding: '0.5em'
+})
+
 const TokenPartContainer = styled.div({
   padding: '1em 0.5em',
   margin: '0em -0.5em',
@@ -58,9 +65,9 @@ export default class TokenParts extends React.Component {
       )
     }
     return (
-      <div>
+      <Container>
         {children}
-      </div>
+      </Container>
     )
   }
 }
