@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="hippo-face.svg"
-   class="hippo-face">
+   class="hippo-face"
+   data-z="400"
+   data-slots="face">
   <defs
      id="defs4" />
   <sodipodi:namedview

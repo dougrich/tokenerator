@@ -17,7 +17,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="moon-staf.svg"
-   class="moon-staff">
+   class="moon-staff"
+   data-z="1200"
+   data-slots="left-weapon">
   <defs
      id="defs4">
     <inkscape:path-effect

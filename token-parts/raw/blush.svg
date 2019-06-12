@@ -18,9 +18,8 @@
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="rosy-cheeks.svg"
    class="blush"
-   data-zindex="900"
-   data-slots="256"
-   data-visible="true">
+   data-z="400"
+   data-slots="face">
   <defs
      id="defs4">
     <linearGradient

@@ -16,7 +16,9 @@
    sodipodi:docname="elf.svg"
    width="100%"
    height="100%"
-   viewBox="0 0 90 90">
+   viewBox="0 0 90 90"
+   data-z="100"
+   data-slots="body">
   <defs
      id="defs4" />
   <sodipodi:namedview

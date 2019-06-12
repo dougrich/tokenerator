@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="Heavy Staff (Right).svg"
-   class="heavy-staff-right">
+   class="heavy-staff-right"
+   data-z="1200"
+   data-slots="right-weapon">
   <metadata
      id="metadata11">
     <rdf:RDF>

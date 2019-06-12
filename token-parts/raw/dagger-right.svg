@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="temp.svg"
-   class="dagger-right">
+   class="dagger-right"
+   data-z="1200"
+   data-slots="right-weapon">
   <defs
      id="defs4" />
   <sodipodi:namedview

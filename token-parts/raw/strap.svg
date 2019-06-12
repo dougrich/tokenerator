@@ -14,7 +14,9 @@
    inkscape:version="0.48.4 r9939"
    width="100%"
    height="100%"
-   sodipodi:docname="strap.svg">
+   sodipodi:docname="strap.svg"
+   data-z="700"
+   data-slots="collar">
   <defs
      id="defs16" />
   <sodipodi:namedview

@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="musket.svg"
-   class="musket">
+   class="musket"
+   data-z="1200"
+   data-slots="left-weapon+right-weapon">
   <defs
      id="defs4" />
   <sodipodi:namedview

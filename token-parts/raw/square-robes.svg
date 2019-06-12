@@ -17,7 +17,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="square-robes.svg"
-   class="square-robes">
+   class="square-robes"
+   data-z="500"
+   data-slots="clothing+jacket">
   <defs
      id="defs4">
     <inkscape:path-effect

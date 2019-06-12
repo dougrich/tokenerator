@@ -17,9 +17,8 @@
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="flower-in-hair.svg"
    class="flower-in-hair"
-   data-zindex="900"
-   data-slots="256"
-   data-visible="true">
+   data-z="900"
+   data-slots="hair">
   <defs
      id="defs4" />
   <sodipodi:namedview

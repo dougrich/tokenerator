@@ -17,7 +17,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="gladiator.svg"
-   class="gladiator-helmet">
+   class="gladiator-helmet"
+   data-z="1000"
+   data-slots="hat">
   <defs
      id="defs4">
     <linearGradient

@@ -17,9 +17,8 @@
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="glasses.svg"
    class="medieval-glasses"
-   data-zindex="900"
-   data-slots="256"
-   data-visible="true">
+   data-z="1100"
+   data-slots="">
   <defs
      id="defs4" />
   <sodipodi:namedview
