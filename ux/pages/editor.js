@@ -1,23 +1,40 @@
 import AppHead from '../components/head'
 import Header from '../components/header'
 import ColorPicker from '../components/color-picker'
-import { Flex, HiddenSvg } from '../components/styled'
+import styled from '@emotion/styled'
+import { HiddenSvg, NavigationLinkStyled } from '../components/styled'
 import Page from '../components/page'
 import dynamic from 'next/dynamic'
 import * as Color from 'color'
 import TokenParts from '../components/token-part-list';
-import { TextField, ToggleField } from '../components/field'
+import { TextField, TextAreaField, ToggleField } from '../components/field'
 import { bindActionCreators } from 'redux'
 import { connect, Provider } from 'react-redux'
 import store, { dispatchers } from '../src/editor-state-machine'
 import PartGrid from '../components/part-grid';
-import Toggle from '../components/slider-toggle';
 
 const Display = dynamic(
   () => import('../components/editor'),
   {
     loading: () => <p>Loading</p>
   })
+
+const FlexRow = styled.div({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-between'
+})
+const FlexColumn = styled.div({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column'
+})
+
+const ActionRow = styled.div({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-around'
+})
 
 const ConnectedColorPicker = connect(
   state => ({
@@ -61,7 +78,7 @@ const ConnectedTitle = connect(
 const ConnectedDescription = connect(
   state => ({ value: state.description }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_DESCRIPTION }, dispatch)
-)(TextField)
+)(TextAreaField)
 
 const ConnectedIsPrivate = connect(
   state => ({ value: state.isPrivate }),
@@ -69,9 +86,9 @@ const ConnectedIsPrivate = connect(
 )(ToggleField)
 
 const ConnectedSave = connect(
-  state => ({}),
+  state => ({ as: 'button' }),
   dispatch => bindActionCreators({ onClick: dispatchers.SAVE_TOKEN }, dispatch)
-)((props) => <button {...props}>{props.children}</button>)
+)(NavigationLinkStyled)
 
 export default class extends React.Component {
 
@@ -84,18 +101,23 @@ export default class extends React.Component {
           <ColorPicker.Defs />
         </HiddenSvg>
         <Provider store={store}>
-          <ConnectedTitle label='Title'/>
-          <ConnectedDescription label='Description'/>
-          <ConnectedIsPrivate label='Private'/>
-          <ConnectedSave>
-            Save
-          </ConnectedSave>
-          <Flex>
-            <ConnectedDisplay/>
-            <ConnectedColorPicker>
-              <ConnectedTokenParts />
-            </ConnectedColorPicker>
-          </Flex>
+          <FlexRow>
+            <FlexColumn>
+              <ConnectedTitle label='Title'/>
+              <ConnectedDescription label='Description'/>
+              <ConnectedIsPrivate label='Private'/>
+              <ActionRow>
+                <ConnectedSave>
+                  Save
+                </ConnectedSave>
+              </ActionRow>
+            </FlexColumn>
+            <ConnectedDisplay />
+            <FlexRow>
+              <ConnectedColorPicker/>
+              <ConnectedTokenParts/>
+            </FlexRow>
+          </FlexRow>
           <ConnectedPartGrid />
         </Provider>
       </Page>

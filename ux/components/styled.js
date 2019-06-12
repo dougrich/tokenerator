@@ -71,6 +71,8 @@ export const NavigationLinkStyled = styled.a`
   margin: 0em 0.5em;
   position: relative;
   transition: ${timing.navigation} color;
+  background: transparent;
+  border: 0;
 
   &:after {
     content: '';
@@ -254,28 +256,52 @@ export const Label = styled.label(props => [
 ])
 
 export const TextInputUnderline = styled.div({
-  content: "''",
   position: 'absolute',
   bottom: -2,
   left: 0,
   right: 0,
   height: 2,
   backgroundColor: colors.borderblack,
+  pointerEvents: 'none',
   transform: 'scale(0.5, 1)',
   transformOrigin: 'bottom left',
   transition: '200ms transform',
-  'input:hover+&,input:focus+&': {
+  'input:hover+&,input:focus+&,textarea:hover+&,textarea:focus+&': {
     transform: 'scale(1,1)',
     backgroundColor: '#D00'
+  }
+})
+
+export const TextAreaLines = styled.div({
+  position: 'absolute',
+  left: -2,
+  bottom: -2,
+  top: 0,
+  right: 0,
+  width: 'auto',
+  height: 'auto',
+  borderColor: colors.borderblack,
+  borderTop: '0!important',
+  borderRight: '0!important',
+  borderWidth: '4px',
+  borderStyle: 'solid',
+  pointerEvents: 'none',
+  transform: 'scale(0.5, 0.5)',
+  transformOrigin: 'bottom left',
+  transition: '200ms transform, 200ms border-width',
+  'input:hover+&,input:focus+&,textarea:hover+&,textarea:focus+&': {
+    transform: 'scale(1,1)',
+    borderWidth: '2px',
+    borderColor: '#D00'
   }
 })
 
 const TextInputPositioning = css({
   padding: '0.5em',
   textAlign: 'left',
-  width: 'calc(100% - 1em)'
+  width: 'calc(100% - 1em)!important',
+  maxHeight: '10em'
 })
-
 export const TextInput = styled.input(props => [
   props.theme.typography.body,
   TextInputPositioning,
@@ -283,10 +309,14 @@ export const TextInput = styled.input(props => [
     display: 'block',
     background: 'transparent',
     border: 0,
+    marginRight: 0,
     position: 'relative',
     outlineOffset: '0px',
     '&:focus': {
       outline: '2px dashed #D00'
+    },
+    'textarea&': {
+      height: '10em'
     }
   }
 ])

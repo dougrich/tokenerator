@@ -1,7 +1,7 @@
 import HorizontalSlider from './slider-horizontal'
 import Toggle from './slider-toggle'
 import styled from '@emotion/styled'
-import { Label, TextContainer, TextInput, TextInputUnderline, TextAddon, TextMeasure, Row } from './styled'
+import { Label, TextContainer, TextInput, TextInputUnderline, TextAddon, TextMeasure, Row, TextAreaLines } from './styled'
 
 const RangeFieldLabel = styled.div({
   display: 'flex',
@@ -87,6 +87,24 @@ export class TextField extends React.PureComponent {
         <TextContainer>
           <TextInput {...rest} />
           <TextInputUnderline />
+        </TextContainer>
+      </Row>
+    )
+  }
+}
+
+export class TextAreaField extends React.PureComponent {
+  render() {
+    const {
+      label,
+      ...rest
+    } = this.props
+    return (
+      <Row>
+        <Label>{label}</Label>
+        <TextContainer>
+          <TextInput as='textarea' {...rest} />
+          <TextAreaLines />
         </TextContainer>
       </Row>
     )

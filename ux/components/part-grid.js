@@ -8,7 +8,11 @@ const PartGridContainer = styled.div({
 const PartPreviewContainer = styled.button({
   display: 'inline-block',
   width: '10em',
-  height: '10em'
+  height: '10em',
+  border: 0,
+  padding: 0,
+  backgroundColor: 'transparent',
+  backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'><circle cx='45' cy='45' r='36' fill='%23ddd' /></svg>")`
 })
 
 const PartPreview = styled.svg({
