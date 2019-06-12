@@ -94,7 +94,7 @@ export class TextField extends React.PureComponent {
 }
 
 export class TextAreaField extends React.PureComponent {
-  render() {
+  render () {
     const {
       label,
       ...rest
