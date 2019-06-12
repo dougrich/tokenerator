@@ -12,7 +12,9 @@
    version="1.1"
    id="flail-right"
    sodipodi:docname="flail.svg"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   data-z="1200"
+   data-slots="right-weapon">
   <defs
      id="defs12" />
   <sodipodi:namedview

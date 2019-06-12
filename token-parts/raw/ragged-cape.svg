@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="ragged-cape.svg"
-   class="ragged-cape">
+   class="ragged-cape"
+   data-z="0"
+   data-slots="back">
   <defs
      id="defs4">
     <inkscape:path-effect

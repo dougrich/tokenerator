@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="horned-pig-snout.svg"
-   class="horned-pig-snout">
+   class="horned-pig-snout"
+   data-z="400"
+   data-slots="face">
   <defs
      id="defs4" />
   <sodipodi:namedview

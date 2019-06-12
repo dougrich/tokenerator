@@ -17,7 +17,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="long-dress.svg"
-   class="long-dress">
+   class="long-dress"
+   data-z="500"
+   data-slots="clothing">
   <defs
      id="defs4">
     <inkscape:path-effect

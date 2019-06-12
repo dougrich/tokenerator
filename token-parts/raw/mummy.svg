@@ -16,7 +16,9 @@
    class="mummy"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="mummy.svg">
+   sodipodi:docname="mummy.svg"
+   data-z="100"
+   data-slots="body">
   <defs
      id="defs4" />
   <sodipodi:namedview

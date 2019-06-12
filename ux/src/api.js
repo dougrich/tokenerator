@@ -19,4 +19,8 @@ apiclient.getToken = (id) => apiclient
   .get(`/api/token/${id}.json`)
   .then(response => response.data)
 
+apiclient.createToken = (body) => apiclient
+  .post(`/api/token`, body)
+  .then(response => response.headers['location'])
+
 export default apiclient

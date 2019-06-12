@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="lab-coat.svg"
-   class="lab-coat">
+   class="lab-coat"
+   data-z="600"
+   data-slots="jacket">
   <defs
      id="defs4" />
   <sodipodi:namedview

@@ -1,4 +1,5 @@
 import HorizontalSlider from './slider-horizontal'
+import Toggle from './slider-toggle'
 import styled from '@emotion/styled'
 import { Label, TextContainer, TextInput, TextInputUnderline, TextAddon, TextMeasure, Row } from './styled'
 
@@ -87,6 +88,21 @@ export class TextField extends React.PureComponent {
           <TextInput {...rest} />
           <TextInputUnderline />
         </TextContainer>
+      </Row>
+    )
+  }
+}
+
+export class ToggleField extends React.PureComponent {
+  render () {
+    const {
+      label,
+      ...rest
+    } = this.props
+    return (
+      <Row>
+        <Label>{label}</Label>
+        <Toggle {...rest} />
       </Row>
     )
   }

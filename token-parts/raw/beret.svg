@@ -13,6 +13,8 @@
    height="100%"
    viewBox="0 0 90 90"
    id="svg2"
+   data-z="1000"
+   data-slots="hat"
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="beret.svg"

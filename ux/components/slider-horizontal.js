@@ -66,11 +66,13 @@ export default class HorizontalSlider extends React.PureComponent {
       max,
       min,
       step,
-      value
+      value,
+      ...rest
     } = this.props
     const x = (value - min) / (max - min)
     return (
       <Slider
+        {...rest}
         x={x}
         y={0.5}
         height='1em'

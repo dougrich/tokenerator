@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="monkey-ears.svg"
-   class="monkey-ears">
+   class="monkey-ears"
+   data-z="50"
+   data-slots="ear">
   <defs
      id="defs4" />
   <sodipodi:namedview

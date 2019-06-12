@@ -17,7 +17,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="C:\git\dougrich.net\token-builder\token-builder-content\template.svg"
-   class="plain-shirt">
+   class="plain-shirt"
+   data-z="500"
+   data-slots="clothing">
   <defs
      id="defs4">
     <linearGradient

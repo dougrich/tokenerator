@@ -17,7 +17,9 @@
    version="1.1"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
    sodipodi:docname="light-crossbow.1.svg"
-   class="light-crossbow-right">
+   class="light-crossbow-right"
+   data-z="1200"
+   data-slots="right-weapon">
   <defs
      id="defs4" />
   <sodipodi:namedview

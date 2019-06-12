@@ -16,7 +16,9 @@
    viewBox="0 0 90 90"
    class="circuit-body"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="circuit-body.svg">
+   sodipodi:docname="circuit-body.svg"
+   data-z="100"
+   data-slots="body">
   <defs
      id="defs4" />
   <sodipodi:namedview

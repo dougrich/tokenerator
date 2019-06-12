@@ -17,7 +17,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="pointed-hair.svg"
-   class="pointed-hair">
+   class="pointed-hair"
+   data-z="900"
+   data-slots="hair">
   <defs
      id="defs4">
     <inkscape:path-effect

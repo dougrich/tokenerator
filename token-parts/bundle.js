@@ -4,10 +4,48 @@ const cheerio = require('cheerio')
 
 const SVGO = require('svgo')
 
+function parseZ(z) {
+  if (!z) {
+    return 0
+  } else {
+    const attempt = parseInt(z)
+    if (Number.isNaN(attempt)) {
+      throw new Error('Invalid z-index')
+    } else {
+      return attempt
+    }
+  }
+}
+
+function parseSlots(slots) {
+  if (!slots) return []
+  return slots.split('+').map(x => ({
+    'body': 1 << 0,
+    'clothing': 1 << 1,
+    'jacket': 1 << 2,
+    'tails': 1 << 3,
+    'ear': 1 << 4,
+    'back': 1 << 5,
+    'face': 1 << 6,
+    'facial-hair': 1 << 7,
+    'hair': 1 << 8,
+    'hat': 1 << 9,
+    'left-weapon': 1 << 10,
+    'right-weapon': 1 << 11,
+    'collar': 1 << 12,
+    'pauldrons': 1 << 13
+  }[x] || 0)).reduce((a, b) => a | b, 0)
+}
+
 async function processFile(filename) {
   const contents = await fs.readFile(filename, 'utf8')
   const $ = cheerio.load(contents)
   const layers = []
+  const defaults = {
+    z: parseZ($('svg').attr('data-z')),
+    slots: parseSlots($('svg').attr('data-slots')),
+    channels: {}
+  }
   $('g').each((i, e) => {
     const className = e.attribs['class']
     if (className) {
@@ -28,7 +66,7 @@ async function processFile(filename) {
             }
           }
         }
-
+        defaults.channels[className] = { color: fill }
         e.attribs['fill'] = '${context[\'' + className + '\'].color}'
 
       })
@@ -50,6 +88,8 @@ async function processFile(filename) {
     }
     const id = path.basename(filename).replace('.svg', '')
     return {
+      id,
+      defaults,
       schema: {
         type: 'object',
         additionalProperties: false,
@@ -109,13 +149,15 @@ async function processDirectory() {
       }
     }
   }
+  const allDefaults = {}
   const templates = []
-  for (const { schema, template } of contents) {
+  for (const { schema, template, defaults, id } of contents) {
     templates.push(template)
+    allDefaults[id] = defaults
     oneOf.push(schema)
   }
 
-  const js = 'module.exports = {\n  $schema: ' + JSON.stringify(combinedSchema) + ',\n  ' + templates.join(',\n  ') + '\n}'
+  const js = 'module.exports = {\n  $schema: ' + JSON.stringify(combinedSchema) + ',\n  $defaults: ' + JSON.stringify(allDefaults) + ',\n  ' + templates.join(',\n  ') + '\n}'
   fs.writeFile('../api/src/token-parts.js', js)
   fs.writeFile('../ux/src/token-parts.js', js)
 }

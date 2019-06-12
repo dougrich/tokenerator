@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="tower-shield (left).svg"
-   class="tower-shield-left">
+   class="tower-shield-left"
+   data-z="1200"
+   data-slots="left-weapon">
   <defs
      id="defs4" />
   <sodipodi:namedview

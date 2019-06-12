@@ -17,7 +17,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="buttoned-robes.svg"
-   class="buttoned-robes">
+   class="buttoned-robes"
+   data-z="500"
+   data-slots="clothing+jacket">
   <defs
      id="defs4">
     <inkscape:path-effect

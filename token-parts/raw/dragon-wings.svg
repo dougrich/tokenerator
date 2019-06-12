@@ -16,7 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="Dragon Wings.svg"
-   class="dragon-wings">
+   class="dragon-wings"
+   data-z="0"
+   data-slots="back">
   <metadata
      id="metadata16">
     <rdf:RDF>
