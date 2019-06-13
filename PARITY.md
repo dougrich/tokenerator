@@ -29,7 +29,7 @@ This describes scenarios and high level flows that need to be able to be accompl
 - [ ] I can fork a token to make a new token
 - [x] I can add several tokens to a set
   - [x] I can remove tokens from a set
-  - [ x I can specify the set should include a specific number of copies, and how to differentiate them
+  - [x] I can specify the set should include a specific number of copies, and how to differentiate them
     - [x] differentiate with numbers
     - [x] differentiate with letters
   - [x] I can download the set as a .zip
