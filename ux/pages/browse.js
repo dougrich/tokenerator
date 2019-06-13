@@ -1,6 +1,7 @@
 import AppHead from '../components/head'
 import Header from '../components/header'
-import { Grid } from '../components/styled'
+import styled from '@emotion/styled'
+import { Grid, NavigationLinkStyled } from '../components/styled'
 import { getCookieProps } from '../src/common'
 import api from '../src/api'
 import TokenPreview from '../components/token-preview';
@@ -30,6 +31,13 @@ class BrowseGrid extends React.PureComponent {
   }
 }
 
+const ActionRow = styled.div({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-around',
+  marginBottom: '1em'
+})
+
 const ConnectedBrowseGrid = connect(
   state => ({
     pinned: state.pinned
@@ -49,11 +57,14 @@ const ConnectedActionPanel = connect(
     onUnpin: dispatchers.UNPIN_TOKEN
   }, dispatch)
 )(({ pinned }) => (
-  <div>
-    <Link href={`/batch?ids=${pinned.join('+')}`}>
-      <a>Download</a>
-    </Link>
-  </div>
+  <ActionRow>
+    <div>
+      <span>{pinned.length} pinned</span>
+      <Link href={`/batch?ids=${pinned.join('+')}`} passHref>
+        <NavigationLinkStyled>Download</NavigationLinkStyled>
+      </Link>
+    </div>
+  </ActionRow>
 ))
 
 export default class Browse extends React.PureComponent {

@@ -38,7 +38,7 @@ async function arrange(
         size,
         decor: decor === 'default' ? undefined : decor
       })
-      const filename = path.resolve(root, id + '@500@' + decor + '.png')
+      const filename = path.resolve(root, id + '@' + decor + '.png')
       images.push(filename)
       const friendlyIdx = friendly.length
       friendly.push('')

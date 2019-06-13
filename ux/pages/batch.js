@@ -4,7 +4,14 @@ import Header from '../components/header'
 import { connect, Provider } from 'react-redux'
 import styled from '@emotion/styled'
 import store, { dispatchers } from '../src/batch-state-machine'
-import { TextField } from '../components/field';
+import { TextField, SelectField, RangeField } from '../components/field'
+import { NavigationLinkStyled } from '../components/styled'
+
+const ActionRow = styled.div({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-around'
+})
 
 const BatchItemContainer = styled.div({
   margin: 'auto',
@@ -44,13 +51,68 @@ class BatchItem extends React.PureComponent {
             label='Count'
             onChange={onCountChange}
           />
-          <select value={label} onChange={onLabelChange}>
-            <option value='none'>None</option>
-            <option value='number'>Number</option>
-            <option value='alphabet'>Alphabet</option>
-          </select>
+          <SelectField label='Symbol Type' value={label} onChange={onLabelChange} options={[
+            { label: 'None', value: 'none' },
+            { label: 'Number', value: 'number' },
+            { label: 'Alphabet', value: 'alphabet' },
+          ]}/>
         </BatchItemFields>
       </BatchItemRow>
+    )
+  }
+}
+
+class BatchOptionFrom extends React.PureComponent {
+  render () {
+    const {
+      type,
+      name,
+      page,
+      size,
+      onTypeChange,
+      onChange
+    } = this.props
+
+    return (
+      <div>
+        <SelectField
+          label='Format'
+          options={[
+            { label: 'File - Zip Archive', value: 'ZIP' },
+            { label: 'File - PDF Document', value: 'PDF' },
+          ]}
+          value={type}
+          onChange={onTypeChange}
+        />
+        {type === 'PDF' && (
+          <TextField
+            label='Name'
+            value={name}
+            onChange={onChange('name')}
+          />
+        )}
+        {type === 'ZIP' && (
+          <RangeField
+            label='Image Size'
+            max={1400}
+            min={70}
+            step={5}
+            value={size}
+            onChange={onChange('size')}
+          />
+        )}
+        {type === 'PDF' && (
+          <SelectField
+            label='Page Size'
+            options={[
+              { label: 'Letter', value: 'letter' },
+              { label: 'A4', value: 'a4' }
+            ]}
+            value={page}
+            onChange={onChange('page')}
+          />
+        )}
+      </div>
     )
   }
 }
@@ -67,26 +129,23 @@ const ConnectedBatchItem = connect(
   })
 )(BatchItem)
 
-const ConnectedType = connect(
+const ConnectedForm = connect(
   (state) => ({
-    value: state.type
+    type: state.type,
+    ...state.options
   }),
   dispatch => ({
-    onChange: (e) => dispatch(dispatchers.SET_TYPE(e.target.value))
+    onTypeChange: (e) => dispatch(dispatchers.SET_TYPE(e.target.value)),
+    onChange: (key) => (e) => dispatch(dispatchers.SET_OPTION(key, e.target ? e.target.value : e))
   })
-)(({ value, onChange}) => (
-  <select value={value} onChange={onChange}>
-    <option value='ZIP'>ZIP</option>
-    <option value='PDF'>PDF</option>
-  </select>
-))
+)(BatchOptionFrom)
 
 const ConnectedDownload = connect(
   () => ({}),
   (dispatch, { ids }) => ({
     onClick: () => dispatch(dispatchers.DOWNLOAD(ids))
   })
-)(styled.button({}))
+)(NavigationLinkStyled)
 
 export default class Batch extends React.PureComponent {
   static getInitialProps(context) {
@@ -103,10 +162,10 @@ export default class Batch extends React.PureComponent {
         <Provider store={store}>
           <BatchItemContainer>
             {ids.map((id) => <ConnectedBatchItem id={id} key={id} />)}
-            <ConnectedType />
-            <div>
+            <ConnectedForm/>
+            <ActionRow>
               <ConnectedDownload ids={ids}>Download</ConnectedDownload>
-            </div>
+            </ActionRow>
           </BatchItemContainer>
         </Provider>
       </Page>

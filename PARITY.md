@@ -27,13 +27,13 @@ This describes scenarios and high level flows that need to be able to be accompl
 - [x] I can look at the details for a specific token
 - [x] I can download a specific token as a PNG at a specific resolution
 - [ ] I can fork a token to make a new token
-- [ ] I can add several tokens to a set
-  - [ ] I can remove tokens from a set
-  - [ ] I can specify the set should include a specific number of copies, and how to differentiate them
-    - [ ] differentiate with numbers
-    - [ ] differentiate with letters
-  - [ ] I can download the set as a .zip
-  - [ ] I can download or print the set as a .pdf
+- [x] I can add several tokens to a set
+  - [x] I can remove tokens from a set
+  - [ x I can specify the set should include a specific number of copies, and how to differentiate them
+    - [x] differentiate with numbers
+    - [x] differentiate with letters
+  - [x] I can download the set as a .zip
+  - [x] I can download or print the set as a .pdf
 
 Additional goals:
 

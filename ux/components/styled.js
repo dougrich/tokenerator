@@ -188,7 +188,7 @@ export const TextInputUnderline = styled.div({
   transform: 'scale(0.5, 1)',
   transformOrigin: 'bottom left',
   transition: '200ms transform',
-  'input:hover+&,input:focus+&,textarea:hover+&,textarea:focus+&': {
+  'input:hover+&,input:focus+&,textarea:hover+&,textarea:focus+&,select:hover+&,select:focus+&': {
     transform: 'scale(1,1)',
     backgroundColor: '#D00'
   }
@@ -221,7 +221,8 @@ export const TextAreaLines = styled.div({
 const TextInputPositioning = css({
   padding: '0.5em',
   textAlign: 'left',
-  width: 'calc(100% - 1em)!important',
+  width: '100%',
+  boxSizing: 'border-box',
   maxHeight: '10em'
 })
 export const TextInput = styled.input(props => [
