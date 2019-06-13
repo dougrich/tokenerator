@@ -140,6 +140,7 @@ function batch(bucketName, topic, canonical) {
     await publisher.publish(Buffer.from(storedname))
     res.status(201)
     res.setHeader('Location', canonical.batch(batchid))
+    res.setHeader('X-Batch-ID', batchid)
     res.end()
   })
 
