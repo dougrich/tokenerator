@@ -7,8 +7,8 @@ export const SET_OPTION = 'set-option'
 export const CLEAR = 'clear'
 
 export const dispatchers = {
-  SET_LABEL: (id, value) => ({ type: SET_LABEL, id, value }),
-  SET_COUNT: (id, value) => ({ type: SET_COUNT, id, value }),
+  SET_LABEL: (key, value) => ({ type: SET_LABEL, key, value }),
+  SET_COUNT: (key, value) => ({ type: SET_COUNT, key, value }),
   SET_TYPE: (value) => ({ type: SET_TYPE, value }),
   SET_OPTION: (key, value) => ({ type: SET_OPTION, key, value }),
   CLEAR: () => ({ type: CLEAR }),

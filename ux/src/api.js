@@ -11,26 +11,25 @@ if (IS_CLIENT) {
   })
 }
 
-apiclient.browseTokens = () => apiclient
-  .get('/api/token/')
+const fetchData = (url) => (...args) => apiclient
+  .get(url(...args))
   .then(response => response.data)
 
-apiclient.getToken = (id) => apiclient
-  .get(`/api/token/${id}.json`)
-  .then(response => response.data)
+const postData = (url, header) => (body) => apiclient
+  .post(url, body)
+  .then(response => response.headers[header])
 
-apiclient.createToken = (body) => apiclient
-  .post(`/api/token`, body)
-  .then(response => response.headers['location'])
+apiclient.browseTokens = fetchData(() => '/api/token/')
 
-apiclient.createBatch = (body) => apiclient
-  .post(`/api/batch`, body)
-  .then(response => response.headers['x-batch-id'])
+apiclient.getToken = fetchData(id => `/api/token/${id}.json`)
+
+apiclient.createToken = postData('/api/token', 'location')
+
+apiclient.createBatch = postData('/api/batch', 'x-batch-id')
 
 apiclient.checkBatch = (id) => apiclient
   .head(apiclient.checkBatch.route(id))
   .then(response => {
-    console.log(response)
     return response.status === 200
   })
 apiclient.checkBatch.route = id => `/api/batch/${id}`

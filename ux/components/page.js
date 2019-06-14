@@ -1,5 +1,8 @@
 import { Global } from '@emotion/core'
 import { ThemeProvider, withTheme } from 'emotion-theming'
+import { Provider } from 'react-redux'
+import AppHead from './head'
+import Header from './header'
 
 const theme = {
   colors: {
@@ -53,10 +56,25 @@ const GlobalStylesheet = withTheme(
 
 export default class Page extends React.PureComponent {
   render () {
+    let {
+      children,
+      store,
+      title
+    } = this.props
+
+    if (store) {
+      children = (
+        <Provider store={store}>
+          {children}
+        </Provider>
+      )
+    }
     return (
       <ThemeProvider theme={theme}>
         <GlobalStylesheet />
-        {this.props.children}
+        <AppHead title={title} />
+        <Header />
+        {children}
       </ThemeProvider>
     )
   }

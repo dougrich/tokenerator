@@ -124,7 +124,6 @@ export const Article = styled.article(props => [
 ])
 
 const gridBreakpoints = [
-  [400, 100],
   [600, 150],
   [800, 200],
   [1200, 300],
@@ -137,23 +136,32 @@ const gridBreakpoints = [
   item: `${size}px`
 }))
 
-const gridstyle = gridBreakpoints.map(({ query, size }) => `
-  ${query} {
-    width: ${size};
+const { itemstyle, gridstyle } = gridBreakpoints.reduce(({ itemstyle, gridstyle }, { query, size, item }) => ({
+  itemstyle: {
+    ...itemstyle,
+    [query]: {
+      width: item,
+      height: item
+    }
+  },
+  gridstyle: {
+    ...gridstyle,
+    [query]: {
+      width: size
+    }
   }
-`).join('\n')
-
-const itemstyle = gridBreakpoints.map(({ query, item }) => `
-  ${query} {
-    width: ${item};
-    height: ${item};
+}), {
+  itemstyle: {
+    width: '100px',
+    height: '100px'
+  },
+  gridstyle: {
+    margin: 'auto',
+    width: '400px'
   }
-`).join('\n')
+})
 
-export const Grid = styled.div`
-  margin: auto;
-  ${gridstyle}
-`
+export const Grid = styled.div(gridstyle)
 
 export const GridItem = css(itemstyle)
 
@@ -225,10 +233,9 @@ const TextInputPositioning = css({
   boxSizing: 'border-box',
   maxHeight: '10em'
 })
-export const TextInput = styled.input(props => [
-  props.theme.typography.body,
-  TextInputPositioning,
-  {
+
+export const [TextInput, TextAddon] = [
+  ['input', () => ({
     display: 'block',
     background: 'transparent',
     border: 0,
@@ -241,21 +248,20 @@ export const TextInput = styled.input(props => [
     'textarea&': {
       height: '10em'
     }
-  }
-])
-
-export const TextAddon = styled.div(props => [
-  props.theme.typography.body,
-  TextInputPositioning,
-  {
+  })],
+  ['div', ({ theme }) => ({
     position: 'absolute',
     top: 0,
     left: 0,
-    opacity: props.theme.focused ? 0 : 0.5,
+    opacity: theme.focused ? 0 : 0.5,
     pointerEvents: 'none',
     whiteSpace: 'nowrap'
-  }
-])
+  })]
+].map(([tag, styles]) => styled[tag](props => [
+  props.theme.typography.body,
+  TextInputPositioning,
+  styles(props)
+]))
 
 export const TextMeasure = styled.span({
   opacity: 0

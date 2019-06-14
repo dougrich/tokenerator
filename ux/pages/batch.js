@@ -4,7 +4,7 @@ import Header from '../components/header'
 import { connect, Provider } from 'react-redux'
 import styled from '@emotion/styled'
 import store, { dispatchers } from '../src/batch-state-machine'
-import { TextField, SelectField, RangeField } from '../components/field'
+import { TextField, SelectField, RangeField, PixelField } from '../components/field'
 import { NavigationLinkStyled } from '../components/styled'
 
 const ActionRow = styled.div({
@@ -92,11 +92,7 @@ class BatchOptionFrom extends React.PureComponent {
           />
         )}
         {type === 'ZIP' && (
-          <RangeField
-            label='Image Size'
-            max={1400}
-            min={70}
-            step={5}
+          <PixelField
             value={size}
             onChange={onChange('size')}
           />
@@ -156,18 +152,14 @@ export default class Batch extends React.PureComponent {
   render () {
     const { ids } = this.props
     return (
-      <Page>
-        <AppHead title='Batch' />
-        <Header />
-        <Provider store={store}>
-          <BatchItemContainer>
-            {ids.map((id) => <ConnectedBatchItem id={id} key={id} />)}
-            <ConnectedForm/>
-            <ActionRow>
-              <ConnectedDownload ids={ids}>Download</ConnectedDownload>
-            </ActionRow>
-          </BatchItemContainer>
-        </Provider>
+      <Page title='Batch' store={store}>
+        <BatchItemContainer>
+          {ids.map((id) => <ConnectedBatchItem id={id} key={id} />)}
+          <ConnectedForm/>
+          <ActionRow>
+            <ConnectedDownload ids={ids}>Download</ConnectedDownload>
+          </ActionRow>
+        </BatchItemContainer>
       </Page>
     )
   }

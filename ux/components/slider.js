@@ -17,39 +17,61 @@ export const toPercentage = (v) => {
   return `${Math.floor(v * 1000) / 10}%`
 }
 
+const keyoffset = (keycode, x, y, step, m) => ({
+  37: () => ({ x: m * -step.x + x }),
+  38: () => ({ y: m * -step.y + y }),
+  39: () => ({ x: m * step.x + x }),
+  40: () => ({ y: m * step.y + y })
+}[keycode])
+
 export default class Slider extends React.PureComponent {
   constructor (props, context) {
     super(props, context)
     this.state = {
       theme: { focused: false }
     }
+    this.touchEvents = {
+      'touchend': this.cleanup,
+      'touchmove': this.onTouchMove
+    }
+    this.mouseEvents = {
+      'mouseup': this.cleanup,
+      'mousemove': this.onMouseMove
+    }
   }
   getd = (page, bound, full) => {
     return (page - bound) / full
   }
 
+  bound = (d, k) => d[k] === null
+    ? this.props[k]
+    : Math.min(1, Math.max(0, d[k]))
+
   onChange = (d) => {
     this.props.onChange({
-      x: Math.min(1, Math.max(0, d.x)),
-      y: Math.min(1, Math.max(0, d.y))
+      x: this.bound(d, 'x'),
+      y: this.bound(d, 'y')
     })
   }
 
+  modifyDocumentListeners = (events, method) => {
+    if (!this.props.isStatic) {
+      for (const key in events) {
+        document[method](key, events[key])
+      }
+    }
+  }
+
   cleanup = () => {
-    document.removeEventListener('mouseup', this.cleanup)
-    document.removeEventListener('mousemove', this.onMouseMove)
-    document.removeEventListener('touchend', this.cleanup)
-    document.removeEventListener('touchmove', this.onTouchMove)
+    this.modifyDocumentListeners(this.mouseEvents, 'removeEventListener')
+    this.modifyDocumentListeners(this.touchEvents, 'removeEventListener')
   }
 
   onTouchStart = (e) => {
     this.bounded = e.target.getBoundingClientRect()
+    this.onMouseMove(e)
     e.target.focus()
-    this.onTouchMove(e)
-    if (!this.props.isStatic) {
-      document.addEventListener('touchend', this.cleanup)
-      document.addEventListener('touchmove', this.onTouchMove)
-    }
+    this.modifyDocumentListeners(this.touchEvents, 'addEventListener')
   }
 
   onTouchMove = (e) => {
@@ -59,10 +81,7 @@ export default class Slider extends React.PureComponent {
   onMouseDown = (e) => {
     this.bounded = e.target.getBoundingClientRect()
     this.onMouseMove(e)
-    if (!this.props.isStatic) {
-      document.addEventListener('mouseup', this.cleanup)
-      document.addEventListener('mousemove', this.onMouseMove)
-    }
+    this.modifyDocumentListeners(this.mouseEvents, 'addEventListener')
   }
 
   onMouseMove = (e) => {
@@ -79,20 +98,10 @@ export default class Slider extends React.PureComponent {
   onKeyDown = (e) => {
     const { x, y, step } = this.props
     const m = e.shiftKey ? 10 : 1
-    switch (e.keyCode) {
-      case 37:
-        this.onChange({ x: x - step.x * m, y })
-        break
-      case 38:
-        this.onChange({ x, y: y - step.y * m })
-        break
-      case 39:
-        this.onChange({ x: x + step.x * m, y })
-        break
-      case 40:
-        this.onChange({ x, y: y + step.y * m })
-        break
-    }
+    const offset = keyoffset(e.keyCode, x, y, step, m)
+    if (!offset) return
+    const d = offset()
+    this.onChange(d)
   }
 
   updateTheme = (update) => {

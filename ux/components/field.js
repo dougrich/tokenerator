@@ -3,6 +3,7 @@ import Toggle from './slider-toggle'
 import Select from './select'
 import styled from '@emotion/styled'
 import { Label, TextContainer, TextInput, TextInputUnderline, TextAddon, TextMeasure, Row, TextAreaLines } from './styled'
+import withAttrs from '../src/with-attrs'
 
 const RangeFieldLabel = styled.div({
   display: 'flex',
@@ -75,6 +76,13 @@ export class RangeField extends React.PureComponent {
     )
   }
 }
+
+export const PixelField = withAttrs({
+  max: 1400,
+  min: 70,
+  step: 5,
+  label: 'Image Size'
+})(RangeField)
 
 function withLabel (Component) {
   return class extends React.PureComponent {

@@ -1,36 +1,22 @@
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
 import { SET_LABEL, SET_COUNT, SET_TYPE, SET_OPTION, CLEAR } from './actions'
+import valueReducer from '../reducer-value'
+import keyvalueReducer from '../reducer-keyvalue'
 
-const labels = createReducer(
-  {},
+const clearable = (others, value) => createReducer(
+  value(),
   {
-    [SET_LABEL]: (set, { id, value }) => ({
-      ...set,
-      [id]: value
-    }),
-    [CLEAR]: () => ({})
+    ...others,
+    [CLEAR]: value
   }
 )
 
-const count = createReducer(
-  {},
-  {
-    [SET_COUNT]: (set, { id, value }) => ({
-      ...set,
-      [id]: value
-    }),
-    [CLEAR]: () => ({})
-  }
-)
+const labels = clearable({ [SET_LABEL]: keyvalueReducer }, () => ({}))
 
-const type = createReducer(
-  'ZIP',
-  {
-    [SET_TYPE]: (_, { value }) => value,
-    [CLEAR]: () => 'ZIP'
-  }
-)
+const count = clearable({ [SET_COUNT]: keyvalueReducer }, () => ({}))
+
+const type = clearable({ [SET_TYPE]: valueReducer }, () => 'ZIP')
 
 const options = createReducer(
   {
@@ -39,10 +25,7 @@ const options = createReducer(
     size: 140
   },
   {
-    [SET_OPTION]: (state, { key, value }) => ({
-      ...state,
-      [key]: value
-    })
+    [SET_OPTION]: keyvalueReducer
   }
 )
 

@@ -12,9 +12,9 @@ export const SAVE_TOKEN_START = 'save-token-start'
 export const SAVE_TOKEN_END = 'save-token-end'
 
 export const dispatchers = {
-  SET_COLOR: color => (dispatch, getState) => {
+  SET_COLOR: value => (dispatch, getState) => {
     const { active } = getState()
-    dispatch({ type: SET_COLOR, color, active })
+    dispatch({ type: SET_COLOR, value, active })
   },
   SET_CHANNEL: (index, channel) => (dispatch, getState) => {
     const { parts } = getState()
@@ -30,8 +30,8 @@ export const dispatchers = {
     dispatch({ type: REMOVE_PART, index, isActive: active && active.index === index })
   },
   ADD_PART: (id, { z, slots, channels }) => ({ type: ADD_PART, id, z, slots, channels }),
-  SET_TITLE: (event) => ({ type: SET_TITLE, event }),
-  SET_DESCRIPTION: (event) => ({ type: SET_DESCRIPTION, event }),
+  SET_TITLE: (event) => ({ type: SET_TITLE, value: event.target.value }),
+  SET_DESCRIPTION: (event) => ({ type: SET_DESCRIPTION, value: event.target.value }),
   SET_PRIVATE: (value) => ({ type: SET_PRIVATE, value }),
   SAVE_TOKEN: () => async (dispatch, getState) => {
     const {

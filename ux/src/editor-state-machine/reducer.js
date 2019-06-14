@@ -2,13 +2,12 @@ import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TIT
 import Color from 'color'
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
+import valueReducer from '../reducer-value'
 
 const currentColor = createReducer(
   null,
   {
-    [SET_COLOR]: (_, { color }) => {
-      return color
-    },
+    [SET_COLOR]: valueReducer,
     [SET_CHANNEL]: (_, { activeColor }) => {
       return Color(activeColor).hsl()
     },
@@ -31,31 +30,16 @@ const active = createReducer(
   }
 )
 
-const title = createReducer(
-  '',
-  {
-    [SET_TITLE]: (_, { event }) => event.target.value
-  }
-)
+const title = createReducer('', { [SET_TITLE]: valueReducer })
 
-const description = createReducer(
-  '',
-  {
-    [SET_DESCRIPTION]: (_, { event }) => event.target.value
-  }
-)
+const description = createReducer('', { [SET_DESCRIPTION]: valueReducer })
 
-const isPrivate = createReducer(
-  false,
-  {
-    [SET_PRIVATE]: (_, { value }) => value
-  }
-)
+const isPrivate = createReducer(false, { [SET_PRIVATE]: valueReducer })
 
 const parts = createReducer(
   [],
   {
-    [SET_COLOR]: (current, { active, color }) => {
+    [SET_COLOR]: (current, { active, value }) => {
       if (!active) return current
       const { index, channel } = active
       const updated = current.slice()
@@ -63,7 +47,7 @@ const parts = createReducer(
       part.channels = {
         ...part.channels,
         [channel]: {
-          color: color.hex().toString()
+          color: value.hex().toString()
         }
       }
       return updated
