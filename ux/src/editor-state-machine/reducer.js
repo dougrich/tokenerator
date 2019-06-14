@@ -1,20 +1,7 @@
 import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE } from './actions'
 import Color from 'color'
 import { combineReducers } from 'redux'
-
-/**
- * createReducer creates a map reducer
- * taken from https://redux.js.org/recipes/reducing-boilerplate#generating-reducers
- */
-function createReducer (initial, handlers) {
-  return function reducer (state = initial, action) {
-    if (handlers.hasOwnProperty(action.type)) {
-      return handlers[action.type](state, action)
-    } else {
-      return state
-    }
-  }
-}
+import createReducer from '../create-reducer'
 
 const currentColor = createReducer(
   null,

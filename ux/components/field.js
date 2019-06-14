@@ -1,5 +1,6 @@
 import HorizontalSlider from './slider-horizontal'
 import Toggle from './slider-toggle'
+import Select from './select'
 import styled from '@emotion/styled'
 import { Label, TextContainer, TextInput, TextInputUnderline, TextAddon, TextMeasure, Row, TextAreaLines } from './styled'
 
@@ -75,53 +76,37 @@ export class RangeField extends React.PureComponent {
   }
 }
 
-export class TextField extends React.PureComponent {
-  render () {
-    const {
-      label,
-      ...rest
-    } = this.props
-    return (
-      <Row>
-        <Label>{label}</Label>
-        <TextContainer>
-          <TextInput {...rest} />
-          <TextInputUnderline />
-        </TextContainer>
-      </Row>
-    )
+function withLabel (Component) {
+  return class extends React.PureComponent {
+    render () {
+      const {
+        label,
+        ...rest
+      } = this.props
+      return (
+        <Row>
+          <Label>{label}</Label>
+          <Component {...rest} />
+        </Row>
+      )
+    }
   }
 }
 
-export class TextAreaField extends React.PureComponent {
-  render () {
-    const {
-      label,
-      ...rest
-    } = this.props
-    return (
-      <Row>
-        <Label>{label}</Label>
-        <TextContainer>
-          <TextInput as='textarea' {...rest} />
-          <TextAreaLines />
-        </TextContainer>
-      </Row>
-    )
-  }
-}
+export const TextField = withLabel(props => (
+  <TextContainer>
+    <TextInput {...props} />
+    <TextInputUnderline />
+  </TextContainer>
+))
 
-export class ToggleField extends React.PureComponent {
-  render () {
-    const {
-      label,
-      ...rest
-    } = this.props
-    return (
-      <Row>
-        <Label>{label}</Label>
-        <Toggle {...rest} />
-      </Row>
-    )
-  }
-}
+export const TextAreaField = withLabel(props => (
+  <TextContainer>
+    <TextInput as='textarea' {...props} />
+    <TextAreaLines />
+  </TextContainer>
+))
+
+export const ToggleField = withLabel(Toggle)
+
+export const SelectField = withLabel(Select)

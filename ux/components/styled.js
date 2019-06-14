@@ -155,36 +155,7 @@ export const Grid = styled.div`
   ${gridstyle}
 `
 
-export const TokenPreviewContainer = styled.div`
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  ${itemstyle}
-
-  &:hover>div, &:focus>div {
-    transform: translate(-50%, 0%);
-    background-color: rgba(0,0,0,0.75);
-  }
-`
-
-export const TokenPreviewTitle = styled.div`
-  position: absolute;
-  pointer-events: none;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  font-size: 2em;
-  color: white;
-  background-color: transparent;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 100%;
-  text-align: center;
-  transform: translate(0%, 0%);
-  transition: ${timing.navigation} transform, ${timing.navigation} background-color;
-  ${typography.title}
-`
+export const GridItem = css(itemstyle)
 
 export const DefaultText = styled.div`
   font-style: italic;
@@ -192,57 +163,8 @@ export const DefaultText = styled.div`
   opacity: 0.8;
 `
 
-export const TokenPreviewImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-`
-
 export const TokenTitle = styled.h2`
   ${typography.title}
-`
-
-export const Button = styled.button`
-  ${typography.body}
-  position: relative;
-  background-color: black;
-  border-radius: 2px;
-  padding: 1em;
-  width: 6em;
-  color: white;
-  text-decoration: none;
-  transition: ${timing.navigation} color;
-  display: inline-block;
-  text-align: center;
-  margin: 1em;
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    right: 0;
-    height: ${measure.border};
-    background-color: white;
-    transform: scale(0.5, 1);
-    transition: ${timing.navigation} transform, ${timing.navigation} background-color;
-  }
-
-  &:hover, &:focus {
-    color: ${colors.accent};
-  }
-
-  &:hover:after, &:focus:after {
-    transform: scale(0.75, 1);
-    background-color: ${colors.accent};
-  }
-
-  &:focus {
-    outline: ${measure.border} dashed ${colors.accent};
-  }
 `
 
 export const Label = styled.label(props => [
@@ -266,7 +188,7 @@ export const TextInputUnderline = styled.div({
   transform: 'scale(0.5, 1)',
   transformOrigin: 'bottom left',
   transition: '200ms transform',
-  'input:hover+&,input:focus+&,textarea:hover+&,textarea:focus+&': {
+  'input:hover+&,input:focus+&,textarea:hover+&,textarea:focus+&,select:hover+&,select:focus+&': {
     transform: 'scale(1,1)',
     backgroundColor: '#D00'
   }
@@ -299,7 +221,8 @@ export const TextAreaLines = styled.div({
 const TextInputPositioning = css({
   padding: '0.5em',
   textAlign: 'left',
-  width: 'calc(100% - 1em)!important',
+  width: '100%',
+  boxSizing: 'border-box',
   maxHeight: '10em'
 })
 export const TextInput = styled.input(props => [
@@ -354,3 +277,50 @@ export const Flex = styled.div({
   maxWidth: '1200px',
   margin: 'auto'
 })
+
+export const Action = styled.button(props => [
+  props.theme.typography.body,
+  {
+    display: 'inline-block',
+    position: 'relative',
+    background: 'transparent',
+    textDecoration: 'none',
+    color: 'black',
+    cursor: 'pointer',
+    border: 0,
+    margin: '0em 1em',
+    padding: '0em 0.5em',
+    '&:after': {
+      content: "''",
+      position: 'absolute',
+      bottom: '-2px',
+      left: 0,
+      right: 0,
+      height: '2px',
+      backgroundColor: 'black',
+      transform: 'scale(0.5,1)',
+      transition: '200ms transform, 200ms background-color'
+    },
+    '&:hover,&:focus': {
+      color: '#D00'
+    },
+    '&:hover:after,&:focus:after': {
+      transform: 'scale(1,1)',
+      backgroundColor: '#D00'
+    },
+    '&:focus': {
+      outline: '2px dashed #D00'
+    }
+  }
+])
+
+export const ActionLink = (props) => (
+  <Link
+    {...props}
+    passHref
+  >
+    <Action as='a'>
+      {props.children}
+    </Action>
+  </Link>
+)

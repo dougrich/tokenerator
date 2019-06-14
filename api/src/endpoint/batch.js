@@ -85,7 +85,7 @@ function loadBatch(bucket) {
       const body = await requestFile.download()
       const request = JSON.parse(body.toString())
       const resultFile = bucket.file(request.result)
-      const resultDone = await resultFile.exists()
+      const [resultDone] = await resultFile.exists()
       if (!resultDone) {
         req.params.result = ''
         res.status(202)
@@ -140,6 +140,7 @@ function batch(bucketName, topic, canonical) {
     await publisher.publish(Buffer.from(storedname))
     res.status(201)
     res.setHeader('Location', canonical.batch(batchid))
+    res.setHeader('X-Batch-ID', batchid)
     res.end()
   })
 
