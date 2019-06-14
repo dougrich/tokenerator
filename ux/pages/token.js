@@ -6,7 +6,7 @@ import { DefaultTokenTitle, DefaultTokenDescription } from '../src/constants'
 import { Container, TokenTitle, TokenDescription, DefaultText, NavigationLinkStyled, Navigation } from '../components/styled'
 import Page from '../components/page'
 import HorizontalSlider from '../components/slider-horizontal';
-import { RangeField } from '../components/field';
+import { RangeField, PixelField } from '../components/field';
 
 export default class Browse extends React.PureComponent {
   static getInitialProps(context) {
@@ -60,18 +60,12 @@ export default class Browse extends React.PureComponent {
     const { token } = this.props
     const title = token.title || DefaultTokenTitle
     return (
-      <Page>
-        <AppHead title={title} />
-        <Header />
+      <Page title={title}>
         <Container>
           {this.renderTitle()}
           {this.renderDescription()}
           <img src={`/api/token/${token.id}.svg`}/>
-          <RangeField
-            label='Size'
-            max={1400}
-            min={70}
-            step={5}
+          <PixelField
             value={this.state.size}
             onChange={this.onSizeChange}
           />

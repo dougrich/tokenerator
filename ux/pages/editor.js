@@ -94,32 +94,28 @@ export default class extends React.Component {
 
   render() {
     return (
-      <Page>
-        <AppHead title='Editor' />
-        <Header />
+      <Page title='Editor' store={store}>
         <HiddenSvg>
           <ColorPicker.Defs />
         </HiddenSvg>
-        <Provider store={store}>
+        <FlexRow>
+          <FlexColumn>
+            <ConnectedTitle label='Title'/>
+            <ConnectedDescription label='Description'/>
+            <ConnectedIsPrivate label='Private'/>
+            <ActionRow>
+              <ConnectedSave>
+                Save
+              </ConnectedSave>
+            </ActionRow>
+          </FlexColumn>
+          <ConnectedDisplay />
           <FlexRow>
-            <FlexColumn>
-              <ConnectedTitle label='Title'/>
-              <ConnectedDescription label='Description'/>
-              <ConnectedIsPrivate label='Private'/>
-              <ActionRow>
-                <ConnectedSave>
-                  Save
-                </ConnectedSave>
-              </ActionRow>
-            </FlexColumn>
-            <ConnectedDisplay />
-            <FlexRow>
-              <ConnectedColorPicker/>
-              <ConnectedTokenParts/>
-            </FlexRow>
+            <ConnectedColorPicker/>
+            <ConnectedTokenParts/>
           </FlexRow>
-          <ConnectedPartGrid />
-        </Provider>
+        </FlexRow>
+        <ConnectedPartGrid />
       </Page>
     )
   }

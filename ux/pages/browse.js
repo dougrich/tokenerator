@@ -91,13 +91,9 @@ export default class Browse extends React.PureComponent {
   render() {
     const { tokens } = this.props
     return (
-      <Page>
-        <Provider store={store}>
-          <AppHead title='Browse' />
-          <Header />
-          <ConnectedActionPanel />
-          <ConnectedBrowseGrid tokens={tokens} />
-        </Provider>
+      <Page title='Browse' store={store}>
+        <ConnectedActionPanel />
+        <ConnectedBrowseGrid tokens={tokens} />
       </Page>
     )
   }

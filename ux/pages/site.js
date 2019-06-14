@@ -12,8 +12,6 @@ export default class Site extends React.PureComponent {
   render() {
     return (
       <Page>
-        <AppHead />
-        <Header />
         <Container>
           <Article dangerouslySetInnerHTML={{ __html: SiteDetails }} />
         </Container>

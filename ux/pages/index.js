@@ -5,8 +5,6 @@ import Page from '../components/page'
 function Home () {
   return (
     <Page>
-      <AppHead />
-      <Header />
     </Page>
   )
 }
