@@ -57,10 +57,10 @@ export default class Browse extends React.PureComponent {
   onSizeChange = newSize => this.setState({ size: newSize })
 
   render() {
-    const { token } = this.props
+    const { token, user } = this.props
     const title = token.title || DefaultTokenTitle
     return (
-      <Page title={title}>
+      <Page title={title} user={user}>
         <Container>
           {this.renderTitle()}
           {this.renderDescription()}

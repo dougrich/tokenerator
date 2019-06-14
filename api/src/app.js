@@ -7,7 +7,8 @@ const config = require('./config')
 const canonical = {
   token: (id) => `/token/${id}`,
   account: () => `/account`,
-  batch: (id) => `/batch/${id}`
+  batch: (id) => `/batch/${id}`,
+  logout: () => `/logout`
 }
 
 function app() {

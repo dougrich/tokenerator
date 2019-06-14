@@ -47,7 +47,7 @@ export const Title = styled.h1(props => [
 ])
 
 export const Container = styled.div`
-  max-width: 500px;
+  max-width: 800px;
   width: 100%;
   margin: auto;
 `
@@ -61,7 +61,7 @@ export const Header = styled.header`
 export const NavigationLinkStyled = styled.a`
   ${typography.title}
   width: 100%;
-  max-width: 6em;
+  max-width: 8em;
   cursor: pointer;  
   font-size: 1.5em;
   color: ${colors.borderblack};

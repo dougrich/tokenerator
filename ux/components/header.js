@@ -3,7 +3,8 @@ import {
   Title,
   Header,
   Navigation,
-  NavigationLink
+  NavigationLink,
+  NavigationLinkStyled
 } from './styled'
 
 /**
@@ -23,9 +24,21 @@ import {
  * - consistent experience anchor across multiple pages and backgrounds
  */
 export default class extends React.PureComponent {
+  onSignIn = () => {
+    const newwindow = window.open('/login', 'Log In', 'height=600,width=800')
+    if (window.focus) { newwindow.focus() }
+  }
+  onSignOut = () => {
+    const newwindow = window.open('/api/account/logout', 'Log Out', 'height=600,width=800')
+    if (window.focus) { newwindow.focus() }
+  }
   render () {
+    const {
+      user,
+      ...rest
+    } = this.props
     return (
-      <Header {...this.props}>
+      <Header {...rest}>
         <Container>
           <Title>
               Token Builder
@@ -43,6 +56,17 @@ export default class extends React.PureComponent {
             <NavigationLink href='/site'>
                 Site
             </NavigationLink>
+            {user
+              ? (
+                <NavigationLinkStyled onClick={this.onSignOut}>
+                  Sign Out
+                </NavigationLinkStyled>
+              )
+              : (
+                <NavigationLinkStyled onClick={this.onSignIn}>
+                  Sign In
+                </NavigationLinkStyled>
+              )}
           </Navigation>
         </Container>
       </Header>

@@ -108,6 +108,14 @@ function accountEndpoint(canonical) {
     )
   }
 
+  router.use(
+    `/logout`,
+    (req, res, next) => {
+      res.clearCookie('auth')
+      res.redirect(302, canonical.logout())
+    }
+  )
+
   return router
 }
 

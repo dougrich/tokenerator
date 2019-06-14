@@ -1,5 +1,3 @@
-import AppHead from '../components/head'
-import Header from '../components/header'
 import styled from '@emotion/styled'
 import { SelectField } from '../components/field'
 import { Grid, Action, ActionLink } from '../components/styled'
@@ -89,9 +87,9 @@ export default class Browse extends React.PureComponent {
       })
   }
   render() {
-    const { tokens } = this.props
+    const { tokens, user } = this.props
     return (
-      <Page title='Browse' store={store}>
+      <Page title='Browse' store={store} user={user}>
         <ConnectedActionPanel />
         <ConnectedBrowseGrid tokens={tokens} />
       </Page>
