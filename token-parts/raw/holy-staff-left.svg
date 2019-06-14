@@ -200,7 +200,7 @@
        sodipodi:nodetypes="cscccsc" />
     <path
        sodipodi:type="arc"
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="path6461"
        sodipodi:cx="-342"
        sodipodi:cy="305.10001"

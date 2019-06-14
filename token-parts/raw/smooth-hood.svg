@@ -28,7 +28,7 @@
        id="mask3912-5">
       <path
          inkscape:connector-curvature="0"
-         style="fill:url(#radialGradient3916-7);fill-opacity:1;stroke:none"
+         style="fill:url(#linearGradient6505);fill-opacity:1;stroke:none"
          d="m 35.531199,25.012229 c -2.30048,0.104248 -4.638168,1.00412 -6.718788,1.970141 -1.234898,0.573173 -2.593215,1.165481 -3.874966,1.876074 -1.489803,1.506915 -2.658771,3.364648 -3.343767,5.315605 -0.641508,1.827142 -1.074236,3.895309 -1.093724,5.909885 0.756378,1.761601 1.853574,3.445554 2.906244,4.909195 1.66931,1.748505 3.393116,3.33089 5.156195,4.721465 4.338439,1.574783 8.959509,2.694543 8.968758,5.222082 4.932933,1.878514 10.012526,2.184854 15.031273,0.531483 -0.743657,-3.42741 5.412605,-4.530164 10.374989,-6.535187 0.0028,0.0028 0.02567,0.01011 0.03118,7.1e-5 1.224144,-1.169838 2.432518,-2.474662 3.624983,-3.939787 1.034603,-1.438432 2.119899,-3.086387 2.874976,-4.815376 0.01044,-2.040031 -0.411699,-4.150031 -1.06247,-6.003732 -0.684943,-1.951092 -1.853939,-3.808668 -3.34375,-5.315591 -1.281779,-0.710578 -0.827534,-3.085184 -2.062453,-3.658393 -2.774143,-1.288087 -5.165217,-0.677918 -8.14744,-1.5e-5 1.812527,-7e-5 -2.579809,1.788981 -2.652527,1.799983 -2.616232,0.536334 -5.571712,0.16646 -7.200052,1.795903 -1.628459,-1.62945 -4.352588,-3.059573 -6.968777,-3.595879 -0.07297,-0.01075 -0.143897,0.01704 -0.218765,1.5e-5 -0.745531,-0.169522 -1.514411,-0.222527 -2.281254,-0.187794 z"
          id="path3914-1"
          sodipodi:nodetypes="cccccccccccccsccccccccc" />
@@ -54,21 +54,22 @@
        cy="152.1223"
        fx="-225"
        fy="152.1223"
-       r="25.450468" />
+       r="25.450468"/>
     <linearGradient
-       id="linearGradient6505">
+       id="linearGradient6505"
+       gradientTransform="rotate(90deg)">
       <stop
          id="stop6507"
          offset="0"
-         style="stop-color:#000000;stop-opacity:0;" />
+         style="stop-color:#FFFFFF;stop-opacity:0.8;" />
       <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="0.28869519"
-         id="stop6509" />
+         id="stop6511"
+         offset="0.8"
+         style="stop-color:#FFFFFF;stop-opacity:0;" />
       <stop
          id="stop6511"
          offset="1"
-         style="stop-color:#808080;stop-opacity:1;" />
+         style="stop-color:#FFFFFF;stop-opacity:0;" />
     </linearGradient>
   </defs>
   <sodipodi:namedview
@@ -127,7 +128,7 @@
      style="display:inline"
      class="shading">
     <rect
-       style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect3105"
        width="66.927963"
        height="39.088982"

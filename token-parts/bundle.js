@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 const cheerio = require('cheerio')
+const shortid = require('shortid')
 
 const SVGO = require('svgo')
 
@@ -52,6 +53,8 @@ async function processFile(filename) {
       layers.push(className.toString())
       $(`g.${className} *`).each((i, e) => {
         // pull fill out of style
+        if (e.attribs['class'] === 'ignored' || e.tagName === 'g') return
+
         let fill = ''
         if (e.attribs['fill']) {
           fill = e.attribs['fill']
@@ -61,11 +64,15 @@ async function processFile(filename) {
           for (const decl of decls) {
             if (decl.indexOf('fill:') === 0) {
               fill = decl.slice('fill:'.length)
+              if (fill === 'none') return
               e.attribs['style'] = style.replace(decl, '').replace(';;', '').replace(/^\;/gi, '')
               break
             }
           }
         }
+
+        if (fill === 'none') return
+
         defaults.channels[className] = { color: fill }
         e.attribs['fill'] = '${context[\'' + className + '\'].color}'
 
@@ -76,7 +83,14 @@ async function processFile(filename) {
   const done = $('body').html()
   const svgo = new SVGO({
     plugins: [
-      { cleanupAttrs: false }
+      { cleanupAttrs: false },
+      {
+        cleanupIDs: {
+          remove: true,
+          minify: true,
+          prefix: 'd-' + shortid() + '-'
+        }
+      }
     ]
   })
   
