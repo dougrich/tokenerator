@@ -1,7 +1,8 @@
 import AppHead from '../components/head'
 import Header from '../components/header'
 import styled from '@emotion/styled'
-import { Grid, NavigationLinkStyled } from '../components/styled'
+import { SelectField } from '../components/field'
+import { Grid, Action, ActionLink } from '../components/styled'
 import { getCookieProps } from '../src/common'
 import api from '../src/api'
 import TokenPreview from '../components/token-preview';
@@ -9,7 +10,6 @@ import { connect, Provider } from 'react-redux'
 import store, { dispatchers } from '../src/browse-state-machine'
 import Page from '../components/page'
 import { bindActionCreators } from 'redux';
-import Link from 'next/link'
 
 
 class BrowseGrid extends React.PureComponent {
@@ -34,7 +34,7 @@ class BrowseGrid extends React.PureComponent {
 const ActionRow = styled.div({
   width: '100%',
   display: 'flex',
-  justifyContent: 'space-around',
+  justifyContent: 'center',
   marginBottom: '1em'
 })
 
@@ -53,18 +53,29 @@ const ConnectedActionPanel = connect(
     pinned: state.pinned
   }),
   dispatch => bindActionCreators({
-    onPin: dispatchers.PIN_TOKEN,
-    onUnpin: dispatchers.UNPIN_TOKEN
+    onClear: dispatchers.CLEAR
   }, dispatch)
-)(({ pinned }) => (
-  <ActionRow>
-    <div>
-      <span>{pinned.length} pinned</span>
-      <Link href={`/batch?ids=${pinned.join('+')}`} passHref>
-        <NavigationLinkStyled>Download</NavigationLinkStyled>
-      </Link>
-    </div>
-  </ActionRow>
+)(({ pinned, onClear }) => (
+  <React.Fragment>
+    <ActionRow>
+      <div>{pinned.length} pinned</div>
+    </ActionRow>
+    <ActionRow>
+      <Action onClick={onClear} >Clear</Action>
+      <ActionLink href={`/batch?ids=${pinned.join('+')}`}>
+        Download
+      </ActionLink>
+    </ActionRow>
+    <ActionRow>
+      <SelectField
+        label='Filter'
+        options={[
+          { value: 'all', label: 'All Public Tokens' },
+          { value: 'mine', label: 'My Tokens' }
+        ]}
+      />
+    </ActionRow>
+  </React.Fragment>
 ))
 
 export default class Browse extends React.PureComponent {

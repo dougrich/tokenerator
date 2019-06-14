@@ -7,6 +7,7 @@ This describes scenarios and high level flows that need to be able to be accompl
   - [x] I can set colors from a color picker
   - [x] I can set colors from a set of logical color choices
   - [ ] I can select a color by eyedropping a relevant swatch
+  - [ ] I can set multiple colors at once
   - [x] I can adjust colors and see the results immediately
     - [ ] I can adjust the hue of a _set_ of colors for fast color shifting
   - [x] I can add parts
@@ -34,9 +35,11 @@ This describes scenarios and high level flows that need to be able to be accompl
     - [x] differentiate with letters
   - [x] I can download the set as a .zip
   - [x] I can download or print the set as a .pdf
+- [ ] I can click a part and start editing colors for it
 
 Additional goals:
 
+- [ ] When I add a new part, it becomes the active one for color changes
 - [ ] I can undo/redo actions in the token editor
 - [ ] I can see the progress of my set to binary conversion
 - [ ] I can save my own color selections
@@ -50,3 +53,4 @@ Additional goals:
   - [ ] Add transforms to parts
   - [ ] I can adjust the z-ordering of parts
 - [ ] Documentation/tutorials
+- [ ] I can update title/description on my own tokens

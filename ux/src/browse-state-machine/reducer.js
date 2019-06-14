@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
-import { PIN_TOKEN, UNPIN_TOKEN } from './actions'
+import { PIN_TOKEN, UNPIN_TOKEN, CLEAR } from './actions'
 
 const pinned = createReducer(
   [],
@@ -22,7 +22,8 @@ const pinned = createReducer(
         }
       }
       return set
-    }
+    },
+    [CLEAR]: () => ([])
   }
 )
 

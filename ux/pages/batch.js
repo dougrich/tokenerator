@@ -86,7 +86,7 @@ class BatchOptionFrom extends React.PureComponent {
         />
         {type === 'PDF' && (
           <TextField
-            label='Name'
+            label='Document Title'
             value={name}
             onChange={onChange('name')}
           />

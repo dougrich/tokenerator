@@ -277,3 +277,50 @@ export const Flex = styled.div({
   maxWidth: '1200px',
   margin: 'auto'
 })
+
+export const Action = styled.button(props => [
+  props.theme.typography.body,
+  {
+    display: 'inline-block',
+    position: 'relative',
+    background: 'transparent',
+    textDecoration: 'none',
+    color: 'black',
+    cursor: 'pointer',
+    border: 0,
+    margin: '0em 1em',
+    padding: '0em 0.5em',
+    '&:after': {
+      content: "''",
+      position: 'absolute',
+      bottom: '-2px',
+      left: 0,
+      right: 0,
+      height: '2px',
+      backgroundColor: 'black',
+      transform: 'scale(0.5,1)',
+      transition: '200ms transform, 200ms background-color'
+    },
+    '&:hover,&:focus': {
+      color: '#D00'
+    },
+    '&:hover:after,&:focus:after': {
+      transform: 'scale(1,1)',
+      backgroundColor: '#D00'
+    },
+    '&:focus': {
+      outline: '2px dashed #D00'
+    }
+  }
+])
+
+export const ActionLink = (props) => (
+  <Link
+    {...props}
+    passHref
+  >
+    <Action as='a'>
+      {props.children}
+    </Action>
+  </Link>
+)

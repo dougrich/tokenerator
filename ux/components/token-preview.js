@@ -25,7 +25,9 @@ const TokenPreviewContainer = styled.div([
       transform: 'scale(0.95,0.95)'
     },
     '&:hover>button, &:focus>button': {
-      opacity: 1
+      opacity: 1,
+      color: 'black',
+      backgroundColor: 'white'
     }
   },
   GridItem
@@ -65,14 +67,29 @@ const TokenPin = styled.button(props => [
   props.theme.typography.body,
   {
     position: 'absolute',
-    top: '1em',
-    right: '1em',
+    top: '0em',
+    right: '0em',
+    padding: '0.5em',
+    width:'20%',
+    textAlign: 'center',
     transition: '200ms opacity',
-    borderRadius: '100%',
-    backgroundColor: props.pinned ? '#D00' : 'transparent',
-    color: props.pinned ? 'white' : 'black',
+    backgroundColor: props.pinned ? 'black!important' : 'transparent',
+    color: props.pinned ? 'white!important' : 'black',
     border: 0,
-    opacity: props.pinned ? 1 : 0.5
+    opacity: props.pinned ? 1 : 0,
+    border: '0.25em solid white',
+    borderTopRightRadius: '1em',
+    borderBottomLeftRadius: '1em',
+    cursor: 'pointer',
+    transition: '200ms background-color, 200ms color, 200ms opacity',
+    '&:hover, &:focus': {
+      opacity: 1,
+      backgroundColor: '#D00!important',
+      color: 'white!important'
+    },
+    '&:focus': {
+      outline: '2px dashed #D00'
+    }
   }
 ])
 
@@ -95,7 +112,9 @@ export default class TokenPreview extends React.PureComponent {
       <Link href={`/token?id=${id}`} as={`/token/${id}`} passHref>
         <TokenPreviewContainer as='a'>
           <TokenPreviewImage src={`/api/token/${id}.svg`} />
-          <TokenPin pinned={isPinned} onClick={this.onClick}>Pin</TokenPin>
+          <TokenPin pinned={isPinned} onClick={this.onClick}>
+            {isPinned ? 'Pinned' : 'Pin'}
+          </TokenPin>
           {title && (
             <TokenPreviewTitle>
               {title}
