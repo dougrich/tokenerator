@@ -22,9 +22,9 @@ This describes scenarios and high level flows that need to be able to be accompl
 - [x] I can browse existing tokens
   - [x] only the ones that aren't marked as 'private'
   - [ ] only my own tokens, regardless of private or public
-- [ ] I can sign in
-- [ ] I can sign out
-- [ ] I can see that I am signed in
+- [x] I can sign in
+- [x] I can sign out
+- [x] I can see that I am signed in
 - [x] I can look at the details for a specific token
 - [x] I can download a specific token as a PNG at a specific resolution
 - [ ] I can fork a token to make a new token
@@ -40,6 +40,8 @@ This describes scenarios and high level flows that need to be able to be accompl
 Additional goals:
 
 - [ ] When I add a new part, it becomes the active one for color changes
+- [x] I can sign in without losing progress on token editor
+  - [x] I have a reminder to sign in if I am not signed in
 - [ ] I can undo/redo actions in the token editor
 - [ ] I can see the progress of my set to binary conversion
 - [ ] I can save my own color selections

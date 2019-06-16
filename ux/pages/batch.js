@@ -150,9 +150,9 @@ export default class Batch extends React.PureComponent {
     }
   }
   render () {
-    const { ids } = this.props
+    const { ids, user } = this.props
     return (
-      <Page title='Batch' store={store}>
+      <Page title='Batch' store={store} user={user}>
         <BatchItemContainer>
           {ids.map((id) => <ConnectedBatchItem id={id} key={id} />)}
           <ConnectedForm/>

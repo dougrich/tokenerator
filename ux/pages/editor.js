@@ -36,6 +36,13 @@ const ActionRow = styled.div({
   justifyContent: 'space-around'
 })
 
+const UserWarning = styled.div(props => ({
+  backgroundColor: '#e3e3e3',
+  padding: '1em',
+  margin: '1em',
+  display: props.hasUser ? 'none' : 'block'
+}))
+
 const ConnectedColorPicker = connect(
   state => ({
     current: state.currentColor || Color('#000'),
@@ -93,8 +100,9 @@ const ConnectedSave = connect(
 export default class extends React.Component {
 
   render() {
+    const { user } = this.props
     return (
-      <Page title='Editor' store={store}>
+      <Page title='Editor' store={store} user={user}>
         <HiddenSvg>
           <ColorPicker.Defs />
         </HiddenSvg>
@@ -103,6 +111,10 @@ export default class extends React.Component {
             <ConnectedTitle label='Title'/>
             <ConnectedDescription label='Description'/>
             <ConnectedIsPrivate label='Private'/>
+            <UserWarning hasUser={!!user}>
+              You are not currently logged in. Make sure to favorite the link to your token if you want to be able to get to it after saving it.<br/>
+              You can sign in (without losing your work) at the top of the page.
+            </UserWarning>
             <ActionRow>
               <ConnectedSave>
                 Save
