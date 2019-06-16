@@ -1,8 +1,8 @@
 import Page from '../components/page'
 
-function Home () {
+function Home (props) {
   return (
-    <Page user={this.props.user}>
+    <Page user={props.user}>
     </Page>
   )
 }
