@@ -67,6 +67,8 @@ export const NavigationLinkStyled = styled.a`
   font-size: 1.5em;
   color: ${colors.borderblack};
   text-decoration: none;
+  padding: 0;
+  line-height: 2em;
   padding-top: 0.25em;
   padding-bottom: 0.15em;
   margin: 0em 0.5em;
@@ -106,7 +108,7 @@ export const NavigationLink = (props) => (
     {...props}
     passHref
   >
-    <NavigationLinkStyled>
+    <NavigationLinkStyled as={props.as}>
       {props.children}
     </NavigationLinkStyled>
   </Link>
@@ -329,7 +331,8 @@ export const Action = styled.button(props => [
 
 export const ActionLink = (props) => (
   <Link
-    {...props}
+    as={props.as}
+    href={props.disabled ? undefined : props.href}
     passHref
   >
     <Action as='a' disabled={props.disabled}>
