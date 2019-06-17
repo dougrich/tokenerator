@@ -42,11 +42,15 @@ async function processFile(filename) {
   const contents = await fs.readFile(filename, 'utf8')
   const $ = cheerio.load(contents)
   const layers = []
+  const svg = $('svg')
+  const id = path.basename(filename).replace('.svg', '')
   const defaults = {
-    z: parseZ($('svg').attr('data-z')),
-    slots: parseSlots($('svg').attr('data-slots')),
+    z: parseZ(svg.attr('data-z')),
+    slots: parseSlots(svg.attr('data-slots')),
     channels: {}
   }
+  svg.attr('data-z', '')
+  svg.attr('data-slots', '')
   $('g').each((i, e) => {
     const className = e.attribs['class']
     if (className) {
@@ -75,7 +79,7 @@ async function processFile(filename) {
 
         defaults.channels[className] = { color: fill }
         e.attribs['fill'] = '${context[\'' + className + '\'].color}'
-
+        e.attribs['data-layer'] = `${id}/${className}`
       })
     }
   })
@@ -100,7 +104,6 @@ async function processFile(filename) {
     for (const layer of layers) {
       properties[layer] = { '$ref': '#/defs/layer' }
     }
-    const id = path.basename(filename).replace('.svg', '')
     return {
       id,
       defaults,

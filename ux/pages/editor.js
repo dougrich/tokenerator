@@ -4,7 +4,6 @@ import ColorPicker from '../components/color-picker'
 import styled from '@emotion/styled'
 import { HiddenSvg, NavigationLinkStyled } from '../components/styled'
 import Page from '../components/page'
-import dynamic from 'next/dynamic'
 import * as Color from 'color'
 import TokenParts from '../components/token-part-list';
 import { TextField, TextAreaField, ToggleField } from '../components/field'
@@ -12,12 +11,7 @@ import { bindActionCreators } from 'redux'
 import { connect, Provider } from 'react-redux'
 import store, { dispatchers } from '../src/editor-state-machine'
 import PartGrid from '../components/part-grid';
-
-const Display = dynamic(
-  () => import('../components/editor'),
-  {
-    loading: () => <p>Loading</p>
-  })
+import Display from '../components/token-editor-display'
 
 const FlexRow = styled.div({
   width: '100%',
@@ -68,7 +62,10 @@ const ConnectedTokenParts = connect(
 const ConnectedDisplay = connect(
   state => ({
     parts: state.parts
-  })
+  }),
+  dispatch => bindActionCreators({
+    onActivate: dispatchers.SET_CHANNEL,
+  }, dispatch)
 )(Display)
 
 const ConnectedPartGrid = connect(
@@ -106,6 +103,7 @@ export default class extends React.Component {
       <Page title='Editor' store={store} user={user}>
         <HiddenSvg>
           <ColorPicker.Defs />
+          <Display.Defs />
         </HiddenSvg>
         <FlexRow>
           <FlexColumn>
