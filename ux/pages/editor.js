@@ -69,7 +69,9 @@ const ConnectedDisplay = connect(
 )(Display)
 
 const ConnectedPartGrid = connect(
-  state => ({}),
+  state => ({
+    parts: state.parts
+  }),
   dispatch => bindActionCreators({
     onClick: dispatchers.ADD_PART
   }, dispatch)

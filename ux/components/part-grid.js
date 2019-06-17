@@ -27,6 +27,10 @@ const PartPreviewContainer = styled.button({
   '&:active': {
     transition: '100ms transform',
     transform: 'scale(0.9, 0.9)'
+  },
+  ':disabled': {
+    opacity: 0.2,
+    pointerEvents: "none"
   }
 })
 
@@ -43,12 +47,18 @@ const PartPreview = styled.svg({
 
 export default class PartGrid extends React.PureComponent {
   render () {
+    const { parts: active } = this.props
+    const isActive = {}
+    for (const p of active) {
+      isActive[p.id] = true
+    }
     const children = []
     for (const part in parts) {
       if (part[0] === '$') continue
       children.push(
         <PartPreviewContainer
           key={children.length}
+          disabled={!!isActive[part]}
           onClick={this.props.onClick.bind(null, part, parts.$defaults[part])}
         >
           <TokenShadow/>
