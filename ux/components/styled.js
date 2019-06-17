@@ -108,7 +108,7 @@ export const NavigationLink = (props) => (
     {...props}
     passHref
   >
-    <NavigationLinkStyled as={props.as}>
+    <NavigationLinkStyled>
       {props.children}
     </NavigationLinkStyled>
   </Link>
@@ -329,17 +329,25 @@ export const Action = styled.button(props => [
   }
 ])
 
-export const ActionLink = (props) => (
-  <Link
-    as={props.as}
-    href={props.disabled ? undefined : props.href}
-    passHref
-  >
-    <Action as='a' disabled={props.disabled}>
-      {props.children}
-    </Action>
-  </Link>
-)
+export const ActionLink = (props) => {
+  if (props.disabled) {
+    return (
+      <Action as='a' disabled>
+        {props.children}
+      </Action>
+    )
+  }
+  return (
+    <Link
+      {...props}
+      passHref
+    >
+      <Action as='a'>
+        {props.children}
+      </Action>
+    </Link>
+  )
+}
 
 const TokenShadowContainer = withAttrs({
   viewBox: '0 0 90 90'
@@ -353,6 +361,6 @@ const TokenShadowContainer = withAttrs({
 
 export const TokenShadow = () => (
   <TokenShadowContainer>
-    <circle cx="45" cy="45" r="36" fill="#e3e3e3" />
+    <circle cx='45' cy='45' r='36' fill='#e3e3e3' />
   </TokenShadowContainer>
 )

@@ -6,6 +6,7 @@ import { TextField } from './field'
 import { Label, Row } from './styled'
 import { ColorSwatchButton, ColorSwatchContainer } from './color-swatch'
 import withAttr from '../src/with-attrs'
+import React from 'react'
 
 const ColorPickerContainer = styled.div({
   width: '100%',
@@ -33,14 +34,14 @@ const PickerCircleFill = withAttr({
   r: '0.5em'
 })(
   styled.circle({
-    pointerEvents: 'none',
+    pointerEvents: 'none'
   })
 )
 
 const PickerCircle = ({ fill }) => (
   <React.Fragment>
     <PickerCircleOutline />
-    <PickerCircleFill fill={fill}/>
+    <PickerCircleFill fill={fill} />
   </React.Fragment>
 )
 

@@ -1,7 +1,8 @@
 import * as parts from '../src/token-parts'
 import styled from '@emotion/styled'
-import { TokenShadow } from './styled';
+import { TokenShadow } from './styled'
 import { SelectField } from './field'
+import React from 'react'
 
 const PartGridContainer = styled.div({
   textAlign: 'center'
@@ -29,7 +30,7 @@ const PartPreviewContainer = styled.button(props => ({
     transform: 'scale(0.9, 0.9)'
   },
   ':disabled': {
-    pointerEvents: "none"
+    pointerEvents: 'none'
   },
   ':disabled svg': {
     opacity: 0.2
@@ -54,10 +55,10 @@ const PartPreview = styled.svg({
   bottom: 0
 })
 
-const PartFilterOptions = parts.$tags.$list.map(x => ({value: x, label: x }))
+const PartFilterOptions = parts.$tags.$list.map(x => ({ value: x, label: x }))
 
 export default class PartGrid extends React.PureComponent {
-  constructor(props, context) {
+  constructor (props, context) {
     super(props, context)
     this.state = {
       filter: 'all'
@@ -83,7 +84,7 @@ export default class PartGrid extends React.PureComponent {
           disabled={!!isActive[part]}
           onClick={this.props.onClick.bind(null, part, parts.$defaults[part])}
         >
-          <TokenShadow/>
+          <TokenShadow />
           <PartPreview
             viewBox='0 0 90 90'
             dangerouslySetInnerHTML={{ __html: parts[part](parts.$defaults[part].channels) }}

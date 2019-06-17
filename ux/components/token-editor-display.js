@@ -1,6 +1,7 @@
 import { tokenToSvg } from '../src/token'
 import styled from '@emotion/styled'
-import { TokenShadow } from './styled';
+import { TokenShadow } from './styled'
+import React from 'react'
 
 const Container = styled.div({
   width: '100%',
@@ -38,7 +39,7 @@ export default class Display extends React.Component {
     if (parts.length === 0) {
       return (
         <Container>
-          <TokenShadow/>
+          <TokenShadow />
           <Placeholder>
             Select some parts to get started
           </Placeholder>
@@ -57,12 +58,12 @@ Display.Defs = class extends React.PureComponent {
     return (
       <React.Fragment>
         <mask id='display-hover-effect'>
-          <rect width='90' height='90' fill='url(#display-hover-pattern'/>
+          <rect width='90' height='90' fill='url(#display-hover-pattern' />
         </mask>
         <pattern id='display-hover-pattern' x='0' y='0' width={size} height={size} patternUnits='userSpaceOnUse'>
-          <rect x='0' y='0' width={size} height={size} fill='white'/>
-          <line x1='0' x2={size} y1='0' y2={size} stroke='black' strokeWidth={size / 5}/>
-          <line x1='0' x2={size} y2='0' y1={size} stroke='black' strokeWidth={size / 5}/>
+          <rect x='0' y='0' width={size} height={size} fill='white' />
+          <line x1='0' x2={size} y1='0' y2={size} stroke='black' strokeWidth={size / 5} />
+          <line x1='0' x2={size} y2='0' y1={size} stroke='black' strokeWidth={size / 5} />
         </pattern>
       </React.Fragment>
     )

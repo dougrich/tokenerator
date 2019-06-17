@@ -1,5 +1,7 @@
 import App, { Container } from 'next/app'
 import * as cookie from 'cookie'
+import styled from '@emotion/styled'
+import Router from 'next/router'
 import { LOGGEDIN } from '../src/const';
 
 function getUser(raw) {
@@ -14,6 +16,17 @@ function getUser(raw) {
   }
   return JSON.parse(body)
 }
+
+const Loader = styled.div(props => ({
+  opacity: props.loading ? 1 : 0,
+  pointerEvents: props.loading ? 'initial' : 'none',
+  backgroundColor: 'rgba(1, 1, 1, 0.9)',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0
+}))
 
 export default class extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -35,8 +48,19 @@ export default class extends App {
     super(props, context)
 
     this.state = {
-      user: props.user
+      user: props.user,
+      loading: false
     }
+  }
+
+  routeChangeStart() {
+    console.log('START LOADING')
+    this.setState({ loading: true })
+  }
+
+  routeChangeEnd() {
+    console.log('DONE LOADING')
+    this.setState({ loading: false })
   }
 
   componentDidMount() {
@@ -46,6 +70,9 @@ export default class extends App {
         this.setState({ user })
       }
     })
+    Router.events.on('routeChangeStart', this.routeChangeStart)
+    Router.events.on('routeChangeComplete', this.routeChangeEnd)
+    Router.events.on('routeChangeError', this.routeChangeEnd)
   }
 
   render () {
@@ -53,9 +80,12 @@ export default class extends App {
     const { user } = this.state
 
     return (
-      <Container>
-        <Component {...pageProps} user={user} />
-      </Container>
+      <React.Fragment>
+        <Loader loading={this.state.loading} />
+        <Container>
+          <Component {...pageProps} user={user} />
+        </Container>
+      </React.Fragment>
     )
   }
 }
