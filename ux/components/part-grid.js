@@ -29,8 +29,17 @@ const PartPreviewContainer = styled.button({
     transform: 'scale(0.9, 0.9)'
   },
   ':disabled': {
-    opacity: 0.2,
     pointerEvents: "none"
+  },
+  ':disabled svg': {
+    opacity: 0.2
+  },
+  '&:disabled:after': {
+    content: '"selected"',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
   }
 })
 
