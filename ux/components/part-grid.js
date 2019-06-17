@@ -1,14 +1,14 @@
 import * as parts from '../src/token-parts'
 import styled from '@emotion/styled'
 import { TokenShadow } from './styled';
-import withAttrs from '../src/with-attrs'
+import { SelectField } from './field'
 
 const PartGridContainer = styled.div({
   textAlign: 'center'
 })
 
-const PartPreviewContainer = styled.button({
-  display: 'inline-block',
+const PartPreviewContainer = styled.button(props => ({
+  display: props.visible ? 'inline-block' : 'none',
   width: '10em',
   height: '10em',
   border: 0,
@@ -41,7 +41,7 @@ const PartPreviewContainer = styled.button({
     left: '50%',
     transform: 'translate(-50%, -50%)'
   }
-})
+}))
 
 const PartPreview = styled.svg({
   display: 'block',
@@ -54,19 +54,32 @@ const PartPreview = styled.svg({
   bottom: 0
 })
 
+const PartFilterOptions = parts.$tags.$list.map(x => ({value: x, label: x }))
+
 export default class PartGrid extends React.PureComponent {
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      filter: 'all'
+    }
+  }
+
+  setFilter = (e) => this.setState({ filter: e.target.value })
+
   render () {
     const { parts: active } = this.props
     const isActive = {}
     for (const p of active) {
       isActive[p.id] = true
     }
+    const filtered = parts.$tags[this.state.filter]
     const children = []
     for (const part in parts) {
       if (part[0] === '$') continue
       children.push(
         <PartPreviewContainer
           key={children.length}
+          visible={filtered.indexOf(part) >= 0}
           disabled={!!isActive[part]}
           onClick={this.props.onClick.bind(null, part, parts.$defaults[part])}
         >
@@ -79,9 +92,17 @@ export default class PartGrid extends React.PureComponent {
       )
     }
     return (
-      <PartGridContainer>
-        {children}
-      </PartGridContainer>
+      <React.Fragment>
+        <SelectField
+          label='Filter Parts'
+          value={this.state.filter}
+          onChange={this.setFilter}
+          options={PartFilterOptions}
+        />
+        <PartGridContainer>
+          {children}
+        </PartGridContainer>
+      </React.Fragment>
     )
   }
 }
