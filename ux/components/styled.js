@@ -287,6 +287,12 @@ export const Flex = styled.div({
 
 export const Action = styled.button(props => [
   props.theme.typography.body,
+  props.disabled
+    ? {
+      pointerEvents: 'none',
+      opacity: 0.2
+    }
+    : {},
   {
     display: 'inline-block',
     position: 'relative',
@@ -326,7 +332,7 @@ export const ActionLink = (props) => (
     {...props}
     passHref
   >
-    <Action as='a'>
+    <Action as='a' disabled={props.disabled}>
       {props.children}
     </Action>
   </Link>

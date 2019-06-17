@@ -33,7 +33,12 @@ const ActionRow = styled.div({
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  marginBottom: '1em'
+  marginBottom: '2em'
+})
+
+const Pinned = styled.div({
+  textAlign: 'center',
+  marginBottom: '0.75em'
 })
 
 const ConnectedBrowseGrid = connect(
@@ -55,12 +60,10 @@ const ConnectedActionPanel = connect(
   }, dispatch)
 )(({ pinned, onClear }) => (
   <React.Fragment>
+    <Pinned>{pinned.length} pinned</Pinned>
     <ActionRow>
-      <div>{pinned.length} pinned</div>
-    </ActionRow>
-    <ActionRow>
-      <Action onClick={onClear} >Clear</Action>
-      <ActionLink href={`/batch?ids=${pinned.join('+')}`}>
+      <Action onClick={onClear} disabled={pinned.length === 0}>Clear</Action>
+      <ActionLink href={`/batch?ids=${pinned.join('+')}`} disabled={pinned.length === 0}>
         Download
       </ActionLink>
     </ActionRow>
