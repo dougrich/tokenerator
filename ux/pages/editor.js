@@ -60,7 +60,8 @@ const ConnectedTokenParts = connect(
   }),
   dispatch => bindActionCreators({
     onActivate: dispatchers.SET_CHANNEL,
-    onRemove: dispatchers.REMOVE_PART
+    onRemove: dispatchers.REMOVE_PART,
+    onClear: dispatchers.CLEAR_PARTS
   }, dispatch)
 )(TokenParts)
 

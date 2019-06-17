@@ -1,5 +1,7 @@
 import * as parts from '../src/token-parts'
 import styled from '@emotion/styled'
+import { TokenShadow } from './styled';
+import withAttrs from '../src/with-attrs'
 
 const PartGridContainer = styled.div({
   textAlign: 'center'
@@ -12,9 +14,9 @@ const PartPreviewContainer = styled.button({
   border: 0,
   padding: 0,
   cursor: 'pointer',
+  position: 'relative',
   backgroundColor: 'transparent',
   transition: '200ms transform',
-  backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'><circle cx='45' cy='45' r='36' fill='%23ddd' /></svg>")`,
   '&:hover, &:focus': {
     zIndex: 1,
     transform: 'scale(1.1, 1.1)'
@@ -31,7 +33,12 @@ const PartPreviewContainer = styled.button({
 const PartPreview = styled.svg({
   display: 'block',
   width: '100%',
-  height: '100%'
+  height: '100%',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0
 })
 
 export default class PartGrid extends React.PureComponent {
@@ -44,6 +51,7 @@ export default class PartGrid extends React.PureComponent {
           key={children.length}
           onClick={this.props.onClick.bind(null, part, parts.$defaults[part])}
         >
+          <TokenShadow/>
           <PartPreview
             viewBox='0 0 90 90'
             dangerouslySetInnerHTML={{ __html: parts[part](parts.$defaults[part].channels) }}

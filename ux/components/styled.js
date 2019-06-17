@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import withAttrs from '../src/with-attrs'
 
 const colors = {
   borderblack: '#333',
@@ -329,4 +330,20 @@ export const ActionLink = (props) => (
       {props.children}
     </Action>
   </Link>
+)
+
+const TokenShadowContainer = withAttrs({
+  viewBox: '0 0 90 90'
+})(styled.svg({
+  top: '0',
+  left: '0',
+  right: '0',
+  bottom: '0',
+  display: 'block'
+}))
+
+export const TokenShadow = () => (
+  <TokenShadowContainer>
+    <circle cx="45" cy="45" r="36" fill="#e3e3e3" />
+  </TokenShadowContainer>
 )

@@ -10,6 +10,7 @@ export const SET_DESCRIPTION = 'set-description'
 export const SET_PRIVATE = 'set-private'
 export const SAVE_TOKEN_START = 'save-token-start'
 export const SAVE_TOKEN_END = 'save-token-end'
+export const CLEAR_PARTS = 'clear-parts'
 
 export const dispatchers = {
   SET_COLOR: value => (dispatch, getState) => {
@@ -57,5 +58,6 @@ export const dispatchers = {
     } catch (err) {
       dispatch({ type: SAVE_TOKEN_END, error: err })
     }
-  }
+  },
+  CLEAR_PARTS: () => ({ type: CLEAR_PARTS })
 }

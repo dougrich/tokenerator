@@ -5,6 +5,7 @@ import Slider from './slider'
 import { TextField } from './field'
 import { Label, Row } from './styled'
 import { ColorSwatchButton, ColorSwatchContainer } from './color-swatch'
+import withAttr from '../src/with-attrs'
 
 const ColorPickerContainer = styled.div({
   width: '100%',
@@ -16,13 +17,32 @@ const PickerRect = styled.rect({
   pointerEvents: 'none'
 })
 
-const PickerCircle = styled.circle({
-  pointerEvents: 'none',
-  fill: 'transparent',
-  stroke: 'white',
-  strokeWidth: 3,
-  mixBlendMode: 'difference'
-})
+const PickerCircleOutline = withAttr({
+  r: '0.5em'
+})(
+  styled.circle({
+    pointerEvents: 'none',
+    fill: 'transparent',
+    stroke: 'white',
+    strokeWidth: 5,
+    mixBlendMode: 'difference'
+  })
+)
+
+const PickerCircleFill = withAttr({
+  r: '0.5em'
+})(
+  styled.circle({
+    pointerEvents: 'none',
+  })
+)
+
+const PickerCircle = ({ fill }) => (
+  <React.Fragment>
+    <PickerCircleOutline />
+    <PickerCircleFill fill={fill}/>
+  </React.Fragment>
+)
 
 const step = {
   x: 0.01,
@@ -100,7 +120,8 @@ class SaturationLightnessSlider extends React.PureComponent {
     const {
       hue,
       saturation,
-      lightness
+      lightness,
+      color
     } = this.props
     const background = Color.hsl(hue, 100, 50).hex()
     //
@@ -111,6 +132,9 @@ class SaturationLightnessSlider extends React.PureComponent {
         y={y}
         step={step}
         thumb={PickerCircle}
+        thumbProps={{
+          fill: color
+        }}
         onChange={this.onChange}
         height='8em'
       >
@@ -135,6 +159,9 @@ class HueSlider extends React.PureComponent {
         y={0.5}
         step={step}
         thumb={PickerCircle}
+        thumbProps={{
+          fill: this.props.color
+        }}
         onChange={this.onChange}
         height='1.2em'
       >
@@ -220,11 +247,12 @@ export default class ColorPicker extends React.Component {
         <SaturationLightnessSlider
           hue={hue}
           saturation={saturation}
+          color={currentHex}
           lightness={lightness}
           onChange={this.onSaturationLightnessChange}
         />
         <Label>Hue</Label>
-        <HueSlider hue={hue} onChange={this.onHueChange} />
+        <HueSlider hue={hue} color={currentHex} onChange={this.onHueChange} />
         <ColorInput current={currentHex} onChange={this.onInputChange} />
         {
           Swatches.map(({ name, set }, i) => {

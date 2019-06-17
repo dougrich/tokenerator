@@ -1,4 +1,4 @@
-import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE } from './actions'
+import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE, CLEAR_PARTS } from './actions'
 import Color from 'color'
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
@@ -75,7 +75,8 @@ const parts = createReducer(
         next.push({ id, channels, z, slots })
       }
       return next
-    }
+    },
+    [CLEAR_PARTS]: (current) => ([])
   }
 )
 

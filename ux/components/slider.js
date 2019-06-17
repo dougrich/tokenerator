@@ -134,6 +134,7 @@ export default class Slider extends React.PureComponent {
       y,
       children,
       thumb: Thumb,
+      thumbProps,
       step,
       ...rest
     } = this.props
@@ -152,7 +153,7 @@ export default class Slider extends React.PureComponent {
         >
           {children}
           <svg x={toPercentage(x)} y={toPercentage(y)} style={{ overflow: 'visible', pointerEvents: 'none' }}>
-            <Thumb cx={0} cy={0} r='0.5em' />
+            <Thumb {...thumbProps} />
           </svg>
         </PickerContainer>
       </ThemeProvider>
