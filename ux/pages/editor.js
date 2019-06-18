@@ -13,6 +13,7 @@ import store, { dispatchers } from '../src/editor-state-machine'
 import PartGrid from '../components/part-grid';
 import Display from '../components/token-editor-display'
 import api from '../src/api'
+import KeyShortcuts from '../components/keyshortcuts'
 
 const FlexRow = styled.div({
   width: '100%',
@@ -100,6 +101,14 @@ const ConnectedSave = connect(
   dispatch => bindActionCreators({ onClick: dispatchers.SAVE_TOKEN }, dispatch)
 )(NavigationLinkStyled)
 
+const ConnectedKeyShortcuts = connect(
+  () => ({}),
+  dispatch => bindActionCreators({
+    onUndo: dispatchers.UNDO,
+    onRedo: dispatchers.REDO
+  }, dispatch)
+)(KeyShortcuts)
+
 export default class extends React.Component {
   static getInitialProps(context) {
     const forkedFrom = context.query.fork
@@ -126,6 +135,7 @@ export default class extends React.Component {
     const { user } = this.props
     return (
       <Page title='Editor' store={this.store} user={user}>
+        <ConnectedKeyShortcuts />
         <HiddenSvg>
           <ColorPicker.Defs />
           <Display.Defs />

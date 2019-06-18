@@ -93,6 +93,10 @@ export default undoable(
   {
     undoType: UNDO,
     redoType: REDO,
-    groupBy: groupByActionTypes([SET_COLOR])
+    groupBy: groupByActionTypes([
+      SET_COLOR,
+      SET_TITLE,
+      SET_DESCRIPTION
+    ])
   }
 )
