@@ -20,12 +20,13 @@ function getUser(raw) {
 const Loader = styled.div(props => ({
   opacity: props.loading ? 1 : 0,
   pointerEvents: props.loading ? 'initial' : 'none',
-  backgroundColor: 'rgba(1, 1, 1, 0.9)',
+  backgroundColor: 'rgba(255, 255, 255, 0.9)',
   position: 'fixed',
   top: 0,
   left: 0,
   right: 0,
-  bottom: 0
+  bottom: 0,
+  zIndex: 1
 }))
 
 export default class extends App {
@@ -53,13 +54,11 @@ export default class extends App {
     }
   }
 
-  routeChangeStart() {
-    console.log('START LOADING')
+  routeChangeStart = () => {
     this.setState({ loading: true })
   }
 
-  routeChangeEnd() {
-    console.log('DONE LOADING')
+  routeChangeEnd = () => {
     this.setState({ loading: false })
   }
 
@@ -72,17 +71,16 @@ export default class extends App {
     })
     Router.events.on('routeChangeStart', this.routeChangeStart)
     Router.events.on('routeChangeComplete', this.routeChangeEnd)
-    Router.events.on('routeChangeError', this.routeChangeEnd)
   }
 
   render () {
     const { Component, pageProps } = this.props
-    const { user } = this.state
+    const { user, loading } = this.state
 
     return (
       <React.Fragment>
-        <Loader loading={this.state.loading} />
         <Container>
+          <Loader loading={loading} />
           <Component {...pageProps} user={user} />
         </Container>
       </React.Fragment>
