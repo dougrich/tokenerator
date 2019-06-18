@@ -61,6 +61,7 @@ export const Header = styled.header`
 
 export const NavigationLinkStyled = styled.a`
   ${typography.title}
+  display: inline-block;
   width: 100%;
   max-width: 8em;
   cursor: pointer;  

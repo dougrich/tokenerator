@@ -3,10 +3,18 @@ import Header from '../components/header'
 import Link from 'next/link'
 import api from '../src/api'
 import { DefaultTokenTitle, DefaultTokenDescription } from '../src/constants'
-import { Container, TokenTitle, TokenDescription, DefaultText, NavigationLinkStyled, Navigation } from '../components/styled'
+import styled from '@emotion/styled'
+import { Container, TokenTitle, TokenDescription, DefaultText, NavigationLinkStyled, NavigationLink } from '../components/styled'
 import Page from '../components/page'
 import HorizontalSlider from '../components/slider-horizontal';
 import { RangeField, PixelField } from '../components/field';
+
+const ActionSet = styled.div({
+  textAlign: 'center',
+  maxWidth: '20em',
+  margin: 'auto',
+  marginBottom: '3em'
+})
 
 export default class Browse extends React.PureComponent {
   static getInitialProps(context) {
@@ -65,18 +73,16 @@ export default class Browse extends React.PureComponent {
           {this.renderTitle()}
           {this.renderDescription()}
           <img src={`/api/token/${token.id}.svg`}/>
-          <PixelField
-            value={this.state.size}
-            onChange={this.onSizeChange}
-          />
-          <Navigation>
+          <ActionSet>
+            <PixelField
+              value={this.state.size}
+              onChange={this.onSizeChange}
+            />
             <NavigationLinkStyled as='a' href={`/api/token/${token.id}.png?size=${this.state.size}`} download target='_blank'>Download</NavigationLinkStyled>
-            <Link href={`/editor?fork=${token.id}`} passHref>
-              <NavigationLinkStyled as='a'>
-                Fork
-              </NavigationLinkStyled>
-            </Link>
-          </Navigation>
+          </ActionSet>
+          <ActionSet>
+            <NavigationLink href={`/editor?fork=${token.id}`}>Fork</NavigationLink>
+          </ActionSet>
         </Container>
       </Page>
     )
