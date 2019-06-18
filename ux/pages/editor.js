@@ -12,6 +12,7 @@ import { connect, Provider } from 'react-redux'
 import store, { dispatchers } from '../src/editor-state-machine'
 import PartGrid from '../components/part-grid';
 import Display from '../components/token-editor-display'
+import api from '../src/api'
 
 const FlexRow = styled.div({
   width: '100%',
@@ -98,11 +99,27 @@ const ConnectedSave = connect(
 )(NavigationLinkStyled)
 
 export default class extends React.Component {
+  static getInitialProps(context) {
+    const forkedFrom = context.query.fork
+    if (!forkedFrom) {
+      return {}
+    }
+    return api.getToken(forkedFrom)
+      .then(token => {
+        return {
+          parts: token.parts
+        }
+      })
+  }
 
+  constructor(props, context) {
+    super(props, context)
+    this.store = store({ parts: props.parts })
+  }
   render() {
     const { user } = this.props
     return (
-      <Page title='Editor' store={store} user={user}>
+      <Page title='Editor' store={this.store} user={user}>
         <HiddenSvg>
           <ColorPicker.Defs />
           <Display.Defs />
