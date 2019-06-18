@@ -53,8 +53,7 @@ export const dispatchers = {
     }
     dispatch({ type: SAVE_TOKEN_START })
     try {
-      const location = await api.createToken(body)
-      const [id] = location.slice(1).split('/')[1]
+      const [location, id] = await api.createToken(body)
       Router.push({
         pathname: '/token',
         query: { id }
