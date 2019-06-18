@@ -39,7 +39,7 @@ const UserWarning = styled.div(props => ({
 }))
 
 const ConnectedColorPicker = connect(
-  state => ({
+  ({ present: state }) => ({
     current: state.currentColor || Color('#000'),
     enabled: !!state.currentColor
   }),
@@ -49,19 +49,21 @@ const ConnectedColorPicker = connect(
 )(ColorPicker)
 
 const ConnectedTokenParts = connect(
-  state => ({
+  ({ present: state }) => ({
     parts: state.parts,
     active: state.active
   }),
   dispatch => bindActionCreators({
     onActivate: dispatchers.SET_CHANNEL,
     onRemove: dispatchers.REMOVE_PART,
-    onClear: dispatchers.CLEAR_PARTS
+    onClear: dispatchers.CLEAR_PARTS,
+    onUndo: dispatchers.UNDO,
+    onRedo: dispatchers.REDO
   }, dispatch)
 )(TokenParts)
 
 const ConnectedDisplay = connect(
-  state => ({
+  ({ present: state }) => ({
     parts: state.parts
   }),
   dispatch => bindActionCreators({
@@ -70,7 +72,7 @@ const ConnectedDisplay = connect(
 )(Display)
 
 const ConnectedPartGrid = connect(
-  state => ({
+  ({ present: state }) => ({
     parts: state.parts
   }),
   dispatch => bindActionCreators({
@@ -79,22 +81,22 @@ const ConnectedPartGrid = connect(
 )(PartGrid)
 
 const ConnectedTitle = connect(
-  state => ({ value: state.title }),
+  ({ present: state }) => ({ value: state.title }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_TITLE }, dispatch)
 )(TextField)
 
 const ConnectedDescription = connect(
-  state => ({ value: state.description }),
+  ({ present: state }) => ({ value: state.description }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_DESCRIPTION }, dispatch)
 )(TextAreaField)
 
 const ConnectedIsPrivate = connect(
-  state => ({ value: state.isPrivate }),
+  ({ present: state }) => ({ value: state.isPrivate }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_PRIVATE }, dispatch)
 )(ToggleField)
 
 const ConnectedSave = connect(
-  state => ({ as: 'button' }),
+  () => ({ as: 'button' }),
   dispatch => bindActionCreators({ onClick: dispatchers.SAVE_TOKEN }, dispatch)
 )(NavigationLinkStyled)
 
@@ -102,19 +104,23 @@ export default class extends React.Component {
   static getInitialProps(context) {
     const forkedFrom = context.query.fork
     if (!forkedFrom) {
-      return {}
+      return { }
     }
     return api.getToken(forkedFrom)
       .then(token => {
         return {
-          parts: token.parts
+          present: { parts: token.parts }
         }
       })
   }
 
   constructor(props, context) {
     super(props, context)
-    this.store = store({ parts: props.parts })
+    this.store = store({
+      past: [],
+      present: { parts: props.parts },
+      future: []
+    })
   }
   render() {
     const { user } = this.props

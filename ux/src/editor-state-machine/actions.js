@@ -11,14 +11,16 @@ export const SET_PRIVATE = 'set-private'
 export const SAVE_TOKEN_START = 'save-token-start'
 export const SAVE_TOKEN_END = 'save-token-end'
 export const CLEAR_PARTS = 'clear-parts'
+export const UNDO = 'undo'
+export const REDO = 'redo'
 
 export const dispatchers = {
   SET_COLOR: value => (dispatch, getState) => {
-    const { active } = getState()
+    const { present: { active } } = getState()
     dispatch({ type: SET_COLOR, value, active })
   },
   SET_CHANNEL: (index, channel) => (dispatch, getState) => {
-    const { parts } = getState()
+    const { present: { parts } } = getState()
     dispatch({
       type: SET_CHANNEL,
       index,
@@ -27,7 +29,7 @@ export const dispatchers = {
     })
   },
   REMOVE_PART: (index) => (dispatch, getState) => {
-    const { active } = getState()
+    const { present: { active } } = getState()
     dispatch({ type: REMOVE_PART, index, isActive: active && active.index === index })
   },
   ADD_PART: (id, { z, slots, channels }) => ({ type: ADD_PART, id, z, slots, channels }),
@@ -36,10 +38,12 @@ export const dispatchers = {
   SET_PRIVATE: (value) => ({ type: SET_PRIVATE, value }),
   SAVE_TOKEN: () => async (dispatch, getState) => {
     const {
-      title,
-      description,
-      isPrivate,
-      parts
+      present: {
+        title,
+        description,
+        isPrivate,
+        parts
+      }
     } = getState()
     const body = {
       title,
@@ -59,5 +63,7 @@ export const dispatchers = {
       dispatch({ type: SAVE_TOKEN_END, error: err })
     }
   },
-  CLEAR_PARTS: () => ({ type: CLEAR_PARTS })
+  CLEAR_PARTS: () => ({ type: CLEAR_PARTS }),
+  UNDO: () => ({ type: UNDO }),
+  REDO: () => ({ type: REDO })
 }
