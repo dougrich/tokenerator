@@ -21,7 +21,7 @@ const postData = (url, headers) => (body) => apiclient
     if (Array.isArray(headers)) {
       return headers.map(h => response.headers[h])
     } else {
-      response.headers[headers]
+      return response.headers[headers]
     }
   })
 
