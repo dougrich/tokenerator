@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@dougrich/react-signin-google": "^0.1.0",
+    "@dougrich/react-signin-microsoft": "^0.1.0",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
     "axios": "^0.19.0",

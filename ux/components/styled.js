@@ -365,3 +365,18 @@ export const TokenShadow = () => (
     <circle cx='45' cy='45' r='36' fill='#e3e3e3' />
   </TokenShadowContainer>
 )
+
+export const ModalContainer = styled.div({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  background: 'white',
+  padding: '2em',
+  border: '1px solid #d9d9d9',
+  borderRadius: '0.25em'
+})
+
+export const TextCenter = styled.div({
+  textAlign: 'center'
+})

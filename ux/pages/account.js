@@ -1,4 +1,5 @@
 import { LOGGEDIN } from "../src/const";
+import { ModalContainer, TextCenter } from '../components/styled'
 
 export default class extends React.PureComponent {
   componentDidMount() {
@@ -9,9 +10,11 @@ export default class extends React.PureComponent {
   }
   render () {
     return (
-      <div>
-        You have successfully logged in!
-      </div>
+      <ModalContainer>
+        <TextCenter>
+          You have successfully logged in!
+        </TextCenter>
+      </ModalContainer>
     )
   }
 }
