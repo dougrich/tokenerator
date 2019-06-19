@@ -38,15 +38,35 @@ function parseSlots(slots) {
   }[x] || 0)).reduce((a, b) => a | b, 0)
 }
 
+function parseTags(tags) {
+  if (!tags) return ['all']
+  const each = tags.split(',')
+  const tagged = ['all']
+  for (const tag of each) {
+    const parts = tag.split('/')
+    let set = ''
+    for (const p of parts) {
+      tagged.push(set + p)
+      set += p + '/'
+    }
+  }
+  return tagged.filter((x, i, a) => a.indexOf(x) === i)
+}
+
 async function processFile(filename) {
   const contents = await fs.readFile(filename, 'utf8')
   const $ = cheerio.load(contents)
   const layers = []
+  const svg = $('svg')
+  const id = path.basename(filename).replace('.svg', '')
+  const tags = parseTags(svg.attr('data-tags'))
   const defaults = {
-    z: parseZ($('svg').attr('data-z')),
-    slots: parseSlots($('svg').attr('data-slots')),
+    z: parseZ(svg.attr('data-z')),
+    slots: parseSlots(svg.attr('data-slots')),
     channels: {}
   }
+  svg.attr('data-z', '')
+  svg.attr('data-slots', '')
   $('g').each((i, e) => {
     const className = e.attribs['class']
     if (className) {
@@ -75,7 +95,7 @@ async function processFile(filename) {
 
         defaults.channels[className] = { color: fill }
         e.attribs['fill'] = '${context[\'' + className + '\'].color}'
-
+        e.attribs['data-layer'] = `${id}/${className}`
       })
     }
   })
@@ -100,7 +120,6 @@ async function processFile(filename) {
     for (const layer of layers) {
       properties[layer] = { '$ref': '#/defs/layer' }
     }
-    const id = path.basename(filename).replace('.svg', '')
     return {
       id,
       defaults,
@@ -120,6 +139,7 @@ async function processFile(filename) {
           }
         }
       },
+      tags,
       template: `"${id}": (context) => \`${optimized}\``
     }
   } catch (err) {
@@ -164,14 +184,28 @@ async function processDirectory() {
     }
   }
   const allDefaults = {}
+  const allTags = {}
   const templates = []
-  for (const { schema, template, defaults, id } of contents) {
+  for (const { schema, template, defaults, tags, id } of contents) {
     templates.push(template)
     allDefaults[id] = defaults
     oneOf.push(schema)
+    for (const t of tags) {
+      const set = allTags[t] || []
+      set.push(id)
+      allTags[t] = set
+    }
   }
 
-  const js = 'module.exports = {\n  $schema: ' + JSON.stringify(combinedSchema) + ',\n  $defaults: ' + JSON.stringify(allDefaults) + ',\n  ' + templates.join(',\n  ') + '\n}'
+  allTags['$list'] = Object.keys(allTags).sort()
+
+  const moduleExports = {
+    '$schema': combinedSchema,
+    '$defaults': allDefaults,
+    '$tags': allTags
+  }
+
+  const js = 'module.exports = ' + JSON.stringify(moduleExports).slice(0, -1) + ',\n  ' + templates.join(',\n  ') + '\n}'
   fs.writeFile('../api/src/token-parts.js', js)
   fs.writeFile('../ux/src/token-parts.js', js)
 }

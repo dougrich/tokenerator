@@ -4,7 +4,6 @@ import ColorPicker from '../components/color-picker'
 import styled from '@emotion/styled'
 import { HiddenSvg, NavigationLinkStyled } from '../components/styled'
 import Page from '../components/page'
-import dynamic from 'next/dynamic'
 import * as Color from 'color'
 import TokenParts from '../components/token-part-list';
 import { TextField, TextAreaField, ToggleField } from '../components/field'
@@ -12,12 +11,9 @@ import { bindActionCreators } from 'redux'
 import { connect, Provider } from 'react-redux'
 import store, { dispatchers } from '../src/editor-state-machine'
 import PartGrid from '../components/part-grid';
-
-const Display = dynamic(
-  () => import('../components/editor'),
-  {
-    loading: () => <p>Loading</p>
-  })
+import Display from '../components/token-editor-display'
+import api from '../src/api'
+import KeyShortcuts from '../components/keyshortcuts'
 
 const FlexRow = styled.div({
   width: '100%',
@@ -44,7 +40,7 @@ const UserWarning = styled.div(props => ({
 }))
 
 const ConnectedColorPicker = connect(
-  state => ({
+  ({ present: state }) => ({
     current: state.currentColor || Color('#000'),
     enabled: !!state.currentColor
   }),
@@ -54,57 +50,95 @@ const ConnectedColorPicker = connect(
 )(ColorPicker)
 
 const ConnectedTokenParts = connect(
-  state => ({
+  ({ present: state }) => ({
     parts: state.parts,
     active: state.active
   }),
   dispatch => bindActionCreators({
     onActivate: dispatchers.SET_CHANNEL,
-    onRemove: dispatchers.REMOVE_PART
+    onRemove: dispatchers.REMOVE_PART,
+    onClear: dispatchers.CLEAR_PARTS,
+    onUndo: dispatchers.UNDO,
+    onRedo: dispatchers.REDO
   }, dispatch)
 )(TokenParts)
 
 const ConnectedDisplay = connect(
-  state => ({
+  ({ present: state }) => ({
     parts: state.parts
-  })
+  }),
+  dispatch => bindActionCreators({
+    onActivate: dispatchers.SET_CHANNEL,
+  }, dispatch)
 )(Display)
 
 const ConnectedPartGrid = connect(
-  state => ({}),
+  ({ present: state }) => ({
+    parts: state.parts
+  }),
   dispatch => bindActionCreators({
     onClick: dispatchers.ADD_PART
   }, dispatch)
 )(PartGrid)
 
 const ConnectedTitle = connect(
-  state => ({ value: state.title }),
+  ({ present: state }) => ({ value: state.title }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_TITLE }, dispatch)
 )(TextField)
 
 const ConnectedDescription = connect(
-  state => ({ value: state.description }),
+  ({ present: state }) => ({ value: state.description }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_DESCRIPTION }, dispatch)
 )(TextAreaField)
 
 const ConnectedIsPrivate = connect(
-  state => ({ value: state.isPrivate }),
+  ({ present: state }) => ({ value: state.isPrivate }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_PRIVATE }, dispatch)
 )(ToggleField)
 
 const ConnectedSave = connect(
-  state => ({ as: 'button' }),
+  () => ({ as: 'button' }),
   dispatch => bindActionCreators({ onClick: dispatchers.SAVE_TOKEN }, dispatch)
 )(NavigationLinkStyled)
 
-export default class extends React.Component {
+const ConnectedKeyShortcuts = connect(
+  () => ({}),
+  dispatch => bindActionCreators({
+    onUndo: dispatchers.UNDO,
+    onRedo: dispatchers.REDO
+  }, dispatch)
+)(KeyShortcuts)
 
+export default class extends React.Component {
+  static getInitialProps(context) {
+    const forkedFrom = context.query.fork
+    if (!forkedFrom) {
+      return { }
+    }
+    return api.getToken(forkedFrom)
+      .then(token => {
+        return {
+          present: { parts: token.parts }
+        }
+      })
+  }
+
+  constructor(props, context) {
+    super(props, context)
+    this.store = store({
+      past: [],
+      present: { parts: props.parts },
+      future: []
+    })
+  }
   render() {
     const { user } = this.props
     return (
-      <Page title='Editor' store={store} user={user}>
+      <Page title='Editor' store={this.store} user={user}>
+        <ConnectedKeyShortcuts />
         <HiddenSvg>
           <ColorPicker.Defs />
+          <Display.Defs />
         </HiddenSvg>
         <FlexRow>
           <FlexColumn>

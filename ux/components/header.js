@@ -58,12 +58,12 @@ export default class extends React.PureComponent {
             </NavigationLink>
             {user
               ? (
-                <NavigationLinkStyled onClick={this.onSignOut}>
+                <NavigationLinkStyled as='button' onClick={this.onSignOut}>
                   Sign Out
                 </NavigationLinkStyled>
               )
               : (
-                <NavigationLinkStyled onClick={this.onSignIn}>
+                <NavigationLinkStyled as='button' onClick={this.onSignIn}>
                   Sign In
                 </NavigationLinkStyled>
               )}

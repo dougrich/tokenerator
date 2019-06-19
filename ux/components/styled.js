@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import withAttrs from '../src/with-attrs'
 
 const colors = {
   borderblack: '#333',
@@ -60,12 +61,15 @@ export const Header = styled.header`
 
 export const NavigationLinkStyled = styled.a`
   ${typography.title}
+  display: inline-block;
   width: 100%;
   max-width: 8em;
   cursor: pointer;  
   font-size: 1.5em;
   color: ${colors.borderblack};
   text-decoration: none;
+  padding: 0;
+  line-height: 2em;
   padding-top: 0.25em;
   padding-bottom: 0.15em;
   margin: 0em 0.5em;
@@ -286,6 +290,12 @@ export const Flex = styled.div({
 
 export const Action = styled.button(props => [
   props.theme.typography.body,
+  props.disabled
+    ? {
+      pointerEvents: 'none',
+      opacity: 0.2
+    }
+    : {},
   {
     display: 'inline-block',
     position: 'relative',
@@ -320,13 +330,38 @@ export const Action = styled.button(props => [
   }
 ])
 
-export const ActionLink = (props) => (
-  <Link
-    {...props}
-    passHref
-  >
-    <Action as='a'>
-      {props.children}
-    </Action>
-  </Link>
+export const ActionLink = (props) => {
+  if (props.disabled) {
+    return (
+      <Action as='a' disabled>
+        {props.children}
+      </Action>
+    )
+  }
+  return (
+    <Link
+      {...props}
+      passHref
+    >
+      <Action as='a'>
+        {props.children}
+      </Action>
+    </Link>
+  )
+}
+
+const TokenShadowContainer = withAttrs({
+  viewBox: '0 0 90 90'
+})(styled.svg({
+  top: '0',
+  left: '0',
+  right: '0',
+  bottom: '0',
+  display: 'block'
+}))
+
+export const TokenShadow = () => (
+  <TokenShadowContainer>
+    <circle cx='45' cy='45' r='36' fill='#e3e3e3' />
+  </TokenShadowContainer>
 )

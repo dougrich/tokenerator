@@ -70,8 +70,8 @@ function tokenToSvg(token, decor) {
     svg += template(part.channels)
   }
   if (decor != null) {
-    svg += '<text x="45" y="80" text-anchor="middle" stroke="black" stroke-width="4.5" fill="black" font-size="50" font-family="monospace">' + decor + '</text>'
-    svg += '<text x="45" y="80" text-anchor="middle" fill="white" font-size="50" font-family="monospace">' + decor + '</text>'
+    svg += '<text x="45" y="80" text-anchor="middle" fill="white" font-size="40" font-family="monospace" stroke="black" stroke-width="8" stroke-linejoin="bevel" >' + decor + '</text>'
+    svg += '<text x="45" y="80" text-anchor="middle" fill="white" font-size="40" font-family="monospace">' + decor + '</text>'
   }
   svg += '</svg>'
   return svg
@@ -97,6 +97,7 @@ function tokenEndpoint(bucket, canonical) {
       // populate id, redirect to token
       try {
         const id = await setToken(firestore, req.body)
+        res.setHeader('X-Token-Id', id)
         res.redirect(200, canonical.token(id))
       } catch (err) {
         next(err)

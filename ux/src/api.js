@@ -15,15 +15,21 @@ const fetchData = (url) => (...args) => apiclient
   .get(url(...args))
   .then(response => response.data)
 
-const postData = (url, header) => (body) => apiclient
+const postData = (url, headers) => (body) => apiclient
   .post(url, body)
-  .then(response => response.headers[header])
+  .then(response => {
+    if (Array.isArray(headers)) {
+      return headers.map(h => response.headers[h])
+    } else {
+      return response.headers[headers]
+    }
+  })
 
 apiclient.browseTokens = fetchData(() => '/api/token/')
 
 apiclient.getToken = fetchData(id => `/api/token/${id}.json`)
 
-apiclient.createToken = postData('/api/token', 'location')
+apiclient.createToken = postData('/api/token', ['location', 'x-token-id'])
 
 apiclient.createBatch = postData('/api/batch', 'x-batch-id')
 

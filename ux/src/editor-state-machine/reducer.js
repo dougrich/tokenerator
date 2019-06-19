@@ -1,8 +1,9 @@
-import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE } from './actions'
+import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE, CLEAR_PARTS, UNDO, REDO } from './actions'
 import Color from 'color'
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
 import valueReducer from '../reducer-value'
+import undoable, { groupByActionTypes } from 'redux-undo'
 
 const currentColor = createReducer(
   null,
@@ -75,15 +76,27 @@ const parts = createReducer(
         next.push({ id, channels, z, slots })
       }
       return next
-    }
+    },
+    [CLEAR_PARTS]: () => ([])
   }
 )
 
-export default combineReducers({
-  currentColor,
-  title,
-  description,
-  isPrivate,
-  parts,
-  active
-})
+export default undoable(
+  combineReducers({
+    currentColor,
+    title,
+    description,
+    isPrivate,
+    parts,
+    active
+  }),
+  {
+    undoType: UNDO,
+    redoType: REDO,
+    groupBy: groupByActionTypes([
+      SET_COLOR,
+      SET_TITLE,
+      SET_DESCRIPTION
+    ])
+  }
+)

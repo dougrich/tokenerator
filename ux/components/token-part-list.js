@@ -66,6 +66,11 @@ export default class TokenParts extends React.Component {
     }
     return (
       <Container>
+        <div>
+          <button onClick={this.props.onClear}>Clear</button>
+          <button onClick={this.props.onUndo}>Undo</button>
+          <button onClick={this.props.onRedo}>Redo</button>
+        </div>
         {children}
       </Container>
     )
