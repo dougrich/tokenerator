@@ -25,7 +25,7 @@ const postData = (url, headers) => (body) => apiclient
     }
   })
 
-apiclient.browseTokens = fetchData(() => '/api/token/')
+apiclient.browseTokens = fetchData((next) => '/api/token/' + (next ? '?next=' + next : ''))
 
 apiclient.getToken = fetchData(id => `/api/token/${id}.json`)
 
