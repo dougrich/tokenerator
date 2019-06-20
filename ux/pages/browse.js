@@ -12,13 +12,14 @@ import { bindActionCreators } from 'redux';
 
 class BrowseGrid extends React.PureComponent {
   render() {
-    const { tokens, pinned, onPin, onUnpin } = this.props
+    const { tokens, isLoading, pinned, onPin, onUnpin } = this.props
     return (
       <Grid>
         {tokens.map(x => (
           <TokenPreview
             {...x}
             key={x.id}
+            disabled={isLoading}
             isPinned={pinned.indexOf(x.id) >= 0}
             onPin={onPin}
             onUnpin={onUnpin}
@@ -74,6 +75,7 @@ const Pinned = styled.div({
 const ConnectedBrowseGrid = connect(
   state => ({
     pinned: state.pinned,
+    isLoading: state.tokens.isLoading,
     tokens: state.tokens.set
   }),
   dispatch => bindActionCreators({
@@ -84,12 +86,14 @@ const ConnectedBrowseGrid = connect(
 
 const ConnectedActionPanel = connect(
   state => ({
-    pinned: state.pinned
+    pinned: state.pinned,
+    filter: state.filter
   }),
   dispatch => bindActionCreators({
-    onClear: dispatchers.CLEAR
+    onClear: dispatchers.CLEAR,
+    onFilter: dispatchers.SET_FILTER
   }, dispatch)
-)(({ pinned, onClear }) => (
+)(({ pinned, filter, onFilter, onClear }) => (
   <React.Fragment>
     <Pinned>{pinned.length} pinned</Pinned>
     <ActionRow>
@@ -101,6 +105,8 @@ const ConnectedActionPanel = connect(
     <ActionRow>
       <SelectField
         label='Filter'
+        value={filter}
+        onChange={onFilter}
         options={[
           { value: 'all', label: 'All Public Tokens' },
           { value: 'mine', label: 'My Tokens' }

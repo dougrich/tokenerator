@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
-import { PIN_TOKEN, UNPIN_TOKEN, CLEAR, LOAD_MORE_START, LOAD_MORE_DONE, LOAD_MORE_ERROR } from './actions'
+import valueReducer from '../reducer-value'
+import { PIN_TOKEN, UNPIN_TOKEN, CLEAR, LOAD_MORE_START, LOAD_MORE_DONE, LOAD_MORE_ERROR, SET_FILTER_START } from './actions'
 
 const setOp = (onMatch, onMismatch) => (set, { id }) => {
   const next = set.slice()
@@ -47,8 +48,14 @@ const tokens = createReducer(
       isLoading: true,
       error: null
     }),
-    [LOAD_MORE_DONE]: (state, { documents, next }) => ({
-      set: [...state.set, ...documents],
+    [SET_FILTER_START]: (state) => ({
+      set: state.set,
+      next: null,
+      isLoading: true,
+      error: null
+    }),
+    [LOAD_MORE_DONE]: (state, { documents, next, isAppend }) => ({
+      set: isAppend ? [...state.set, ...documents] : documents,
       next,
       isLoading: false,
       error: null
@@ -62,7 +69,15 @@ const tokens = createReducer(
   }
 )
 
+const filter = createReducer(
+  'all',
+  {
+    [SET_FILTER_START]: valueReducer
+  }
+)
+
 export default combineReducers({
   pinned,
-  tokens
+  tokens,
+  filter
 })
