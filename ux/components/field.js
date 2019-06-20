@@ -47,6 +47,7 @@ export class RangeField extends React.PureComponent {
   render () {
     const {
       label,
+      disabled,
       value
     } = this.props
     const {
@@ -54,7 +55,7 @@ export class RangeField extends React.PureComponent {
     } = this.state
     const displayvalue = current == null ? value.toString() : current
     return (
-      <Row>
+      <Row disabled={disabled}>
         <RangeFieldLabel>
           <Label>{label}</Label>
           <TextContainer>
@@ -89,12 +90,13 @@ function withLabel (Component) {
     render () {
       const {
         label,
+        disabled,
         ...rest
       } = this.props
       return (
-        <Row>
+        <Row disabled={disabled}>
           <Label>{label}</Label>
-          <Component {...rest} />
+          <Component {...rest} disabled={disabled} />
         </Row>
       )
     }

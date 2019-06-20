@@ -38,7 +38,12 @@ export const Navigation = styled.nav`
   ${row}
 `
 
-export const Row = styled.div(row)
+export const Row = styled.div(props => ({
+  margin: 0,
+  marginBottom: '1em',
+  opacity: props.disabled ? 0.5 : 1,
+  pointerEvents: props.disabled ? 'none' : null
+}))
 
 export const Title = styled.h1(props => [
   props.theme.typography.title,

@@ -51,15 +51,29 @@ class TokenPart extends React.Component {
 
 export default class TokenParts extends React.Component {
   render () {
+    const {
+      parts,
+      active,
+      onActivate,
+      onRemove,
+      onClear,
+      onUndo,
+      onRedo,
+      disabled,
+      canClear,
+      canUndo,
+      canRedo
+    } = this.props
     const children = []
-    for (const part of this.props.parts) {
+    for (const part of parts) {
       children.push(
         <TokenPart
           key={children.length}
           index={children.length}
-          active={this.props.active}
-          onClick={this.props.onActivate}
-          onRemove={this.props.onRemove}
+          active={active}
+          disabled={disabled}
+          onClick={onActivate}
+          onRemove={onRemove}
           {...part}
         />
       )
@@ -67,9 +81,9 @@ export default class TokenParts extends React.Component {
     return (
       <Container>
         <div>
-          <button onClick={this.props.onClear}>Clear</button>
-          <button onClick={this.props.onUndo}>Undo</button>
-          <button onClick={this.props.onRedo}>Redo</button>
+          <button onClick={onClear} disabled={disabled || !canClear}>Clear</button>
+          <button onClick={onUndo} disabled={disabled || !canUndo}>Undo</button>
+          <button onClick={onRedo} disabled={disabled || !canRedo}>Redo</button>
         </div>
         {children}
       </Container>

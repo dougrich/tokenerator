@@ -2,7 +2,7 @@ import AppHead from '../components/head'
 import Header from '../components/header'
 import ColorPicker from '../components/color-picker'
 import styled from '@emotion/styled'
-import { HiddenSvg, NavigationLinkStyled } from '../components/styled'
+import { HiddenSvg, NavigationLinkStyled, Action } from '../components/styled'
 import Page from '../components/page'
 import * as Color from 'color'
 import TokenParts from '../components/token-part-list';
@@ -40,9 +40,9 @@ const UserWarning = styled.div(props => ({
 }))
 
 const ConnectedColorPicker = connect(
-  ({ present: state }) => ({
-    current: state.currentColor || Color('#000'),
-    enabled: !!state.currentColor
+  ({ present: { currentColor, isSaving } }) => ({
+    current: currentColor || Color('#000'),
+    disabled: !currentColor || isSaving,
   }),
   dispatch => bindActionCreators({
     onChange: dispatchers.SET_COLOR
@@ -50,9 +50,13 @@ const ConnectedColorPicker = connect(
 )(ColorPicker)
 
 const ConnectedTokenParts = connect(
-  ({ present: state }) => ({
-    parts: state.parts,
-    active: state.active
+  ({ present: { parts, active, isSaving}, past, future }) => ({
+    parts,
+    active,
+    disabled: isSaving,
+    canClear: parts.length > 0,
+    canUndo: past.length > 0,
+    canRedo: future.length > 0
   }),
   dispatch => bindActionCreators({
     onActivate: dispatchers.SET_CHANNEL,
@@ -64,8 +68,9 @@ const ConnectedTokenParts = connect(
 )(TokenParts)
 
 const ConnectedDisplay = connect(
-  ({ present: state }) => ({
-    parts: state.parts
+  ({ present: { parts, isSaving } }) => ({
+    parts,
+    disabled: isSaving
   }),
   dispatch => bindActionCreators({
     onActivate: dispatchers.SET_CHANNEL,
@@ -73,8 +78,9 @@ const ConnectedDisplay = connect(
 )(Display)
 
 const ConnectedPartGrid = connect(
-  ({ present: state }) => ({
-    parts: state.parts
+  ({ present: { parts, isSaving } }) => ({
+    parts,
+    disabled: isSaving
   }),
   dispatch => bindActionCreators({
     onClick: dispatchers.ADD_PART
@@ -82,24 +88,27 @@ const ConnectedPartGrid = connect(
 )(PartGrid)
 
 const ConnectedTitle = connect(
-  ({ present: state }) => ({ value: state.title }),
+  ({ present: { title, isSaving } }) => ({ value: title, disabled: isSaving }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_TITLE }, dispatch)
 )(TextField)
 
 const ConnectedDescription = connect(
-  ({ present: state }) => ({ value: state.description }),
+  ({ present: { description, isSaving } }) => ({ value: description, disabled: isSaving }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_DESCRIPTION }, dispatch)
 )(TextAreaField)
 
 const ConnectedIsPrivate = connect(
-  ({ present: state }) => ({ value: state.isPrivate }),
+  ({ present: { isPrivate, isSaving } }) => ({ value: isPrivate, disabled: isSaving }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_PRIVATE }, dispatch)
 )(ToggleField)
 
 const ConnectedSave = connect(
-  () => ({ as: 'button' }),
+  ({ present: { isSaving, parts }}) => ({
+    as: 'button',
+    disabled: isSaving || parts.length === 0
+  }),
   dispatch => bindActionCreators({ onClick: dispatchers.SAVE_TOKEN }, dispatch)
-)(NavigationLinkStyled)
+)(Action)
 
 const ConnectedKeyShortcuts = connect(
   () => ({}),

@@ -1,9 +1,9 @@
-import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE, CLEAR_PARTS, UNDO, REDO } from './actions'
+import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE, CLEAR_PARTS, UNDO, REDO, SAVE_TOKEN_START, SAVE_TOKEN_END } from './actions'
 import Color from 'color'
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
 import valueReducer from '../reducer-value'
-import undoable, { groupByActionTypes } from 'redux-undo'
+import undoable, { groupByActionTypes, excludeAction } from 'redux-undo'
 
 const currentColor = createReducer(
   null,
@@ -81,6 +81,22 @@ const parts = createReducer(
   }
 )
 
+const isSaving = createReducer(
+  false,
+  {
+    [SAVE_TOKEN_START]: () => true,
+    [SAVE_TOKEN_END]: () => false
+  }
+)
+
+const saveError = createReducer(
+  null,
+  {
+    [SAVE_TOKEN_START]: () => null,
+    [SAVE_TOKEN_END]: (_, { error }) => error.message
+  }
+)
+
 export default undoable(
   combineReducers({
     currentColor,
@@ -88,7 +104,9 @@ export default undoable(
     description,
     isPrivate,
     parts,
-    active
+    active,
+    isSaving,
+    saveError
   }),
   {
     undoType: UNDO,
@@ -97,6 +115,10 @@ export default undoable(
       SET_COLOR,
       SET_TITLE,
       SET_DESCRIPTION
+    ]),
+    filter: excludeAction([
+      SAVE_TOKEN_START,
+      SAVE_TOKEN_END
     ])
   }
 )
