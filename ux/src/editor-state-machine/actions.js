@@ -53,6 +53,10 @@ export const dispatchers = {
     }
     dispatch({ type: SAVE_TOKEN_START })
     try {
+      await new Promise((resolve, reject) => {
+        setTimeout(resolve, 1000)
+      })
+      throw new Error('Oh no, we testing')
       const [location, id] = await api.createToken(body)
       Router.push({
         pathname: '/token',

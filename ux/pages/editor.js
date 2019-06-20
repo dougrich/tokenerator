@@ -118,6 +118,19 @@ const ConnectedKeyShortcuts = connect(
   }, dispatch)
 )(KeyShortcuts)
 
+const ConnectedError = connect(
+  ({ present: { saveError }}) => ({
+    saveError
+  })
+)(({ saveError }) => {
+  console.log(saveError)
+  return (
+    <UserWarning hasUser={!saveError}>
+      {saveError}
+    </UserWarning>
+  )
+})
+
 export default class extends React.Component {
   static getInitialProps(context) {
     const forkedFrom = context.query.fork
@@ -158,6 +171,7 @@ export default class extends React.Component {
               You are not currently logged in. Make sure to favorite the link to your token if you want to be able to get to it after saving it.<br/>
               You can sign in (without losing your work) at the top of the page.
             </UserWarning>
+            <ConnectedError/>
             <ActionRow>
               <ConnectedSave>
                 Save
