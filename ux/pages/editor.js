@@ -121,7 +121,8 @@ const ConnectedKeyShortcuts = connect(
   () => ({}),
   dispatch => bindActionCreators({
     onUndo: dispatchers.UNDO,
-    onRedo: dispatchers.REDO
+    onRedo: dispatchers.REDO,
+    onDelete: dispatchers.DELETE_ACTIVE
   }, dispatch)
 )(KeyShortcuts)
 

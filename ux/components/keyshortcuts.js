@@ -2,7 +2,8 @@ import React from 'react'
 
 const KeyCodes = {
   Z: 90,
-  Y: 89
+  Y: 89,
+  Delete: 46
 }
 
 export default class extends React.PureComponent {
@@ -13,7 +14,12 @@ export default class extends React.PureComponent {
     document.removeEventListener('keydown', this.onKeyDown)
   }
   executeCommand (e, fn) {
-    if (e.ctrlKey && fn) {
+    if (e.ctrlKey) {
+      this.execute(fn)
+    }
+  }
+  execute (e, fn) {
+    if (fn) {
       e.preventDefault()
       e.stopPropagation()
       fn()
@@ -25,6 +31,8 @@ export default class extends React.PureComponent {
         return this.executeCommand(e, this.props.onUndo)
       case KeyCodes.Y:
         return this.executeCommand(e, this.props.onRedo)
+      case KeyCodes.Delete:
+        return this.execute(e, this.props.onDelete)
     }
   }
   render () {

@@ -72,5 +72,9 @@ export const dispatchers = {
   UNDO: () => ({ type: UNDO }),
   REDO: () => ({ type: REDO }),
   SET_ADVANCED: actionValue(SET_ADVANCED),
-  SWAP_PARTS: (i, j) => ({ type: SWAP_PARTS, i, j })
+  SWAP_PARTS: (i, j) => ({ type: SWAP_PARTS, i, j }),
+  DELETE_ACTIVE: () => (dispatch, getState) => {
+    const { present: { active } } = getState()
+    dispatch({ type: REMOVE_PART, index: active.index, isActive: true })
+  }
 }
