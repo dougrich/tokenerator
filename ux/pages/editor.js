@@ -2,7 +2,7 @@ import AppHead from '../components/head'
 import Header from '../components/header'
 import ColorPicker from '../components/color-picker'
 import styled from '@emotion/styled'
-import { HiddenSvg, NavigationLinkStyled, Action } from '../components/styled'
+import { HiddenSvg, Action } from '../components/styled'
 import Page from '../components/page'
 import * as Color from 'color'
 import TokenParts from '../components/token-part-list';
