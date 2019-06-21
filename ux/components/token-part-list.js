@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
-import { Label } from './styled'
+import React from 'react'
+import { Label, Action, ActionRow } from './styled'
 import { ColorSwatchButton, ColorSwatchContainer } from './color-swatch'
 
 const Container = styled.div({
@@ -12,8 +13,12 @@ const Container = styled.div({
 const TokenPartContainer = styled.div({
   padding: '1em 0.5em',
   margin: '0em -0.5em',
+  display: 'flex',
   '&+&': {
     borderTop: '1px solid #ccc'
+  },
+  '&>div': {
+    width: '100%'
   }
 })
 
@@ -23,8 +28,13 @@ class TokenPart extends React.Component {
       index,
       id,
       channels,
+      isAdvanced,
+      isFirst,
+      isLast,
       active,
       onClick,
+      disabled,
+      onSwap,
       onRemove
     } = this.props
     const children = []
@@ -40,10 +50,35 @@ class TokenPart extends React.Component {
     }
     return (
       <TokenPartContainer>
-        <Label>{id}<button onClick={onRemove.bind(null, index)}>X</button></Label>
-        <ColorSwatchContainer>
-          {children}
-        </ColorSwatchContainer>
+        <div>
+          <Label>{id}</Label>
+          <ColorSwatchContainer>
+            {children}
+          </ColorSwatchContainer>
+        </div>
+        <ActionRow>
+          {isAdvanced && (
+            <React.Fragment>
+              <Action
+                disabled={disabled || isFirst}
+                onClick={onSwap.bind(null, index, index + 1)}
+              >
+                Up
+              </Action>
+              <Action
+                disabled={disabled || isLast}
+                onClick={onSwap.bind(null, index, index - 1)}
+              >
+                Down
+              </Action>
+            </React.Fragment>
+          )}
+          <Action
+            disabled={disabled}
+            onClick={onRemove.bind(null, index)}>
+            Remove
+          </Action>
+        </ActionRow>
       </TokenPartContainer>
     )
   }
@@ -54,11 +89,13 @@ export default class TokenParts extends React.Component {
     const {
       parts,
       active,
+      isAdvanced,
       onActivate,
       onRemove,
       onClear,
       onUndo,
       onRedo,
+      onSwap,
       disabled,
       canClear,
       canUndo,
@@ -68,23 +105,28 @@ export default class TokenParts extends React.Component {
     for (const part of parts) {
       children.push(
         <TokenPart
-          key={children.length}
+          key={part.id}
+          isAdvanced={isAdvanced}
+          isLast={children.length === 0}
+          isFirst={children.length === parts.length - 1}
           index={children.length}
           active={active}
           disabled={disabled}
           onClick={onActivate}
           onRemove={onRemove}
+          onSwap={onSwap}
           {...part}
         />
       )
     }
+    children.reverse()
     return (
       <Container>
-        <div>
-          <button onClick={onClear} disabled={disabled || !canClear}>Clear</button>
-          <button onClick={onUndo} disabled={disabled || !canUndo}>Undo</button>
-          <button onClick={onRedo} disabled={disabled || !canRedo}>Redo</button>
-        </div>
+        <ActionRow>
+          <Action onClick={onClear} disabled={disabled || !canClear}>Clear</Action>
+          <Action onClick={onUndo} disabled={disabled || !canUndo}>Undo</Action>
+          <Action onClick={onRedo} disabled={disabled || !canRedo}>Redo</Action>
+        </ActionRow>
         {children}
       </Container>
     )

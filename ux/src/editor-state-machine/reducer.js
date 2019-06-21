@@ -1,4 +1,4 @@
-import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE, CLEAR_PARTS, UNDO, REDO, SAVE_TOKEN_START, SAVE_TOKEN_END } from './actions'
+import { SET_COLOR, SET_CHANNEL, REMOVE_PART, ADD_PART, SET_DESCRIPTION, SET_TITLE, SET_PRIVATE, CLEAR_PARTS, UNDO, REDO, SAVE_TOKEN_START, SAVE_TOKEN_END, SET_ADVANCED, SWAP_PARTS } from './actions'
 import Color from 'color'
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
@@ -58,8 +58,15 @@ const parts = createReducer(
       updated.splice(index, 1)
       return updated
     },
-    [ADD_PART]: (current, { id, z, slots, channels }) => {
+    [ADD_PART]: (current, { id, z, slots, channels, isAdvanced }) => {
       const next = []
+
+      if (isAdvanced) {
+        next.push(...current)
+        next.push({ id, channels, z, slots })
+        return next
+      }
+
       for (let i = 0; i < current.length; i++) {
         const other = current[i]
         // if they collide
@@ -77,6 +84,13 @@ const parts = createReducer(
       }
       return next
     },
+    [SWAP_PARTS]: (current, { i, j }) => {
+      const next = current.slice()
+      const original = next[i]
+      next[i] = next[j]
+      next[j] = original
+      return next
+    },
     [CLEAR_PARTS]: () => ([])
   }
 )
@@ -88,6 +102,8 @@ const isSaving = createReducer(
     [SAVE_TOKEN_END]: () => false
   }
 )
+
+const isAdvanced = createReducer(false, { [SET_ADVANCED]: valueReducer })
 
 const saveError = createReducer(
   null,
@@ -106,7 +122,8 @@ export default undoable(
     parts,
     active,
     isSaving,
-    saveError
+    saveError,
+    isAdvanced
   }),
   {
     undoType: UNDO,

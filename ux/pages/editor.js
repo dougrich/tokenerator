@@ -50,9 +50,10 @@ const ConnectedColorPicker = connect(
 )(ColorPicker)
 
 const ConnectedTokenParts = connect(
-  ({ present: { parts, active, isSaving}, past, future }) => ({
+  ({ present: { parts, active, isSaving, isAdvanced }, past, future }) => ({
     parts,
     active,
+    isAdvanced,
     disabled: isSaving,
     canClear: parts.length > 0,
     canUndo: past.length > 0,
@@ -63,7 +64,8 @@ const ConnectedTokenParts = connect(
     onRemove: dispatchers.REMOVE_PART,
     onClear: dispatchers.CLEAR_PARTS,
     onUndo: dispatchers.UNDO,
-    onRedo: dispatchers.REDO
+    onRedo: dispatchers.REDO,
+    onSwap: dispatchers.SWAP_PARTS
   }, dispatch)
 )(TokenParts)
 
@@ -102,6 +104,11 @@ const ConnectedIsPrivate = connect(
   dispatch => bindActionCreators({ onChange: dispatchers.SET_PRIVATE }, dispatch)
 )(ToggleField)
 
+const ConnectedIsAdvanced = connect(
+  ({ present: { isAdvanced, isSaving } }) => ({ value: isAdvanced, disabled: isSaving }),
+  dispatch => bindActionCreators({ onChange: dispatchers.SET_ADVANCED }, dispatch)
+)(ToggleField)
+
 const ConnectedSave = connect(
   ({ present: { isSaving, parts }}) => ({
     as: 'button',
@@ -123,7 +130,6 @@ const ConnectedError = connect(
     saveError
   })
 )(({ saveError }) => {
-  console.log(saveError)
   return (
     <UserWarning hasUser={!saveError}>
       {saveError}
@@ -167,6 +173,7 @@ export default class extends React.Component {
             <ConnectedTitle label='Title'/>
             <ConnectedDescription label='Description'/>
             <ConnectedIsPrivate label='Private'/>
+            <ConnectedIsAdvanced label='Advanced'/>
             <UserWarning hasUser={!!user}>
               You are not currently logged in. Make sure to favorite the link to your token if you want to be able to get to it after saving it.<br/>
               You can sign in (without losing your work) at the top of the page.

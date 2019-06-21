@@ -302,6 +302,7 @@ export const Action = styled.button(props => [
     }
     : {},
   {
+    height: '1.5em',
     display: 'inline-block',
     position: 'relative',
     background: 'transparent',
@@ -334,6 +335,11 @@ export const Action = styled.button(props => [
     }
   }
 ])
+
+export const ActionRow = styled.div({
+  display: 'flex',
+  justifyContent: 'space-around'
+})
 
 export const ActionLink = (props) => {
   if (props.disabled) {
