@@ -5,9 +5,9 @@ import { ColorSwatchButton, ColorSwatchContainer } from './color-swatch'
 
 const Container = styled.div({
   width: '100%',
-  overflow: 'auto',
   position: 'relative',
-  padding: '0.5em'
+  padding: '0.5em',
+  marginBottom: '2em'
 })
 
 const TokenPartContainer = styled.div({

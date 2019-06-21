@@ -1,41 +1,40 @@
 import * as parts from '../src/token-parts'
 import styled from '@emotion/styled'
-import { TokenShadow } from './styled'
+import { TokenShadow, Grid, GridItem } from './styled'
 import { SelectField } from './field'
 import React from 'react'
 
-const PartGridContainer = styled.div({
-  textAlign: 'center'
-})
-
-const PartPreviewContainer = styled.button(props => ({
-  display: props.visible ? 'inline-block' : 'none',
-  width: '10em',
-  height: '10em',
-  border: 0,
-  padding: 0,
-  cursor: 'pointer',
-  position: 'relative',
-  backgroundColor: 'transparent',
-  transition: '200ms transform',
-  '&:hover, &:focus': {
-    zIndex: 1,
-    transform: 'scale(1.1, 1.1)'
-  },
-  '&:focus': {
-    outline: '2px dashed #D00'
-  },
-  '&:active': {
-    transition: '100ms transform',
-    transform: 'scale(0.9, 0.9)'
-  },
-  ':disabled': {
-    pointerEvents: 'none'
-  },
-  ':disabled svg': {
-    opacity: 0.2
+const PartPreviewContainer = styled.button(props => [
+  GridItem,
+  {
+    display: props.visible ? 'inline-block' : 'none',
+    width: '10em',
+    height: '10em',
+    border: 0,
+    padding: 0,
+    cursor: 'pointer',
+    position: 'relative',
+    backgroundColor: 'transparent',
+    transition: '200ms transform',
+    '&:hover, &:focus': {
+      zIndex: 1,
+      transform: 'scale(1.1, 1.1)'
+    },
+    '&:focus': {
+      outline: '2px dashed #D00'
+    },
+    '&:active': {
+      transition: '100ms transform',
+      transform: 'scale(0.9, 0.9)'
+    },
+    ':disabled': {
+      pointerEvents: 'none'
+    },
+    ':disabled svg': {
+      opacity: 0.2
+    }
   }
-}))
+])
 
 const PartPreviewLabel = styled.div(props => ({
   position: 'absolute',
@@ -96,16 +95,18 @@ export default class PartGrid extends React.PureComponent {
     }
     return (
       <React.Fragment>
-        <SelectField
-          label='Filter Parts'
-          disabled={disabled}
-          value={this.state.filter}
-          onChange={this.setFilter}
-          options={PartFilterOptions}
-        />
-        <PartGridContainer>
+        <div style={{ maxWidth: '20em', margin: 'auto', marginBottom: '2em' }}>
+          <SelectField
+            label='Filter Parts'
+            disabled={disabled}
+            value={this.state.filter}
+            onChange={this.setFilter}
+            options={PartFilterOptions}
+          />
+        </div>
+        <Grid>
           {children}
-        </PartGridContainer>
+        </Grid>
       </React.Fragment>
     )
   }

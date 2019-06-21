@@ -11,7 +11,7 @@ import React from 'react'
 const ColorPickerContainer = styled.div({
   width: '100%',
   maxWidth: '300px',
-  margin: 'auto'
+  margin: '0 auto'
 })
 
 const PickerRect = styled.rect({

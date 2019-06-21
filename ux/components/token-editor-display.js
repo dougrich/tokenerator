@@ -8,10 +8,14 @@ const Container = styled.div({
   height: '100%',
   maxWidth: '40em',
   maxHeight: '40em',
-  margin: '1em',
+  margin: '1em auto',
   position: 'relative',
   '[data-layer]:hover': {
     mask: 'url(#display-hover-effect)'
+  },
+  '&>svg': {
+    height: '100%',
+    width: '100%'
   }
 })
 
@@ -19,9 +23,10 @@ const Placeholder = styled.div(props => [
   props.theme.typography.subheader,
   {
     position: 'absolute',
-    top: '50%',
+    top: '0%',
     left: '50%',
-    whiteSpace: 'nowrap',
+    width: '50%',
+    textAlign: 'center',
     transform: 'translate(-50%, -50%)'
   }
 ])
