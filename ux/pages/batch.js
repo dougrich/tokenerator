@@ -98,6 +98,7 @@ class BatchOptionFrom extends React.PureComponent {
         {type === constants.FORMAT_PDF && (
           <TextField
             label='Document Title'
+            maxLength={200}
             disabled={disabled}
             value={name}
             onChange={onChange('name')}
