@@ -5,7 +5,7 @@ import { connect, Provider } from 'react-redux'
 import styled from '@emotion/styled'
 import createStore, { dispatchers, constants } from '../src/batch-state-machine'
 import { TextField, SelectField, RangeField, PixelField } from '../components/field'
-import { NavigationLinkStyled, Action } from '../components/styled'
+import { Action } from '../components/styled'
 
 const ActionRow = styled.div({
   width: '100%',
@@ -98,6 +98,7 @@ class BatchOptionFrom extends React.PureComponent {
         {type === constants.FORMAT_PDF && (
           <TextField
             label='Document Title'
+            maxLength={200}
             disabled={disabled}
             value={name}
             onChange={onChange('name')}

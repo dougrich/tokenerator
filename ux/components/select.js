@@ -1,9 +1,9 @@
 import { TextInput, TextInputUnderline, TextContainer } from './styled'
 
 export default class Select extends React.PureComponent {
-  renderOption = ({ value, label }, i) => {
+  renderOption = ({ value, label, disabled }, i) => {
     return (
-      <option key={i} value={value}>
+      <option key={i} value={value} disabled={disabled}>
         {label}
       </option>
     )

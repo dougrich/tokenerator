@@ -32,7 +32,7 @@ const theme = {
       fontFamily: "'Oswald', sans-serif",
       textAlign: 'center',
       fontSize: '3em',
-      lineHeight: '1.5em'
+      lineHeight: '3em'
     }
   }
 }
@@ -45,7 +45,8 @@ const GlobalStylesheet = withTheme(
         <Global styles={{
           body: [
             {
-              background: theme.colors.background
+              background: theme.colors.background,
+              margin: 0
             },
             theme.typography.body
           ]

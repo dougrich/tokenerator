@@ -2,7 +2,7 @@ import AppHead from '../components/head'
 import Header from '../components/header'
 import ColorPicker from '../components/color-picker'
 import styled from '@emotion/styled'
-import { HiddenSvg, NavigationLinkStyled, Action } from '../components/styled'
+import { HiddenSvg, Action } from '../components/styled'
 import Page from '../components/page'
 import * as Color from 'color'
 import TokenParts from '../components/token-part-list';
@@ -17,13 +17,24 @@ import KeyShortcuts from '../components/keyshortcuts'
 
 const FlexRow = styled.div({
   width: '100%',
+  height: '60vh',
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  overflowX: 'auto',
+  overflowY: 'hidden'
 })
-const FlexColumn = styled.div({
+const Panel = styled.div({
   width: '100%',
+  minWidth: '300px',
+  padding: '2em',
   display: 'flex',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  boxSizing: 'border-box',
+  overflowY: 'auto',
+  height: '100%',
+  '@media (max-width: 900px)': {
+    minWidth: '100vw'
+  }
 })
 
 const ActionRow = styled.div({
@@ -121,7 +132,8 @@ const ConnectedKeyShortcuts = connect(
   () => ({}),
   dispatch => bindActionCreators({
     onUndo: dispatchers.UNDO,
-    onRedo: dispatchers.REDO
+    onRedo: dispatchers.REDO,
+    onDelete: dispatchers.DELETE_ACTIVE
   }, dispatch)
 )(KeyShortcuts)
 
@@ -180,7 +192,7 @@ export default class extends React.Component {
           <Display.Defs />
         </HiddenSvg>
         <FlexRow>
-          <FlexColumn>
+          <Panel>
             <ConnectedTitle maxLength={200} label='Title'/>
             <ConnectedDescription maxLength={2000} label='Description'/>
             <ConnectedIsPrivate label='Private'/>
@@ -196,12 +208,14 @@ export default class extends React.Component {
                 Save
               </ConnectedSave>
             </ActionRow>
-          </FlexColumn>
-          <ConnectedDisplay />
-          <FlexRow>
+          </Panel>
+          <Panel style={{height: '100%' }}>
+            <ConnectedDisplay />
+          </Panel>
+          <Panel>
             <ConnectedColorPicker/>
             <ConnectedTokenParts/>
-          </FlexRow>
+          </Panel>
         </FlexRow>
         <ConnectedPartGrid />
       </Page>

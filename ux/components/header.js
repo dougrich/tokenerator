@@ -3,8 +3,8 @@ import {
   Title,
   Header,
   Navigation,
-  NavigationLink,
-  NavigationLinkStyled
+  ActionLink,
+  Action
 } from './styled'
 
 /**
@@ -44,28 +44,28 @@ export default class extends React.PureComponent {
               Token Builder
           </Title>
           <Navigation>
-            <NavigationLink href='/'>
+            <ActionLink href='/'>
                 Home
-            </NavigationLink>
-            <NavigationLink href='/browse'>
+            </ActionLink>
+            <ActionLink href='/browse'>
                 Browse
-            </NavigationLink>
-            <NavigationLink prefetch href='/editor'>
+            </ActionLink>
+            <ActionLink prefetch href='/editor'>
                 Editor
-            </NavigationLink>
-            <NavigationLink href='/site'>
+            </ActionLink>
+            <ActionLink href='/site'>
                 Site
-            </NavigationLink>
+            </ActionLink>
             {user
               ? (
-                <NavigationLinkStyled as='button' onClick={this.onSignOut}>
+                <Action as='button' onClick={this.onSignOut}>
                   Sign Out
-                </NavigationLinkStyled>
+                </Action>
               )
               : (
-                <NavigationLinkStyled as='button' onClick={this.onSignIn}>
+                <Action as='button' onClick={this.onSignIn}>
                   Sign In
-                </NavigationLinkStyled>
+                </Action>
               )}
           </Navigation>
         </Container>

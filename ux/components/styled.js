@@ -12,10 +12,6 @@ const measure = {
   border: '2px'
 }
 
-const timing = {
-  navigation: '100ms ease-in-out'
-}
-
 const typography = {
   title: css`
     font-family: 'Oswald', sans-serif;
@@ -32,11 +28,19 @@ const row = css`
   margin-bottom: 1em;
 `
 
-export const Navigation = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  ${row}
-`
+export const Navigation = styled.nav(row, {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-around',
+  '&>*': {
+    marginTop: '1em!important',
+    width: '10em'
+  },
+  '@media (min-width: 600px)': {
+    flexDirection: 'row'
+  }
+})
 
 export const Row = styled.div(props => ({
   margin: 0,
@@ -48,7 +52,17 @@ export const Row = styled.div(props => ({
 export const Title = styled.h1(props => [
   props.theme.typography.title,
   {
-    margin: 0
+    margin: 0,
+    fontSize: '1.5em',
+    lineHeight: '2em',
+    '@media (min-width: 600px)': {
+      fontSize: '2em',
+      lineHeight: '3em'
+    },
+    '@media (min-width: 800px)': {
+      fontSize: '3em',
+      lineHeight: '3em'
+    }
   }
 ])
 
@@ -64,64 +78,9 @@ export const Header = styled.header`
   position: relative;
 `
 
-export const NavigationLinkStyled = styled.a`
-  ${typography.title}
-  display: inline-block;
-  width: 100%;
-  max-width: 8em;
-  cursor: pointer;  
-  font-size: 1.5em;
-  color: ${colors.borderblack};
-  text-decoration: none;
-  padding: 0;
-  line-height: 2em;
-  padding-top: 0.25em;
-  padding-bottom: 0.15em;
-  margin: 0em 0.5em;
-  position: relative;
-  transition: ${timing.navigation} color;
-  background: transparent;
-  border: 0;
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -${measure.border};
-    left: 0;
-    right: 0;
-    height: ${measure.border};
-    background-color: ${colors.borderblack};
-    transform: scale(0.5, 1);
-    transition: ${timing.navigation} transform, ${timing.navigation} background-color;
-  }
-
-  &:hover, &:focus {
-    color: ${colors.accent};
-  }
-
-  &:hover:after, &:focus:after {
-    transform: scale(1, 1);
-    background-color: ${colors.accent};
-  }
-
-  &:focus {
-    outline: ${measure.border} dashed ${colors.accent};
-  }
-`
-
-export const NavigationLink = (props) => (
-  <Link
-    {...props}
-    passHref
-  >
-    <NavigationLinkStyled>
-      {props.children}
-    </NavigationLinkStyled>
-  </Link>
-)
-
 export const Article = styled.article(props => [
   {
+    padding: '2em',
     'h1, h2, h3, h4': props.theme.typography.header,
     'pre': {
       whiteSpace: 'pre-wrap',
@@ -133,12 +92,13 @@ export const Article = styled.article(props => [
 ])
 
 const gridBreakpoints = [
+  [300, 75],
   [600, 150],
   [800, 200],
   [1200, 300],
-  [1600, 400],
-  [2000, 500],
-  [2500, 500]
+  [1500, 300],
+  [2000, 400],
+  [2400, 400]
 ].map(([gridwidth, size]) => ({
   query: `@media (min-width: ${gridwidth}px)`,
   size: `${gridwidth}px`,
@@ -307,6 +267,7 @@ export const Action = styled.button(props => [
     position: 'relative',
     background: 'transparent',
     textDecoration: 'none',
+    textAlign: 'center',
     color: 'black',
     cursor: 'pointer',
     border: 0,

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import api from '../src/api'
 import { DefaultTokenTitle, DefaultTokenDescription } from '../src/constants'
 import styled from '@emotion/styled'
-import { Container, TokenTitle, TokenDescription, DefaultText, NavigationLinkStyled, NavigationLink } from '../components/styled'
+import { Container, TokenTitle, TokenDescription, DefaultText, Action, ActionLink } from '../components/styled'
 import Page from '../components/page'
 import HorizontalSlider from '../components/slider-horizontal';
 import { RangeField, PixelField } from '../components/field';
@@ -78,10 +78,10 @@ export default class Browse extends React.PureComponent {
               value={this.state.size}
               onChange={this.onSizeChange}
             />
-            <NavigationLinkStyled as='a' href={`/api/token/${token.id}.png?size=${this.state.size}`} download target='_blank'>Download</NavigationLinkStyled>
+            <Action as='a' href={`/api/token/${token.id}.png?size=${this.state.size}`} download target='_blank'>Download</Action>
           </ActionSet>
           <ActionSet>
-            <NavigationLink href={`/editor?fork=${token.id}`}>Fork</NavigationLink>
+            <ActionLink href={`/editor?fork=${token.id}`}>Fork</ActionLink>
           </ActionSet>
         </Container>
       </Page>

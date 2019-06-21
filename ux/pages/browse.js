@@ -9,6 +9,11 @@ import createStore, { dispatchers } from '../src/browse-state-machine'
 import Page from '../components/page'
 import { bindActionCreators } from 'redux';
 
+/**
+ * This is used to cache the scrolled position and state of browse between page loads
+ */
+let BrowseCache = null
+
 
 class BrowseGrid extends React.PureComponent {
   render() {
@@ -93,7 +98,7 @@ const ConnectedActionPanel = connect(
     onClear: dispatchers.CLEAR,
     onFilter: dispatchers.SET_FILTER
   }, dispatch)
-)(({ pinned, filter, onFilter, onClear }) => (
+)(({ pinned, filter, onFilter, onClear, user }) => (
   <React.Fragment>
     <Pinned>{pinned.length} pinned</Pinned>
     <ActionRow>
@@ -109,7 +114,7 @@ const ConnectedActionPanel = connect(
         onChange={onFilter}
         options={[
           { value: 'all', label: 'All Public Tokens' },
-          { value: 'mine', label: 'My Tokens' }
+          { value: 'mine', label: 'My Tokens' + (!user ? ' - sign in required' : ''), disabled: !user }
         ]}
       />
     </ActionRow>
@@ -128,6 +133,7 @@ const ConnectedBrowseMore = connect(
 
 export default class Browse extends React.PureComponent {
   static getInitialProps(context) {
+    if (BrowseCache) return {}
     return api.browseTokens()
       .then(({ documents, next }) => {
         return {
@@ -139,18 +145,31 @@ export default class Browse extends React.PureComponent {
   }
   constructor(props, context) {
     super(props, context)
-    this.store = createStore({
-      tokens: {
-        set: props.tokens,
-        next: props.next
-      }
-    })
+    this.store = !!BrowseCache
+      ? BrowseCache.store
+      : createStore({
+        tokens: {
+          set: props.tokens,
+          next: props.next
+        }
+      })
+  }
+  componentDidMount() {
+    if (BrowseCache) {
+      document.scrollingElement.scrollTop = BrowseCache.scrollTop
+    }
+  }
+  componentWillUnmount() {
+    BrowseCache = {
+      store: this.store,
+      scrollTo: document.scrollingElement.scrollTop
+    }
   }
   render() {
     const { user } = this.props
     return (
       <Page title='Browse' store={this.store} user={user}>
-        <ConnectedActionPanel />
+        <ConnectedActionPanel user={user} />
         <ConnectedBrowseGrid />
         <ConnectedBrowseMore>More</ConnectedBrowseMore>
       </Page>

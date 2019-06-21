@@ -204,7 +204,7 @@ function tokenEndpoint(bucket, secret, canonical) {
       req.params.id = req.params.tokenid + '@' + (req.params.decor || 'default') + '.svg'
       next()
     },
-    // cacheMiddleware(bucket, 'immutable, max-age=86400'),
+    cacheMiddleware(bucket, 'immutable, max-age=86400'),
     (req, res) => {
       // flatten it
       res.setHeader('Content-Type', 'image/svg+xml')
@@ -235,7 +235,7 @@ function tokenEndpoint(bucket, secret, canonical) {
       req.params.id = req.params.tokenid + '@' + req.query.size + '@' + (req.params.decor || 'default') + '.png'
       next()
     },
-    // cacheMiddleware(bucket, 'immutable, max-age=86400'),
+    cacheMiddleware(bucket, 'immutable, max-age=86400'),
     (req, res, next) => {
       const svg = tokenToSvg(req.params.token, req.params.decor)
       const size = parseInt(req.query.size || '180')

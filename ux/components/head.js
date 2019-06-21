@@ -20,6 +20,7 @@ export default class AppHead extends React.PureComponent {
         {this.renderTitle()}
         <link href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald:700&display=swap' rel='stylesheet' />
         {this.props.children}
+        <meta name='viewport' content='width=device-width, maximum-scale=1.0' />
       </Head>
     )
   }
