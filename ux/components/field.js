@@ -5,73 +5,43 @@ import styled from '@emotion/styled'
 import { Label, TextContainer, TextInput, TextInputUnderline, TextAddon, TextMeasure, Row, TextAreaLines } from './styled'
 import withAttrs from '../src/with-attrs'
 
-const RangeFieldLabel = styled.div({
+const RangeFieldLabelContainer = styled.div({
   display: 'flex',
   alignItems: 'flex-end',
   marginBottom: '0.5em'
 })
 
+const RangeFieldLabel = withBounds(withEventUnwrap(({
+  label,
+  value,
+  ...rest
+}) => (
+  <RangeFieldLabelContainer>
+    <Label>{label}</Label>
+    <TextContainer>
+      <TextInput
+        type='number'
+        value={value}
+        {...rest}
+      />
+      <TextInputUnderline />
+      <TextAddon>
+        <TextMeasure>{value}</TextMeasure> pixels
+      </TextAddon>
+    </TextContainer>
+  </RangeFieldLabelContainer>
+)))
+
 export class RangeField extends React.PureComponent {
-  constructor (props, context) {
-    super(props, context)
-    this.state = {
-      current: null
-    }
-  }
-
-  startEdit = () => {
-    this.setState({
-      current: this.props.value.toString()
-    })
-  }
-
-  onInput = (e) => {
-    let v = e.target.value
-    v = v.replace('-', '').replace('.', '')
-    if (/^[1-9][0-9]*$/gi.test(v)) {
-      const number = parseInt(v)
-      if (number >= this.props.min && number <= this.props.max) {
-        this.props.onChange(number)
-      }
-    }
-
-    this.setState({ current: v })
-  }
-
-  doneEdit = () => {
-    this.setState({
-      current: null
-    })
-  }
-
   render () {
     const {
-      label,
-      disabled,
-      value
+      disabled
     } = this.props
-    const {
-      current
-    } = this.state
-    const displayvalue = current == null ? value.toString() : current
     return (
       <Row disabled={disabled}>
-        <RangeFieldLabel>
-          <Label>{label}</Label>
-          <TextContainer>
-            <TextInput
-              type='number'
-              value={displayvalue}
-              onFocus={this.startEdit}
-              onBlur={this.doneEdit}
-              onChange={this.onInput}
-            />
-            <TextInputUnderline />
-            <TextAddon>
-              <TextMeasure>{displayvalue}</TextMeasure> pixels
-            </TextAddon>
-          </TextContainer>
-        </RangeFieldLabel>
+        <RangeFieldLabel
+          {...this.props}
+        />
         <HorizontalSlider {...this.props} />
       </Row>
     )
@@ -91,6 +61,68 @@ const FieldDescription = styled.div(props => ({
   top: '100%',
   right: '0.2em'
 }))
+
+function withBounds (Component) {
+  return class extends React.PureComponent {
+    constructor (props, context) {
+      super(props, context)
+      this.state = { current: null }
+    }
+
+    startEdit = () => {
+      this.setState({
+        current: this.props.value.toString()
+      })
+    }
+
+    onChange = (v) => {
+      v = v.replace('-', '').replace('.', '')
+      if (/^[1-9][0-9]*$/gi.test(v)) {
+        const number = parseInt(v)
+        if (number >= this.props.min && number <= this.props.max) {
+          this.props.onChange(number)
+        }
+      }
+
+      this.setState({ current: v })
+    }
+
+    doneEdit = () => {
+      this.setState({
+        current: null
+      })
+    }
+    render () {
+      const {
+        min,
+        max,
+        ...rest
+      } = this.props
+      const {
+        current
+      } = this.state
+      let forced = {}
+      if (min != null && max != null) {
+        let value = this.props.value
+        if (current != null) value = current
+        forced = {
+          onFocus: this.startEdit,
+          onBlur: this.doneEdit,
+          onChange: this.onChange,
+          value
+        }
+      }
+      return (
+        <Component
+          {...rest}
+          min={min}
+          max={max}
+          {...forced}
+        />
+      )
+    }
+  }
+}
 
 function withMaxLength (Component) {
   return class extends React.PureComponent {
@@ -169,13 +201,13 @@ function withLabel (Component) {
   }
 }
 
-export const TextField = withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
+export const TextField = withBounds(withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
   <TextContainer>
     <TextInput {...rest} />
     <TextInputUnderline />
     {children}
   </TextContainer>
-))))
+)))))
 
 export const TextAreaField = withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
   <TextContainer>

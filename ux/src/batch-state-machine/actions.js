@@ -1,6 +1,7 @@
 import api from '../api'
 import actionValue from '../action-value'
 import actionKeyValue from '../action-keyvalue'
+import { constants } from './constants'
 
 export const SET_LABEL = 'set-label'
 export const SET_COUNT = 'set-count'
@@ -16,10 +17,11 @@ export const dispatchers = {
   SET_TYPE: actionValue(SET_TYPE),
   SET_OPTION: actionKeyValue(SET_OPTION),
   DOWNLOAD: (ids) => async (dispatch, getState) => {
-    const status = (v, meta = null) => dispatch({ type: SET_STATUS, value: {
-      state: v,
-      meta
-    }})
+    const status = (v, meta = null) => dispatch({ type: SET_STATUS,
+      value: {
+        state: v,
+        meta
+      } })
     const state = getState()
     const batch = {
       type: state.type,
@@ -27,16 +29,16 @@ export const dispatchers = {
       tokens: ids.map(id => ({
         id,
         count: parseInt(state.count[id]) || 1,
-        label: state.labels[id] || 'none'
+        label: state.labels[id] || constants.LABEL_NONE
       }))
     }
-    status('post')
+    status(constants.STATE_POST)
     let batchid
     try {
       batchid = await api.createBatch(batch)
       let tryCount = 1
       while (true) {
-        status('check', tryCount)
+        status(constants.STATE_CHECK, tryCount)
         const exists = await api.checkBatch(batchid)
         await delay(1000)
         if (exists) {
@@ -45,11 +47,11 @@ export const dispatchers = {
         tryCount++
       }
     } catch (error) {
-      status('error', error.message)
+      status(constants.STATE_ERROR, error.message)
       return
     }
     const url = api.checkBatch.route(batchid)
-    status('done', url)
+    status(constants.STATE_DONE, url)
     const atag = document.createElement('a')
     atag.href = url
     atag.download = 'batch'

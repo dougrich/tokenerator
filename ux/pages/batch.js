@@ -3,7 +3,7 @@ import AppHead from '../components/head'
 import Header from '../components/header'
 import { connect, Provider } from 'react-redux'
 import styled from '@emotion/styled'
-import createStore, { dispatchers } from '../src/batch-state-machine'
+import createStore, { dispatchers, constants } from '../src/batch-state-machine'
 import { TextField, SelectField, RangeField, PixelField } from '../components/field'
 import { NavigationLinkStyled, Action } from '../components/styled'
 
@@ -46,6 +46,7 @@ class BatchItem extends React.PureComponent {
       onCountChange,
       onLabelChange
     } = this.props
+    const max = constants.maxCount[label]
     return (
       <BatchItemRow>
         <BatchItemPreview src={`/api/token/${id}.svg`}/>
@@ -53,16 +54,16 @@ class BatchItem extends React.PureComponent {
           <TextField
             type='number'
             disabled={disabled}
-            max='9'
+            max={max}
             min='1'
             value={count}
             label='Count'
             onChange={onCountChange}
           />
           <SelectField label='Symbol Type' value={label} onChange={onLabelChange} disabled={disabled} options={[
-            { label: 'None', value: 'none' },
-            { label: 'Number', value: 'number' },
-            { label: 'Alphabet', value: 'alphabet' },
+            { label: 'None', value: constants.LABEL_NONE },
+            { label: 'Number', value: constants.LABEL_NUMBER },
+            { label: 'Alphabet', value: constants.LABEL_ALPHABET },
           ]}/>
         </BatchItemFields>
       </BatchItemRow>
@@ -87,14 +88,14 @@ class BatchOptionFrom extends React.PureComponent {
         <SelectField
           label='Format'
           options={[
-            { label: 'File - Zip Archive', value: 'ZIP' },
-            { label: 'File - PDF Document', value: 'PDF' },
+            { label: 'File - Zip Archive', value: constants.FORMAT_ZIP },
+            { label: 'File - PDF Document', value: constants.FORMAT_PDF },
           ]}
           disabled={disabled}
           value={type}
           onChange={onTypeChange}
         />
-        {type === 'PDF' && (
+        {type === constants.FORMAT_PDF && (
           <TextField
             label='Document Title'
             disabled={disabled}
@@ -102,19 +103,19 @@ class BatchOptionFrom extends React.PureComponent {
             onChange={onChange('name')}
           />
         )}
-        {type === 'ZIP' && (
+        {type === constants.FORMAT_ZIP && (
           <PixelField
             value={size}
             disabled={disabled}
             onChange={onChange('size')}
           />
         )}
-        {type === 'PDF' && (
+        {type === constants.FORMAT_PDF && (
           <SelectField
             label='Page Size'
             options={[
-              { label: 'Letter', value: 'letter' },
-              { label: 'A4', value: 'a4' }
+              { label: 'Letter', value: constants.PAGE_LETTER },
+              { label: 'A4', value: constants.PAGE_A4 }
             ]}
             value={page}
             disabled={disabled}
@@ -157,7 +158,7 @@ const ConnectedDownload = connect(
     onClick: () => dispatch(dispatchers.DOWNLOAD(ids))
   }),
   ({ status }, { onClick }, { children }) => {
-    if (status && status.state === 'done') {
+    if (status && status.state === constants.STATE_DONE) {
       return {
         as: 'a',
         href: status.meta,
@@ -192,7 +193,7 @@ const ConnectedStatus = connect(
     meta
   } = status
 
-  if (state === 'post') {
+  if (state === constants.STATE_POST) {
     return (
       <StatusRow>
         <SubStatusRow>
@@ -202,7 +203,7 @@ const ConnectedStatus = connect(
     )
   }
 
-  if (state === 'check') {
+  if (state === constants.STATE_CHECK) {
     return (
       <StatusRow>
         <SubStatusRow>
@@ -215,7 +216,7 @@ const ConnectedStatus = connect(
     )
   }
 
-  if (state === 'done') {
+  if (state === constants.STATE_DONE) {
     return (
       <StatusRow>
         <SubStatusRow>
@@ -225,7 +226,7 @@ const ConnectedStatus = connect(
     )
   }
 
-  if (state === 'error') {
+  if (state === constants.STATE_ERROR) {
     return (
       <StatusRow>
         <SubStatusRow>
@@ -237,6 +238,8 @@ const ConnectedStatus = connect(
       </StatusRow>
     )
   }
+
+  return null
 })
 
 export default class Batch extends React.PureComponent {
