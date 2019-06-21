@@ -14,6 +14,10 @@ export default class extends React.PureComponent {
     return (
       <ModalContainer>
         <SignInProvider>
+          <h3>Heads Up</h3>
+          Before signing in, read through the <a href='/site' target='_blank'>privacy policy</a> and make sure you're okay with it.
+        </SignInProvider>
+        <SignInProvider>
           <Google as='a' href='/api/account/login/google'/>
         </SignInProvider>
         <SignInProvider>
