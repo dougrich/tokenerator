@@ -136,6 +136,17 @@ const ConnectedError = connect(
     </UserWarning>
   )
 })
+const ConnectedWarning = connect(
+  ({ present: { isAdvanced }}) => ({
+    isAdvanced
+  })
+)(({ isAdvanced }) => {
+  return (
+    <UserWarning hasUser={!isAdvanced}>
+      Advanced mode turns off part collision and allows re-ordering parts.
+    </UserWarning>
+  )
+})
 
 export default class extends React.Component {
   static getInitialProps(context) {
@@ -174,6 +185,7 @@ export default class extends React.Component {
             <ConnectedDescription maxLength={2000} label='Description'/>
             <ConnectedIsPrivate label='Private'/>
             <ConnectedIsAdvanced label='Advanced'/>
+            <ConnectedWarning/>
             <UserWarning hasUser={!!user}>
               You are not currently logged in. Make sure to favorite the link to your token if you want to be able to get to it after saving it.<br/>
               You can sign in (without losing your work) at the top of the page.
