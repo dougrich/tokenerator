@@ -93,7 +93,7 @@ const ConnectedActionPanel = connect(
     onClear: dispatchers.CLEAR,
     onFilter: dispatchers.SET_FILTER
   }, dispatch)
-)(({ pinned, filter, onFilter, onClear }) => (
+)(({ pinned, filter, onFilter, onClear, user }) => (
   <React.Fragment>
     <Pinned>{pinned.length} pinned</Pinned>
     <ActionRow>
@@ -109,7 +109,7 @@ const ConnectedActionPanel = connect(
         onChange={onFilter}
         options={[
           { value: 'all', label: 'All Public Tokens' },
-          { value: 'mine', label: 'My Tokens' }
+          { value: 'mine', label: 'My Tokens' + (!user ? ' - sign in required' : ''), disabled: !user }
         ]}
       />
     </ActionRow>
@@ -150,7 +150,7 @@ export default class Browse extends React.PureComponent {
     const { user } = this.props
     return (
       <Page title='Browse' store={this.store} user={user}>
-        <ConnectedActionPanel />
+        <ConnectedActionPanel user={user} />
         <ConnectedBrowseGrid />
         <ConnectedBrowseMore>More</ConnectedBrowseMore>
       </Page>
