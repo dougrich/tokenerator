@@ -1,4 +1,5 @@
 import api from '../api'
+import actionValue from '../action-value'
 import Router from 'next/router'
 
 export const SET_COLOR = 'set-color'
@@ -13,6 +14,8 @@ export const SAVE_TOKEN_END = 'save-token-end'
 export const CLEAR_PARTS = 'clear-parts'
 export const UNDO = 'undo'
 export const REDO = 'redo'
+export const SET_ADVANCED = 'set-advanced'
+export const SWAP_PARTS = 'swap-parts'
 
 export const dispatchers = {
   SET_COLOR: value => (dispatch, getState) => {
@@ -32,10 +35,13 @@ export const dispatchers = {
     const { present: { active } } = getState()
     dispatch({ type: REMOVE_PART, index, isActive: active && active.index === index })
   },
-  ADD_PART: (id, { z, slots, channels }) => ({ type: ADD_PART, id, z, slots, channels }),
-  SET_TITLE: (event) => ({ type: SET_TITLE, value: event.target.value }),
-  SET_DESCRIPTION: (event) => ({ type: SET_DESCRIPTION, value: event.target.value }),
-  SET_PRIVATE: (value) => ({ type: SET_PRIVATE, value }),
+  ADD_PART: (id, { z, slots, channels }) => (dispatch, getState) => {
+    const { present: { isAdvanced } } = getState()
+    dispatch({ type: ADD_PART, id, z, slots, channels, isAdvanced })
+  },
+  SET_TITLE: actionValue(SET_TITLE),
+  SET_DESCRIPTION: actionValue(SET_DESCRIPTION),
+  SET_PRIVATE: actionValue(SET_PRIVATE),
   SAVE_TOKEN: () => async (dispatch, getState) => {
     const {
       present: {
@@ -64,5 +70,7 @@ export const dispatchers = {
   },
   CLEAR_PARTS: () => ({ type: CLEAR_PARTS }),
   UNDO: () => ({ type: UNDO }),
-  REDO: () => ({ type: REDO })
+  REDO: () => ({ type: REDO }),
+  SET_ADVANCED: actionValue(SET_ADVANCED),
+  SWAP_PARTS: (i, j) => ({ type: SWAP_PARTS, i, j })
 }

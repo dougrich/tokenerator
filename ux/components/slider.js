@@ -48,7 +48,10 @@ export default class Slider extends React.PureComponent {
     : Math.min(1, Math.max(0, d[k]))
 
   onChange = (d) => {
-    this.props.onChange({
+    const { disabled, onChange } = this.props
+    if (disabled) return
+
+    onChange({
       x: this.bound(d, 'x'),
       y: this.bound(d, 'y')
     })
@@ -136,6 +139,7 @@ export default class Slider extends React.PureComponent {
       thumb: Thumb,
       thumbProps,
       step,
+      disabled,
       ...rest
     } = this.props
     return (
@@ -149,7 +153,7 @@ export default class Slider extends React.PureComponent {
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
           onKeyDown={this.onKeyDown}
-          tabIndex='0'
+          tabIndex={disabled ? null : '0'}
         >
           {children}
           <svg x={toPercentage(x)} y={toPercentage(y)} style={{ overflow: 'visible', pointerEvents: 'none' }}>

@@ -1,10 +1,29 @@
+import Microsoft from '@dougrich/react-signin-microsoft/dist/dark'
+import Google from '@dougrich/react-signin-google/dist/dark'
+import styled from '@emotion/styled'
+import { ModalContainer } from '../components/styled'
+
+const SignInProvider = styled.div({
+  display: 'block',
+  textAlign: 'center',
+  margin: '2em'
+})
+
 export default class extends React.PureComponent {
   render () {
     return (
-      <div>
-        <a href='/api/account/login/google'>Google</a>
-        <a href='/api/account/login/microsoft'>Microsoft</a>
-      </div>
+      <ModalContainer>
+        <SignInProvider>
+          <h3>Heads Up</h3>
+          Before signing in, read through the <a href='/site' target='_blank'>privacy policy</a> and make sure you're okay with it.
+        </SignInProvider>
+        <SignInProvider>
+          <Google as='a' href='/api/account/login/google'/>
+        </SignInProvider>
+        <SignInProvider>
+          <Microsoft as='a' href='/api/account/login/microsoft'/>
+        </SignInProvider>
+      </ModalContainer>
     )
   }
 }

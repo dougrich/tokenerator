@@ -133,6 +133,7 @@ class SaturationLightnessSlider extends React.PureComponent {
         y={y}
         step={step}
         thumb={PickerCircle}
+        disabled={this.props.disabled}
         thumbProps={{
           fill: color
         }}
@@ -160,6 +161,7 @@ class HueSlider extends React.PureComponent {
         y={0.5}
         step={step}
         thumb={PickerCircle}
+        disabled={this.props.disabled}
         thumbProps={{
           fill: this.props.color
         }}
@@ -185,14 +187,14 @@ class ColorInput extends React.Component {
   onBlur = () => {
     this.setState({ value: null })
   }
-  onChange = (e) => {
-    this.setState({ value: e.target.value })
-    if (colortest({ strict: true }).test(e.target.value)) {
-      this.props.onChange(e.target.value)
+  onChange = (value) => {
+    this.setState({ value })
+    if (colortest({ strict: true }).test(value)) {
+      this.props.onChange(value)
     }
   }
   render () {
-    const { current } = this.props
+    const { current, disabled } = this.props
     const { value } = this.state
     return (
       <TextField
@@ -200,6 +202,7 @@ class ColorInput extends React.Component {
         value={value == null ? current : value}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
+        disabled={disabled}
         onChange={this.onChange}
         label='Hex'
       />
@@ -209,14 +212,24 @@ class ColorInput extends React.Component {
 
 class ColorSwatch extends React.PureComponent {
   onClick = () => {
-    this.props.onChange(Color(this.props.color))
+    const {
+      onChange,
+      color
+    } = this.props
+    onChange(Color(color))
   }
 
   render () {
+    const {
+      name,
+      color,
+      disabled
+    } = this.props
     return (
       <ColorSwatchButton
-        title={`${this.props.name} | ${this.props.color}`}
-        style={{ background: this.props.color }}
+        disabled={disabled}
+        title={`${name} | ${color}`}
+        style={{ background: color }}
         onClick={this.onClick}
       />
     )
@@ -225,40 +238,56 @@ class ColorSwatch extends React.PureComponent {
 
 export default class ColorPicker extends React.Component {
   onHueChange = hue => {
-    const next = this.props.current.hsl()
+    const { onChange, current } = this.props
+    const next = current.hsl()
     next.color[0] = hue
-    this.props.onChange(next)
+    onChange(next)
   }
   onSaturationLightnessChange = (saturation, lightness) => {
-    const next = this.props.current.hsl()
+    const { onChange, current } = this.props
+    const next = current.hsl()
     next.color[1] = saturation
     next.color[2] = lightness
-    this.props.onChange(next)
+    onChange(next)
   }
   onInputChange = (hex) => {
     this.props.onChange(Color(hex))
   }
   render () {
-    const { current, children } = this.props
+    const { current, children, disabled } = this.props
     const [hue, saturation, lightness] = current.hsl().color
     const currentHex = current.hex().toString()
     return (
-      <ColorPickerContainer>
-        <Label>Saturation/Lightness</Label>
-        <SaturationLightnessSlider
-          hue={hue}
-          saturation={saturation}
-          color={currentHex}
-          lightness={lightness}
-          onChange={this.onSaturationLightnessChange}
+      <ColorPickerContainer disabled={disabled}>
+        <Row disabled={disabled}>
+          <Label>Saturation/Lightness</Label>
+          <SaturationLightnessSlider
+            hue={hue}
+            saturation={saturation}
+            color={currentHex}
+            disabled={disabled}
+            lightness={lightness}
+            onChange={this.onSaturationLightnessChange}
+          />
+        </Row>
+        <Row disabled={disabled}>
+          <Label>Hue</Label>
+          <HueSlider
+            hue={hue}
+            color={currentHex}
+            onChange={this.onHueChange}
+            disabled={disabled}
+          />
+        </Row>
+        <ColorInput
+          current={currentHex}
+          onChange={this.onInputChange}
+          disabled={disabled}
         />
-        <Label>Hue</Label>
-        <HueSlider hue={hue} color={currentHex} onChange={this.onHueChange} />
-        <ColorInput current={currentHex} onChange={this.onInputChange} />
         {
           Swatches.map(({ name, set }, i) => {
             return (
-              <Row key={i}>
+              <Row key={i} disabled={disabled}>
                 <Label>{name}</Label>
                 <ColorSwatchContainer>
                   {
@@ -266,6 +295,7 @@ export default class ColorPicker extends React.Component {
                       return (
                         <ColorSwatch
                           key={i}
+                          disabled={disabled}
                           onChange={this.props.onChange}
                           {...props}
                         />

@@ -34,14 +34,15 @@ const PartPreviewContainer = styled.button(props => ({
   },
   ':disabled svg': {
     opacity: 0.2
-  },
-  '&:disabled:after': {
-    content: '"selected"',
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)'
   }
+}))
+
+const PartPreviewLabel = styled.div(props => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  display: props.isVisible ? 'block' : 'none'
 }))
 
 const PartPreview = styled.svg({
@@ -65,10 +66,10 @@ export default class PartGrid extends React.PureComponent {
     }
   }
 
-  setFilter = (e) => this.setState({ filter: e.target.value })
+  setFilter = (filter) => this.setState({ filter })
 
   render () {
-    const { parts: active } = this.props
+    const { parts: active, disabled, onClick } = this.props
     const isActive = {}
     for (const p of active) {
       isActive[p.id] = true
@@ -81,14 +82,15 @@ export default class PartGrid extends React.PureComponent {
         <PartPreviewContainer
           key={children.length}
           visible={filtered.indexOf(part) >= 0}
-          disabled={!!isActive[part]}
-          onClick={this.props.onClick.bind(null, part, parts.$defaults[part])}
+          disabled={!!isActive[part] || disabled}
+          onClick={onClick.bind(null, part, parts.$defaults[part])}
         >
           <TokenShadow />
           <PartPreview
             viewBox='0 0 90 90'
             dangerouslySetInnerHTML={{ __html: parts[part](parts.$defaults[part].channels) }}
           />
+          <PartPreviewLabel isVisible={!!isActive[part]}>Selected</PartPreviewLabel>
         </PartPreviewContainer>
       )
     }
@@ -96,6 +98,7 @@ export default class PartGrid extends React.PureComponent {
       <React.Fragment>
         <SelectField
           label='Filter Parts'
+          disabled={disabled}
           value={this.state.filter}
           onChange={this.setFilter}
           options={PartFilterOptions}

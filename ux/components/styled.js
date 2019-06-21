@@ -38,7 +38,12 @@ export const Navigation = styled.nav`
   ${row}
 `
 
-export const Row = styled.div(row)
+export const Row = styled.div(props => ({
+  margin: 0,
+  marginBottom: '1em',
+  opacity: props.disabled ? 0.5 : 1,
+  pointerEvents: props.disabled ? 'none' : null
+}))
 
 export const Title = styled.h1(props => [
   props.theme.typography.title,
@@ -297,6 +302,7 @@ export const Action = styled.button(props => [
     }
     : {},
   {
+    height: '1.5em',
     display: 'inline-block',
     position: 'relative',
     background: 'transparent',
@@ -329,6 +335,11 @@ export const Action = styled.button(props => [
     }
   }
 ])
+
+export const ActionRow = styled.div({
+  display: 'flex',
+  justifyContent: 'space-around'
+})
 
 export const ActionLink = (props) => {
   if (props.disabled) {
@@ -365,3 +376,18 @@ export const TokenShadow = () => (
     <circle cx='45' cy='45' r='36' fill='#e3e3e3' />
   </TokenShadowContainer>
 )
+
+export const ModalContainer = styled.div({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  background: 'white',
+  padding: '2em',
+  border: '1px solid #d9d9d9',
+  borderRadius: '0.25em'
+})
+
+export const TextCenter = styled.div({
+  textAlign: 'center'
+})

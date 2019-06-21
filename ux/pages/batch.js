@@ -3,9 +3,9 @@ import AppHead from '../components/head'
 import Header from '../components/header'
 import { connect, Provider } from 'react-redux'
 import styled from '@emotion/styled'
-import store, { dispatchers } from '../src/batch-state-machine'
+import createStore, { dispatchers, constants } from '../src/batch-state-machine'
 import { TextField, SelectField, RangeField, PixelField } from '../components/field'
-import { NavigationLinkStyled } from '../components/styled'
+import { NavigationLinkStyled, Action } from '../components/styled'
 
 const ActionRow = styled.div({
   width: '100%',
@@ -38,23 +38,32 @@ const BatchItemFields = styled.div({
 
 class BatchItem extends React.PureComponent {
   render () {
-    const { label, count, id, onCountChange, onLabelChange } = this.props
+    const {
+      label,
+      count,
+      id,
+      disabled,
+      onCountChange,
+      onLabelChange
+    } = this.props
+    const max = constants.maxCount[label]
     return (
       <BatchItemRow>
         <BatchItemPreview src={`/api/token/${id}.svg`}/>
         <BatchItemFields>
           <TextField
             type='number'
-            max='9'
+            disabled={disabled}
+            max={max}
             min='1'
             value={count}
             label='Count'
             onChange={onCountChange}
           />
-          <SelectField label='Symbol Type' value={label} onChange={onLabelChange} options={[
-            { label: 'None', value: 'none' },
-            { label: 'Number', value: 'number' },
-            { label: 'Alphabet', value: 'alphabet' },
+          <SelectField label='Symbol Type' value={label} onChange={onLabelChange} disabled={disabled} options={[
+            { label: 'None', value: constants.LABEL_NONE },
+            { label: 'Number', value: constants.LABEL_NUMBER },
+            { label: 'Alphabet', value: constants.LABEL_ALPHABET },
           ]}/>
         </BatchItemFields>
       </BatchItemRow>
@@ -69,6 +78,7 @@ class BatchOptionFrom extends React.PureComponent {
       name,
       page,
       size,
+      disabled,
       onTypeChange,
       onChange
     } = this.props
@@ -78,33 +88,37 @@ class BatchOptionFrom extends React.PureComponent {
         <SelectField
           label='Format'
           options={[
-            { label: 'File - Zip Archive', value: 'ZIP' },
-            { label: 'File - PDF Document', value: 'PDF' },
+            { label: 'File - Zip Archive', value: constants.FORMAT_ZIP },
+            { label: 'File - PDF Document', value: constants.FORMAT_PDF },
           ]}
+          disabled={disabled}
           value={type}
           onChange={onTypeChange}
         />
-        {type === 'PDF' && (
+        {type === constants.FORMAT_PDF && (
           <TextField
             label='Document Title'
+            disabled={disabled}
             value={name}
             onChange={onChange('name')}
           />
         )}
-        {type === 'ZIP' && (
+        {type === constants.FORMAT_ZIP && (
           <PixelField
             value={size}
+            disabled={disabled}
             onChange={onChange('size')}
           />
         )}
-        {type === 'PDF' && (
+        {type === constants.FORMAT_PDF && (
           <SelectField
             label='Page Size'
             options={[
-              { label: 'Letter', value: 'letter' },
-              { label: 'A4', value: 'a4' }
+              { label: 'Letter', value: constants.PAGE_LETTER },
+              { label: 'A4', value: constants.PAGE_A4 }
             ]}
             value={page}
+            disabled={disabled}
             onChange={onChange('page')}
           />
         )}
@@ -114,34 +128,119 @@ class BatchOptionFrom extends React.PureComponent {
 }
 
 const ConnectedBatchItem = connect(
-  (state, { id }) => ({
+  ({ labels, count, status }, { id }) => ({
     id,
-    label: state.labels[id] || '',
-    count: state.count[id] || 1
+    disabled: status != null,
+    label: labels[id] || '',
+    count: count[id] || 1
   }),
   (dispatch, { id }) => ({
-    onCountChange: (e) => dispatch(dispatchers.SET_COUNT(id, e.target.value)),
-    onLabelChange: (e) => dispatch(dispatchers.SET_LABEL(id, e.target.value))
+    onCountChange: (v) => dispatch(dispatchers.SET_COUNT(id, v)),
+    onLabelChange: (v) => dispatch(dispatchers.SET_LABEL(id, v))
   })
 )(BatchItem)
 
 const ConnectedForm = connect(
-  (state) => ({
-    type: state.type,
-    ...state.options
+  ({ type, options, status}) => ({
+    type,
+    disabled: status != null,
+    ...options
   }),
   dispatch => ({
-    onTypeChange: (e) => dispatch(dispatchers.SET_TYPE(e.target.value)),
-    onChange: (key) => (e) => dispatch(dispatchers.SET_OPTION(key, e.target ? e.target.value : e))
+    onTypeChange: (v) => dispatch(dispatchers.SET_TYPE(v)),
+    onChange: (key) => (v) => dispatch(dispatchers.SET_OPTION(key, v))
   })
 )(BatchOptionFrom)
 
 const ConnectedDownload = connect(
-  () => ({}),
+  ({ status }) => ({ status }),
   (dispatch, { ids }) => ({
     onClick: () => dispatch(dispatchers.DOWNLOAD(ids))
-  })
-)(NavigationLinkStyled)
+  }),
+  ({ status }, { onClick }, { children }) => {
+    if (status && status.state === constants.STATE_DONE) {
+      return {
+        as: 'a',
+        href: status.meta,
+        children
+      }
+    }
+
+    return {
+      disabled: status != null,
+      onClick,
+      children
+    }
+  }
+)(Action)
+
+const StatusRow = styled.div({
+  margin: '5em',
+  textAlign: 'center'
+})
+
+const SubStatusRow = styled.div({
+  margin: '1em'
+})
+
+const ConnectedStatus = connect(
+  ({ status }) => ({ status })
+)(({ status }) => {
+  if (!status) return null
+
+  const {
+    state,
+    meta
+  } = status
+
+  if (state === constants.STATE_POST) {
+    return (
+      <StatusRow>
+        <SubStatusRow>
+          Preparing your download...
+        </SubStatusRow>
+      </StatusRow>
+    )
+  }
+
+  if (state === constants.STATE_CHECK) {
+    return (
+      <StatusRow>
+        <SubStatusRow>
+          Waiting for your download to be ready
+        </SubStatusRow>
+        <SubStatusRow>
+          (check {meta})
+        </SubStatusRow>
+      </StatusRow>
+    )
+  }
+
+  if (state === constants.STATE_DONE) {
+    return (
+      <StatusRow>
+        <SubStatusRow>
+          Your download is ready and should start. If not, click download above.
+        </SubStatusRow>
+      </StatusRow>
+    )
+  }
+
+  if (state === constants.STATE_ERROR) {
+    return (
+      <StatusRow>
+        <SubStatusRow>
+          An error has occured trying to get your download ready.
+        </SubStatusRow>
+        <SubStatusRow>
+          {meta}
+        </SubStatusRow>
+      </StatusRow>
+    )
+  }
+
+  return null
+})
 
 export default class Batch extends React.PureComponent {
   static getInitialProps(context) {
@@ -149,16 +248,21 @@ export default class Batch extends React.PureComponent {
       ids: context.query.ids.split(' ')
     }
   }
+  constructor(props, context) {
+    super(props, context)
+    this.store = createStore()
+  }
   render () {
     const { ids, user } = this.props
     return (
-      <Page title='Batch' store={store} user={user}>
+      <Page title='Batch' store={this.store} user={user}>
         <BatchItemContainer>
           {ids.map((id) => <ConnectedBatchItem id={id} key={id} />)}
           <ConnectedForm/>
           <ActionRow>
             <ConnectedDownload ids={ids}>Download</ConnectedDownload>
           </ActionRow>
+          <ConnectedStatus/>
         </BatchItemContainer>
       </Page>
     )

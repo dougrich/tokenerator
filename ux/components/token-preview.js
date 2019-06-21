@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styled from '@emotion/styled'
 import { GridItem } from './styled'
 
-const TokenPreviewContainer = styled.div([
+const TokenPreviewContainer = styled.div(props => [
   {
     position: 'relative',
     display: 'inline-block',
@@ -10,6 +10,8 @@ const TokenPreviewContainer = styled.div([
     overflow: 'hidden',
     boxSizing: 'border-box',
     borderRadius: '1em',
+    opacity: props.disabled ? 0.5 : 1,
+    pointerEvents: props.disabled ? 'none' : undefined,
     transition: '200ms background-color',
     '&:hover, &:focus': {
       backgroundColor: '#efefef'
@@ -105,12 +107,12 @@ export default class TokenPreview extends React.PureComponent {
     handler(id)
   }
   render () {
-    const { title, id, isPinned } = this.props
+    const { title, disabled, id, isPinned } = this.props
     return (
-      <Link href={`/token?id=${id}`} as={`/token/${id}`} passHref>
-        <TokenPreviewContainer as='a'>
+      <Link href={`/token?id=${id}`} as={`/token/${id}`} passHref={!disabled}>
+        <TokenPreviewContainer as='a' disabled={disabled}>
           <TokenPreviewImage src={`/api/token/${id}.svg`} />
-          <TokenPin pinned={isPinned} onClick={this.onClick}>
+          <TokenPin pinned={isPinned} disabled={disabled} onClick={this.onClick}>
             {isPinned ? 'Pinned' : 'Pin'}
           </TokenPin>
           {title && (

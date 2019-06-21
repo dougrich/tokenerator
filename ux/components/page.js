@@ -25,6 +25,7 @@ const theme = {
     header: {
       fontFamily: "'Oswald', sans-serif",
       textAlign: 'left',
+      paddingBottom: '0.5em',
       borderBottom: '2px solid black'
     },
     title: {

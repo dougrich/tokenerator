@@ -4,27 +4,58 @@ import { Grid, Action, ActionLink } from '../components/styled'
 import { getCookieProps } from '../src/common'
 import api from '../src/api'
 import TokenPreview from '../components/token-preview';
-import { connect, Provider } from 'react-redux'
-import store, { dispatchers } from '../src/browse-state-machine'
+import { connect } from 'react-redux'
+import createStore, { dispatchers } from '../src/browse-state-machine'
 import Page from '../components/page'
 import { bindActionCreators } from 'redux';
 
 
 class BrowseGrid extends React.PureComponent {
   render() {
-    const { tokens, pinned, onPin, onUnpin } = this.props
+    const { tokens, isLoading, pinned, onPin, onUnpin } = this.props
     return (
       <Grid>
         {tokens.map(x => (
           <TokenPreview
             {...x}
             key={x.id}
+            disabled={isLoading}
             isPinned={pinned.indexOf(x.id) >= 0}
             onPin={onPin}
             onUnpin={onUnpin}
           />
         ))}
       </Grid>
+    )
+  }
+}
+
+const BrowseMorePanelContainer = styled.div({
+  padding: '5vh',
+  paddingBottom: '25vh',
+  textAlign: 'center'
+})
+const BrowseMoreError = styled.div({
+  padding: '2em',
+  borderRadius: '0.25em',
+  background: '#ffd0d0',
+  maxWidth: '500px',
+  margin: '1em auto'
+})
+
+class BrowseMorePanel extends React.PureComponent {
+  render() {
+    const {
+      error,
+      ...rest
+    } = this.props
+    return (
+      <BrowseMorePanelContainer>
+        {!!error && (
+          <BrowseMoreError>{error}</BrowseMoreError>
+        )}
+        <Action {...rest}>Load More Tokens</Action>
+      </BrowseMorePanelContainer>
     )
   }
 }
@@ -43,7 +74,9 @@ const Pinned = styled.div({
 
 const ConnectedBrowseGrid = connect(
   state => ({
-    pinned: state.pinned
+    pinned: state.pinned,
+    isLoading: state.tokens.isLoading,
+    tokens: state.tokens.set
   }),
   dispatch => bindActionCreators({
     onPin: dispatchers.PIN_TOKEN,
@@ -53,12 +86,14 @@ const ConnectedBrowseGrid = connect(
 
 const ConnectedActionPanel = connect(
   state => ({
-    pinned: state.pinned
+    pinned: state.pinned,
+    filter: state.filter
   }),
   dispatch => bindActionCreators({
-    onClear: dispatchers.CLEAR
+    onClear: dispatchers.CLEAR,
+    onFilter: dispatchers.SET_FILTER
   }, dispatch)
-)(({ pinned, onClear }) => (
+)(({ pinned, filter, onFilter, onClear }) => (
   <React.Fragment>
     <Pinned>{pinned.length} pinned</Pinned>
     <ActionRow>
@@ -70,6 +105,8 @@ const ConnectedActionPanel = connect(
     <ActionRow>
       <SelectField
         label='Filter'
+        value={filter}
+        onChange={onFilter}
         options={[
           { value: 'all', label: 'All Public Tokens' },
           { value: 'mine', label: 'My Tokens' }
@@ -79,22 +116,43 @@ const ConnectedActionPanel = connect(
   </React.Fragment>
 ))
 
+const ConnectedBrowseMore = connect(
+  state => ({
+    disabled: !!state.tokens.isLoading,
+    error: state.tokens.error
+  }),
+  dispatch => bindActionCreators({
+    onClick: dispatchers.LOAD_MORE
+  }, dispatch)
+)(BrowseMorePanel)
+
 export default class Browse extends React.PureComponent {
   static getInitialProps(context) {
     return api.browseTokens()
       .then(({ documents, next }) => {
         return {
           ...getCookieProps(context),
-          tokens: documents
+          tokens: documents,
+          next
         }
       })
   }
+  constructor(props, context) {
+    super(props, context)
+    this.store = createStore({
+      tokens: {
+        set: props.tokens,
+        next: props.next
+      }
+    })
+  }
   render() {
-    const { tokens, user } = this.props
+    const { user } = this.props
     return (
-      <Page title='Browse' store={store} user={user}>
+      <Page title='Browse' store={this.store} user={user}>
         <ConnectedActionPanel />
-        <ConnectedBrowseGrid tokens={tokens} />
+        <ConnectedBrowseGrid />
+        <ConnectedBrowseMore>More</ConnectedBrowseMore>
       </Page>
     )
   }

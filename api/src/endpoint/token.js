@@ -6,12 +6,27 @@ const Ajv = require('ajv')
 const shortid = require('shortid')
 const bodyparser = require('body-parser')
 const slug = require('slug')
+const cookieParser = require('cookie-parser')
 const { cacheMiddleware, contentMiddleware } = require('../middleware')
 const ajv = new Ajv()
 ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'))
 const validator = ajv.compile(parts.$schema)
+const jwt = require('jsonwebtoken')
 
 const TOKEN_COLLECTION = 'tokens/'
+
+const userMiddleware = (secret) => (req, res, next) => {
+  if (req.cookies.auth) {
+    try {
+      req.params.user = jwt.verify(req.cookies.auth, secret)
+    } catch (err) {
+      res.status(400)
+      res.end('Request contains an invalid JWT token; clear cookies and try again')
+      return
+    }
+  }
+  next()
+}
 
 function loadToken(firestore) {
   return async (req, res, next) => {
@@ -77,13 +92,15 @@ function tokenToSvg(token, decor) {
   return svg
 }
 
-function tokenEndpoint(bucket, canonical) {
+function tokenEndpoint(bucket, secret, canonical) {
   const router = express()
   const firestore = new Firestore()
 
   router.post(
     '/',
     bodyparser.json(),
+    cookieParser(),
+    userMiddleware(secret),
     (req, res, next) => {
       const isValid = validator(req.body)
       if (!isValid) {
@@ -95,6 +112,9 @@ function tokenEndpoint(bucket, canonical) {
     },
     async (req, res, next) => {
       // populate id, redirect to token
+      if (req.params.user) {
+        req.body.user = req.params.user.sub
+      }
       try {
         const id = await setToken(firestore, req.body)
         res.setHeader('X-Token-Id', id)
@@ -107,6 +127,8 @@ function tokenEndpoint(bucket, canonical) {
 
   router.get(
     '/',
+    cookieParser(),
+    userMiddleware(secret),
     (req, res, next) => {
       if (!req.query.next) return next()
       if (!/^[1-9][0-9]*$/.test(req.query.next)) {
@@ -116,14 +138,25 @@ function tokenEndpoint(bucket, canonical) {
       }
 
       req.params.next = parseInt(req.query.next)
+      if (!req.query.filter) return next()
+      if (req.query.filter !== 'mine') {
+        res.status(400)
+        res.end("'filter' query must be 'mine'")
+        return
+      }
       next()
     },
     async (req, res, next) => {
       const size = 60
 
-      let query = firestore.collection('tokens')
-        .where('private', '==', false)
-        .orderBy('modified', 'desc')
+      
+      let query = !!req.query.filter && !!req.params.user && !!req.params.user.sub
+        ? firestore.collection('tokens')
+          .where('user', '==', req.params.user.sub)
+          .orderBy('modified', 'desc')
+        : firestore.collection('tokens')
+          .where('private', '==', false)
+          .orderBy('modified', 'desc')
 
       if (req.params.next) {
         query = query

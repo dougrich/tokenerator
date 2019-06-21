@@ -25,7 +25,18 @@ const postData = (url, headers) => (body) => apiclient
     }
   })
 
-apiclient.browseTokens = fetchData(() => '/api/token/')
+const formatQuery = (params) => {
+  const parts = []
+  for (const k in params) {
+    if (params[k]) {
+      parts.push(`${k}=${params[k]}`)
+    }
+  }
+  if (parts.length === 0) return ''
+  return '?' + parts.join('&')
+}
+
+apiclient.browseTokens = fetchData((filter, next) => '/api/token/' + formatQuery({ filter: filter === 'all' ? null : filter, next }))
 
 apiclient.getToken = fetchData(id => `/api/token/${id}.json`)
 

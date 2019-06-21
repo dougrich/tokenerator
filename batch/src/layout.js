@@ -37,7 +37,7 @@ function createGridPosition(width, height, margin, size, minSize) {
 const margin = inch / 2
 const fontsize = 10
 const size = {
-  token: inch,
+  token: 0.8 * inch,
   outline: 1.375 * inch
 }
 
