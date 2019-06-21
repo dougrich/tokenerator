@@ -9,6 +9,11 @@ import createStore, { dispatchers } from '../src/browse-state-machine'
 import Page from '../components/page'
 import { bindActionCreators } from 'redux';
 
+/**
+ * This is used to cache the scrolled position and state of browse between page loads
+ */
+let BrowseCache = null
+
 
 class BrowseGrid extends React.PureComponent {
   render() {
@@ -128,6 +133,7 @@ const ConnectedBrowseMore = connect(
 
 export default class Browse extends React.PureComponent {
   static getInitialProps(context) {
+    if (BrowseCache) return {}
     return api.browseTokens()
       .then(({ documents, next }) => {
         return {
@@ -139,12 +145,25 @@ export default class Browse extends React.PureComponent {
   }
   constructor(props, context) {
     super(props, context)
-    this.store = createStore({
-      tokens: {
-        set: props.tokens,
-        next: props.next
-      }
-    })
+    this.store = !!BrowseCache
+      ? BrowseCache.store
+      : createStore({
+        tokens: {
+          set: props.tokens,
+          next: props.next
+        }
+      })
+  }
+  componentDidMount() {
+    if (BrowseCache) {
+      document.scrollingElement.scrollTop = BrowseCache.scrollTop
+    }
+  }
+  componentWillUnmount() {
+    BrowseCache = {
+      store: this.store,
+      scrollTo: document.scrollingElement.scrollTop
+    }
   }
   render() {
     const { user } = this.props

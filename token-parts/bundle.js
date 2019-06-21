@@ -94,7 +94,7 @@ async function processFile(filename) {
         if (fill === 'none') return
 
         defaults.channels[className] = { color: fill }
-        e.attribs['fill'] = '${context[\'' + className + '\'].color}'
+        e.attribs['fill'] = '${get(context, \'' + className + '\', \'' + fill + '\')}'
         e.attribs['data-layer'] = `${id}/${className}`
       })
     }
@@ -205,7 +205,13 @@ async function processDirectory() {
     '$tags': allTags
   }
 
-  const js = 'module.exports = ' + JSON.stringify(moduleExports).slice(0, -1) + ',\n  ' + templates.join(',\n  ') + '\n}'
+  function get(context, key, fallback) {
+    return !!context[key]
+      ? context[key].color || fallback
+      : fallback
+  }
+
+  const js = get.toString() + '\n\nmodule.exports = ' + JSON.stringify(moduleExports).slice(0, -1) + ',\n  ' + templates.join(',\n  ') + '\n}'
   fs.writeFile('../api/src/token-parts.js', js)
   fs.writeFile('../ux/src/token-parts.js', js)
 }
