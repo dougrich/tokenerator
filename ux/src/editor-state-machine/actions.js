@@ -1,4 +1,5 @@
 import api from '../api'
+import actionValue from '../action-value'
 import Router from 'next/router'
 
 export const SET_COLOR = 'set-color'
@@ -38,9 +39,9 @@ export const dispatchers = {
     const { present: { isAdvanced } } = getState()
     dispatch({ type: ADD_PART, id, z, slots, channels, isAdvanced })
   },
-  SET_TITLE: (event) => ({ type: SET_TITLE, value: event.target.value }),
-  SET_DESCRIPTION: (event) => ({ type: SET_DESCRIPTION, value: event.target.value }),
-  SET_PRIVATE: (value) => ({ type: SET_PRIVATE, value }),
+  SET_TITLE: actionValue(SET_TITLE),
+  SET_DESCRIPTION: actionValue(SET_DESCRIPTION),
+  SET_PRIVATE: actionValue(SET_PRIVATE),
   SAVE_TOKEN: () => async (dispatch, getState) => {
     const {
       present: {
@@ -70,6 +71,6 @@ export const dispatchers = {
   CLEAR_PARTS: () => ({ type: CLEAR_PARTS }),
   UNDO: () => ({ type: UNDO }),
   REDO: () => ({ type: REDO }),
-  SET_ADVANCED: (value) => ({ type: SET_ADVANCED, value }),
+  SET_ADVANCED: actionValue(SET_ADVANCED),
   SWAP_PARTS: (i, j) => ({ type: SWAP_PARTS, i, j })
 }

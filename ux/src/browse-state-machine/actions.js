@@ -26,11 +26,11 @@ export const dispatchers = {
     dispatch({ type: LOAD_MORE_START })
     await load(filter, true, tokens.next, dispatch)
   },
-  SET_FILTER: (e) => async (dispatch, getState) => {
+  SET_FILTER: (value) => async (dispatch, getState) => {
     const { tokens } = getState()
     if (tokens.isLoading) return
-    dispatch({ type: SET_FILTER_START, value: e.target.value })
-    await load(e.target.value, false, null, dispatch)
+    dispatch({ type: SET_FILTER_START, value })
+    await load(value, false, null, dispatch)
   },
   CLEAR: () => ({ type: CLEAR })
 }

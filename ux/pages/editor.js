@@ -170,8 +170,8 @@ export default class extends React.Component {
         </HiddenSvg>
         <FlexRow>
           <FlexColumn>
-            <ConnectedTitle label='Title'/>
-            <ConnectedDescription label='Description'/>
+            <ConnectedTitle maxLength={200} label='Title'/>
+            <ConnectedDescription maxLength={2000} label='Description'/>
             <ConnectedIsPrivate label='Private'/>
             <ConnectedIsAdvanced label='Advanced'/>
             <UserWarning hasUser={!!user}>

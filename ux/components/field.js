@@ -85,6 +85,72 @@ export const PixelField = withAttrs({
   label: 'Image Size'
 })(RangeField)
 
+const FieldDescription = styled.div(props => ({
+  position: 'absolute',
+  fontSize: '0.8em',
+  top: '100%',
+  right: '0.2em'
+}))
+
+function withMaxLength (Component) {
+  return class extends React.PureComponent {
+    onChange = (v) => {
+      const result = v.slice(0, this.props.maxLength)
+      this.props.onChange(result)
+    }
+    renderMaxLength () {
+      const {
+        value,
+        maxLength
+      } = this.props
+      const length = (value || '').length
+      const left = maxLength - length
+      if (left > maxLength / 2) return null
+      // fade in as we move through 1/8 of the max length
+      const leftPercent = left / maxLength
+      const opacity = Math.min(1, -8 * (leftPercent - 0.5))
+      return (
+        <FieldDescription style={{
+          opacity
+        }}>
+          {left} characters left
+        </FieldDescription>
+      )
+    }
+    render () {
+      const {
+        onChange,
+        children,
+        maxLength,
+        ...rest
+      } = this.props
+      const hasMaxLength = maxLength != null
+      return (
+        <Component {...rest} maxLength={maxLength} onChange={hasMaxLength ? this.onChange : onChange}>
+          {hasMaxLength && this.renderMaxLength()}
+          {children}
+        </Component>
+      )
+    }
+  }
+}
+
+function withEventUnwrap (Component) {
+  return class extends React.PureComponent {
+    onChange = (e) => {
+      if (this.props.onChange) {
+        this.props.onChange(e.target.value)
+      }
+    }
+
+    render () {
+      return (
+        <Component {...this.props} onChange={this.onChange} />
+      )
+    }
+  }
+}
+
 function withLabel (Component) {
   return class extends React.PureComponent {
     render () {
@@ -103,20 +169,22 @@ function withLabel (Component) {
   }
 }
 
-export const TextField = withLabel(props => (
+export const TextField = withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
   <TextContainer>
-    <TextInput {...props} />
+    <TextInput {...rest} />
     <TextInputUnderline />
+    {children}
   </TextContainer>
-))
+))))
 
-export const TextAreaField = withLabel(props => (
+export const TextAreaField = withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
   <TextContainer>
-    <TextInput as='textarea' {...props} />
+    <TextInput as='textarea' {...rest} />
     <TextAreaLines />
+    {children}
   </TextContainer>
-))
+))))
 
 export const ToggleField = withLabel(Toggle)
 
-export const SelectField = withLabel(Select)
+export const SelectField = withEventUnwrap(withLabel(Select))

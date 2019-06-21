@@ -66,7 +66,7 @@ export default class PartGrid extends React.PureComponent {
     }
   }
 
-  setFilter = (e) => this.setState({ filter: e.target.value })
+  setFilter = (filter) => this.setState({ filter })
 
   render () {
     const { parts: active, disabled, onClick } = this.props

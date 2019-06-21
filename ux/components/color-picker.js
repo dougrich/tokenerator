@@ -187,10 +187,10 @@ class ColorInput extends React.Component {
   onBlur = () => {
     this.setState({ value: null })
   }
-  onChange = (e) => {
-    this.setState({ value: e.target.value })
-    if (colortest({ strict: true }).test(e.target.value)) {
-      this.props.onChange(e.target.value)
+  onChange = (value) => {
+    this.setState({ value })
+    if (colortest({ strict: true }).test(value)) {
+      this.props.onChange(value)
     }
   }
   render () {
