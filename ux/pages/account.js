@@ -1,4 +1,5 @@
 import { LOGGEDIN } from "../src/const";
+import Page from '../components/page'
 import { ModalContainer, TextCenter } from '../components/styled'
 
 export default class extends React.PureComponent {
@@ -10,11 +11,13 @@ export default class extends React.PureComponent {
   }
   render () {
     return (
-      <ModalContainer>
-        <TextCenter>
-          You have successfully logged in!
-        </TextCenter>
-      </ModalContainer>
+      <Page simple title='Sign in success!'>
+        <ModalContainer>
+          <TextCenter>
+            You have successfully signed in!
+          </TextCenter>
+        </ModalContainer>
+      </Page>
     )
   }
 }

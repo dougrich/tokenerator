@@ -1,8 +1,9 @@
 import AppHead from '../components/head'
 import Header from '../components/header'
 import ColorPicker from '../components/color-picker'
+import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import { HiddenSvg, Action } from '../components/styled'
+import { HiddenSvg, Action, ActionRow } from '../components/styled'
 import Page from '../components/page'
 import * as Color from 'color'
 import TokenParts from '../components/token-part-list';
@@ -13,35 +14,55 @@ import store, { dispatchers } from '../src/editor-state-machine'
 import PartGrid from '../components/part-grid';
 import Display from '../components/token-editor-display'
 import api from '../src/api'
+import Collapsible from '../components/collapsible'
 import KeyShortcuts from '../components/keyshortcuts'
 
-const FlexRow = styled.div({
+const EditorTools = styled.div({
   width: '100%',
-  height: '60vh',
   display: 'flex',
   justifyContent: 'space-between',
-  overflowX: 'auto',
-  overflowY: 'hidden'
+  '@media (max-width: 1100px)': {
+    flexDirection: 'column',
+    width: '100%'
+  }
 })
-const Panel = styled.div({
-  width: '100%',
-  minWidth: '300px',
+
+const DisplayColor = styled.div({
+  width: '66%',
+  display: 'flex',
+  justifyContent: 'space-between',
+  '@media (max-width: 1100px)': {
+    width: '100%'
+  },
+  '@media (max-width: 750px)': {
+    flexDirection: 'column'
+  }
+})
+
+const BasePanel = css({
   padding: '2em',
   display: 'flex',
   flexDirection: 'column',
   boxSizing: 'border-box',
-  overflowY: 'auto',
-  height: '100%',
-  '@media (max-width: 900px)': {
-    minWidth: '100vw'
-  }
+  height: '100%'
 })
 
-const ActionRow = styled.div({
-  width: '100%',
-  display: 'flex',
-  justifyContent: 'space-around'
-})
+const FormPanel = styled.div([
+  BasePanel,
+  {
+    width: '33%',
+    '@media (max-width: 1100px)': {
+      width: '100%'
+    }
+  }
+])
+
+const DisplayColorPanel = styled.div([
+  BasePanel,
+  {
+    width: '100%'
+  }
+])
 
 const UserWarning = styled.div(props => ({
   backgroundColor: '#e3e3e3',
@@ -184,6 +205,7 @@ export default class extends React.Component {
   }
   render() {
     const { user } = this.props
+    const enabledWidth = 600
     return (
       <Page title='Editor' store={this.store} user={user}>
         <ConnectedKeyShortcuts />
@@ -191,32 +213,38 @@ export default class extends React.Component {
           <ColorPicker.Defs />
           <Display.Defs />
         </HiddenSvg>
-        <FlexRow>
-          <Panel>
-            <ConnectedTitle maxLength={200} label='Title'/>
-            <ConnectedDescription maxLength={2000} label='Description'/>
-            <ConnectedIsPrivate label='Private'/>
-            <ConnectedIsAdvanced label='Advanced'/>
-            <ConnectedWarning/>
-            <UserWarning hasUser={!!user}>
-              You are not currently logged in. Make sure to favorite the link to your token if you want to be able to get to it after saving it.<br/>
-              You can sign in (without losing your work) at the top of the page.
-            </UserWarning>
-            <ConnectedError/>
+        <EditorTools>
+          <FormPanel>
+            <Collapsible enabledWidth={enabledWidth} label='Details'>
+              <ConnectedTitle maxLength={200} label='Title'/>
+              <ConnectedDescription maxLength={2000} label='Description'/>
+              <ActionRow>
+                <ConnectedIsPrivate label='Private'/>
+                <ConnectedIsAdvanced label='Advanced'/>
+              </ActionRow>
+              <ConnectedWarning/>
+              <ConnectedError/>
+            </Collapsible>
             <ActionRow>
               <ConnectedSave>
-                Save
+                Save {!user && 'Anonymously'}
               </ConnectedSave>
             </ActionRow>
-          </Panel>
-          <Panel style={{height: '100%' }}>
-            <ConnectedDisplay />
-          </Panel>
-          <Panel>
-            <ConnectedColorPicker/>
-            <ConnectedTokenParts/>
-          </Panel>
-        </FlexRow>
+          </FormPanel>
+          <DisplayColor>
+            <DisplayColorPanel style={{height: '100%' }}>
+              <ConnectedDisplay />
+            </DisplayColorPanel>
+            <DisplayColorPanel>
+              <Collapsible enabledWidth={enabledWidth} label='Colors'>
+                <ConnectedColorPicker/>
+              </Collapsible>
+              <Collapsible enabledWidth={enabledWidth} label='Parts'>
+                <ConnectedTokenParts/>
+              </Collapsible>
+            </DisplayColorPanel>
+          </DisplayColor>
+        </EditorTools>
         <ConnectedPartGrid />
       </Page>
     )

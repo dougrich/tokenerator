@@ -23,12 +23,14 @@ const typography = {
   `
 }
 
-const row = css`
-  margin: 0;
-  margin-bottom: 1em;
-`
+const RowStyles = props => css({
+  margin: 0,
+  marginBottom: '1.5em',
+  opacity: props.disabled ? 0.5 : 1,
+  pointerEvents: props.disabled ? 'none' : null
+})
 
-export const Navigation = styled.nav(row, {
+export const Navigation = styled.nav(RowStyles, {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -42,12 +44,7 @@ export const Navigation = styled.nav(row, {
   }
 })
 
-export const Row = styled.div(props => ({
-  margin: 0,
-  marginBottom: '1em',
-  opacity: props.disabled ? 0.5 : 1,
-  pointerEvents: props.disabled ? 'none' : null
-}))
+export const Row = styled.div(RowStyles)
 
 export const Title = styled.h1(props => [
   props.theme.typography.title,
@@ -126,7 +123,7 @@ const { itemstyle, gridstyle } = gridBreakpoints.reduce(({ itemstyle, gridstyle 
   },
   gridstyle: {
     margin: 'auto',
-    width: '400px'
+    width: '300px'
   }
 })
 

@@ -55,6 +55,13 @@ const PartPreview = styled.svg({
   bottom: 0
 })
 
+const FilterContainer = styled.div({
+  maxWidth: '20em',
+  margin: 'auto',
+  marginBottom: '2em',
+  padding: '0em 2em'
+})
+
 const PartFilterOptions = parts.$tags.$list.map(x => ({ value: x, label: x }))
 
 export default class PartGrid extends React.PureComponent {
@@ -95,7 +102,7 @@ export default class PartGrid extends React.PureComponent {
     }
     return (
       <React.Fragment>
-        <div style={{ maxWidth: '20em', margin: 'auto', marginBottom: '2em' }}>
+        <FilterContainer>
           <SelectField
             label='Filter Parts'
             disabled={disabled}
@@ -103,7 +110,7 @@ export default class PartGrid extends React.PureComponent {
             onChange={this.setFilter}
             options={PartFilterOptions}
           />
-        </div>
+        </FilterContainer>
         <Grid>
           {children}
         </Grid>

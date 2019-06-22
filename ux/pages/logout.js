@@ -1,5 +1,6 @@
 import { LOGGEDIN } from "../src/const";
 import { ModalContainer, TextCenter } from '../components/styled'
+import Page from '../components/page'
 
 export default class extends React.PureComponent {
   componentDidMount() {
@@ -10,11 +11,13 @@ export default class extends React.PureComponent {
   }
   render () {
     return (
-      <ModalContainer>
-        <TextCenter>
-          You have successfully logged out!
-        </TextCenter>
-      </ModalContainer>
+      <Page simple title='Sign out success!'>
+        <ModalContainer>
+          <TextCenter>
+            You have successfully signed out!
+          </TextCenter>
+        </ModalContainer>
+      </Page>
     )
   }
 }
