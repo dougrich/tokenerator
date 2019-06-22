@@ -62,6 +62,7 @@ export default class Page extends React.PureComponent {
       children,
       store,
       title,
+      simple,
       user
     } = this.props
 
@@ -76,7 +77,7 @@ export default class Page extends React.PureComponent {
       <ThemeProvider theme={theme}>
         <GlobalStylesheet />
         <AppHead title={title} />
-        <Header user={user} />
+        {!simple && <Header user={user} />}
         {children}
       </ThemeProvider>
     )
