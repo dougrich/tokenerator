@@ -17,24 +17,20 @@ import KeyShortcuts from '../components/keyshortcuts'
 
 const FlexRow = styled.div({
   width: '100%',
-  height: '60vh',
   display: 'flex',
   justifyContent: 'space-between',
-  overflowX: 'auto',
-  overflowY: 'hidden'
+  '@media (max-width: 900px)': {
+    flexDirection: 'column'
+  }
 })
 const Panel = styled.div({
   width: '100%',
-  minWidth: '300px',
   padding: '2em',
   display: 'flex',
   flexDirection: 'column',
   boxSizing: 'border-box',
   overflowY: 'auto',
-  height: '100%',
-  '@media (max-width: 900px)': {
-    minWidth: '100vw'
-  }
+  height: '100%'
 })
 
 const ActionRow = styled.div({
