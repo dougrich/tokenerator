@@ -223,14 +223,11 @@ export default class extends React.Component {
                 <ConnectedIsAdvanced label='Advanced'/>
               </ActionRow>
               <ConnectedWarning/>
-              <UserWarning hasUser={!user}>
-                {user && `Welcome back ${user.name}`}
-              </UserWarning>
               <ConnectedError/>
             </Collapsible>
             <ActionRow>
               <ConnectedSave>
-                Save
+                Save {!user && 'Anonymously'}
               </ConnectedSave>
             </ActionRow>
           </FormPanel>
