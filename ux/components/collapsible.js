@@ -10,7 +10,7 @@ const CollapsibleActionRow = styled.div(props => ({
   marginBottom: '1.5em',
   textAlign: 'center',
   [`@media (max-width: ${props.enabledWidth}px)`]: {
-    display:'block'
+    display: 'block'
   }
 }))
 
@@ -21,7 +21,7 @@ const CollapsibleContent = styled.div(props => ({
 }))
 
 export default class extends React.PureComponent {
-  constructor(props, context) {
+  constructor (props, context) {
     super(props, context)
     this.state = {
       collapsed: true
@@ -30,14 +30,14 @@ export default class extends React.PureComponent {
 
   onToggle = () => this.setState({ collapsed: !this.state.collapsed })
 
-  render() {
+  render () {
     return (
       <CollapsibleContainer>
         <CollapsibleActionRow
           enabledWidth={this.props.enabledWidth}
         >
           <Action onClick={this.onToggle}>
-          {this.state.collapsed ? 'Show' : 'Hide'} {this.props.label}
+            {this.state.collapsed ? 'Show' : 'Hide'} {this.props.label}
           </Action>
         </CollapsibleActionRow>
         <CollapsibleContent
