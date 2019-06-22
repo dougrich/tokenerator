@@ -23,9 +23,9 @@ const Placeholder = styled.div(props => [
   props.theme.typography.subheader,
   {
     position: 'absolute',
-    top: '0%',
+    top: '50%',
     left: '50%',
-    width: '50%',
+    width: '70%',
     textAlign: 'center',
     transform: 'translate(-50%, -50%)'
   }
@@ -46,7 +46,7 @@ export default class Display extends React.Component {
         <Container>
           <TokenShadow />
           <Placeholder>
-            Select some parts to get started
+            Add parts to get started
           </Placeholder>
         </Container>
       )

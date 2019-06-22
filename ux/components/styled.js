@@ -123,7 +123,7 @@ const { itemstyle, gridstyle } = gridBreakpoints.reduce(({ itemstyle, gridstyle 
   },
   gridstyle: {
     margin: 'auto',
-    width: '400px'
+    width: '300px'
   }
 })
 

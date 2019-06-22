@@ -6,6 +6,7 @@ import {
   ActionLink,
   Action
 } from './styled'
+import Collapsible from './collapsible'
 
 /**
  * Header component is the component that covers the top of the page
@@ -43,31 +44,33 @@ export default class extends React.PureComponent {
           <Title>
               Token Builder
           </Title>
-          <Navigation>
-            <ActionLink href='/'>
-                Home
-            </ActionLink>
-            <ActionLink href='/browse'>
-                Browse
-            </ActionLink>
-            <ActionLink prefetch href='/editor'>
-                Editor
-            </ActionLink>
-            <ActionLink href='/site'>
-                Site
-            </ActionLink>
-            {user
-              ? (
-                <Action as='button' onClick={this.onSignOut}>
-                  Sign Out
-                </Action>
-              )
-              : (
-                <Action as='button' onClick={this.onSignIn}>
-                  Sign In
-                </Action>
-              )}
-          </Navigation>
+          <Collapsible enabledWidth={599} label='Menu'>
+            <Navigation>
+              <ActionLink href='/'>
+                  Home
+              </ActionLink>
+              <ActionLink href='/browse'>
+                  Browse
+              </ActionLink>
+              <ActionLink prefetch href='/editor'>
+                  Editor
+              </ActionLink>
+              <ActionLink href='/site'>
+                  Site
+              </ActionLink>
+              {user
+                ? (
+                  <Action as='button' onClick={this.onSignOut}>
+                    Sign Out
+                  </Action>
+                )
+                : (
+                  <Action as='button' onClick={this.onSignIn}>
+                    Sign In
+                  </Action>
+                )}
+            </Navigation>
+          </Collapsible>
         </Container>
       </Header>
     )
