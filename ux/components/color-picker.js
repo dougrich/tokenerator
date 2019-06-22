@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import * as Color from 'color'
-import * as colortest from 'hex-color-regex'
 import Slider from './slider'
 import { TextField } from './field'
 import { Label, Row } from './styled'
@@ -174,42 +173,6 @@ class HueSlider extends React.PureComponent {
   }
 }
 
-class ColorInput extends React.Component {
-  constructor (props, context) {
-    super(props, context)
-    this.state = {
-      value: null
-    }
-  }
-  onFocus = () => {
-    this.setState({ value: this.props.current })
-  }
-  onBlur = () => {
-    this.setState({ value: null })
-  }
-  onChange = (value) => {
-    this.setState({ value })
-    if (colortest({ strict: true }).test(value)) {
-      this.props.onChange(value)
-    }
-  }
-  render () {
-    const { current, disabled } = this.props
-    const { value } = this.state
-    return (
-      <TextField
-        type='text'
-        value={value == null ? current : value}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        disabled={disabled}
-        onChange={this.onChange}
-        label='Hex'
-      />
-    )
-  }
-}
-
 class ColorSwatch extends React.PureComponent {
   onClick = () => {
     const {
@@ -279,10 +242,14 @@ export default class ColorPicker extends React.Component {
             disabled={disabled}
           />
         </Row>
-        <ColorInput
-          current={currentHex}
-          onChange={this.onInputChange}
+        <TextField
+          type='text'
+          value={currentHex}
+          pattern='^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'
+          validationMessage='Must be either a hex color, i.e. #FFF, #000000'
           disabled={disabled}
+          onChange={this.onInputChange}
+          label='Hex'
         />
         {
           Swatches.map(({ name, set }, i) => {

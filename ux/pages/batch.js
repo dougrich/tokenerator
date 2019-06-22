@@ -46,7 +46,7 @@ class BatchItem extends React.PureComponent {
       onCountChange,
       onLabelChange
     } = this.props
-    const max = constants.maxCount[label]
+    const max = constants.maxCount[label || 'none']
     return (
       <BatchItemRow>
         <BatchItemPreview src={`/api/token/${id}.svg`}/>

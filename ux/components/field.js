@@ -14,6 +14,7 @@ const RangeFieldLabelContainer = styled.div({
 const RangeFieldLabel = withBounds(withEventUnwrap(({
   label,
   value,
+  children,
   ...rest
 }) => (
   <RangeFieldLabelContainer>
@@ -28,6 +29,7 @@ const RangeFieldLabel = withBounds(withEventUnwrap(({
       <TextAddon>
         <TextMeasure>{value}</TextMeasure> pixels
       </TextAddon>
+      {children}
     </TextContainer>
   </RangeFieldLabelContainer>
 )))
@@ -62,11 +64,13 @@ const FieldDescription = styled.div(props => ({
   right: '0.2em'
 }))
 
-function withBounds (Component) {
+function baseValidation (Component, onChange, applies) {
   return class extends React.PureComponent {
     constructor (props, context) {
       super(props, context)
       this.state = { current: null }
+      this.onChange = onChange.bind(this)
+      this.applies = applies.bind(this)
     }
 
     startEdit = () => {
@@ -75,34 +79,19 @@ function withBounds (Component) {
       })
     }
 
-    onChange = (v) => {
-      v = v.replace('-', '').replace('.', '')
-      if (/^[1-9][0-9]*$/gi.test(v)) {
-        const number = parseInt(v)
-        if (number >= this.props.min && number <= this.props.max) {
-          this.props.onChange(number)
-        }
-      }
-
-      this.setState({ current: v })
-    }
-
     doneEdit = () => {
       this.setState({
-        current: null
+        current: null,
+        error: null
       })
     }
     render () {
       const {
-        min,
-        max,
-        ...rest
-      } = this.props
-      const {
-        current
+        current,
+        error
       } = this.state
       let forced = {}
-      if (min != null && max != null) {
+      if (this.applies()) {
         let value = this.props.value
         if (current != null) value = current
         forced = {
@@ -114,14 +103,82 @@ function withBounds (Component) {
       }
       return (
         <Component
-          {...rest}
-          min={min}
-          max={max}
+          {...this.props}
           {...forced}
-        />
+        >
+          {error && (
+            <FieldDescription>
+              {error}
+            </FieldDescription>
+          )}
+          {this.props.children}
+        </Component>
       )
     }
   }
+}
+
+function withBounds (Component) {
+  return baseValidation(
+    Component,
+    function (v) {
+      const {
+        min,
+        max,
+        onChange
+      } = this.props
+      v = v.replace('-', '').replace('.', '')
+      if (/^[1-9][0-9]*$/gi.test(v)) {
+        const number = parseInt(v)
+        if (number >= min && number <= max) {
+          onChange(number)
+          this.setState({
+            current: v,
+            error: null
+          })
+          return
+        }
+      }
+
+      this.setState({
+        current: v,
+        error: 'Must be between ' + min + ' and ' + max
+      })
+    },
+    function () {
+      const { min, max } = this.props
+      return min != null && max != null
+    }
+  )
+}
+
+function withPattern (Component) {
+  return baseValidation(
+    Component,
+    function (v) {
+      const {
+        pattern,
+        validationMessage,
+        onChange
+      } = this.props
+      if (new RegExp(pattern).test(v)) {
+        onChange(v)
+        this.setState({
+          current: v,
+          error: null
+        })
+        return
+      }
+
+      this.setState({
+        current: v,
+        error: validationMessage
+      })
+    },
+    function () {
+      return this.props.pattern != null
+    }
+  )
 }
 
 function withMaxLength (Component) {
@@ -201,13 +258,13 @@ function withLabel (Component) {
   }
 }
 
-export const TextField = withBounds(withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
+export const TextField = withPattern(withBounds(withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
   <TextContainer>
     <TextInput {...rest} />
     <TextInputUnderline />
     {children}
   </TextContainer>
-)))))
+))))))
 
 export const TextAreaField = withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
   <TextContainer>
