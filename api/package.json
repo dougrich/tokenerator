@@ -19,9 +19,9 @@
     "cookie-parser": "^1.4.4",
     "express": "^4.17.0",
     "jsonwebtoken": "^8.5.1",
+    "nanoid": "^2.0.3",
     "nconf": "^0.10.0",
     "query-string": "^6.5.0",
-    "shortid": "^2.2.14",
     "slug": "^1.1.0",
     "svg2img": "^0.6.0"
   },

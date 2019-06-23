@@ -3,7 +3,7 @@ const Firestore = require('@google-cloud/firestore')
 const svg2img = require('svg2img')
 const parts = require('../token-parts')
 const Ajv = require('ajv')
-const shortid = require('shortid')
+const nanoid = require('nanoid')
 const bodyparser = require('body-parser')
 const slug = require('slug')
 const cookieParser = require('cookie-parser')
@@ -67,7 +67,7 @@ async function setToken(firestore, token) {
   token.modified = Date.now()
   let collision = false
   do {
-    id = shortid()
+    id = nanoid(10)
     const doc = firestore.doc(TOKEN_COLLECTION + id)
     const snapshot = await doc.get()
     collision = snapshot.exists

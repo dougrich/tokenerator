@@ -2,7 +2,7 @@ const { PubSub } = require('@google-cloud/pubsub')
 const { Storage } = require('@google-cloud/storage')
 const express = require('express')
 const Ajv = require('ajv')
-const shortid = require('shortid')
+const nanoid = require('nanoid')
 const bodyparser = require('body-parser')
 const slug = require('slug')
 
@@ -120,14 +120,14 @@ function batch(bucketName, topic, canonical) {
     }
 
     const request = {
-      result: shortid() + '.' + req.body.type.toLowerCase(),
+      result: nanoid() + '.' + req.body.type.toLowerCase(),
       type: req.body.type,
       params: {
         ...req.body.params,
         tokens: req.body.tokens
       }
     }
-    const batchid = shortid()
+    const batchid = nanoid()
     const storedname = batchid + '.batch.json'
 
     try {
