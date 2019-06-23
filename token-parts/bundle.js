@@ -1,7 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 const cheerio = require('cheerio')
-const shortid = require('shortid')
+const nanoid = require('nanoid')
 
 const SVGO = require('svgo')
 
@@ -108,7 +108,7 @@ async function processFile(filename) {
         cleanupIDs: {
           remove: true,
           minify: true,
-          prefix: 'd-' + shortid() + '-'
+          prefix: 'd-' + nanoid(5) + '-'
         }
       }
     ]

@@ -1,6 +1,7 @@
 const { MongoClient } = require('mongodb')
 const Firestore = require('@google-cloud/firestore')
-const shortid = require('shortid')
+const format = require('nanoid/format')
+const url = require('nanoid/url')
 
 const firestore = new Firestore()
 
@@ -12,12 +13,16 @@ async function delay(delayMs) {
 
 function xmur3(str) {
   for(var i = 0, h = 1779033703 ^ str.length; i < str.length; i++)
-      h = Math.imul(h ^ str.charCodeAt(i), 3432918353);
-      h = h << 13 | h >>> 19;
-  return function() {
-      h = Math.imul(h ^ h >>> 16, 2246822507);
-      h = Math.imul(h ^ h >>> 13, 3266489909);
-      return ((h ^= h >>> 16) >>> 0);
+    h = Math.imul(h ^ str.charCodeAt(i), 3432918353);
+  h = h << 13 | h >>> 19;
+  return function(x) {
+    const result = new Array(x)
+    for (let i = 0; i < result.length; i++) {
+      h = Math.imul(h ^ h >>> 16, 2246822507)
+      h = Math.imul(h ^ h >>> 13, 3266489909)
+      result[i] = ((h ^= h >>> 16) >>> 0)
+    }
+    return result
   }
 }
 
@@ -51,9 +56,8 @@ async function pipecollection(db, from, to) {
       } else {
         instance.user = null
       }
-      const seed = xmur3(instance.id.repeat(20))()
-      shortid.seed(seed)
-      instance.id = shortid()
+      const seed = xmur3(instance.id.repeat(20))
+      instance.id = format(seed, url, 10)
       const document = firestore.doc(to + '/' + instance.id)
       await document.set(instance)
 
