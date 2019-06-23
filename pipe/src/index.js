@@ -59,7 +59,10 @@ async function pipecollection(db, from, to) {
       const seed = xmur3(instance.id.repeat(20))
       instance.id = format(seed, url, 10)
       const document = firestore.doc(to + '/' + instance.id)
-      await document.set(instance)
+      const snapshot = document.get()
+      if (!snapshot.exists) {
+        await document.set(instance)
+      }
 
       next = await cursor.nextObject()
       i++
@@ -76,11 +79,6 @@ async function pipecollection(db, from, to) {
     console.log(from + ' Completed batch, re-acquiring cursor')
     await delay(1000)
   }
-}
-
-async function pipeusers(db) {
-  console.log('STARTING PIPE USERS')
-  return pipecollection(db, 'users', 'users')
 }
 
 async function pipetokens(db) {
