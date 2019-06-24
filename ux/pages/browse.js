@@ -77,6 +77,13 @@ const Pinned = styled.div({
   marginBottom: '0.75em'
 })
 
+const NotMobile = styled.div({
+  display: 'none',
+  '@media (min-width: 600px)': {
+    display: 'block'
+  }
+})
+
 const ConnectedBrowseGrid = connect(
   state => ({
     pinned: state.pinned,
@@ -100,13 +107,15 @@ const ConnectedActionPanel = connect(
   }, dispatch)
 )(({ pinned, filter, onFilter, onClear, user }) => (
   <React.Fragment>
-    <Pinned>{pinned.length} pinned</Pinned>
-    <ActionRow>
-      <Action onClick={onClear} disabled={pinned.length === 0}>Clear</Action>
-      <ActionLink href={`/batch?ids=${pinned.join('+')}`} disabled={pinned.length === 0}>
-        Download
-      </ActionLink>
-    </ActionRow>
+    <NotMobile>
+      <Pinned>{pinned.length} pinned</Pinned>
+      <ActionRow>
+        <Action onClick={onClear} disabled={pinned.length === 0}>Clear</Action>
+        <ActionLink href={`/batch?ids=${pinned.join('+')}`} disabled={pinned.length === 0}>
+          Download
+        </ActionLink>
+      </ActionRow>
+    </NotMobile>
     <ActionRow>
       <SelectField
         label='Filter'
