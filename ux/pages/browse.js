@@ -177,7 +177,12 @@ export default class Browse extends React.PureComponent {
   render() {
     const { user } = this.props
     return (
-      <Page title='Browse' store={this.store} user={user}>
+      <Page
+        title='Browse'
+        store={this.store}
+        user={user}
+        canonical='https://tokens.dougrich.net/browse'
+      >
         <ConnectedActionPanel user={user} />
         <ConnectedBrowseGrid />
         <ConnectedBrowseMore>More</ConnectedBrowseMore>

@@ -11,7 +11,11 @@ export default class extends React.PureComponent {
   }
   render () {
     return (
-      <Page simple title='Sign in success!'>
+      <Page
+        simple
+        title='Sign in success!'
+        canonical='https://tokens.dougrich.net/account'
+      >
         <ModalContainer>
           <TextCenter>
             You have successfully signed in!

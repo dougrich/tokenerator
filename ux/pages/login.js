@@ -13,7 +13,11 @@ const SignInProvider = styled.div({
 export default class extends React.PureComponent {
   render () {
     return (
-      <Page simple title='Sign in'>
+      <Page
+        simple
+        title='Sign in'
+        canonical='https://tokens.dougrich.net/login'
+      >
         <ModalContainer>
           <SignInProvider>
             <h3>Heads Up</h3>

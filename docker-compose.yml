@@ -26,6 +26,7 @@ services:
     - ./ux/src:/app/src
     - ./ux/pages:/app/pages
     - ./ux/components:/app/components
+    - ./ux/static:/app/static
     entrypoint: npm run dev
   gateway:
     build: ./gateway

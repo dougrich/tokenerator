@@ -10,6 +10,7 @@ COPY next.config.js /app/next.config.js
 COPY src /app/src
 COPY pages /app/pages
 COPY components /app/components
+COPY static /app/static
 
 RUN npm run lint && npm run build
 
