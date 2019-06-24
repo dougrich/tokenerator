@@ -2,7 +2,6 @@ import { $tags } from '../src/token-parts'
 import styled from '@emotion/styled'
 import { Label } from './styled'
 
-
 const FilterContainer = styled.div({
   margin: 'auto',
   maxWidth: '32em',
@@ -29,10 +28,10 @@ export default class PartFilter extends React.PureComponent {
     }
     onChange(next)
   }
-  render() {
+  render () {
     const tags = $tags.$list.map(x => (
       <FilterOption key={x}>
-        <input type='checkbox' value={x} id={'filter.' + x} onChange={this.onChange}/>
+        <input type='checkbox' value={x} id={'filter.' + x} onChange={this.onChange} />
         <label htmlFor={'filter.' + x}>{x}</label>
       </FilterOption>
     ))

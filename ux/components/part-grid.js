@@ -1,7 +1,6 @@
 import * as parts from '../src/token-parts'
 import styled from '@emotion/styled'
 import { TokenShadow, Grid, GridItem } from './styled'
-import { SelectField } from './field'
 import React from 'react'
 import PartFilter from './part-filter'
 import Unique from '../src/filter-unique'
@@ -118,7 +117,7 @@ export default class PartGrid extends React.PureComponent {
     }
     return (
       <React.Fragment>
-        <PartFilter value={this.state.filter} onChange={this.onFilterChange}/>
+        <PartFilter value={this.state.filter} onChange={this.onFilterChange} />
         <Grid>
           {children}
         </Grid>
