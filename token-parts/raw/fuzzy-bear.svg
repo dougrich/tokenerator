@@ -18,7 +18,8 @@
    sodipodi:docname="C:\git\dougrich.net\token-builder\token-builder-content\template.svg"
    class="fuzzy-bear"
    data-z="100"
-   data-slots="body">
+   data-slots="body"
+   data-tags="body,animals">
   <defs
      id="defs4" />
   <sodipodi:namedview

@@ -18,7 +18,8 @@
    sodipodi:docname="book (right).svg"
    class="book-right"
    data-z="1200"
-   data-slots="right-weapon">
+   data-slots="right-weapon"
+   data-tags="weapons/right">
   <defs
      id="defs4" />
   <sodipodi:namedview

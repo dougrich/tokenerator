@@ -19,7 +19,8 @@
    sodipodi:docname="ghost.svg"
    class="ghost"
    data-z="100"
-   data-slots="body">
+   data-slots="body"
+   data-tags="body,fantasy">
   <defs
      id="defs4">
     <inkscape:path-effect

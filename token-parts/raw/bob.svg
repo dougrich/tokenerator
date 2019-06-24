@@ -18,7 +18,8 @@
    sodipodi:docname="bob.svg"
    class="bob"
    data-z="900"
-   data-slots="hair">
+   data-slots="hair"
+   data-tags="hair/short">
   <defs
      id="defs4" />
   <sodipodi:namedview

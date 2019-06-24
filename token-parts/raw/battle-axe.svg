@@ -15,6 +15,7 @@
    id="svg2"
    data-z="1200"
    data-slots="left-weapon+right-weapon"
+   data-tags="weapons/dual,fantasy/weapons"
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="battle-axe.svg"

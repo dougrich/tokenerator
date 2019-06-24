@@ -19,7 +19,8 @@
    sodipodi:docname="crown.svg"
    class="crown"
    data-z="1000"
-   data-slots="hat">
+   data-slots="hat"
+   data-tags="clothing,fantasy">
   <defs
      id="defs4">
     <radialGradient

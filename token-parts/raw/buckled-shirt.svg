@@ -19,7 +19,8 @@
    sodipodi:docname="buckled.svg"
    class="buckled-shirt"
    data-z="500"
-   data-slots="clothing">
+   data-slots="clothing"
+   data-tags="clothing,fantasy/clothing">
   <defs
      id="defs4">
     <linearGradient

@@ -18,7 +18,8 @@
    sodipodi:docname="template.svg"
    class="dagger-left"
    data-z="1200"
-   data-slots="left-weapon">
+   data-slots="left-weapon"
+   data-tags="weapons,left,fantasy">
   <defs
      id="defs4" />
   <sodipodi:namedview

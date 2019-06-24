@@ -18,7 +18,8 @@
    sodipodi:docname="giraffe.svg"
    class="giraffe"
    data-z="100"
-   data-slots="body">
+   data-slots="body"
+   data-tags="body,animals">
   <defs
      id="defs4">
     <inkscape:path-effect

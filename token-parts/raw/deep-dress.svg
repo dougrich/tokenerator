@@ -19,7 +19,8 @@
    sodipodi:docname="C:\git\dougrich.net\token-builder\token-builder-content\template.svg"
    class="deep-dress"
    data-z="500"
-   data-slots="clothing">
+   data-slots="clothing"
+   data-tags="clothing">
   <defs
      id="defs4">
     <linearGradient

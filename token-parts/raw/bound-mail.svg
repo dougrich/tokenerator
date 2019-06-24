@@ -18,7 +18,8 @@
    viewBox="0 0 90 90"
    class="bound-mail"
    data-z="500"
-   data-slots="clothing">
+   data-slots="clothing"
+   data-tags="armor,fantasy/armor">
   <defs
      id="defs4" />
   <sodipodi:namedview

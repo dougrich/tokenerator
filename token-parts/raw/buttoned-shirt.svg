@@ -19,7 +19,8 @@
    sodipodi:docname="buttoned-shirt.svg"
    class="buttoned-shirt"
    data-z="500"
-   data-slots="clothing">
+   data-slots="clothing"
+   data-tags="clothing">
   <defs
      id="defs4">
     <inkscape:path-effect

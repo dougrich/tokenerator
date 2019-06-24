@@ -19,7 +19,8 @@
    sodipodi:docname="C:\git\dougrich.net\token-builder\token-builder-content\template.svg"
    class="cute-bob"
    data-z="900"
-   data-slots="hair">
+   data-slots="hair"
+   data-tags="hair,short">
   <defs
      id="defs4">
     <radialGradient

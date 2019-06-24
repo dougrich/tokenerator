@@ -18,7 +18,8 @@
    sodipodi:docname="frog.svg"
    class="frog"
    data-z="100"
-   data-slots="body">
+   data-slots="body"
+   data-tags="animals,body">
   <defs
      id="defs4" />
   <sodipodi:namedview

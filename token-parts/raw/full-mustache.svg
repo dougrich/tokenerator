@@ -19,7 +19,8 @@
    sodipodi:docname="C:\git\dougrich.net\token-builder\token-builder-content\template.svg"
    class="full-mustache"
    data-z="850"
-   data-slots="facial-hair">
+   data-slots="facial-hair"
+   data-tags="facial-features">
   <defs
      id="defs4">
     <linearGradient

@@ -19,7 +19,8 @@
    sodipodi:docname="C:\git\dougrich.net\token-builder\token-builder-content\template.svg"
    class="chain-mail"
    data-z="500"
-   data-slots="clothing">
+   data-slots="clothing"
+   data-tags="armor,fantasy/armor">
   <defs
      id="defs4">
     <linearGradient
