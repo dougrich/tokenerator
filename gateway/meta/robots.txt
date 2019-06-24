@@ -1,4 +1,5 @@
 User-agent: *
+Sitemap: /sitemap.xml
 Disallow: /api/*
 Disallow: /static/*
 Disallow: /account
