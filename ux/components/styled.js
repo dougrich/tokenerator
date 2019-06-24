@@ -90,6 +90,8 @@ export const Article = styled.article(props => [
 
 const gridBreakpoints = [
   [300, 75],
+  [400, 100],
+  [500, 125],
   [600, 150],
   [800, 200],
   [1200, 300],

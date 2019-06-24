@@ -5,6 +5,7 @@ const Ajv = require('ajv')
 const nanoid = require('nanoid')
 const bodyparser = require('body-parser')
 const slug = require('slug')
+const { immutable } = require('../cache')
 
 const ajv = new Ajv()
 ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'))
@@ -91,6 +92,7 @@ function loadBatch(bucket) {
         res.status(202)
       } else {
         req.params.result = resultFile
+        res.setHeader('Cache-Control', immutable)
         res.status(200)
       }
       const filename = 'batch_' + slug(request.name || 'tokens') + '.' + request.type.toLowerCase()

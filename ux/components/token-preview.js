@@ -43,14 +43,22 @@ const TokenPreviewTitle = styled.div(props => [
     top: '50%',
     left: 0,
     width: '100%',
-    fontSize: '2em',
     color: 'white',
     backgroundColor: 'transparent',
-    paddingTop: '1em',
-    paddingBottom: '1em',
     paddingLeft: '100%',
+    fontSize: '1.25em',
+    paddingTop: '0.125em',
+    paddingBottom: '0.125em',
     transform: 'translate(0%, 0%)',
-    transition: '200ms transform, 200ms background-color'
+    transition: '200ms transform, 200ms background-color',
+    display: 'none',
+    '@media (min-width: 600px)': {
+      display: 'block'
+    },
+    '@media (min-width: 1200px)': {
+      display: 'block',
+      fontSize: '2em'
+    }
   }
 ])
 
@@ -73,6 +81,8 @@ const TokenPin = styled.button(props => [
     right: '0em',
     padding: '0.5em',
     width: '20%',
+    minWidth: '150px',
+    maxWidth: '100%',
     textAlign: 'center',
     backgroundColor: props.pinned ? 'black!important' : 'transparent',
     color: props.pinned ? 'white!important' : 'black',
@@ -82,6 +92,7 @@ const TokenPin = styled.button(props => [
     borderBottomLeftRadius: '1em',
     cursor: 'pointer',
     transition: '200ms background-color, 200ms color, 200ms opacity',
+    display: 'none',
     '&:hover, &:focus': {
       opacity: 1,
       backgroundColor: '#D00!important',
@@ -89,6 +100,9 @@ const TokenPin = styled.button(props => [
     },
     '&:focus': {
       outline: '2px dashed #D00'
+    },
+    '@media (min-width: 600px)': {
+      display: 'block'
     }
   }
 ])

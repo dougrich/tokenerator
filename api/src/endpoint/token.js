@@ -7,10 +7,11 @@ const nanoid = require('nanoid')
 const bodyparser = require('body-parser')
 const slug = require('slug')
 const cookieParser = require('cookie-parser')
-const { cacheMiddleware, contentMiddleware } = require('../middleware')
+const { contentMiddleware } = require('../middleware')
 const ajv = new Ajv()
 ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'))
 const validator = ajv.compile(parts.$schema)
+const { immutable } = require('../cache')
 const jwt = require('jsonwebtoken')
 
 const TOKEN_COLLECTION = 'tokens/'
@@ -204,9 +205,9 @@ function tokenEndpoint(bucket, secret, canonical) {
       req.params.id = req.params.tokenid + '@' + (req.params.decor || 'default') + '.svg'
       next()
     },
-    cacheMiddleware(bucket, 'immutable, max-age=86400'),
     (req, res) => {
       // flatten it
+      res.setHeader('Cache-Control', immutable)
       res.setHeader('Content-Type', 'image/svg+xml')
       const svg = tokenToSvg(req.params.token, req.params.decor)
       res.end(svg)
@@ -232,13 +233,9 @@ function tokenEndpoint(bucket, secret, canonical) {
     validateDecoration,
     contentMiddleware('image/png'),
     (req, res, next) => {
-      req.params.id = req.params.tokenid + '@' + req.query.size + '@' + (req.params.decor || 'default') + '.png'
-      next()
-    },
-    cacheMiddleware(bucket, 'immutable, max-age=86400'),
-    (req, res, next) => {
       const svg = tokenToSvg(req.params.token, req.params.decor)
       const size = parseInt(req.query.size || '180')
+      res.setHeader('Cache-Control', immutable)
       res.setHeader('Content-Disposition', `attachment; filename="${req.params.slug}@${size}.png"`)
       svg2img(svg,{format:'png', width: size, height: size}, (err, result) => {
         if (err) return next(err)

@@ -15,6 +15,7 @@ const ActionRow = styled.div({
 
 const BatchItemContainer = styled.div({
   margin: 'auto',
+  padding: '2em',
   maxWidth: '500px'
 })
 
