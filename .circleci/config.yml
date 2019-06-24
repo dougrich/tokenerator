@@ -8,7 +8,7 @@ jobs:
     - run: |
         cd ./token-parts
         npm i
-        node ./bundle.js
+        node ./src/bundle.js
     - save_cache:
         key: token-parts-{{ .Revision }}
         paths:
