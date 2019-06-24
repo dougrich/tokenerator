@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { SelectField } from '../components/field'
-import { Grid, Action, ActionLink } from '../components/styled'
+import { Grid, Action, ActionLink, NotPrint } from '../components/styled'
 import { getCookieProps } from '../src/common'
 import api from '../src/api'
 import TokenPreview from '../components/token-preview';
@@ -106,7 +106,7 @@ const ConnectedActionPanel = connect(
     onFilter: dispatchers.SET_FILTER
   }, dispatch)
 )(({ pinned, filter, onFilter, onClear, user }) => (
-  <React.Fragment>
+  <NotPrint>
     <NotMobile>
       <Pinned>{pinned.length} pinned</Pinned>
       <ActionRow>
@@ -127,7 +127,7 @@ const ConnectedActionPanel = connect(
         ]}
       />
     </ActionRow>
-  </React.Fragment>
+  </NotPrint>
 ))
 
 const ConnectedBrowseMore = connect(
@@ -177,7 +177,12 @@ export default class Browse extends React.PureComponent {
   render() {
     const { user } = this.props
     return (
-      <Page title='Browse' store={this.store} user={user}>
+      <Page
+        title='Browse'
+        store={this.store}
+        user={user}
+        canonical='https://tokens.dougrich.net/browse'
+      >
         <ConnectedActionPanel user={user} />
         <ConnectedBrowseGrid />
         <ConnectedBrowseMore>More</ConnectedBrowseMore>

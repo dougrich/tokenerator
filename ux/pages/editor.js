@@ -207,7 +207,12 @@ export default class extends React.Component {
     const { user } = this.props
     const enabledWidth = 600
     return (
-      <Page title='Editor' store={this.store} user={user}>
+      <Page
+        title='Editor'
+        store={this.store}
+        user={user}
+        canonical='https://tokens.dougrich.net/editor'
+      >
         <ConnectedKeyShortcuts />
         <HiddenSvg>
           <ColorPicker.Defs />

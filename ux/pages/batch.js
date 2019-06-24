@@ -257,7 +257,12 @@ export default class Batch extends React.PureComponent {
   render () {
     const { ids, user } = this.props
     return (
-      <Page title='Batch' store={this.store} user={user}>
+      <Page
+        title='Batch'
+        store={this.store}
+        user={user}
+        canonical={'https://tokens.dougrich.net/batch?ids=' + ids.join('+')}
+      >
         <BatchItemContainer>
           {ids.map((id) => <ConnectedBatchItem id={id} key={id} />)}
           <ConnectedForm/>

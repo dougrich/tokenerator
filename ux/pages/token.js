@@ -13,7 +13,10 @@ const ActionSet = styled.div({
   textAlign: 'center',
   maxWidth: '20em',
   margin: 'auto',
-  marginBottom: '3em'
+  marginBottom: '3em',
+  '@media print': {
+    display: 'none'
+  }
 })
 
 export default class Browse extends React.PureComponent {
@@ -67,12 +70,22 @@ export default class Browse extends React.PureComponent {
   render() {
     const { token, user } = this.props
     const title = token.title || DefaultTokenTitle
+    const imageSrc = `/api/token/${token.id}.svg`
     return (
-      <Page title={title} user={user}>
+      <Page
+        title={title}
+        description={token.description}
+        image={imageSrc}
+        user={user}
+        canonical={'https://tokens.dougrich.net/token/' + token.id}
+      >
         <Container>
           {this.renderTitle()}
           {this.renderDescription()}
-          <img src={`/api/token/${token.id}.svg`}/>
+          <img src={imageSrc}/>
+          <ActionSet>
+            <Action as='a' href="https://twitter.com/intent/tweet?screen_name=Tokenerator">Tweet to @tokenerator</Action>
+          </ActionSet>
           <ActionSet>
             <PixelField
               value={this.state.size}

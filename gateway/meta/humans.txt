@@ -1,0 +1,13 @@
+/* TEAM */
+  Maintainer: Douglas Richardson
+  Contact: contact@dougrich.net
+  From: Canada
+
+  Art, feedback: Olivia Wasalski
+  From: Canada
+
+/* SITE */
+  Last update: June 2019
+  Language: English
+  Doctype: HTML5
+  IDE: Visual Studo Code, Inkscape, Chrome, Linux

@@ -6,7 +6,10 @@ const FilterContainer = styled.div({
   margin: 'auto',
   maxWidth: '32em',
   marginBottom: '2em',
-  padding: '0em 2em'
+  padding: '0em 2em',
+  '@media print': {
+    display: 'none'
+  }
 })
 
 const FilterOptionSet = styled.div({

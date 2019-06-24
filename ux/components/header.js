@@ -1,29 +1,22 @@
 import {
   Container,
   Title,
-  Header,
   Navigation,
   ActionLink,
   Action
 } from './styled'
 import Collapsible from './collapsible'
+import styled from '@emotion/styled'
 
-/**
- * Header component is the component that covers the top of the page
- * It needs to afford the user:
- * - access to root
- * - access to token browse
- * - access to token build
- * - access to auxiliary pages (legal, privacy)
- * - access to login if not logged in
- * - access to account if logged in
- * - information on if they are logged in or not
- * - information about the current page they are on
- * - information about what site they are on (including branding)
- * - information about what page they are on (consistent naming)
- * - information about in progress batch jobs that the user has kicked off
- * - consistent experience anchor across multiple pages and backgrounds
- */
+const Header = styled.header({
+  borderBottom: '2px solid #333',
+  margin: '0.5em 2em',
+  position: 'relative',
+  '@media print': {
+    display: 'none'
+  }
+})
+
 export default class extends React.PureComponent {
   onSignIn = () => {
     const newwindow = window.open('/login', 'Log In', 'height=600,width=800')

@@ -1,8 +1,10 @@
 import { Global } from '@emotion/core'
 import { ThemeProvider, withTheme } from 'emotion-theming'
 import { Provider } from 'react-redux'
+import styled from '@emotion/styled'
 import AppHead from './head'
 import Header from './header'
+import { ActionLink } from './styled'
 
 const theme = {
   colors: {
@@ -56,6 +58,17 @@ const GlobalStylesheet = withTheme(
   }
 )
 
+const Footer = styled.footer({
+  padding: '2em',
+  marginTop: '4em',
+  marginBottom: '4em',
+  textAlign: 'center',
+  fontSize: '0.8em',
+  '@media print': {
+    display: 'none'
+  }
+})
+
 export default class Page extends React.PureComponent {
   render () {
     let {
@@ -63,7 +76,9 @@ export default class Page extends React.PureComponent {
       store,
       title,
       simple,
-      user
+      user,
+      canonical,
+      image
     } = this.props
 
     if (store) {
@@ -76,9 +91,17 @@ export default class Page extends React.PureComponent {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStylesheet />
-        <AppHead title={title} />
+        <AppHead
+          title={title}
+          canonical={canonical}
+          image={image}
+        />
         {!simple && <Header user={user} />}
         {children}
+        <Footer>
+          Copyright 2014 - 2019 Douglas Richardson.
+          <ActionLink href='/site'>Terms and Privacy</ActionLink>
+        </Footer>
       </ThemeProvider>
     )
   }
