@@ -1,72 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="90"
-   height="90"
-   viewBox="0 0 90 90"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="famer-hat-long-hair.svg"
-   class="farmer-long-hair"
-   data-z="900"
-   data-slots="hair"
-   data-tags="hair,long">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="6.8907611"
-     inkscape:cx="44.222173"
-     inkscape:cy="51.318733"
-     inkscape:document-units="in"
-     inkscape:current-layer="svg2"
-     showgrid="true"
-     units="in"
-     inkscape:window-width="1246"
-     inkscape:window-height="1030"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
-     inkscape:window-maximized="0">
-    <inkscape:grid
-       type="xygrid"
-       id="grid3855" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="90" height="90" viewBox="0 0 90 90" id="svg2" version="1.1" inkscape:version="0.48.4 r9939" sodipodi:docname="famer-hat-long-hair.svg" class="farmer-long-hair" data-z="900" data-slots="hair" data-tags="hair,long">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="6.8907611" inkscape:cx="44.222173" inkscape:cy="51.318733" inkscape:document-units="in" inkscape:current-layer="svg2" showgrid="true" units="in" inkscape:window-width="1246" inkscape:window-height="1030" inkscape:window-x="0" inkscape:window-y="24" inkscape:window-maximized="0">
+    <inkscape:grid type="xygrid" id="grid3855"/>
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+  <metadata id="metadata7">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Hair"
-     class="hair">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="M 45,9 C 26.817996,9 11.782046,22.4894 9.7225542,35.743953 7.6630623,48.998505 9,58.534785 9,66.59375 l 7.1875,0 C 16.1875,53.99375 14.4,30.6 27,27 l 5.40625,7.1875 15,-13.3125 1.78125,-0.59375 15.625,12.125 3.59375,-3.59375 C 75.6,41.4001 73.8125,53.99375 73.8125,66.59375 l 7.1875,0 C 81,58.63186 82.41221,49.216706 80.315082,35.853053 78.217954,22.4894 63.182004,9 45,9 z"
-       id="path5692"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sccccccccccccs" />
+  <g inkscape:groupmode="layer" id="layer2" inkscape:label="Hair" class="hair">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 45,9 C 26.817996,9 11.782046,22.4894 9.7225542,35.743953 7.6630623,48.998505 9,58.534785 9,66.59375 l 7.1875,0 C 16.1875,53.99375 14.4,30.6 27,27 l 5.40625,7.1875 15,-13.3125 1.78125,-0.59375 15.625,12.125 3.59375,-3.59375 C 75.6,41.4001 73.8125,53.99375 73.8125,66.59375 l 7.1875,0 C 81,58.63186 82.41221,49.216706 80.315082,35.853053 78.217954,22.4894 63.182004,9 45,9 z" id="path5692" inkscape:connector-curvature="0" sodipodi:nodetypes="sccccccccccccs"/>
   </g>
 </svg>

@@ -1,219 +1,37 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100%"
-   height="100%"
-   viewBox="0 0 90 90"
-   id="svg2"
-   data-z="0"
-   data-slots="back"
-   data-tags="back"
-   version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="backpack.svg"
-   class="backpack">
-  <defs
-     id="defs4">
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5121-4"
-       is_visible="true"
-       nbiter_approxstrokes="3"
-       strokelength="1"
-       strokelength_rdm="0;1"
-       strokeoverlap="0.1"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0.9;1"
-       parallel_offset="0.9;1"
-       tremble_size="1.5;1"
-       tremble_frequency="0.01"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10.5"
-       tgtlength="100"
-       tgtlength_rdm="0.1;1" />
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5121-7"
-       is_visible="true"
-       nbiter_approxstrokes="3"
-       strokelength="1"
-       strokelength_rdm="0;1"
-       strokeoverlap="0.1"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0.9;1"
-       parallel_offset="0.9;1"
-       tremble_size="1.5;1"
-       tremble_frequency="0.01"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10.5"
-       tgtlength="100"
-       tgtlength_rdm="0.1;1" />
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5257"
-       is_visible="true"
-       nbiter_approxstrokes="2"
-       strokelength="1"
-       strokelength_rdm="0.1;1"
-       strokeoverlap="0"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0;1"
-       parallel_offset="0.8;1"
-       tremble_size="0.7;1"
-       tremble_frequency="1"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10"
-       tgtlength="100"
-       tgtlength_rdm="0.3;1" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5728-3"
-       id="linearGradient5483"
-       gradientUnits="userSpaceOnUse"
-       x1="945"
-       y1="310.2579"
-       x2="945"
-       y2="388.79999"
-       gradientTransform="translate(-1170,962.35973)" />
-    <linearGradient
-       id="linearGradient5728-3">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop5730-7" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop5732-3" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" data-z="0" data-slots="back" data-tags="back" version="1.1" inkscape:version="0.48.4 r9939" sodipodi:docname="backpack.svg" class="backpack">
+  <defs id="defs4">
+    <inkscape:path-effect effect="sketch" id="path-effect5121-4" is_visible="true" nbiter_approxstrokes="3" strokelength="1" strokelength_rdm="0;1" strokeoverlap="0.1" strokeoverlap_rdm="0;1" ends_tolerance="0.9;1" parallel_offset="0.9;1" tremble_size="1.5;1" tremble_frequency="0.01" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10.5" tgtlength="100" tgtlength_rdm="0.1;1"/>
+    <inkscape:path-effect effect="sketch" id="path-effect5121-7" is_visible="true" nbiter_approxstrokes="3" strokelength="1" strokelength_rdm="0;1" strokeoverlap="0.1" strokeoverlap_rdm="0;1" ends_tolerance="0.9;1" parallel_offset="0.9;1" tremble_size="1.5;1" tremble_frequency="0.01" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10.5" tgtlength="100" tgtlength_rdm="0.1;1"/>
+    <inkscape:path-effect effect="sketch" id="path-effect5257" is_visible="true" nbiter_approxstrokes="2" strokelength="1" strokelength_rdm="0.1;1" strokeoverlap="0" strokeoverlap_rdm="0;1" ends_tolerance="0;1" parallel_offset="0.8;1" tremble_size="0.7;1" tremble_frequency="1" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10" tgtlength="100" tgtlength_rdm="0.3;1"/>
+    <linearGradient inkscape:collect="always" href="#linearGradient5728-3" id="linearGradient5483" gradientUnits="userSpaceOnUse" x1="945" y1="310.2579" x2="945" y2="388.79999" gradientTransform="translate(-1170,962.35973)"/>
+    <linearGradient id="linearGradient5728-3">
+      <stop style="stop-color:#000000;stop-opacity:1;" offset="0" id="stop5730-7"/>
+      <stop style="stop-color:#000000;stop-opacity:0;" offset="1" id="stop5732-3"/>
     </linearGradient>
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect6957"
-       is_visible="true"
-       nbiter_approxstrokes="1"
-       strokelength="2"
-       strokelength_rdm="0.2;1"
-       strokeoverlap="0"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0;1"
-       parallel_offset="0.1;1"
-       tremble_size="0.6;1"
-       tremble_frequency="2.51"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10"
-       tgtlength="100"
-       tgtlength_rdm="0.3;1" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient4525"
-       id="radialGradient4531"
-       cx="33.561127"
-       cy="1181.4069"
-       fx="33.561127"
-       fy="1181.4069"
-       r="38.25"
-       gradientTransform="matrix(1.4117647,-0.98823605,0.89829027,1.2832709,-1076.2267,-300.93889)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       id="linearGradient4525">
-      <stop
-         style="stop-color:#c8eeff;stop-opacity:1;"
-         offset="0"
-         id="stop4527" />
-      <stop
-         style="stop-color:#0091ff;stop-opacity:1;"
-         offset="1"
-         id="stop4529" />
+    <inkscape:path-effect effect="sketch" id="path-effect6957" is_visible="true" nbiter_approxstrokes="1" strokelength="2" strokelength_rdm="0.2;1" strokeoverlap="0" strokeoverlap_rdm="0;1" ends_tolerance="0;1" parallel_offset="0.1;1" tremble_size="0.6;1" tremble_frequency="2.51" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10" tgtlength="100" tgtlength_rdm="0.3;1"/>
+    <radialGradient inkscape:collect="always" href="#linearGradient4525" id="radialGradient4531" cx="33.561127" cy="1181.4069" fx="33.561127" fy="1181.4069" r="38.25" gradientTransform="matrix(1.4117647,-0.98823605,0.89829027,1.2832709,-1076.2267,-300.93889)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="linearGradient4525">
+      <stop style="stop-color:#c8eeff;stop-opacity:1;" offset="0" id="stop4527"/>
+      <stop style="stop-color:#0091ff;stop-opacity:1;" offset="1" id="stop4529"/>
     </linearGradient>
-    <radialGradient
-       r="38.25"
-       fy="1181.4069"
-       fx="33.561127"
-       cy="1181.4069"
-       cx="33.561127"
-       gradientTransform="matrix(1.4117647,-0.98823605,0.89829027,1.2832709,-1076.2267,-300.93885)"
-       gradientUnits="userSpaceOnUse"
-       id="radialGradient3718"
-       xlink:href="#linearGradient4525"
-       inkscape:collect="always" />
+    <radialGradient r="38.25" fy="1181.4069" fx="33.561127" cy="1181.4069" cx="33.561127" gradientTransform="matrix(1.4117647,-0.98823605,0.89829027,1.2832709,-1076.2267,-300.93885)" gradientUnits="userSpaceOnUse" id="radialGradient3718" href="#linearGradient4525" inkscape:collect="always"/>
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="3.9912026"
-     inkscape:cx="96.275693"
-     inkscape:cy="23.238612"
-     inkscape:document-units="in"
-     inkscape:current-layer="svg2"
-     showgrid="false"
-     units="in"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2994"
-       empspacing="5"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true"
-       units="in"
-       spacingx="0.014in"
-       spacingy="0.014in" />
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="3.9912026" inkscape:cx="96.275693" inkscape:cy="23.238612" inkscape:document-units="in" inkscape:current-layer="svg2" showgrid="false" units="in" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1">
+    <inkscape:grid type="xygrid" id="grid2994" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true" units="in" spacingx="0.014in" spacingy="0.014in"/>
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+  <metadata id="metadata7">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:label="backpack"
-     inkscape:groupmode="layer"
-     id="layer1"
-     class="body"
-     transform="translate(0,-962.35975)"
-     style="display:inline">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;display:inline"
-       d="m 18,985.75977 54,0 0,63.00003 -54,0 z"
-       id="rect5186"
-       inkscape:connector-curvature="0" />
+  <g inkscape:label="backpack" inkscape:groupmode="layer" id="layer1" class="body" transform="translate(0,-962.35975)" style="display:inline">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;display:inline" d="m 18,985.75977 54,0 0,63.00003 -54,0 z" id="rect5186" inkscape:connector-curvature="0"/>
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="bag"
-     class="bag">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
-       d="m 21.86621,5.3961496 c -2.97769,-1.2673 -5.57932,0.6407 -7.54007,2.4827 -2.81581,1.2635 -2.66951,4.2300004 -2.07743,6.5951004 -2.35512,2.358 -0.33308,5.0663 -0.80191,7.8037 -0.0759,2.4029 -1.2312,5.5571 0.89646,7.366 2.91049,0.2997 1.90097,4.5666 4.75441,4.5978 2.86483,0.043 6.05906,1.1028 8.74101,-0.085 1.08196,-2.3557 3.1292,-3.385 5.591,-2.2675 5.02188,0.6786 10.17417,1.4475 15.18374,0.3068 3.67552,-0.1786 7.48001,-1.1903 11.03564,0.1595 3.25702,1.2676 6.52234,0.062 9.7578,-0.4484 2.94899,0.014 4.85083,-2.4581 7.49287,-3.3281 3.39075,-0.7375 4.3622,-4.1778 3.60446,-7.2199 -0.43703,-3.2985 -0.0341,-6.9131 -1.43182,-10.0328 -0.0841,-2.8771004 -2.44012,-4.5937004 -4.74257,-5.7136004 -1.72053,-1.8976 -4.21321,-2.165 -6.60971,-1.9447 -6.30264,-0.2732 -12.42349,1.4503 -18.64786,2.0881 -2.9402,-0.8709 -5.98265,-2.1871 -9.16214,-1.6003 -3.48614,1e-4 -6.97228,-3e-4 -10.45843,0 -1.78821,0.7144 -3.76452,0.647 -5.58546,1.2405 z"
-       id="path5181"
-       inkscape:connector-curvature="0" />
+  <g inkscape:groupmode="layer" id="layer2" inkscape:label="bag" class="bag">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" d="m 21.86621,5.3961496 c -2.97769,-1.2673 -5.57932,0.6407 -7.54007,2.4827 -2.81581,1.2635 -2.66951,4.2300004 -2.07743,6.5951004 -2.35512,2.358 -0.33308,5.0663 -0.80191,7.8037 -0.0759,2.4029 -1.2312,5.5571 0.89646,7.366 2.91049,0.2997 1.90097,4.5666 4.75441,4.5978 2.86483,0.043 6.05906,1.1028 8.74101,-0.085 1.08196,-2.3557 3.1292,-3.385 5.591,-2.2675 5.02188,0.6786 10.17417,1.4475 15.18374,0.3068 3.67552,-0.1786 7.48001,-1.1903 11.03564,0.1595 3.25702,1.2676 6.52234,0.062 9.7578,-0.4484 2.94899,0.014 4.85083,-2.4581 7.49287,-3.3281 3.39075,-0.7375 4.3622,-4.1778 3.60446,-7.2199 -0.43703,-3.2985 -0.0341,-6.9131 -1.43182,-10.0328 -0.0841,-2.8771004 -2.44012,-4.5937004 -4.74257,-5.7136004 -1.72053,-1.8976 -4.21321,-2.165 -6.60971,-1.9447 -6.30264,-0.2732 -12.42349,1.4503 -18.64786,2.0881 -2.9402,-0.8709 -5.98265,-2.1871 -9.16214,-1.6003 -3.48614,1e-4 -6.97228,-3e-4 -10.45843,0 -1.78821,0.7144 -3.76452,0.647 -5.58546,1.2405 z" id="path5181" inkscape:connector-curvature="0"/>
   </g>
 </svg>
