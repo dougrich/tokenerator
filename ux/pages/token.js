@@ -84,6 +84,9 @@ export default class Browse extends React.PureComponent {
           {this.renderDescription()}
           <img src={imageSrc}/>
           <ActionSet>
+            <Action as='a' href="https://twitter.com/intent/tweet?screen_name=Tokenerator">Tweet to @tokenerator</Action>
+          </ActionSet>
+          <ActionSet>
             <PixelField
               value={this.state.size}
               onChange={this.onSizeChange}
