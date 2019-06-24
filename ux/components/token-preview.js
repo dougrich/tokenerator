@@ -53,7 +53,7 @@ const TokenPreviewTitle = styled.div(props => [
     transition: '200ms transform, 200ms background-color',
     display: 'none',
     '@media (min-width: 600px)': {
-      display: 'block',
+      display: 'block'
     },
     '@media (min-width: 1200px)': {
       display: 'block',
@@ -102,7 +102,7 @@ const TokenPin = styled.button(props => [
       outline: '2px dashed #D00'
     },
     '@media (min-width: 600px)': {
-      display: 'block',
+      display: 'block'
     }
   }
 ])
