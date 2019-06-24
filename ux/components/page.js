@@ -63,7 +63,10 @@ const Footer = styled.footer({
   marginTop: '4em',
   marginBottom: '4em',
   textAlign: 'center',
-  fontSize: '0.8em'
+  fontSize: '0.8em',
+  '@media print': {
+    display: 'none'
+  }
 })
 
 export default class Page extends React.PureComponent {

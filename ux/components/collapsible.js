@@ -2,7 +2,9 @@ import styled from '@emotion/styled'
 import { Action } from './styled'
 
 const CollapsibleContainer = styled.div({
-
+  '@media print': {
+    display: 'none'
+  }
 })
 
 const CollapsibleActionRow = styled.div(props => ({

@@ -8,10 +8,6 @@ const colors = {
   accent: '#D00'
 }
 
-const measure = {
-  border: '2px'
-}
-
 const typography = {
   title: css`
     font-family: 'Oswald', sans-serif;
@@ -67,12 +63,6 @@ export const Container = styled.div`
   max-width: 800px;
   width: 100%;
   margin: auto;
-`
-
-export const Header = styled.header`
-  border-bottom: ${measure.border} solid ${colors.borderblack};
-  margin: 0.5em 2em;
-  position: relative;
 `
 
 export const Article = styled.article(props => [
@@ -292,6 +282,9 @@ export const Action = styled.button(props => [
     },
     '&:focus': {
       outline: '2px dashed #D00'
+    },
+    '@media print': {
+      display: 'none'
     }
   }
 ])
@@ -350,4 +343,11 @@ export const ModalContainer = styled.div({
 
 export const TextCenter = styled.div({
   textAlign: 'center'
+})
+
+export const NotPrint = styled.div({
+  display: 'block',
+  '@media print': {
+    display: 'none'
+  }
 })

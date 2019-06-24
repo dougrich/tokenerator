@@ -13,7 +13,10 @@ const ActionSet = styled.div({
   textAlign: 'center',
   maxWidth: '20em',
   margin: 'auto',
-  marginBottom: '3em'
+  marginBottom: '3em',
+  '@media print': {
+    display: 'none'
+  }
 })
 
 export default class Browse extends React.PureComponent {
