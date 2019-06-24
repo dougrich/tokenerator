@@ -1,209 +1,35 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100%"
-   height="100%"
-   viewBox="0 0 90 90"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="buttoned-alchemist-robes.svg"
-   class="buttoned-alchemist-robes"
-   data-z="500"
-   data-slots="clothing+jacket">
-  <defs
-     id="defs4">
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5121-4"
-       is_visible="true"
-       nbiter_approxstrokes="3"
-       strokelength="1"
-       strokelength_rdm="0;1"
-       strokeoverlap="0.1"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0.9;1"
-       parallel_offset="0.9;1"
-       tremble_size="1.5;1"
-       tremble_frequency="0.01"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10.5"
-       tgtlength="100"
-       tgtlength_rdm="0.1;1" />
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5121-7"
-       is_visible="true"
-       nbiter_approxstrokes="3"
-       strokelength="1"
-       strokelength_rdm="0;1"
-       strokeoverlap="0.1"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0.9;1"
-       parallel_offset="0.9;1"
-       tremble_size="1.5;1"
-       tremble_frequency="0.01"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10.5"
-       tgtlength="100"
-       tgtlength_rdm="0.1;1" />
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5257"
-       is_visible="true"
-       nbiter_approxstrokes="2"
-       strokelength="1"
-       strokelength_rdm="0.1;1"
-       strokeoverlap="0"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0;1"
-       parallel_offset="0.8;1"
-       tremble_size="0.7;1"
-       tremble_frequency="1"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10"
-       tgtlength="100"
-       tgtlength_rdm="0.3;1" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5728-3"
-       id="linearGradient5483"
-       gradientUnits="userSpaceOnUse"
-       x1="945"
-       y1="310.2579"
-       x2="945"
-       y2="388.79999"
-       gradientTransform="translate(-1170,962.35973)" />
-    <linearGradient
-       id="linearGradient5728-3">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop5730-7" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop5732-3" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" version="1.1" inkscape:version="0.48.4 r9939" sodipodi:docname="buttoned-alchemist-robes.svg" class="buttoned-alchemist-robes" data-z="500" data-slots="clothing+jacket" data-tags="clothing+jacket">
+  <defs id="defs4">
+    <inkscape:path-effect effect="sketch" id="path-effect5121-4" is_visible="true" nbiter_approxstrokes="3" strokelength="1" strokelength_rdm="0;1" strokeoverlap="0.1" strokeoverlap_rdm="0;1" ends_tolerance="0.9;1" parallel_offset="0.9;1" tremble_size="1.5;1" tremble_frequency="0.01" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10.5" tgtlength="100" tgtlength_rdm="0.1;1"/>
+    <inkscape:path-effect effect="sketch" id="path-effect5121-7" is_visible="true" nbiter_approxstrokes="3" strokelength="1" strokelength_rdm="0;1" strokeoverlap="0.1" strokeoverlap_rdm="0;1" ends_tolerance="0.9;1" parallel_offset="0.9;1" tremble_size="1.5;1" tremble_frequency="0.01" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10.5" tgtlength="100" tgtlength_rdm="0.1;1"/>
+    <inkscape:path-effect effect="sketch" id="path-effect5257" is_visible="true" nbiter_approxstrokes="2" strokelength="1" strokelength_rdm="0.1;1" strokeoverlap="0" strokeoverlap_rdm="0;1" ends_tolerance="0;1" parallel_offset="0.8;1" tremble_size="0.7;1" tremble_frequency="1" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10" tgtlength="100" tgtlength_rdm="0.3;1"/>
+    <linearGradient inkscape:collect="always" href="#linearGradient5728-3" id="linearGradient5483" gradientUnits="userSpaceOnUse" x1="945" y1="310.2579" x2="945" y2="388.79999" gradientTransform="translate(-1170,962.35973)"/>
+    <linearGradient id="linearGradient5728-3">
+      <stop style="stop-color:#000000;stop-opacity:1;" offset="0" id="stop5730-7"/>
+      <stop style="stop-color:#000000;stop-opacity:0;" offset="1" id="stop5732-3"/>
     </linearGradient>
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect6957"
-       is_visible="true"
-       nbiter_approxstrokes="1"
-       strokelength="2"
-       strokelength_rdm="0.2;1"
-       strokeoverlap="0"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0;1"
-       parallel_offset="0.1;1"
-       tremble_size="0.6;1"
-       tremble_frequency="2.51"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10"
-       tgtlength="100"
-       tgtlength_rdm="0.3;1" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient4525"
-       id="radialGradient4531"
-       cx="33.561127"
-       cy="1181.4069"
-       fx="33.561127"
-       fy="1181.4069"
-       r="38.25"
-       gradientTransform="matrix(1.4117647,-0.98823605,0.89829027,1.2832709,-1076.2267,-300.93889)"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       id="linearGradient4525">
-      <stop
-         style="stop-color:#c8eeff;stop-opacity:1;"
-         offset="0"
-         id="stop4527" />
-      <stop
-         style="stop-color:#0091ff;stop-opacity:1;"
-         offset="1"
-         id="stop4529" />
+    <inkscape:path-effect effect="sketch" id="path-effect6957" is_visible="true" nbiter_approxstrokes="1" strokelength="2" strokelength_rdm="0.2;1" strokeoverlap="0" strokeoverlap_rdm="0;1" ends_tolerance="0;1" parallel_offset="0.1;1" tremble_size="0.6;1" tremble_frequency="2.51" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10" tgtlength="100" tgtlength_rdm="0.3;1"/>
+    <radialGradient inkscape:collect="always" href="#linearGradient4525" id="radialGradient4531" cx="33.561127" cy="1181.4069" fx="33.561127" fy="1181.4069" r="38.25" gradientTransform="matrix(1.4117647,-0.98823605,0.89829027,1.2832709,-1076.2267,-300.93889)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="linearGradient4525">
+      <stop style="stop-color:#c8eeff;stop-opacity:1;" offset="0" id="stop4527"/>
+      <stop style="stop-color:#0091ff;stop-opacity:1;" offset="1" id="stop4529"/>
     </linearGradient>
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="16"
-     inkscape:cx="28.269531"
-     inkscape:cy="19.144531"
-     inkscape:document-units="in"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     units="in"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2994"
-       empspacing="5"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true"
-       units="in"
-       spacingx="0.014in"
-       spacingy="0.014in" />
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="16" inkscape:cx="28.269531" inkscape:cy="19.144531" inkscape:document-units="in" inkscape:current-layer="layer1" showgrid="false" units="in" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1">
+    <inkscape:grid type="xygrid" id="grid2994" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true" units="in" spacingx="0.014in" spacingy="0.014in"/>
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+  <metadata id="metadata7">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:label="Body"
-     inkscape:groupmode="layer"
-     id="layer1"
-     class="robes"
-     transform="translate(0,-962.35975)"
-     style="display:inline">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 9,1012.766 0,10.7813 0,23.4062 48.59375,0 1.8125,-12.5937 1.78125,12.5937 19.8125,0 0,-21.5937 0,-12.5938 c 0,0 -12.6,5.3938 -36,5.3938 -23.4,0 -36,-5.3938 -36,-5.3938 z"
-       id="path6160"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccczc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 59.4,1036.1597 0,-18"
-       id="path6166"
-       inkscape:connector-curvature="0" />
-    <path
-       id="path6171-8-8"
-       transform="translate(471.87406,793.18353)"
-       style="fill:#000000;fill-opacity:1;stroke-width:0.90000000000000002;stroke-miterlimit:4;stroke:none;stroke-opacity:1;stroke-dasharray:none"
-       d="m -417.59999,245.7 c 0,1.49117 -1.20883,2.7 -2.7,2.7 -1.49117,0 -2.7,-1.20883 -2.7,-2.7 0,-1.49117 1.20883,-2.7 2.7,-2.7 1.49117,0 2.7,1.20883 2.7,2.7 z m 0,-7.2 c 0,1.49117 -1.20883,2.7 -2.7,2.7 -1.49117,0 -2.7,-1.20883 -2.7,-2.7 0,-1.49117 1.20883,-2.7 2.7,-2.7 1.49117,0 2.7,1.20883 2.7,2.7 z m -1e-5,-7.2 c 0,1.49117 -1.20883,2.7 -2.7,2.7 -1.49117,0 -2.7,-1.20883 -2.7,-2.7 0,-1.49117 1.20883,-2.7 2.7,-2.7 1.49117,0 2.7,1.20883 2.7,2.7 z"
-       class="ignored"
-       inkscape:connector-curvature="0" />
+  <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="robes" transform="translate(0,-962.35975)" style="display:inline">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 9,1012.766 0,10.7813 0,23.4062 48.59375,0 1.8125,-12.5937 1.78125,12.5937 19.8125,0 0,-21.5937 0,-12.5938 c 0,0 -12.6,5.3938 -36,5.3938 -23.4,0 -36,-5.3938 -36,-5.3938 z" id="path6160" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccccczc"/>
+    <path style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 59.4,1036.1597 0,-18" id="path6166" inkscape:connector-curvature="0"/>
+    <path id="path6171-8-8" transform="translate(471.87406,793.18353)" style="fill:#000000;fill-opacity:1;stroke-width:0.90000000000000002;stroke-miterlimit:4;stroke:none;stroke-opacity:1;stroke-dasharray:none" d="m -417.59999,245.7 c 0,1.49117 -1.20883,2.7 -2.7,2.7 -1.49117,0 -2.7,-1.20883 -2.7,-2.7 0,-1.49117 1.20883,-2.7 2.7,-2.7 1.49117,0 2.7,1.20883 2.7,2.7 z m 0,-7.2 c 0,1.49117 -1.20883,2.7 -2.7,2.7 -1.49117,0 -2.7,-1.20883 -2.7,-2.7 0,-1.49117 1.20883,-2.7 2.7,-2.7 1.49117,0 2.7,1.20883 2.7,2.7 z m -1e-5,-7.2 c 0,1.49117 -1.20883,2.7 -2.7,2.7 -1.49117,0 -2.7,-1.20883 -2.7,-2.7 0,-1.49117 1.20883,-2.7 2.7,-2.7 1.49117,0 2.7,1.20883 2.7,2.7 z" class="ignored" inkscape:connector-curvature="0"/>
   </g>
 </svg>

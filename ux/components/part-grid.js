@@ -1,8 +1,10 @@
 import * as parts from '../src/token-parts'
 import styled from '@emotion/styled'
 import { TokenShadow, Grid, GridItem } from './styled'
-import { SelectField } from './field'
 import React from 'react'
+import PartFilter from './part-filter'
+import Unique from '../src/filter-unique'
+import Union from '../src/filter-union'
 
 const PartPreviewContainer = styled.button(props => [
   GridItem,
@@ -55,24 +57,37 @@ const PartPreview = styled.svg({
   bottom: 0
 })
 
-const FilterContainer = styled.div({
-  maxWidth: '20em',
-  margin: 'auto',
-  marginBottom: '2em',
-  padding: '0em 2em'
-})
+const partIds = Object.keys(parts).filter(x => x[0] !== '$')
 
-const PartFilterOptions = parts.$tags.$list.map(x => ({ value: x, label: x }))
+const partsFromFilter = (filters) => {
+  const filtered = []
+  for (const f in filters) {
+    if (filters[f]) filtered.push(f)
+  }
+  if (filtered.length === 0) {
+    return partIds
+  }
+  let partids = partIds
+  for (const filter of filtered) {
+    const tagged = parts.$tags[filter]
+    partids = partids.filter(Union(tagged))
+  }
+  return partids.filter(Unique)
+}
 
 export default class PartGrid extends React.PureComponent {
   constructor (props, context) {
     super(props, context)
     this.state = {
-      filter: 'all'
+      filter: {},
+      parts: partsFromFilter({})
     }
   }
 
-  setFilter = (filter) => this.setState({ filter })
+  onFilterChange = (v) => this.setState({
+    filter: v,
+    parts: partsFromFilter(v)
+  })
 
   render () {
     const { parts: active, disabled, onClick } = this.props
@@ -80,7 +95,7 @@ export default class PartGrid extends React.PureComponent {
     for (const p of active) {
       isActive[p.id] = true
     }
-    const filtered = parts.$tags[this.state.filter]
+    const filtered = this.state.parts
     const children = []
     for (const part in parts) {
       if (part[0] === '$') continue
@@ -102,15 +117,7 @@ export default class PartGrid extends React.PureComponent {
     }
     return (
       <React.Fragment>
-        <FilterContainer>
-          <SelectField
-            label='Filter Parts'
-            disabled={disabled}
-            value={this.state.filter}
-            onChange={this.setFilter}
-            options={PartFilterOptions}
-          />
-        </FilterContainer>
+        <PartFilter value={this.state.filter} onChange={this.onFilterChange} />
         <Grid>
           {children}
         </Grid>

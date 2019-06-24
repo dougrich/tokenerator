@@ -1,7 +1,6 @@
 const fs = require('fs-extra')
-const path = require('path')
-const cheerio = require('cheerio')
 const nanoid = require('nanoid')
+const forEach = require('./forEach')
 
 const SVGO = require('svgo')
 
@@ -34,31 +33,19 @@ function parseSlots(slots) {
     'left-weapon': 1 << 10,
     'right-weapon': 1 << 11,
     'collar': 1 << 12,
-    'pauldrons': 1 << 13
+    'pauldron': 1 << 13
   }[x] || 0)).reduce((a, b) => a | b, 0)
 }
 
 function parseTags(tags) {
   if (!tags) return ['all']
-  const each = tags.split(',')
-  const tagged = ['all']
-  for (const tag of each) {
-    const parts = tag.split('/')
-    let set = ''
-    for (const p of parts) {
-      tagged.push(set + p)
-      set += p + '/'
-    }
-  }
-  return tagged.filter((x, i, a) => a.indexOf(x) === i)
+  const each = tags.split('+')
+  return each.filter((x, i, a) => a.indexOf(x) === i)
 }
 
-async function processFile(filename) {
-  const contents = await fs.readFile(filename, 'utf8')
-  const $ = cheerio.load(contents)
+async function processFile($, { id }, filename) {
   const layers = []
   const svg = $('svg')
-  const id = path.basename(filename).replace('.svg', '')
   const tags = parseTags(svg.attr('data-tags'))
   const defaults = {
     z: parseZ(svg.attr('data-z')),
@@ -149,10 +136,8 @@ async function processFile(filename) {
 }
 
 
-async function processDirectory() {
-  const files = await fs.readdir('./raw')
-  
-  const contents = await Promise.all(files.map(name => processFile('./raw/' + name)))
+async function processDirectory() {  
+  const contents = await forEach(processFile)
   const oneOf = []
   const combinedSchema = {
     type: 'object',

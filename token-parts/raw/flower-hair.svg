@@ -1,81 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100%"
-   height="100%"
-   viewBox="0 0 90 90"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="flower-hair.svg"
-   class="flower-hair"
-   data-z="900"
-   data-slots="hair">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="7.9824051"
-     inkscape:cx="29.683214"
-     inkscape:cy="38.843113"
-     inkscape:document-units="in"
-     inkscape:current-layer="svg2"
-     showgrid="true"
-     units="in"
-     inkscape:window-width="1418"
-     inkscape:window-height="1030"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
-     inkscape:window-maximized="0">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2994"
-       empspacing="5"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true"
-       units="in"
-       spacingx="0.014in"
-       spacingy="0.014in" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" version="1.1" inkscape:version="0.48.4 r9939" sodipodi:docname="flower-hair.svg" class="flower-hair" data-z="900" data-slots="hair" data-tags="hair+long">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="7.9824051" inkscape:cx="29.683214" inkscape:cy="38.843113" inkscape:document-units="in" inkscape:current-layer="svg2" showgrid="true" units="in" inkscape:window-width="1418" inkscape:window-height="1030" inkscape:window-x="0" inkscape:window-y="24" inkscape:window-maximized="0">
+    <inkscape:grid type="xygrid" id="grid2994" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true" units="in" spacingx="0.014in" spacingy="0.014in"/>
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+  <metadata id="metadata7">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:label="Body"
-     inkscape:groupmode="layer"
-     id="layer1"
-     class="hair"
-     transform="translate(0,-962.35975)"
-     style="display:inline">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 55.44,18.18 c -7.571395,0.06309 -6.3,12.6 -18.9,12.6 -2.22182,-1.189082 2.304576,-6.540525 0,-7.56 -1.26,1.26 -6.3,11.34 -13.86,12.6 C 21.42,27 11.667605,38.576962 11.34,43.38 10.714068,55.773765 22.68,63.54 21.42,74.88 10.08,66.06 17.10139,73.557111 13.86,79.92 10.08,72.36 10.08,76.14 5.04,77.4 3.78,68.58 3.5866642,56.74779 5.04,43.38 5.7789703,36.582947 5.2367269,29.042899 8.82,23.22 17.64,5.58 37.8,3.06 60.48,11.88 83.985551,12.550317 82.505097,33.727061 81.9,48.42 81.674564,60.297255 89.46,67.32 85.68,77.4 80.64,71.1 80.64,72.36 76.86,78.66 71.82,71.1 69.3,79.92 64.26,79.92 59.22,76.14 76.375679,60.708957 76.86,47.16 77.074821,41.150353 70.201608,35.725159 66.78,30.78 62.802656,25.031649 62.42995,18.121754 55.44,18.18 z"
-       id="path3752"
-       inkscape:connector-curvature="0"
-       transform="translate(0,962.35975)"
-       sodipodi:nodetypes="cccccccccccccccccc" />
+  <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="hair" transform="translate(0,-962.35975)" style="display:inline">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 55.44,18.18 c -7.571395,0.06309 -6.3,12.6 -18.9,12.6 -2.22182,-1.189082 2.304576,-6.540525 0,-7.56 -1.26,1.26 -6.3,11.34 -13.86,12.6 C 21.42,27 11.667605,38.576962 11.34,43.38 10.714068,55.773765 22.68,63.54 21.42,74.88 10.08,66.06 17.10139,73.557111 13.86,79.92 10.08,72.36 10.08,76.14 5.04,77.4 3.78,68.58 3.5866642,56.74779 5.04,43.38 5.7789703,36.582947 5.2367269,29.042899 8.82,23.22 17.64,5.58 37.8,3.06 60.48,11.88 83.985551,12.550317 82.505097,33.727061 81.9,48.42 81.674564,60.297255 89.46,67.32 85.68,77.4 80.64,71.1 80.64,72.36 76.86,78.66 71.82,71.1 69.3,79.92 64.26,79.92 59.22,76.14 76.375679,60.708957 76.86,47.16 77.074821,41.150353 70.201608,35.725159 66.78,30.78 62.802656,25.031649 62.42995,18.121754 55.44,18.18 z" id="path3752" inkscape:connector-curvature="0" transform="translate(0,962.35975)" sodipodi:nodetypes="cccccccccccccccccc"/>
   </g>
 </svg>

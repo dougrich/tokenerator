@@ -1,75 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 90 90"
-   class="scarf"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.48.4 r9939"
-   width="100%"
-   height="100%"
-   sodipodi:docname="C:\Users\dougrich\Google Drive\Token Parts\template.svg"
-   data-z="700"
-   data-slots="collar">
-  <defs
-     id="defs16" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
-     id="namedview14"
-     showgrid="false"
-     inkscape:zoom="2.6222222"
-     inkscape:cx="45"
-     inkscape:cy="45"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg2" />
-  <metadata
-     title="Basic Body"
-     contributor="Douglas Richardson"
-     id="metadata4">
-    <layers
-       id="layers6">
-      <layer
-         name="Primary"
-         data-layer="layer1"
-         id="layer8" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 90 90" class="scarf" id="svg2" version="1.1" inkscape:version="0.48.4 r9939" width="100%" height="100%" sodipodi:docname="C:\Users\dougrich\Google Drive\Token Parts\template.svg" data-z="700" data-slots="collar" data-tags="collar">
+  <defs id="defs16"/>
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="640" inkscape:window-height="480" id="namedview14" showgrid="false" inkscape:zoom="2.6222222" inkscape:cx="45" inkscape:cy="45" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="0" inkscape:current-layer="svg2"/>
+  <metadata title="Basic Body" contributor="Douglas Richardson" id="metadata4">
+    <layers id="layers6">
+      <layer name="Primary" data-layer="layer1" id="layer8"/>
     </layers>
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="scarf"
-     class="fabric">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
-       d="M 9.0625,42.75 C 9.0163152,43.496499 9,44.241869 9,45 c 0,2.299943 0.2127646,4.538678 0.625,6.71875 4.499382,2.024516 12.32235,3.596206 21.875,4.40625 l 0,26.3125 8.8125,2.53125 -0.0611,-33.674318 C 40.190293,49.682614 38.291212,47.90625 35.96875,47.90625 27.212504,46.961376 17.017519,45.914532 9.0625,42.75 z M 80.96875,43.5 C 71.733077,46.126876 62.850994,47.453308 55,47.90625 c -2.322462,0 -4.221543,1.776364 -4.282646,3.388182 l -0.0611,33.674318 8.8125,-2.53125 0,-26.25 C 68.129832,55.504182 75.419763,54.210985 80.21875,52.5 80.732379,50.078654 81,47.574391 81,45 81,44.494486 80.98939,44.000444 80.96875,43.5 z"
-       id="circle2990-0"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csccccccccccccccsc" />
+  <g inkscape:groupmode="layer" id="layer1" inkscape:label="scarf" class="fabric">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" d="M 9.0625,42.75 C 9.0163152,43.496499 9,44.241869 9,45 c 0,2.299943 0.2127646,4.538678 0.625,6.71875 4.499382,2.024516 12.32235,3.596206 21.875,4.40625 l 0,26.3125 8.8125,2.53125 -0.0611,-33.674318 C 40.190293,49.682614 38.291212,47.90625 35.96875,47.90625 27.212504,46.961376 17.017519,45.914532 9.0625,42.75 z M 80.96875,43.5 C 71.733077,46.126876 62.850994,47.453308 55,47.90625 c -2.322462,0 -4.221543,1.776364 -4.282646,3.388182 l -0.0611,33.674318 8.8125,-2.53125 0,-26.25 C 68.129832,55.504182 75.419763,54.210985 80.21875,52.5 80.732379,50.078654 81,47.574391 81,45 81,44.494486 80.98939,44.000444 80.96875,43.5 z" id="circle2990-0" inkscape:connector-curvature="0" sodipodi:nodetypes="csccccccccccccccsc"/>
   </g>
 </svg>

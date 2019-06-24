@@ -1,157 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 90 90"
-   class="barbute"
-   id="svg3674"
-   data-z="1000"
-   data-slots="hat"
-   version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="barbute.svg">
-  <defs
-     id="defs3684">
-    <inkscape:path-effect
-       tgtlength_rdm="0.1;1"
-       tgtlength="100"
-       tgtscale="10.5"
-       tgt_places_rdmness="1;1"
-       nbtangents="0"
-       tremble_frequency="0.01"
-       tremble_size="1.5;1"
-       parallel_offset="0.9;1"
-       ends_tolerance="0.9;1"
-       strokeoverlap_rdm="0;1"
-       strokeoverlap="0.1"
-       strokelength_rdm="0;1"
-       strokelength="1"
-       nbiter_approxstrokes="3"
-       is_visible="true"
-       id="path-effect5121-4"
-       effect="sketch" />
-    <inkscape:path-effect
-       tgtlength_rdm="0.1;1"
-       tgtlength="100"
-       tgtscale="10.5"
-       tgt_places_rdmness="1;1"
-       nbtangents="0"
-       tremble_frequency="0.01"
-       tremble_size="1.5;1"
-       parallel_offset="0.9;1"
-       ends_tolerance="0.9;1"
-       strokeoverlap_rdm="0;1"
-       strokeoverlap="0.1"
-       strokelength_rdm="0;1"
-       strokelength="1"
-       nbiter_approxstrokes="3"
-       is_visible="true"
-       id="path-effect5121-7"
-       effect="sketch" />
-    <inkscape:path-effect
-       tgtlength_rdm="0.3;1"
-       tgtlength="100"
-       tgtscale="10"
-       tgt_places_rdmness="1;1"
-       nbtangents="0"
-       tremble_frequency="1"
-       tremble_size="0.7;1"
-       parallel_offset="0.8;1"
-       ends_tolerance="0;1"
-       strokeoverlap_rdm="0;1"
-       strokeoverlap="0"
-       strokelength_rdm="0.1;1"
-       strokelength="1"
-       nbiter_approxstrokes="2"
-       is_visible="true"
-       id="path-effect5257"
-       effect="sketch" />
-    <linearGradient
-       id="linearGradient5728-3">
-      <stop
-         id="stop5730-7"
-         offset="0"
-         style="stop-color:#000000;stop-opacity:1;" />
-      <stop
-         id="stop5732-3"
-         offset="1"
-         style="stop-color:#000000;stop-opacity:0;" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 90 90" class="barbute" id="svg3674" data-z="1000" data-slots="hat" data-tags="armor+fantasy+hat" version="1.1" inkscape:version="0.91 r13725" sodipodi:docname="barbute.svg">
+  <defs id="defs3684">
+    <inkscape:path-effect tgtlength_rdm="0.1;1" tgtlength="100" tgtscale="10.5" tgt_places_rdmness="1;1" nbtangents="0" tremble_frequency="0.01" tremble_size="1.5;1" parallel_offset="0.9;1" ends_tolerance="0.9;1" strokeoverlap_rdm="0;1" strokeoverlap="0.1" strokelength_rdm="0;1" strokelength="1" nbiter_approxstrokes="3" is_visible="true" id="path-effect5121-4" effect="sketch"/>
+    <inkscape:path-effect tgtlength_rdm="0.1;1" tgtlength="100" tgtscale="10.5" tgt_places_rdmness="1;1" nbtangents="0" tremble_frequency="0.01" tremble_size="1.5;1" parallel_offset="0.9;1" ends_tolerance="0.9;1" strokeoverlap_rdm="0;1" strokeoverlap="0.1" strokelength_rdm="0;1" strokelength="1" nbiter_approxstrokes="3" is_visible="true" id="path-effect5121-7" effect="sketch"/>
+    <inkscape:path-effect tgtlength_rdm="0.3;1" tgtlength="100" tgtscale="10" tgt_places_rdmness="1;1" nbtangents="0" tremble_frequency="1" tremble_size="0.7;1" parallel_offset="0.8;1" ends_tolerance="0;1" strokeoverlap_rdm="0;1" strokeoverlap="0" strokelength_rdm="0.1;1" strokelength="1" nbiter_approxstrokes="2" is_visible="true" id="path-effect5257" effect="sketch"/>
+    <linearGradient id="linearGradient5728-3">
+      <stop id="stop5730-7" offset="0" style="stop-color:#000000;stop-opacity:1;"/>
+      <stop id="stop5732-3" offset="1" style="stop-color:#000000;stop-opacity:0;"/>
     </linearGradient>
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="388.79999"
-       x2="945"
-       y1="310.2579"
-       x1="945"
-       id="linearGradient5734"
-       xlink:href="#linearGradient5728-3"
-       inkscape:collect="always" />
+    <linearGradient gradientUnits="userSpaceOnUse" y2="388.79999" x2="945" y1="310.2579" x1="945" id="linearGradient5734" href="#linearGradient5728-3" inkscape:collect="always"/>
   </defs>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1280"
-     inkscape:window-height="702"
-     id="namedview3682"
-     showgrid="false"
-     inkscape:zoom="5.5555555"
-     inkscape:cx="45"
-     inkscape:cy="45"
-     inkscape:window-x="58"
-     inkscape:window-y="7"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="g4206" />
-  <metadata
-     title="Barbute Helmet"
-     contributor="Douglas Richardson"
-     id="metadata3676">
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1280" inkscape:window-height="702" id="namedview3682" showgrid="false" inkscape:zoom="5.5555555" inkscape:cx="45" inkscape:cy="45" inkscape:window-x="58" inkscape:window-y="7" inkscape:window-maximized="0" inkscape:current-layer="g4206"/>
+  <metadata title="Barbute Helmet" contributor="Douglas Richardson" id="metadata3676">
     <layers>
-      <layer
-         name="Primary"
-         data-layer="layer1" />
+      <layer name="Primary" data-layer="layer1"/>
     </layers>
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     class="helmet"
-     inkscape:label="body"
-     style="display:inline"
-     id="g4206">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.81741142;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 45.003601,8.6825635 A 38.069531,42.844082 0 0 0 10.472107,33.600563 c -1.6841411,6.851024 -3.1205077,12.85993 -3.2736657,13.628193 6.3763717,3.560288 21.7423087,6.243446 37.8795137,6.243446 14.654721,0 30.736072,-3.159667 37.767981,-6.208579 a 38.069531,42.844082 0 0 0 -0.117727,-1.083189 c -0.20991,-1.108301 -0.700718,-3.648747 -1.472633,-7.570703 A 38.069531,42.844082 0 0 0 45.003601,8.6825635 Z"
-       id="path3829-1-5-74-4-24-3"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8.58839607;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 61.939889,28.150659 45.069526,36.895053 28.199162,28.150659"
-       id="path4173"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:12.88259411;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 45.069526,36.895053 0,15.739812"
-       id="path4175"
-       inkscape:connector-curvature="0" />
+  <g inkscape:groupmode="layer" class="helmet" inkscape:label="body" style="display:inline" id="g4206">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.81741142;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 45.003601,8.6825635 A 38.069531,42.844082 0 0 0 10.472107,33.600563 c -1.6841411,6.851024 -3.1205077,12.85993 -3.2736657,13.628193 6.3763717,3.560288 21.7423087,6.243446 37.8795137,6.243446 14.654721,0 30.736072,-3.159667 37.767981,-6.208579 a 38.069531,42.844082 0 0 0 -0.117727,-1.083189 c -0.20991,-1.108301 -0.700718,-3.648747 -1.472633,-7.570703 A 38.069531,42.844082 0 0 0 45.003601,8.6825635 Z" id="path3829-1-5-74-4-24-3" inkscape:connector-curvature="0"/>
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8.58839607;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 61.939889,28.150659 45.069526,36.895053 28.199162,28.150659" id="path4173" inkscape:connector-curvature="0"/>
+    <path style="fill:none;stroke:#000000;stroke-width:12.88259411;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 45.069526,36.895053 0,15.739812" id="path4175" inkscape:connector-curvature="0"/>
   </g>
 </svg>

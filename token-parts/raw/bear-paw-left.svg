@@ -1,105 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100%"
-   height="100%"
-   viewBox="0 0 90 90"
-   id="svg2"
-   data-z="1200"
-   data-slots="left-weapon"
-   version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="bear-paw (left).svg"
-   class="bear-paw-left">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="5.6444128"
-     inkscape:cx="78.457183"
-     inkscape:cy="-0.12110123"
-     inkscape:document-units="in"
-     inkscape:current-layer="svg2"
-     showgrid="false"
-     units="in"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2994"
-       empspacing="5"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true"
-       units="in"
-       spacingx="0.014in"
-       spacingy="0.014in" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" data-z="1200" data-slots="left-weapon" data-tags="left+animals+weapon" version="1.1" inkscape:version="0.48.4 r9939" sodipodi:docname="bear-paw (left).svg" class="bear-paw-left">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="5.6444128" inkscape:cx="78.457183" inkscape:cy="-0.12110123" inkscape:document-units="in" inkscape:current-layer="svg2" showgrid="false" units="in" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1">
+    <inkscape:grid type="xygrid" id="grid2994" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true" units="in" spacingx="0.014in" spacingy="0.014in"/>
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+  <metadata id="metadata7">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:label="Body"
-     inkscape:groupmode="layer"
-     id="layer1"
-     class="body"
-     transform="translate(0,-962.35975)"
-     style="display:inline">
-    <path
-       inkscape:connector-curvature="0"
-       id="path4413-2-9"
-       d="m 16.55472,1022.3463 c -3.525792,0.7159 -8.946384,0.1309 -9.425,4.8 -0.693832,1.4186 2.612952,3.0474 1.025,5.075 0.768008,2.924 -3.671696,7.1333 0.02496,8.775 2.360728,-0.3018 4.13736,1.2396 3.85,3.55 3.313216,1.9219 7.812432,-0.033 11.575,0.65 2.171232,-0.1594 0.60884,-3.7721 3.2,-3.975 3.946608,0.058 2.673592,-4.4219 1.5,-6.575 -0.744032,-2.5108 -0.42876,-5.2598 0.55,-7.5 -1.59324,-0.6885 0.550504,-3.2987 -1.9,-3.475 -3.397264,-0.785 -6.888144,-1.5371 -10.4,-1.325 z"
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+  <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="body" transform="translate(0,-962.35975)" style="display:inline">
+    <path inkscape:connector-curvature="0" id="path4413-2-9" d="m 16.55472,1022.3463 c -3.525792,0.7159 -8.946384,0.1309 -9.425,4.8 -0.693832,1.4186 2.612952,3.0474 1.025,5.075 0.768008,2.924 -3.671696,7.1333 0.02496,8.775 2.360728,-0.3018 4.13736,1.2396 3.85,3.55 3.313216,1.9219 7.812432,-0.033 11.575,0.65 2.171232,-0.1594 0.60884,-3.7721 3.2,-3.975 3.946608,0.058 2.673592,-4.4219 1.5,-6.575 -0.744032,-2.5108 -0.42876,-5.2598 0.55,-7.5 -1.59324,-0.6885 0.550504,-3.2987 -1.9,-3.475 -3.397264,-0.785 -6.888144,-1.5371 -10.4,-1.325 z" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"/>
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Pads"
-     class="pads">
-    <path
-       inkscape:connector-curvature="0"
-       id="path4413-3"
-       d="m 17.22972,68.49935 c -5.519104,0.5972 -6.62424,8.969 -1.225,10.825 4.930056,2.2737 10.199928,-4.7678 6.3,-8.8 -1.215648,-1.5596 -3.23656,-2.2519 -5.075,-2.025 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path4415-1"
-       d="m 11.72972,63.48655 c -4.261384,-0.082 -2.664472,7.1422 1.2,5.575 3.083968,-1.1425 2.075064,-5.8711 -1.2,-5.575 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path4415-3-9"
-       d="m 17.67972,61.18655 c -4.208184,-0.054 -2.728328,7.036 1.125,5.625 3.173192,-1.1356 2.203976,-5.8821 -1.125,-5.625 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path4415-3-1-8"
-       d="m 23.72972,63.88655 c -4.205472,0.1817 -2.309144,7.3601 1.5,5.5 3.025656,-1.2693 1.76052,-5.9529 -1.5,-5.5 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
+  <g inkscape:groupmode="layer" id="layer2" inkscape:label="Pads" class="pads">
+    <path inkscape:connector-curvature="0" id="path4413-3" d="m 17.22972,68.49935 c -5.519104,0.5972 -6.62424,8.969 -1.225,10.825 4.930056,2.2737 10.199928,-4.7678 6.3,-8.8 -1.215648,-1.5596 -3.23656,-2.2519 -5.075,-2.025 z" style="fill:#000000;fill-opacity:1;stroke:none;display:inline"/>
+    <path inkscape:connector-curvature="0" id="path4415-1" d="m 11.72972,63.48655 c -4.261384,-0.082 -2.664472,7.1422 1.2,5.575 3.083968,-1.1425 2.075064,-5.8711 -1.2,-5.575 z" style="fill:#000000;fill-opacity:1;stroke:none;display:inline"/>
+    <path inkscape:connector-curvature="0" id="path4415-3-9" d="m 17.67972,61.18655 c -4.208184,-0.054 -2.728328,7.036 1.125,5.625 3.173192,-1.1356 2.203976,-5.8821 -1.125,-5.625 z" style="fill:#000000;fill-opacity:1;stroke:none;display:inline"/>
+    <path inkscape:connector-curvature="0" id="path4415-3-1-8" d="m 23.72972,63.88655 c -4.205472,0.1817 -2.309144,7.3601 1.5,5.5 3.025656,-1.2693 1.76052,-5.9529 -1.5,-5.5 z" style="fill:#000000;fill-opacity:1;stroke:none;display:inline"/>
   </g>
 </svg>
