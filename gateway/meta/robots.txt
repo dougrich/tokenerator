@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /api/*
+Disallow: /static/*
+Disallow: /account
+Disallow: /login
+Disallow: /logout
