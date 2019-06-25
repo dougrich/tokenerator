@@ -71,12 +71,13 @@ export default class Browse extends React.PureComponent {
     const { token, user } = this.props
     const title = token.title || DefaultTokenTitle
     const imageSrc = `/api/token/${token.id}.svg`
+    const previewImageSource = `/api/token/${token.id}.png?size=288`
     const canonical = 'https://tokens.dougrich.net/token/' + token.id
     return (
       <Page
         title={title}
         description={token.description}
-        image={'https://tokens.dougrich.net' + imageSrc}
+        image={previewImageSource}
         imageAlt={title}
         user={user}
         canonical={canonical}
