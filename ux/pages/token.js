@@ -75,7 +75,7 @@ export default class Browse extends React.PureComponent {
       <Page
         title={title}
         description={token.description}
-        image={imageSrc}
+        image={'https://tokens.dougrich.net' + imageSrc}
         user={user}
         canonical={'https://tokens.dougrich.net/token/' + token.id}
       >
