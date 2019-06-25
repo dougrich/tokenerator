@@ -78,7 +78,9 @@ export default class Page extends React.PureComponent {
       simple,
       user,
       canonical,
-      image
+      description,
+      image,
+      imageAlt
     } = this.props
 
     if (store) {
@@ -95,6 +97,8 @@ export default class Page extends React.PureComponent {
           title={title}
           canonical={canonical}
           image={image}
+          imageAlt={imageAlt}
+          description={description}
         />
         {!simple && <Header user={user} />}
         {children}
