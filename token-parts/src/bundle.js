@@ -38,7 +38,7 @@ function parseSlots(slots) {
 }
 
 function parseTags(tags) {
-  if (!tags) return ['all']
+  if (!tags) return []
   const each = tags.split('+')
   return each.filter((x, i, a) => a.indexOf(x) === i)
 }

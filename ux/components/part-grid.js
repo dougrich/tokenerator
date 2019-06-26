@@ -1,6 +1,6 @@
 import * as parts from '../src/token-parts'
 import styled from '@emotion/styled'
-import { TokenShadow, Grid, GridItem } from './styled'
+import { TokenShadow, Grid, GridItem, Label, TextCenter } from './styled'
 import React from 'react'
 import PartFilter from './part-filter'
 import Unique from '../src/filter-unique'
@@ -97,12 +97,15 @@ export default class PartGrid extends React.PureComponent {
     }
     const filtered = this.state.parts
     const children = []
+    let visibleCount = 0
     for (const part in parts) {
       if (part[0] === '$') continue
+      const isVisible = filtered.indexOf(part) >= 0
+      if (isVisible) visibleCount++
       children.push(
         <PartPreviewContainer
           key={children.length}
-          visible={filtered.indexOf(part) >= 0}
+          visible={isVisible}
           disabled={!!isActive[part] || disabled}
           onClick={onClick.bind(null, part, parts.$defaults[part])}
         >
@@ -118,6 +121,11 @@ export default class PartGrid extends React.PureComponent {
     return (
       <React.Fragment>
         <PartFilter value={this.state.filter} onChange={this.onFilterChange} />
+        {visibleCount === 0 && (
+          <TextCenter>
+            <Label as='div'>No parts match the filter</Label>
+          </TextCenter>
+        )}
         <Grid>
           {children}
         </Grid>

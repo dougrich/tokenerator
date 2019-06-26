@@ -10,7 +10,6 @@ if (!tagA || !tagB) {
 }
 
 forEach(($, { id }, write) => {
-  const slots = $('svg').attr('data-slots').split('+')
   let tags = ($('svg').attr('data-tags') || '').split('+')
   for (let i = 0; i < tags.length; i++) {
     const parts = tags[i].split('/')
@@ -18,9 +17,6 @@ forEach(($, { id }, write) => {
       const leaves = p.split(',')
       tags.splice(i, 1, ...leaves)
     }
-  }
-  for (const slot of slots) {
-    tags.push(...slot.split('-'))
   }
   tags = tags.map(x => {
     if (x === tagA) return tagB
