@@ -8,22 +8,6 @@ commands:
     - run: |
         bash /tmp/workspace/buildtag.sh
 jobs:
-  create-ids:
-    machine: true
-    steps:
-    - run:
-        name: Creating workspace
-        command: |
-          mkdir -p workspace
-    - run:
-        name: Creating readable buildid
-        command: |
-          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_BUILD_NUM}
-          echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> workspace/buildtag.sh
-    - persist_to_workspace:
-        root: workspace
-        paths:
-        - buildtag.sh
   build-tokens:
     docker:
     - image: circleci/node:12
@@ -140,6 +124,22 @@ jobs:
     - run: 
         name: Apply rolling update
         command: ./deploy/rolling-update.sh ${BUILD_TAG}
+  create-ids:
+    machine: true
+    steps:
+    - run:
+        name: Creating workspace
+        command: |
+          mkdir -p workspace
+    - run:
+        name: Creating readable buildid
+        command: |
+          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_BUILD_NUM}
+          echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> workspace/buildtag.sh
+    - persist_to_workspace:
+        root: workspace
+        paths:
+        - buildtag.sh
 workflows:
   version: 2
   build:
