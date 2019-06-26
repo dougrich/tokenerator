@@ -29,7 +29,8 @@ services:
     - ./ux/pages:/app/pages
     - ./ux/components:/app/components
     - ./ux/static:/app/static
-    entrypoint: npm run dev
+    - ./ux/next.config.js:/app/next.config.js
+    entrypoint: ash -c "npm i -D && npm run dev"
   gateway:
     build: ./gateway
     ports:
