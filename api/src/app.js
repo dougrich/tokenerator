@@ -9,7 +9,8 @@ const canonical = {
   token: (id) => `/token/${id}`,
   account: () => `/account`,
   batch: (id) => `/batch/${id}`,
-  logout: () => `/logout`
+  logout: () => `/logout`,
+  browse: `/browse`
 }
 
 function app() {

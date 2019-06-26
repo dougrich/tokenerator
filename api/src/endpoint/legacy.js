@@ -16,7 +16,7 @@ function legacyEndpoint(canonical) {
       try {
         const result = await query.get()
         if (result.empty) {
-          res.status(404).end()
+          res.redirect(301, canonical.browse)
         } else {
           const { id } = await result.docs[0].data()
           res.redirect(301, canonical.token(id))
