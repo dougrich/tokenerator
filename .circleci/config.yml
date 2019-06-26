@@ -62,7 +62,7 @@ jobs:
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
     - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/gateway:${CIRCLE_SHA1}
-  deploy:
+  create-gcp-template:
     docker:
     - image: google/cloud-sdk
     steps:
@@ -108,6 +108,14 @@ jobs:
     - run: 
         name: Create build template
         command: ./deploy/create-gcr-template.sh ${BUILD_TAG} startup-script.sh
+  rolling-update:
+    docker:
+    - image: google/cloud-sdk
+    steps:
+    - checkout
+    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - run: gcloud config set project ${GCP_PROJECT}
+    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
     - run: 
         name: Apply rolling update
         command: ./deploy/rolling-update.sh ${BUILD_TAG}
@@ -124,12 +132,15 @@ workflows:
         - build-tokens
     - build-gateway
     - build-batch
-    - deploy:
+    - create-gcp-template:
         requires:
         - build-api
         - build-batch
         - build-ux
         - build-gateway
+    - rolling-update:
+        requires:
+        - create-gcp-template
         filters:
           branches:
             only: master
