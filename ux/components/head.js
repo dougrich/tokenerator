@@ -23,7 +23,7 @@ export default class AppHead extends React.PureComponent {
         <title>{title}</title>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald:700&display=swap' rel='stylesheet' />
         {this.props.children}
-        <meta name='viewport' content='width=device-width, maximum-scale=1.0' />
+        <meta name='viewport' content='width=device-width' />
         <meta property='og:title' content={title} />
         <meta property='og:url' content={this.props.canonical} />
         <meta property='og:type' content='website' />
