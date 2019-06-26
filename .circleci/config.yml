@@ -134,7 +134,7 @@ jobs:
     - persist_to_workspace:
         root: workspace
         paths:
-        - buildtag.sh
+        - buildtag
 workflows:
   version: 2
   build:
