@@ -103,7 +103,7 @@ jobs:
     - run:
         name: Create build tag 
         command: |
-          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_BUILD_NUM}
+          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_SHA1}
           echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> $BASH_ENV
     - run: 
         name: Create build template
@@ -116,6 +116,11 @@ jobs:
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: gcloud config set project ${GCP_PROJECT}
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+    - run:
+        name: Create build tag 
+        command: |
+          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_SHA1}
+          echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> $BASH_ENV
     - run: 
         name: Apply rolling update
         command: ./deploy/rolling-update.sh ${BUILD_TAG}
