@@ -59,9 +59,10 @@ class BatchItem extends React.PureComponent {
             min='1'
             value={count}
             label='Count'
+            name={'count.' + id}
             onChange={onCountChange}
           />
-          <SelectField label='Symbol Type' value={label} onChange={onLabelChange} disabled={disabled} options={[
+          <SelectField label='Symbol Type' name={'symbol-type.' + id} value={label} onChange={onLabelChange} disabled={disabled} options={[
             { label: 'None', value: constants.LABEL_NONE },
             { label: 'Number', value: constants.LABEL_NUMBER },
             { label: 'Alphabet', value: constants.LABEL_ALPHABET },
@@ -88,6 +89,7 @@ class BatchOptionFrom extends React.PureComponent {
       <div>
         <SelectField
           label='Format'
+          name='format'
           options={[
             { label: 'File - Zip Archive', value: constants.FORMAT_ZIP },
             { label: 'File - PDF Document', value: constants.FORMAT_PDF },
@@ -99,6 +101,7 @@ class BatchOptionFrom extends React.PureComponent {
         {type === constants.FORMAT_PDF && (
           <TextField
             label='Document Title'
+            name='title'
             maxLength={200}
             disabled={disabled}
             value={name}
@@ -108,6 +111,7 @@ class BatchOptionFrom extends React.PureComponent {
         {type === constants.FORMAT_ZIP && (
           <PixelField
             value={size}
+            name='pixels'
             disabled={disabled}
             onChange={onChange('size')}
           />
@@ -115,6 +119,7 @@ class BatchOptionFrom extends React.PureComponent {
         {type === constants.FORMAT_PDF && (
           <SelectField
             label='Page Size'
+            name='page-size'
             options={[
               { label: 'Letter', value: constants.PAGE_LETTER },
               { label: 'A4', value: constants.PAGE_A4 }

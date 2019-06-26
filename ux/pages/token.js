@@ -91,6 +91,7 @@ export default class Browse extends React.PureComponent {
           </ActionSet>
           <ActionSet>
             <PixelField
+              name='pixels'
               value={this.state.size}
               onChange={this.onSizeChange}
             />
