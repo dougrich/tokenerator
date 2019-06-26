@@ -24,6 +24,7 @@ COPY package* /app/
 
 RUN npm i
 COPY --from=0 /app/.next /app/.next
+COPY static /app/static
 COPY src/server.js /app/src/server.js
 
 ENTRYPOINT npm run start
