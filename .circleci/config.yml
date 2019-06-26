@@ -1,6 +1,6 @@
 version: 2
 commands:
-  populate-workspace:
+  populate-workspace: &populate-workspace
     description: Fetches the workspace and populates environment variables
     steps:
     - attach_workspace:
@@ -74,7 +74,7 @@ jobs:
     docker:
     - image: google/cloud-sdk
     steps:
-    - populate-workspace
+    - *populate-workspace
     - checkout
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: gcloud config set project ${GCP_PROJECT}
@@ -116,7 +116,7 @@ jobs:
     docker:
     - image: google/cloud-sdk
     steps:
-    - populate-workspace
+    - *populate-workspace
     - checkout
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: gcloud config set project ${GCP_PROJECT}
