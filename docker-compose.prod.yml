@@ -4,32 +4,18 @@ services:
     build: ./batch
     environment:
     - GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json
-    - NODE_ENV=development
     volumes:
     - ./creds.json:/gcp/creds.json
     - ./config.json:/app/config.json
-    - ./batch/src:/app/src
-    entrypoint: ash -c "npm i -D && npm run start"
   api:
     build: ./api
     environment:
     - GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json
-    - NODE_ENV=development
     volumes:
     - ./creds.json:/gcp/creds.json
     - ./config.json:/app/config.json
-    - ./api/src:/app/src
-    entrypoint: bash -c "npm i -D && npm run start"
   ux:
     build: ./ux
-    environment:
-    - NODE_ENV=development
-    volumes:
-    - ./ux/src:/app/src
-    - ./ux/pages:/app/pages
-    - ./ux/components:/app/components
-    - ./ux/static:/app/static
-    entrypoint: npm run dev
   gateway:
     build: ./gateway
     ports:
