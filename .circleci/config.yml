@@ -145,6 +145,7 @@ workflows:
   build:
     jobs:
     - create-ids
+    - build-tokens
     - build-api:
         requires:
         - build-tokens
