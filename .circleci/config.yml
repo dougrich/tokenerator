@@ -2,11 +2,10 @@ version: 2
 commands:
   populate-gcp: &populate-gcp
     name: Populate GCP Credentials
-    step:
-      run: |
-        echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
-        gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
-        gcloud --quiet config set project ${GCP_PROJECT}
+    command: |
+      echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+      gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+      gcloud --quiet config set project ${GCP_PROJECT}
 jobs:
   build-tokens:
     docker:
@@ -31,7 +30,7 @@ jobs:
         key: token-parts-{{ .Revision }}
         paths:
         - ./api/src/token-parts.js
-    - *populate-gcp
+    - run: *populate-gcp
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1} ./api
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
   build-ux:
@@ -43,7 +42,7 @@ jobs:
         key: token-parts-{{ .Revision }}
         paths:
         - ./ux/src/token-parts.js
-    - *populate-gcp
+    - run: *populate-gcp
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1} ./ux
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1}
   build-batch:
@@ -51,7 +50,7 @@ jobs:
       docker_layer_caching: true
     steps:
     - checkout
-    - *populate-gcp
+    - run: *populate-gcp
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1} ./batch
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
   build-gateway:
@@ -59,7 +58,7 @@ jobs:
       docker_layer_caching: true
     steps:
     - checkout
-    - *populate-gcp
+    - run: *populate-gcp
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/gateway:${CIRCLE_SHA1} ./gateway
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/gateway:${CIRCLE_SHA1}
   create-gcp-template:
@@ -71,7 +70,7 @@ jobs:
     - run: |
         bash /tmp/workspace/buildtag.sh
     - checkout
-    - *populate-gcp
+    - run: *populate-gcp
     - run: 
         name: Create startup-script
         command: |
@@ -114,7 +113,7 @@ jobs:
     - run: |
         bash /tmp/workspace/buildtag.sh
     - checkout
-    - *populate-gcp
+    - run: *populate-gcp
     - run: 
         name: Apply rolling update
         command: ./deploy/rolling-update.sh ${BUILD_TAG}
