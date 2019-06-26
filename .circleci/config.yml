@@ -68,7 +68,7 @@ jobs:
     - attach_workspace:
         at: /tmp/workspace
     - run: |
-        echo /tmp/workspace/buildtag.sh
+        cat /tmp/workspace/buildtag.sh
         bash /tmp/workspace/buildtag.sh
     - checkout
     - run: *populate-gcp
