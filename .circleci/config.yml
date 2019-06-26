@@ -86,6 +86,11 @@ jobs:
 
           docker-credential-gcr configure-docker
 
+          docker pull us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1} & \
+          docker pull us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1} & \
+          docker pull us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1} & \
+          docker pull us.gcr.io/${GCP_PROJECT}/gateway:${CIRCLE_SHA1}
+
           docker network create --driver bridge tokens
           docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json --network tokens --name=batch us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
           docker run -d --restart=\"always\" -v /home/cloudservice/config.json:/app/config.json -v /home/cloudservice/creds.json:/gcp/creds.json -e GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json --network tokens --name=api us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}

@@ -14,4 +14,16 @@ COPY static /app/static
 
 RUN npm run lint && npm run build
 
+FROM node:12-alpine
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+COPY package* /app/
+
+RUN npm i
+COPY --from=0 /app/.next /app/.next
+COPY src/server.js /app/src/server.js
+
 ENTRYPOINT npm run start
