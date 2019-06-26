@@ -1,5 +1,29 @@
 version: 2
+commands:
+  populate-workspace:
+    description: Fetches the workspace and populates environment variables
+    steps:
+    - attach_workspace:
+        at: /tmp/workspace
+    - run: |
+        bash /tmp/workspace/buildtag.sh
 jobs:
+  create-ids:
+    machine: true
+    steps:
+    - run:
+        name: Creating workspace
+        command: |
+          mkdir -p workspace
+    - run:
+        name: Creating readable buildid
+        command: |
+          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_BUILD_NUM}
+          echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> workspace/buildtag.sh
+    - persist_to_workspace:
+        root: workspace
+        paths:
+        - buildtag.sh
   build-tokens:
     docker:
     - image: circleci/node:12
@@ -66,6 +90,7 @@ jobs:
     docker:
     - image: google/cloud-sdk
     steps:
+    - populate-workspace
     - checkout
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: gcloud config set project ${GCP_PROJECT}
@@ -100,11 +125,6 @@ jobs:
 
           EOFF
           " > startup-script.sh
-    - run:
-        name: Create build tag 
-        command: |
-          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_SHA1}
-          echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> $BASH_ENV
     - run: 
         name: Create build template
         command: ./deploy/create-gcr-template.sh ${BUILD_TAG} startup-script.sh
@@ -112,15 +132,11 @@ jobs:
     docker:
     - image: google/cloud-sdk
     steps:
+    - populate-workspace
     - checkout
     - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
     - run: gcloud config set project ${GCP_PROJECT}
     - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
-    - run:
-        name: Create build tag 
-        command: |
-          BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_SHA1}
-          echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> $BASH_ENV
     - run: 
         name: Apply rolling update
         command: ./deploy/rolling-update.sh ${BUILD_TAG}
@@ -128,7 +144,7 @@ workflows:
   version: 2
   build:
     jobs:
-    - build-tokens
+    - create-ids
     - build-api:
         requires:
         - build-tokens
@@ -143,9 +159,11 @@ workflows:
         - build-batch
         - build-ux
         - build-gateway
+        - create-ids
     - rolling-update:
         requires:
         - create-gcp-template
+        - create-ids
         filters:
           branches:
             only: master
