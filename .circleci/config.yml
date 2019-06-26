@@ -2,10 +2,11 @@ version: 2
 commands:
   populate-gcp: &populate-gcp
     name: Populate GCP Credentials
-    run: |
-      echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
-      gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
-      gcloud --quiet config set project ${GCP_PROJECT}
+    step:
+      run: |
+        echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+        gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+        gcloud --quiet config set project ${GCP_PROJECT}
 jobs:
   build-tokens:
     docker:
