@@ -68,8 +68,8 @@ jobs:
     - attach_workspace:
         at: /tmp/workspace
     - run: |
-        cat /tmp/workspace/buildtag.sh
-        bash /tmp/workspace/buildtag.sh
+        BUILD_TAG = `cat /tmp/workspace/buildtag`
+        export BUILD_TAG
     - checkout
     - run: *populate-gcp
     - run: 
@@ -112,7 +112,8 @@ jobs:
     - attach_workspace:
         at: /tmp/workspace
     - run: |
-        bash /tmp/workspace/buildtag.sh
+        BUILD_TAG = `cat /tmp/workspace/buildtag`
+        export BUILD_TAG
     - checkout
     - run: *populate-gcp
     - run: 
@@ -129,7 +130,7 @@ jobs:
         name: Creating readable buildid
         command: |
           BUILD_TAG=$(date '+%Y-%m-%d-')${CIRCLE_BUILD_NUM}
-          echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> workspace/buildtag.sh
+          echo "${BUILD_TAG}" >> workspace/buildtag
     - persist_to_workspace:
         root: workspace
         paths:
