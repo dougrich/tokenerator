@@ -1,12 +1,11 @@
 version: 2
 commands:
-  populate-workspace: &populate-workspace
-    description: Fetches the workspace and populates environment variables
-    steps:
-    - attach_workspace:
-        at: /tmp/workspace
-    - run: |
-        bash /tmp/workspace/buildtag.sh
+  populate-gcp: &populate-gcp
+    name: Populate GCP Credentials
+    run: |
+      echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+      gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+      gcloud --quiet config set project ${GCP_PROJECT}
 jobs:
   build-tokens:
     docker:
@@ -31,10 +30,8 @@ jobs:
         key: token-parts-{{ .Revision }}
         paths:
         - ./api/src/token-parts.js
-    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - *populate-gcp
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1} ./api
-    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
-    - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenapi:${CIRCLE_SHA1}
   build-ux:
     machine:
@@ -45,40 +42,35 @@ jobs:
         key: token-parts-{{ .Revision }}
         paths:
         - ./ux/src/token-parts.js
-    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - *populate-gcp
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1} ./ux
-    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
-    - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/tokenux:${CIRCLE_SHA1}
   build-batch:
     machine:
       docker_layer_caching: true
     steps:
     - checkout
-    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - *populate-gcp
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1} ./batch
-    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
-    - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/batchprocess:${CIRCLE_SHA1}
   build-gateway:
     machine:
       docker_layer_caching: true
     steps:
     - checkout
-    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+    - *populate-gcp
     - run: docker build --rm=false -t us.gcr.io/${GCP_PROJECT}/gateway:${CIRCLE_SHA1} ./gateway
-    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
-    - run: gcloud --quiet config set project ${GCP_PROJECT}
     - run: gcloud docker -- push us.gcr.io/${GCP_PROJECT}/gateway:${CIRCLE_SHA1}
   create-gcp-template:
     docker:
     - image: google/cloud-sdk
     steps:
-    - *populate-workspace
+    - attach_workspace:
+        at: /tmp/workspace
+    - run: |
+        bash /tmp/workspace/buildtag.sh
     - checkout
-    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
-    - run: gcloud config set project ${GCP_PROJECT}
-    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+    - *populate-gcp
     - run: 
         name: Create startup-script
         command: |
@@ -116,11 +108,12 @@ jobs:
     docker:
     - image: google/cloud-sdk
     steps:
-    - *populate-workspace
+    - attach_workspace:
+        at: /tmp/workspace
+    - run: |
+        bash /tmp/workspace/buildtag.sh
     - checkout
-    - run: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
-    - run: gcloud config set project ${GCP_PROJECT}
-    - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+    - *populate-gcp
     - run: 
         name: Apply rolling update
         command: ./deploy/rolling-update.sh ${BUILD_TAG}
