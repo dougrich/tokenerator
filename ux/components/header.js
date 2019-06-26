@@ -72,7 +72,7 @@ export default class extends React.PureComponent {
             </Navigation>
           </Collapsible>
           <Notice>
-            Remember to give feedback, request parts, and raise issues on <a href="https://github.com/dougrich/tokenerator/issues/new" target="_blank">Github</a>, <a href="https://twitter.com/tokenerator">Twitter</a>, or by emailing <a href="mailto:contact@dougrich.net" target="_blank">contact@dougrich.net</a>
+            Remember to give feedback, request parts, and raise issues on <a href='https://github.com/dougrich/tokenerator/issues/new' target='_blank'>Github</a>, <a href='https://twitter.com/tokenerator'>Twitter</a>, or by emailing <a href='mailto:contact@dougrich.net' target='_blank'>contact@dougrich.net</a>
           </Notice>
         </Container>
       </Header>
