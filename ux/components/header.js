@@ -17,6 +17,13 @@ const Header = styled.header({
   }
 })
 
+const Notice = styled.div({
+  margin: 'auto',
+  padding: '2em',
+  textAlign: 'center',
+  marginBottom: '2em'
+})
+
 export default class extends React.PureComponent {
   onSignIn = () => {
     const newwindow = window.open('/login', 'Log In', 'height=600,width=800')
@@ -64,6 +71,9 @@ export default class extends React.PureComponent {
                 )}
             </Navigation>
           </Collapsible>
+          <Notice>
+            Remember to give feedback, request parts, and raise issues on <a href="https://github.com/dougrich/tokenerator/issues/new" target="_blank">Github</a>, <a href="https://twitter.com/tokenerator">Twitter</a>, or by emailing <a href="mailto:contact@dougrich.net" target="_blank">contact@dougrich.net</a>
+          </Notice>
         </Container>
       </Header>
     )
