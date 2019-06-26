@@ -244,6 +244,7 @@ export default class ColorPicker extends React.Component {
         </Row>
         <TextField
           type='text'
+          name='color-picker-hex'
           value={currentHex}
           pattern='^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'
           validationMessage='Must be either a hex color, i.e. #FFF, #000000'

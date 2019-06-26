@@ -18,12 +18,13 @@ const RangeFieldLabel = withBounds(withEventUnwrap(({
   ...rest
 }) => (
   <RangeFieldLabelContainer>
-    <Label>{label}</Label>
+    <Label htmlFor={rest.name}>{label}</Label>
     <TextContainer>
       <TextInput
         type='number'
         value={value}
         {...rest}
+        id={rest.name}
       />
       <TextInputUnderline />
       <TextAddon>
@@ -246,12 +247,13 @@ function withLabel (Component) {
       const {
         label,
         disabled,
+        name,
         ...rest
       } = this.props
       return (
         <Row disabled={disabled}>
-          <Label>{label}</Label>
-          <Component {...rest} disabled={disabled} />
+          <Label htmlFor={name}>{label}</Label>
+          <Component {...rest} disabled={disabled} name={name} />
         </Row>
       )
     }
@@ -260,7 +262,7 @@ function withLabel (Component) {
 
 export const TextField = withPattern(withBounds(withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
   <TextContainer>
-    <TextInput {...rest} />
+    <TextInput {...rest} id={rest.name} />
     <TextInputUnderline />
     {children}
   </TextContainer>
@@ -268,7 +270,7 @@ export const TextField = withPattern(withBounds(withMaxLength(withEventUnwrap(wi
 
 export const TextAreaField = withMaxLength(withEventUnwrap(withLabel(({ children, ...rest }) => (
   <TextContainer>
-    <TextInput as='textarea' {...rest} />
+    <TextInput as='textarea' {...rest} id={rest.name} />
     <TextAreaLines />
     {children}
   </TextContainer>

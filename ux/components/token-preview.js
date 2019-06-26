@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 import { GridItem } from './styled'
+import { DefaultTokenTitle } from '../src/constants'
 
 const TokenPreviewContainer = styled.div(props => [
   {
@@ -124,8 +125,8 @@ export default class TokenPreview extends React.PureComponent {
     const { title, disabled, id, isPinned } = this.props
     return (
       <Link href={`/token?id=${id}`} as={`/token/${id}`} passHref={!disabled}>
-        <TokenPreviewContainer as='a' disabled={disabled}>
-          <TokenPreviewImage src={`/api/token/${id}.svg`} />
+        <TokenPreviewContainer as='a' disabled={disabled} title={title || DefaultTokenTitle} >
+          <TokenPreviewImage src={`/api/token/${id}.svg`} alt={title || DefaultTokenTitle} />
           <TokenPin pinned={isPinned} disabled={disabled} onClick={this.onClick}>
             {isPinned ? 'Pinned' : 'Pin'}
           </TokenPin>

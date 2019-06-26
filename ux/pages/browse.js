@@ -119,6 +119,7 @@ const ConnectedActionPanel = connect(
     <ActionRow>
       <SelectField
         label='Filter'
+        name='filter-tokens'
         value={filter}
         onChange={onFilter}
         options={[

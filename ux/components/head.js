@@ -35,6 +35,7 @@ export default class AppHead extends React.PureComponent {
         <meta property='twitter:description' content={this.props.description || defaultDescription} />
         <meta property='twitter:image' content={this.props.image || defaultLogo} />
         <meta property='twitter:alt' content={this.props.imageAlt || defaultAlt} />
+        <meta name='description' content={this.props.description || defaultDescription} />
         <link rel='shortcut icon' type='image/png' href='/static/logo@150.png' />
         <link rel='canonical' href={this.props.canonical} />
         <link rel='me' href='https://twitter.com/@tokenerator' />
