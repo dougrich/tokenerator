@@ -68,7 +68,7 @@ jobs:
     - attach_workspace:
         at: /tmp/workspace
     - run: |
-        BUILD_TAG = `cat /tmp/workspace/buildtag`
+        BUILD_TAG=$(cat /tmp/workspace/buildtag)
         echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> $BASH_ENV
     - checkout
     - run: *populate-gcp
@@ -112,7 +112,7 @@ jobs:
     - attach_workspace:
         at: /tmp/workspace
     - run: |
-        BUILD_TAG = `cat /tmp/workspace/buildtag`
+        BUILD_TAG=$(cat /tmp/workspace/buildtag)
         echo "export BUILD_TAG=\"${BUILD_TAG}\"" >> $BASH_ENV
     - checkout
     - run: *populate-gcp
