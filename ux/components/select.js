@@ -12,12 +12,13 @@ export default class Select extends React.PureComponent {
     const {
       options,
       value,
+      name,
       onChange,
       children
     } = this.props
     return (
       <TextContainer>
-        <TextInput as='select' value={value} onChange={onChange}>
+        <TextInput as='select' id={name} name={name} value={value} onChange={onChange}>
           {options.map(this.renderOption)}
           {children}
         </TextInput>

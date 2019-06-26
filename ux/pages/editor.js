@@ -221,8 +221,8 @@ export default class extends React.Component {
         <EditorTools>
           <FormPanel>
             <Collapsible enabledWidth={enabledWidth} label='Details'>
-              <ConnectedTitle maxLength={200} label='Title'/>
-              <ConnectedDescription maxLength={2000} label='Description'/>
+              <ConnectedTitle maxLength={200} label='Title' name='token-title'/>
+              <ConnectedDescription maxLength={2000} label='Description' name='token-description'/>
               <ActionRow>
                 <ConnectedIsPrivate label='Private'/>
                 <ConnectedIsAdvanced label='Advanced'/>

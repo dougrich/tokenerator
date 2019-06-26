@@ -85,7 +85,7 @@ export default class Browse extends React.PureComponent {
         <Container>
           {this.renderTitle()}
           {this.renderDescription()}
-          <img src={imageSrc}/>
+          <img src={imageSrc} alt={title}/>
           <ActionSet>
             <Action as='a' href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(canonical)}>Tweet</Action>
           </ActionSet>
