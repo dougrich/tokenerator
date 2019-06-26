@@ -45,7 +45,7 @@ function loadToken(firestore) {
       }
       const data = req.params.token = token.data()
       req.params.slug = slug(data.title || 'token')
-      res.setHeader('x-token-name', data.title.slice(0, 255))
+      res.setHeader('x-token-name', encodeURIComponent(data.title.slice(0, 255)))
       res.setHeader('x-token-slug', req.params.slug)
       next()
     } catch (err) {

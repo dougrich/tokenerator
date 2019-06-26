@@ -3,8 +3,6 @@ const Firestore = require('@google-cloud/firestore')
 const format = require('nanoid/format')
 const url = require('nanoid/url')
 
-const firestore = new Firestore()
-
 async function delay(delayMs) {
   return new Promise((resolve, reject) => {
     setTimeout(resolve, delayMs)
@@ -36,6 +34,8 @@ async function pipecollection(db, from, to) {
     const cursor = db.collection(from).find().skip(batchSkip * batchSize).limit(batchSize)
     let next = await cursor.nextObject()
     let i = 0
+
+    const firestore = new Firestore()
     while (next != null) {
       const instance = next
       delete instance._id
