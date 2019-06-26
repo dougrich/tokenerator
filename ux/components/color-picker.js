@@ -73,14 +73,6 @@ const defIds = {
 
 const Swatches = [
   {
-    name: 'Hair',
-    set: [
-      { name: 'Jet black', color: '#11110F' },
-      { name: 'Black', color: '#2F272F' },
-      { name: 'Brown', color: '#6F635B' }
-    ]
-  },
-  {
     name: 'Skin',
     set: [
       { name: 'Pale', color: '#FCF0F0' },
@@ -89,6 +81,34 @@ const Swatches = [
       { name: 'Brown', color: '#9F856B' },
       { name: 'Ashen', color: '#999' },
       { name: 'Dark', color: '#555' }
+    ]
+  },
+  {
+    name: 'Hair',
+    set: [
+      { name: 'Jet black', color: '#11110F' },
+      { name: 'Black', color: '#2F272F' },
+      { name: 'Brown', color: '#6F635B' },
+      { name: 'Gray', color: '#CABFB1' },
+      { name: 'Platinum Blonde', color: '#FFF5E1' },
+      { name: 'Blonde', color: '#E6CEA8' },
+      { name: 'Light Brown', color: '#A7856A' },
+      { name: 'Slightly Red', color: '#A56B46' },
+      { name: 'Red', color: '#B55239' },
+      { name: 'Dark Red', color: '#8D4A43' },
+      { name: 'Dark Brown', color: '#533D32' }
+    ]
+  },
+  {
+    name: 'Metals',
+    set: [
+      { name: 'Iron', color: '#6D6A65' },
+      { name: 'Steel', color: '#949494' },
+      { name: 'Rusted', color: '#805342' },
+      { name: 'Copper', color: '#CD7F32' },
+      { name: 'Gold', color: '#FFD700' },
+      { name: 'Silver', color: '#C0C0C0' },
+      { name: 'Bright Silver', color: '#E5E5E8' }
     ]
   }
 ]
