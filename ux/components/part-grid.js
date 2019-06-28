@@ -46,6 +46,17 @@ const PartPreviewLabel = styled.div(props => ({
   display: props.isVisible ? 'block' : 'none'
 }))
 
+const PartNewLabel = styled.div({
+  position: 'absolute',
+  top: '0',
+  left: '50%',
+  padding: '0.25em 0.75em',
+  backgroundColor: '#D00',
+  fontSize: '1.15em',
+  color: 'white',
+  transform: 'translate(-50%,0%)'
+})
+
 const PartPreview = styled.svg({
   display: 'block',
   width: '100%',
@@ -98,13 +109,15 @@ export default class PartGrid extends React.PureComponent {
     const filtered = this.state.parts
     const children = []
     let visibleCount = 0
+    const newParts = parts.$tags.new
     for (const part in parts) {
       if (part[0] === '$') continue
       const isVisible = filtered.indexOf(part) >= 0
       if (isVisible) visibleCount++
-      children.push(
+      const isNew = newParts.indexOf(part) >= 0
+      const child = (
         <PartPreviewContainer
-          key={children.length}
+          key={part}
           visible={isVisible}
           disabled={!!isActive[part] || disabled}
           onClick={onClick.bind(null, part, parts.$defaults[part])}
@@ -115,8 +128,15 @@ export default class PartGrid extends React.PureComponent {
             dangerouslySetInnerHTML={{ __html: parts[part](parts.$defaults[part].channels) }}
           />
           <PartPreviewLabel isVisible={!!isActive[part]}>Selected</PartPreviewLabel>
+          {isNew && <PartNewLabel>New!</PartNewLabel>}
         </PartPreviewContainer>
       )
+      
+      if (isNew) {
+        children.unshift(child)
+      } else {
+        children.push(child)
+      }
     }
     return (
       <React.Fragment>
