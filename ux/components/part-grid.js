@@ -131,7 +131,7 @@ export default class PartGrid extends React.PureComponent {
           {isNew && <PartNewLabel>New!</PartNewLabel>}
         </PartPreviewContainer>
       )
-      
+
       if (isNew) {
         children.unshift(child)
       } else {
