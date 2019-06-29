@@ -4,7 +4,7 @@ import Link from 'next/link'
 import api from '../src/api'
 import { DefaultTokenTitle, DefaultTokenDescription } from '../src/constants'
 import styled from '@emotion/styled'
-import { Container, TokenTitle, TokenDescription, DefaultText, Action, ActionLink } from '../components/styled'
+import { Container, TokenTitle, DefaultText, Action, ActionLink } from '../components/styled'
 import Page from '../components/page'
 import HorizontalSlider from '../components/slider-horizontal';
 import { RangeField, PixelField } from '../components/field';
@@ -17,6 +17,13 @@ const ActionSet = styled.div({
   '@media print': {
     display: 'none'
   }
+})
+
+const TokenDescription = styled.div({
+  maxWidth: '400px',
+  margin: 'auto',
+  padding: '2em',
+  marginBottom: '2em'
 })
 
 export default class Browse extends React.PureComponent {
@@ -59,9 +66,9 @@ export default class Browse extends React.PureComponent {
       return null
     }
     return (
-      <div>
+      <TokenDescription>
         {description}
-      </div>
+      </TokenDescription>
     )
   }
 
