@@ -190,7 +190,7 @@ export default class extends React.Component {
     return api.getToken(forkedFrom)
       .then(token => {
         return {
-          present: { parts: token.parts }
+          parts: token.parts
         }
       })
   }
