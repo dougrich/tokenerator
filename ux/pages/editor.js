@@ -16,6 +16,7 @@ import Display from '../components/token-editor-display'
 import api from '../src/api'
 import Collapsible from '../components/collapsible'
 import KeyShortcuts from '../components/keyshortcuts'
+import * as parts from '../src/token-parts'
 
 const EditorTools = styled.div({
   width: '100%',
@@ -190,7 +191,14 @@ export default class extends React.Component {
     return api.getToken(forkedFrom)
       .then(token => {
         return {
-          parts: token.parts
+          parts: token.parts.map(({ id, channels }) => {
+            const defaults = parts.$defaults[id]
+            return {
+              ...defaults,
+              id,
+              channels
+            }
+          })
         }
       })
   }
