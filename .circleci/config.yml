@@ -13,7 +13,7 @@ jobs:
     steps:
     - checkout
     - run: |
-        cd ./token-parts
+        cd ./parts
         npm i
         npm start -- bundle
     - save_cache:
