@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const nanoid = require('nanoid')
-const forEach = require('./forEach')
+const forEach = require('../forEach')
+const program = require('commander')
 
 const SVGO = require('svgo')
 
@@ -201,4 +202,7 @@ async function processDirectory() {
   fs.writeFile('../ux/src/token-parts.js', js)
 }
 
-processDirectory()
+program
+  .command('bundle')
+  .description('bundles and writes the token-parts files')
+  .action(processDirectory)
