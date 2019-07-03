@@ -13,9 +13,9 @@ jobs:
     steps:
     - checkout
     - run: |
-        cd ./token-parts
+        cd ./parts
         npm i
-        node ./src/bundle.js
+        npm start -- bundle
     - save_cache:
         key: token-parts-{{ .Revision }}
         paths:

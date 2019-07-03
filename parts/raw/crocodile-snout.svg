@@ -1,0 +1,30 @@
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:tokenerator="http://dougrich.net/tokens" viewBox="0 0 90 90" id="crocodile-snout" class="crocodile-snout" version="1.1" sodipodi:docname="dragon-snout.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)" data-z="860" data-slots="face" data-tags="animals+face">
+  <defs id="defs10"/>
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="3840" inkscape:window-height="2066" id="namedview8" showgrid="false" inkscape:zoom="20.977778" inkscape:cx="46.272557" inkscape:cy="35.105886" inkscape:window-x="-11" inkscape:window-y="-11" inkscape:window-maximized="1" inkscape:current-layer="layer3"/>
+  <metadata id="metadata2">
+    <tokenerator:name>Crocodile Snout</tokenerator:name>
+    <tokenerator:author>Douglas Richardson</tokenerator:author>
+    <tokenerator:z>860</tokenerator:z>
+    <tokenerator:variants collision="face"/>
+    <tokenerator:availability type="visible"/>
+    <rdf:rdf>
+      <cc:work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
+  </metadata>
+  <g inkscape:groupmode="layer" id="layer1" class="crocodile-snout-teeth" inkscape:label="teeth" style="display:inline" sodipodi:insensitive="true">
+    <path style="display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 32.17065,55.887444 c 0.517674,1.369521 2.055248,2.106605 3.607527,1.806036 1.669444,-0.324447 2.723081,-1.775885 2.353172,-3.241607 -0.369676,-1.466411 -1.924727,-2.106433 -3.693755,-2.065775 -1.769028,0.04067 -1.501932,-1.143107 -3.876727,-3.184483 -0.555688,3.15168 1.092111,5.316309 1.60978,6.68583 z" id="path883" inkscape:connector-curvature="0" sodipodi:nodetypes="zcczcz"/>
+    <path style="display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 58.691159,55.909762 c -0.506264,1.323993 -2.009948,2.036575 -3.528014,1.745997 -1.632647,-0.31366 -2.663062,-1.716849 -2.301306,-3.133847 0.361528,-1.417662 1.882305,-2.036409 3.612342,-1.997101 1.730037,0.03931 1.468827,-1.105109 3.79128,-3.078622 0.543441,3.046908 -1.06804,5.13958 -1.574299,6.463574 z" id="path883-8" inkscape:connector-curvature="0" sodipodi:nodetypes="zcczcz"/>
+  </g>
+  <g inkscape:groupmode="layer" id="layer2" class="crocodile-snout-body" inkscape:label="snout" style="display:inline" sodipodi:insensitive="true">
+    <path style="display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 45.890051,41.39281 c -6.190157,-2.7e-5 -11.303914,0.314702 -11.448372,2.909352 0.0012,0.09379 1.515293,6.281025 2.65892,10.948133 -0.223379,0.773658 -0.33802,1.574225 -0.340674,2.379013 -2.7e-4,4.827585 3.943217,8.741183 8.807671,8.740915 4.863913,-4.91e-4 8.806556,-3.913867 8.806286,-8.740915 -0.0034,-0.635938 -0.07682,-1.269603 -0.218807,-1.889742 L 57.241915,44.1125 c -0.23932,-2.404303 -5.161708,-2.719717 -11.351864,-2.71969 z" id="path824" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccccc"/>
+    <path style="display:inline;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 34.441679,44.302162 c 0.0012,0.09379 1.515293,6.281025 2.65892,10.948133 -0.223379,0.773658 -0.33802,1.574225 -0.340674,2.379013 1.239137,4.064874 4.168735,8.839443 8.807671,8.740915 4.637351,-0.09849 7.042785,-4.724248 8.806286,-8.740915 -0.0034,-0.635938 -0.07682,-1.269603 -0.218807,-1.889742 L 57.241915,44.1125" id="path824-5" inkscape:connector-curvature="0" sodipodi:nodetypes="cccsccc"/>
+  </g>
+  <g inkscape:groupmode="layer" id="layer3" class="crocodile-snout-nostrils" inkscape:label="nostrils" style="display:inline">
+    <path style="display:inline;fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:1.125;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 44.224137,60.748231 c 0.954857,-0.191361 0.530653,-1.413214 0.269659,-2.087267 -0.283613,-0.732469 -0.843737,-2.041862 -1.887615,-1.850077 -0.97364,0.178879 -0.602418,1.427957 -0.337075,2.110986 0.285609,0.735195 0.913322,2.035125 1.955031,1.826358 z" id="path973" inkscape:connector-curvature="0" sodipodi:nodetypes="sssss"/>
+    <path style="display:inline;fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:1.125;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 46.846348,60.748231 c -0.954857,-0.191361 -0.530653,-1.413214 -0.269659,-2.087267 0.283613,-0.732469 0.843737,-2.041862 1.887615,-1.850077 0.97364,0.178879 0.602418,1.427957 0.337075,2.110986 -0.285609,0.735195 -0.913322,2.035125 -1.955031,1.826358 z" id="path973-0" inkscape:connector-curvature="0" sodipodi:nodetypes="sssss"/>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" version="1.1" inkscape:version="0.48.4 r9939" sodipodi:docname="sickle (right).svg" class="sickle-right" data-z="1200" data-slots="right-weapon" data-tags="right-hand+weapon">
+  <defs id="defs4">
+    <inkscape:path-effect effect="sketch" id="path-effect5121-4" is_visible="true" nbiter_approxstrokes="3" strokelength="1" strokelength_rdm="0;1" strokeoverlap="0.1" strokeoverlap_rdm="0;1" ends_tolerance="0.9;1" parallel_offset="0.9;1" tremble_size="1.5;1" tremble_frequency="0.01" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10.5" tgtlength="100" tgtlength_rdm="0.1;1"/>
+    <inkscape:path-effect effect="sketch" id="path-effect5121-7" is_visible="true" nbiter_approxstrokes="3" strokelength="1" strokelength_rdm="0;1" strokeoverlap="0.1" strokeoverlap_rdm="0;1" ends_tolerance="0.9;1" parallel_offset="0.9;1" tremble_size="1.5;1" tremble_frequency="0.01" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10.5" tgtlength="100" tgtlength_rdm="0.1;1"/>
+    <inkscape:path-effect effect="sketch" id="path-effect5257" is_visible="true" nbiter_approxstrokes="2" strokelength="1" strokelength_rdm="0.1;1" strokeoverlap="0" strokeoverlap_rdm="0;1" ends_tolerance="0;1" parallel_offset="0.8;1" tremble_size="0.7;1" tremble_frequency="1" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10" tgtlength="100" tgtlength_rdm="0.3;1"/>
+    <linearGradient inkscape:collect="always" href="#linearGradient5728-3" id="linearGradient5483" gradientUnits="userSpaceOnUse" x1="945" y1="310.2579" x2="945" y2="388.79999" gradientTransform="translate(-1170,962.35973)"/>
+    <linearGradient id="linearGradient5728-3">
+      <stop style="stop-color:#000000;stop-opacity:1;" offset="0" id="stop5730-7"/>
+      <stop style="stop-color:#000000;stop-opacity:0;" offset="1" id="stop5732-3"/>
+    </linearGradient>
+    <inkscape:path-effect effect="sketch" id="path-effect6957" is_visible="true" nbiter_approxstrokes="1" strokelength="2" strokelength_rdm="0.2;1" strokeoverlap="0" strokeoverlap_rdm="0;1" ends_tolerance="0;1" parallel_offset="0.1;1" tremble_size="0.6;1" tremble_frequency="2.51" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10" tgtlength="100" tgtlength_rdm="0.3;1"/>
+    <radialGradient inkscape:collect="always" href="#linearGradient4525" id="radialGradient4531" cx="33.561127" cy="1181.4069" fx="33.561127" fy="1181.4069" r="38.25" gradientTransform="matrix(1.4117647,-0.98823605,0.89829027,1.2832709,-1076.2267,-300.93889)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="linearGradient4525">
+      <stop style="stop-color:#c8eeff;stop-opacity:1;" offset="0" id="stop4527"/>
+      <stop style="stop-color:#0091ff;stop-opacity:1;" offset="1" id="stop4529"/>
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="3.9912026" inkscape:cx="126.7875" inkscape:cy="13.275574" inkscape:document-units="in" inkscape:current-layer="layer1" showgrid="false" units="in" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1">
+    <inkscape:grid type="xygrid" id="grid2994" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true" units="in" spacingx="0.014in" spacingy="0.014in"/>
+  </sodipodi:namedview>
+  <metadata id="metadata7">
+    <rdf:rdf>
+      <cc:work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
+  </metadata>
+  <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="body" transform="translate(0,-962.35975)" style="display:inline">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 77.157741,1014.6002 c -4.47714,-3.0406 -4.609449,-1.9338 -9.266091,-0.3097 2.431975,1.6516 4.246691,2.884 6.485261,4.4043 2.23857,1.5203 2.808267,4.586 1.272461,6.8474 -1.535812,2.2614 -4.595546,2.8622 -6.834116,1.3419 l -2.434788,-1.6535 -2.78083,4.0947 2.434787,1.6535 c 4.47714,3.0406 10.596617,1.839 13.668241,-2.6838 3.071618,-4.5229 1.932215,-10.6542 -2.544925,-13.6948 z" id="path4691-5-2" inkscape:connector-curvature="0" sodipodi:nodetypes="cccssccssc"/>
+    <path transform="matrix(0.82725858,0.56182137,-0.56182137,0.82725858,0,0)" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 632.96925,811.06201 0,16.93823 z" id="rect4689-1-1" inkscape:connector-curvature="0" sodipodi:nodetypes="ccc"/>
+  </g>
+</svg>
