@@ -53,14 +53,18 @@ const styleHandlers = (...names) => {
   const set = {}
   for (const n of names) {
     set[n] = aggregateReplace(n, (old, value, add) => ($, { id }, write) => {
+      let needsWriting = false
       $('*').each((i, e) => {
         const updatedStyle = styleField(e, n, old, value)
         const updatedAttrib = attribField(e, n, old, value)
         if (updatedStyle || updatedAttrib) {
           add(id)
-          return write()
+          needsWriting = true
         }
       })
+      if (needsWriting) {
+        return write()
+      }
     })
   }
   return set
