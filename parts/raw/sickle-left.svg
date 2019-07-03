@@ -28,7 +28,7 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="body" transform="translate(0,-962.35975)" style="display:inline">
-    <path transform="matrix(-0.83061759,0.55684326,0.55684326,0.83061759,0,0)" style="fill:none;stroke:#000000;stroke-width:5.4000001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" d="m 553.64753,866.62061 0,16.93823 z" id="rect4689-1-1" inkscape:connector-curvature="0" sodipodi:nodetypes="ccc"/>
+    <path transform="matrix(-0.83061759,0.55684326,0.55684326,0.83061759,0,0)" style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" d="m 553.64753,866.62061 0,16.93823 z" id="rect4689-1-1" inkscape:connector-curvature="0" sodipodi:nodetypes="ccc"/>
     <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 13.574039,1016.0967 c 4.495319,-3.0136 4.620979,-1.9061 9.267784,-0.2541 -2.44185,1.637 -4.263934,2.8586 -6.511594,4.3654 -2.247659,1.5068 -2.835757,4.569 -1.313559,6.8396 1.522204,2.2706 4.578275,2.8898 6.825934,1.3829 l 2.444674,-1.6389 2.75619,4.1113 -2.444673,1.6389 c -4.495319,3.0137 -10.60747,1.7754 -13.651877,-2.7658 -3.0444012,-4.5412 -1.8681982,-10.6656 2.627121,-13.6793 z" id="path4691-5" inkscape:connector-curvature="0" sodipodi:nodetypes="cccssccssc"/>
   </g>
 </svg>
