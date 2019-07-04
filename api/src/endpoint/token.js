@@ -1,6 +1,5 @@
 const express = require('express')
 const Firestore = require('@google-cloud/firestore')
-const svg2img = require('svg2img')
 const parts = require('../token-parts')
 const Ajv = require('ajv')
 const nanoid = require('nanoid')
@@ -13,6 +12,7 @@ ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'))
 const validator = ajv.compile(parts.$schema)
 const { immutable } = require('../cache')
 const jwt = require('jsonwebtoken')
+const rsvg = require('librsvg').Rsvg
 
 const TOKEN_COLLECTION = 'tokens/'
 
@@ -237,10 +237,20 @@ function tokenEndpoint(bucket, secret, canonical) {
       const size = parseInt(req.query.size || '180')
       res.setHeader('Cache-Control', immutable)
       res.setHeader('Content-Disposition', `attachment; filename="${req.params.slug}@${size}.png"`)
-      svg2img(svg,{format:'png', width: size, height: size}, (err, result) => {
-        if (err) return next(err)
-        res.end(result)
+      const render = new rsvg()
+      render.on('finish', function () {
+        const { data } = render.render({
+          format: 'png',
+          width: size,
+          height: size
+        })
+        res.end(data)
       })
+      render.on('error', function () {
+        res.status(500)
+        res.end()
+      })
+      render.end(svg)
     }
   )
 
