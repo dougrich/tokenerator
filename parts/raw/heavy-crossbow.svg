@@ -13,9 +13,9 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="crossbeam" transform="translate(0,-962.35975)" style="display:inline">
-    <path sodipodi:nodetypes="cscsc" inkscape:connector-curvature="0" id="path5323-7" d="m 27.97658,998.943 c 8.65277,-0.588 16.11267,3.3847 22.27386,9.5459 6.16119,6.1612 10.13395,13.6211 9.54594,22.2739 6.79421,-8.8234 4.90328,-20.5526 -3.18198,-28.6379 -8.08525,-8.0852 -19.81445,-9.9761 -28.63782,-3.1819" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"/>
+    <path sodipodi:nodetypes="cscsc" inkscape:connector-curvature="0" id="path5323-7" d="m 27.97658,998.943 c 8.65277,-0.588 16.11267,3.3847 22.27386,9.5459 6.16119,6.1612 10.13395,13.6211 9.54594,22.2739 6.79421,-8.8234 4.90328,-20.5526 -3.18198,-28.6379 -8.08525,-8.0852 -19.81445,-9.9761 -28.63782,-3.1819" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"/>
     <path style="fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 27.97658,998.943 -3.81838,34.3654" id="path3807" inkscape:connector-curvature="0"/>
     <path style="fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 25.431,1034.5812 34.36538,-3.8184" id="path5333-1" inkscape:connector-curvature="0"/>
-    <path inkscape:connector-curvature="0" id="path5331-6-7" d="m 66.79674,991.9426 -49.638895,49.639 z" style="fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" sodipodi:nodetypes="ccc"/>
+    <path inkscape:connector-curvature="0" id="path5331-6-7" d="m 66.79674,991.9426 -49.638895,49.639 z" style="fill:none;stroke:#000000;stroke-width:2.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" sodipodi:nodetypes="ccc"/>
   </g>
 </svg>

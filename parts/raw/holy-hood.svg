@@ -28,9 +28,9 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:groupmode="layer" id="layer2" inkscape:label="Back" class="back">
-    <path style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" d="m 7.2,25.2 7.2,7.2 c 0,0 7.2,-16.2 30.6,-16.2 23.4,0 30.6,16.2 30.6,16.2 l 7.2,-7.2 C 82.8,25.2 73.8,9 45,9 16.2,9 7.2,25.2 7.2,25.2 z" id="path6690" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccc"/>
+    <path style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" d="m 7.2,25.2 7.2,7.2 c 0,0 7.2,-16.2 30.6,-16.2 23.4,0 30.6,16.2 30.6,16.2 l 7.2,-7.2 C 82.8,25.2 73.8,9 45,9 16.2,9 7.2,25.2 7.2,25.2 z" id="path6690" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccc"/>
   </g>
   <g inkscape:label="Front" inkscape:groupmode="layer" id="layer1" class="front" transform="translate(0,-962.35975)" style="display:inline">
-    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none" d="m 18,989.35975 c 1.8,0 3.6,3.6 3.6,3.6 0,0 10.8,-5.4 23.4,-5.4 12.6,0 23.4,5.4 23.4,5.4 0,0 1.8,-3.6 3.6,-3.6 0,-7.2 -5.18877,-8.93599 -9,-10.8 -4.34547,-2.1253 -12.6,-1.8 -12.6,-1.8 0,0 0,-7.2 0,-9 0,-1.34164 -4.05836,-1.8 -5.4,-1.8 -1.34164,0 -4.69466,0.65873 -5.4,1.8 0,1.8 0,9 0,9 0,0 -8.25453,-0.3253 -12.6,1.8 -3.81123,1.86401 -9,3.6 -9,10.8 z" id="path6692" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccccccccc"/>
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none" d="m 18,989.35975 c 1.8,0 3.6,3.6 3.6,3.6 0,0 10.8,-5.4 23.4,-5.4 12.6,0 23.4,5.4 23.4,5.4 0,0 1.8,-3.6 3.6,-3.6 0,-7.2 -5.18877,-8.93599 -9,-10.8 -4.34547,-2.1253 -12.6,-1.8 -12.6,-1.8 0,0 0,-7.2 0,-9 0,-1.34164 -4.05836,-1.8 -5.4,-1.8 -1.34164,0 -4.69466,0.65873 -5.4,1.8 0,1.8 0,9 0,9 0,0 -8.25453,-0.3253 -12.6,1.8 -3.81123,1.86401 -9,3.6 -9,10.8 z" id="path6692" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccccccccc"/>
   </g>
 </svg>

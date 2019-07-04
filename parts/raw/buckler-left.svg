@@ -13,7 +13,7 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="body" transform="translate(0,-962.35975)" style="display:inline">
-    <path sodipodi:type="arc" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path4963-3" sodipodi:cx="382.5" sodipodi:cy="-67.5" sodipodi:rx="13.5" sodipodi:ry="13.5" d="m 396,-67.5 a 13.5,13.5 0 1 1 -27,0 13.5,13.5 0 1 1 27,0 z" transform="translate(-362.25,1090.6098)"/>
+    <path sodipodi:type="arc" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path4963-3" sodipodi:cx="382.5" sodipodi:cy="-67.5" sodipodi:rx="13.5" sodipodi:ry="13.5" d="m 396,-67.5 a 13.5,13.5 0 1 1 -27,0 13.5,13.5 0 1 1 27,0 z" transform="translate(-362.25,1090.6098)"/>
   </g>
   <g inkscape:groupmode="layer" id="layer2" inkscape:label="blazon" class="blazon">
     <path style="fill:#000000;fill-opacity:1;stroke:none;display:inline" d="m 17.5625,49.06255 c 1.575,3.15 1.775,4.9133 0.59375,7.7187 -0.80294,0.4237 -1.45139,1.0721 -1.875,1.875 -2.80547,1.1813 -4.56875,0.9813 -7.71875,-0.5937 l 0,5.375 c 3.15,-1.575 4.91328,-1.775 7.71875,-0.5937 0.42361,0.8029 1.07206,1.4513 1.875,1.875 1.18125,2.8054 0.98125,4.5687 -0.59375,7.7187 l 5.375,0 c -1.575,-3.15 -1.775,-4.9133 -0.59375,-7.7187 0.80294,-0.4237 1.45139,-1.0721 1.875,-1.875 2.80547,-1.1813 4.56875,-0.9813 7.71875,0.5937 l 0,-5.375 c -3.15,1.575 -4.91328,1.775 -7.71875,0.5937 -0.42361,-0.8029 -1.07206,-1.4513 -1.875,-1.875 -1.18125,-2.8054 -0.98125,-4.5687 0.59375,-7.7187 l -5.375,0 z" id="path4967-3" inkscape:connector-curvature="0"/>

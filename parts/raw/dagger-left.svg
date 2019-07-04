@@ -14,9 +14,9 @@
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="blade" transform="translate(0,-962.35975)" style="display:inline">
     <g transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,598.5619,345.5554)" id="g5681-1" style="fill:#ffffff;fill-opacity:1">
-      <path transform="translate(0,962.35975)" inkscape:connector-curvature="0" id="path5667-8" d="m 77.4,-90 -5.4,14.4 10.8,0 z" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
-      <path transform="translate(0,962.35975)" inkscape:connector-curvature="0" id="path5677-4" d="m 66.6,-73.8 21.6,0" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
-      <path transform="translate(0,962.35975)" inkscape:connector-curvature="0" id="path5679-9" d="m 77.4,-73.8 0,10.8" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+      <path transform="translate(0,962.35975)" inkscape:connector-curvature="0" id="path5667-8" d="m 77.4,-90 -5.4,14.4 10.8,0 z" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+      <path transform="translate(0,962.35975)" inkscape:connector-curvature="0" id="path5677-4" d="m 66.6,-73.8 21.6,0" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+      <path transform="translate(0,962.35975)" inkscape:connector-curvature="0" id="path5679-9" d="m 77.4,-73.8 0,10.8" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
     </g>
   </g>
 </svg>

@@ -13,7 +13,7 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="blade" transform="translate(0,-962.35975)" style="display:inline">
-    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 81.560088,1019.5424 c 6.252662,11.4286 7.076055,23.2301 2.1473,27.429 -0.1,-6.5021 -2.764714,-15.4056 -7.68517,-24.3992 l 5.53787,-3.0298 z" id="path4561" inkscape:connector-curvature="0"/>
-    <path style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 83.776848,1018.3438 53.93157,1034.6723" id="path4632" inkscape:connector-curvature="0"/>
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 81.560088,1019.5424 c 6.252662,11.4286 7.076055,23.2301 2.1473,27.429 -0.1,-6.5021 -2.764714,-15.4056 -7.68517,-24.3992 l 5.53787,-3.0298 z" id="path4561" inkscape:connector-curvature="0"/>
+    <path style="fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 83.776848,1018.3438 53.93157,1034.6723" id="path4632" inkscape:connector-curvature="0"/>
   </g>
 </svg>

@@ -22,9 +22,9 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="hair" transform="translate(0,-962.35975)" style="display:inline">
-    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 15.90484,982.1598 -1.8,-12.6001 7.2,3.6001 5.4,-5.4 5.4,3.6 7.2,-3.6 5.4,3.6 9,-3.6 7.2,3.6 5.4,-3.6 3.6,3.6 5.4,-1.8001 -1.8,12.6001 z" id="path6145" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccccccccccc"/>
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 15.90484,982.1598 -1.8,-12.6001 7.2,3.6001 5.4,-5.4 5.4,3.6 7.2,-3.6 5.4,3.6 9,-3.6 7.2,3.6 5.4,-3.6 3.6,3.6 5.4,-1.8001 -1.8,12.6001 z" id="path6145" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccccccccccc"/>
   </g>
   <g inkscape:groupmode="layer" id="layer2" inkscape:label="headband" class="headband">
-    <path style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" d="m 14.4,27.00005 1.8,-7.2 57.6,0 1.8,7.2 z" id="path6141" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc"/>
+    <path style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" d="m 14.4,27.00005 1.8,-7.2 57.6,0 1.8,7.2 z" id="path6141" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc"/>
   </g>
 </svg>

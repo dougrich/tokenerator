@@ -13,8 +13,8 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="body" transform="translate(0,-962.35975)" style="display:inline">
-    <path inkscape:connector-curvature="0" id="path3763-79-0" d="m 54.348861,1023.2961 -2.545584,2.5456 12.727922,12.728 2.545584,-2.5456 z" style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
-    <path inkscape:connector-curvature="0" id="path3765-5-6" d="m 56.894446,1030.9329 -7.636754,7.6368 2.545585,2.5455 7.636753,-7.6367" style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
-    <path inkscape:connector-curvature="0" id="path3767-4-6" d="m 58.167238,1027.1145 21.637467,-21.6374 5.091169,0 0,5.0911 -21.637467,21.6375" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+    <path inkscape:connector-curvature="0" id="path3763-79-0" d="m 54.348861,1023.2961 -2.545584,2.5456 12.727922,12.728 2.545584,-2.5456 z" style="fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+    <path inkscape:connector-curvature="0" id="path3765-5-6" d="m 56.894446,1030.9329 -7.636754,7.6368 2.545585,2.5455 7.636753,-7.6367" style="fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+    <path inkscape:connector-curvature="0" id="path3767-4-6" d="m 58.167238,1027.1145 21.637467,-21.6374 5.091169,0 0,5.0911 -21.637467,21.6375" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
   </g>
 </svg>

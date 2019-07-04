@@ -28,8 +28,8 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="staff" transform="translate(0,-962.35975)" style="display:inline">
-    <path style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 71.73,1014.8162 0,36" id="path6457-1" inkscape:connector-curvature="0"/>
-    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 71.73,1020.2162 c 0,0 9,-1.8 10.8,-3.6 1.8,-1.8 3.6,-3.6 3.6,-14.4 -7.2,7.2 -14.4,7.2 -14.4,7.2 0,0 -5.4,0 -12.6,-7.2 0,10.8 1.8,12.6 3.6,14.4 1.8,1.8 9,3.6 9,3.6 z" id="path6459-4" inkscape:connector-curvature="0" sodipodi:nodetypes="cscccsc"/>
-    <path sodipodi:type="arc" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path6461-9" sodipodi:cx="-342" sodipodi:cy="305.10001" sodipodi:rx="1.8" sodipodi:ry="0.89999998" d="m -340.2,305.10001 a 1.8,0.89999998 0 1 1 -3.6,0 1.8,0.89999998 0 1 1 3.6,0 z" transform="translate(413.73,701.35954)"/>
+    <path style="fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 71.73,1014.8162 0,36" id="path6457-1" inkscape:connector-curvature="0"/>
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 71.73,1020.2162 c 0,0 9,-1.8 10.8,-3.6 1.8,-1.8 3.6,-3.6 3.6,-14.4 -7.2,7.2 -14.4,7.2 -14.4,7.2 0,0 -5.4,0 -12.6,-7.2 0,10.8 1.8,12.6 3.6,14.4 1.8,1.8 9,3.6 9,3.6 z" id="path6459-4" inkscape:connector-curvature="0" sodipodi:nodetypes="cscccsc"/>
+    <path sodipodi:type="arc" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path6461-9" sodipodi:cx="-342" sodipodi:cy="305.10001" sodipodi:rx="1.8" sodipodi:ry="0.89999998" d="m -340.2,305.10001 a 1.8,0.89999998 0 1 1 -3.6,0 1.8,0.89999998 0 1 1 3.6,0 z" transform="translate(413.73,701.35954)"/>
   </g>
 </svg>

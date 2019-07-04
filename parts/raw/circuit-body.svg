@@ -13,7 +13,7 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Primary" inkscape:groupmode="layer" id="layer1" class="body" transform="translate(0,-962.35975)" style="display:inline" sodipodi:insensitive="true">
-    <circle transform="translate(0,962.35975)" style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" cx="45" cy="45" r="36" id="circle2990-1" sodipodi:cx="45" sodipodi:cy="45" sodipodi:rx="36" sodipodi:ry="36" d="M 81,45 C 81,64.882251 64.882251,81 45,81 25.117749,81 9,64.882251 9,45 9,25.117749 25.117749,9 45,9 64.882251,9 81,25.117749 81,45 z"/>
+    <circle transform="translate(0,962.35975)" style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" cx="45" cy="45" r="36" id="circle2990-1" sodipodi:cx="45" sodipodi:cy="45" sodipodi:rx="36" sodipodi:ry="36" d="M 81,45 C 81,64.882251 64.882251,81 45,81 25.117749,81 9,64.882251 9,45 9,25.117749 25.117749,9 45,9 64.882251,9 81,25.117749 81,45 z"/>
   </g>
   <g inkscape:groupmode="layer" id="layer2" class="circuits" inkscape:label="Secondary" style="display:inline">
     <path style="fill:#000000" d="" id="path4374" inkscape:connector-curvature="0"/>
