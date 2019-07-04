@@ -1,6 +1,5 @@
 const express = require('express')
 const Firestore = require('@google-cloud/firestore')
-const svg2img = require('svg2img')
 const parts = require('../token-parts')
 const Ajv = require('ajv')
 const nanoid = require('nanoid')
@@ -13,6 +12,8 @@ ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'))
 const validator = ajv.compile(parts.$schema)
 const { immutable } = require('../cache')
 const jwt = require('jsonwebtoken')
+const rsvg = require('librsvg').Rsvg
+const { tokenToSvg } = require('../token2svg')
 
 const TOKEN_COLLECTION = 'tokens/'
 
@@ -77,20 +78,6 @@ async function setToken(firestore, token) {
   token.id = id
   await doc.set(token)
   return id
-}
-
-function tokenToSvg(token, decor) {
-  let svg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">`
-  for (const part of token.parts) {
-    const template = parts[part.id]
-    svg += template(part.channels)
-  }
-  if (decor != null) {
-    svg += '<text x="45" y="80" text-anchor="middle" fill="white" font-size="40" font-family="monospace" stroke="black" stroke-width="8" stroke-linejoin="bevel" >' + decor + '</text>'
-    svg += '<text x="45" y="80" text-anchor="middle" fill="white" font-size="40" font-family="monospace">' + decor + '</text>'
-  }
-  svg += '</svg>'
-  return svg
 }
 
 function tokenEndpoint(bucket, secret, canonical) {
@@ -209,7 +196,7 @@ function tokenEndpoint(bucket, secret, canonical) {
       // flatten it
       res.setHeader('Cache-Control', immutable)
       res.setHeader('Content-Type', 'image/svg+xml')
-      const svg = tokenToSvg(req.params.token, req.params.decor)
+      const svg = tokenToSvg(parts, req.params.token, req.params.decor)
       res.end(svg)
     }
   )
@@ -233,14 +220,24 @@ function tokenEndpoint(bucket, secret, canonical) {
     validateDecoration,
     contentMiddleware('image/png'),
     (req, res, next) => {
-      const svg = tokenToSvg(req.params.token, req.params.decor)
+      const svg = tokenToSvg(parts, req.params.token, req.params.decor)
       const size = parseInt(req.query.size || '180')
       res.setHeader('Cache-Control', immutable)
       res.setHeader('Content-Disposition', `attachment; filename="${req.params.slug}@${size}.png"`)
-      svg2img(svg,{format:'png', width: size, height: size}, (err, result) => {
-        if (err) return next(err)
-        res.end(result)
+      const render = new rsvg()
+      render.on('finish', function () {
+        const { data } = render.render({
+          format: 'png',
+          width: size,
+          height: size
+        })
+        res.end(data)
       })
+      render.on('error', function () {
+        res.status(500)
+        res.end()
+      })
+      render.end(svg)
     }
   )
 
