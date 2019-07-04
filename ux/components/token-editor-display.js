@@ -2,6 +2,7 @@ import { tokenToSvg } from '../src/token'
 import styled from '@emotion/styled'
 import { TokenShadow } from './styled'
 import React from 'react'
+import * as allParts from '../src/token-parts'
 
 const Container = styled.div({
   width: '100%',
@@ -52,7 +53,7 @@ export default class Display extends React.Component {
       )
     }
     return (
-      <Container onClick={this.onClick} dangerouslySetInnerHTML={{ __html: tokenToSvg({ parts }) }} />
+      <Container onClick={this.onClick} dangerouslySetInnerHTML={{ __html: tokenToSvg(allParts, { parts }) }} />
     )
   }
 }
