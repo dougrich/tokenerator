@@ -17,11 +17,11 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="cyclops-eye.svg"
+   sodipodi:docname="cyclops-eye-slit.svg"
    class="cyclops-eye"
    data-z="400"
    data-slots="face+eyes"
-   data-tags="face">
+   data-tags="new+face">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -33,9 +33,9 @@
      inkscape:pageshadow="2"
      inkscape:zoom="31.92962"
      inkscape:cx="35.563157"
-     inkscape:cy="46.44948"
+     inkscape:cy="47.702236"
      inkscape:document-units="in"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer3"
      showgrid="false"
      units="in"
      inkscape:window-width="3773"
@@ -110,11 +110,11 @@
      class="pupil"
      inkscape:label="Pupil">
     <ellipse
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.00812078;stroke-miterlimit:4;stroke-dasharray:none;marker:none;enable-background:accumulate"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.23613393;stroke-miterlimit:4;stroke-dasharray:none;marker:none;enable-background:accumulate"
        id="path6632"
        cx="45.147518"
-       cy="38.872231"
-       rx="3.8866417"
-       ry="3.9841561" />
+       cy="38.997505"
+       rx="0.59815913"
+       ry="9.8094683" />
   </g>
 </svg>
