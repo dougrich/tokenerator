@@ -21,7 +21,7 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="helmet" transform="translate(0,-962.35975)" style="display:inline">
-    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 45,971.3598 c -9.96177,-0.1037 -21.6,0 -27,1.8 -1.8,1.8 -10.8,34.2 -11.21865,36 6.43349,3.079 21.93689,5.3999 38.21865,5.3999 14.84161,0 31.1401,-2.754 38.192544,-5.3999 -0.392544,-1.8 -7.592544,-34.2 -9.392544,-36 -7.2,-1.8 -18.77568,-1.6957 -28.8,-1.8 z" id="path3829-1-5-74-4-24-3" inkscape:connector-curvature="0" sodipodi:nodetypes="sccsccs"/>
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 45,971.3598 c -9.96177,-0.1037 -21.6,0 -27,1.8 -1.8,1.8 -10.8,34.2 -11.21865,36 6.43349,3.079 21.93689,5.3999 38.21865,5.3999 14.84161,0 31.1401,-2.754 38.192544,-5.3999 -0.392544,-1.8 -7.592544,-34.2 -9.392544,-36 -7.2,-1.8 -18.77568,-1.6957 -28.8,-1.8 z" id="path3829-1-5-74-4-24-3" inkscape:connector-curvature="0" sodipodi:nodetypes="sccsccs"/>
     <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:9;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 63,989.3598 -18,9 -18,-9" id="path4173" inkscape:connector-curvature="0"/>
     <path style="fill:none;stroke:#000000;stroke-width:13.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 45,998.3598 0,16.1999" id="path4175" inkscape:connector-curvature="0"/>
   </g>

@@ -16,10 +16,10 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="collar" inkscape:groupmode="layer" id="layer1" class="body" transform="translate(0,-962.35975)" style="display:inline">
-    <path sodipodi:nodetypes="cccccccc" inkscape:connector-curvature="0" id="path3936-7" d="m 41.4,1018.1598 -14.4,-1.8 -18,-5.4 -3.6,19.8 21.6,-1.8 7.2,-5.4001 7.2,-1.7999 z" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
-    <path sodipodi:nodetypes="cccccccc" inkscape:connector-curvature="0" id="path3936-5-6" d="m 48.6,1018.1598 14.4,-1.8 18,-5.4 3.6,19.8 -21.6,-1.8 -7.2,-5.4001 -7.2,-1.7999 z" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+    <path sodipodi:nodetypes="cccccccc" inkscape:connector-curvature="0" id="path3936-7" d="m 41.4,1018.1598 -14.4,-1.8 -18,-5.4 -3.6,19.8 21.6,-1.8 7.2,-5.4001 7.2,-1.7999 z" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+    <path sodipodi:nodetypes="cccccccc" inkscape:connector-curvature="0" id="path3936-5-6" d="m 48.6,1018.1598 14.4,-1.8 18,-5.4 3.6,19.8 -21.6,-1.8 -7.2,-5.4001 -7.2,-1.7999 z" style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
   </g>
   <g inkscape:groupmode="layer" id="layer2" inkscape:label="clasp" class="clasp">
-    <path transform="translate(-9.5367433e-8,-89.99995)" d="m 48.6,147.60001 a 3.5999999,3.5999999 0 1 1 -7.2,0 3.5999999,3.5999999 0 1 1 7.2,0 z" sodipodi:ry="3.5999999" sodipodi:rx="3.5999999" sodipodi:cy="147.60001" sodipodi:cx="45" id="path3934-1" style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" sodipodi:type="arc"/>
+    <path transform="translate(-9.5367433e-8,-89.99995)" d="m 48.6,147.60001 a 3.5999999,3.5999999 0 1 1 -7.2,0 3.5999999,3.5999999 0 1 1 7.2,0 z" sodipodi:ry="3.5999999" sodipodi:rx="3.5999999" sodipodi:cy="147.60001" sodipodi:cx="45" id="path3934-1" style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" sodipodi:type="arc"/>
   </g>
 </svg>

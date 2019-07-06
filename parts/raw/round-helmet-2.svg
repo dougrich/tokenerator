@@ -22,7 +22,7 @@
     </rdf:rdf>
   </metadata>
   <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="helmet" transform="translate(0,-962.35975)" style="display:inline">
-    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 45,971.3598 c -9.9618,-0.1037 -21.6,0 -27,1.8 -1.8,1.8 -10.8,34.1999 -11.21865,35.9999 6.43345,3.079 21.93685,5.3999 38.21865,5.3999 14.8416,0 31.1401,-2.754 38.1925,-5.3999 -0.3925,-1.8 -7.5925,-34.1999 -9.3925,-35.9999 -7.2,-1.8 -18.7757,-1.6957 -28.8,-1.8 z" id="path3829-1-5-74-4-24-3-4" inkscape:connector-curvature="0" sodipodi:nodetypes="sccsccs"/>
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 45,971.3598 c -9.9618,-0.1037 -21.6,0 -27,1.8 -1.8,1.8 -10.8,34.1999 -11.21865,35.9999 6.43345,3.079 21.93685,5.3999 38.21865,5.3999 14.8416,0 31.1401,-2.754 38.1925,-5.3999 -0.3925,-1.8 -7.5925,-34.1999 -9.3925,-35.9999 -7.2,-1.8 -18.7757,-1.6957 -28.8,-1.8 z" id="path3829-1-5-74-4-24-3-4" inkscape:connector-curvature="0" sodipodi:nodetypes="sccsccs"/>
     <path style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:9;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" d="m 63,993.85974 -36,0 z" id="rect4246-4-1" inkscape:connector-curvature="0" sodipodi:nodetypes="ccc"/>
   </g>
 </svg>

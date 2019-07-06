@@ -114,7 +114,7 @@ export default class PartGrid extends React.PureComponent {
       if (part[0] === '$') continue
       const isVisible = filtered.indexOf(part) >= 0
       if (isVisible) visibleCount++
-      const isNew = newParts.indexOf(part) >= 0
+      const isNew = newParts && newParts.indexOf(part) >= 0
       const child = (
         <PartPreviewContainer
           key={part}
