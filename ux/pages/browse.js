@@ -37,7 +37,7 @@ class BrowseGrid extends React.PureComponent {
 
 const BrowseMorePanelContainer = styled.div({
   padding: '5vh',
-  paddingBottom: '25vh',
+  paddingBottom: '15vh',
   textAlign: 'center'
 })
 const BrowseMoreError = styled.div({
@@ -52,16 +52,23 @@ class BrowseMorePanel extends React.PureComponent {
   render() {
     const {
       error,
+      hasNext,
       ...rest
     } = this.props
-    return (
-      <BrowseMorePanelContainer>
-        {!!error && (
-          <BrowseMoreError>{error}</BrowseMoreError>
-        )}
-        <Action {...rest}>Load More Tokens</Action>
-      </BrowseMorePanelContainer>
-    )
+    if (!hasNext) {
+      return (
+        <BrowseMorePanelContainer/>
+      )
+    } else {
+      return (
+        <BrowseMorePanelContainer>
+          {!!error && (
+            <BrowseMoreError>{error}</BrowseMoreError>
+          )}
+          <Action {...rest}>Load More Tokens</Action>
+        </BrowseMorePanelContainer>
+      )
+    }
   }
 }
 
@@ -134,6 +141,7 @@ const ConnectedActionPanel = connect(
 const ConnectedBrowseMore = connect(
   state => ({
     disabled: !!state.tokens.isLoading,
+    hasNext: !!state.tokens.next,
     error: state.tokens.error
   }),
   dispatch => bindActionCreators({

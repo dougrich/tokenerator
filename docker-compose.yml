@@ -1,15 +1,5 @@
 version: '3'
 services:
-  batch:
-    build: ./batch
-    environment:
-    - GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json
-    - NODE_ENV=development
-    volumes:
-    - ./creds.json:/gcp/creds.json
-    - ./config.json:/app/config.json
-    - ./batch/src:/app/src
-    entrypoint: ash -c "npm i -D && npm run start"
   api:
     build: ./api
     environment:

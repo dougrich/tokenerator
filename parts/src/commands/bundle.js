@@ -2,6 +2,7 @@ const fs = require('fs-extra')
 const nanoid = require('nanoid')
 const forEach = require('../forEach')
 const program = require('commander')
+const style = require('../style')
 
 const SVGO = require('svgo')
 
@@ -68,15 +69,12 @@ async function processFile($, { id }, filename) {
         if (e.attribs['fill']) {
           fill = e.attribs['fill']
         } else if (e.attribs['style']) {
-          const style = e.attribs['style']
-          const decls = style.split(';')
-          for (const decl of decls) {
-            if (decl.indexOf('fill:') === 0) {
-              fill = decl.slice('fill:'.length)
-              if (fill === 'none') return
-              e.attribs['style'] = style.replace(decl, '').replace(';;', '').replace(/^\;/gi, '')
-              break
-            }
+          const stylemap = style.parse(e.attribs['style'])
+          if (stylemap['fill']) {
+            fill = stylemap['fill']
+            if (fill === 'none') return
+            delete stylemap['fill']
+            e.attribs['style'] = style.serialize(stylemap)
           }
         }
 

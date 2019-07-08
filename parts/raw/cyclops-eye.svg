@@ -94,10 +94,9 @@
      inkscape:groupmode="layer"
      id="layer2"
      class="iris"
-     inkscape:label="Inner Eye"
-     style="display:inline">
+     inkscape:label="Inner Eye">
     <ellipse
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.5075109;stroke-opacity:1;marker:none;enable-background:accumulate"
+       style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.5075109;stroke-opacity:1;marker:none;enable-background:accumulate"
        id="path6630"
        cx="45.049988"
        cy="39.011532"
@@ -110,7 +109,7 @@
      class="pupil"
      inkscape:label="Pupil">
     <ellipse
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.00812078;stroke-miterlimit:4;stroke-dasharray:none;marker:none;enable-background:accumulate"
+       style="color:#000000;overflow:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.00812078;stroke-miterlimit:4;stroke-dasharray:none;marker:none;enable-background:accumulate"
        id="path6632"
        cx="45.147518"
        cy="38.872231"
