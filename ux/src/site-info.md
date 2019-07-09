@@ -8,14 +8,32 @@ ___OAuth Provider___ is the account provider that you signed in with: either Goo
 
 A ___user id___ is a unique, random id provided by your oauth provider. It contains no information beyond which provider you signed in with.
 
-### Tracking
-I track as little as possible.
+### Tracking/Data Usage
+I track as little as possible. No data is collected until you create a token.
 
 When you create a token, I make note of:
-- what time it is on my servers, so browsing is sorted by most recent
-- if you are signed in, your user id, so you can view your own tokens
+- the title you provided
+- the description you provided
+- whether or not you checked 'private'
+- what time it is on my servers
+- if you are signed in, your user id
 
 When you batch download tokens, I do not collect any information.
+
+This information is collected to:
+- provide the token details page (title, description)
+- enable the browse page to function (title, privacy choice, time submitted)
+- enable browsing your own tokens (user id)
+- anonymous site analytics, viewable [here](todo: get github link).
+
+Site analytics are used to:
+- understand how the site is being used
+- estimate the amount of load on my servers
+- understand which features are being used
+- understand which parts are being used
+- understand how users are using the site - are there people using the site? how many per day? etc.
+
+To completely understand the analytics, I recommend looking at the monthly reports.
 
 ### Cookies / Signing In
 
