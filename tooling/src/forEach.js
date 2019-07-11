@@ -3,7 +3,8 @@ const path = require('path')
 const cheerio = require('cheerio')
 
 module.exports = async function forEach(fn) {
-  const files = await fs.readdir('./raw')
+  const root = path.join(__dirname, '../../parts/raw')
+  const files = await fs.readdir(root)
   
   const write = async ($, filename) => {
     const src = $
@@ -13,7 +14,7 @@ module.exports = async function forEach(fn) {
     await fs.writeFile(filename, src)
   }
   return await Promise.all(files.map(async (name) => {
-    const filename = path.join('./raw', name)
+    const filename = path.join(root, name)
     const contents = await fs.readFile(filename, 'utf8')
     const id = path.basename(filename).replace('.svg', '')
     const $ = cheerio.load(contents)

@@ -1,0 +1,26 @@
+{
+  "name": "token-parts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "backup-kibana": "elasticdump --input http://localhost:9200/.kibana_1 --output=./kibana/settings.json --type=data",
+    "restore-kibana": "elasticdump --output=http://localhost:9200/.kibana_1 --input=./kibana/settings.json --type=data"
+  },
+  "author": "",
+  "license": "CC0",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.2.0",
+    "@google-cloud/firestore": "^2.2.4",
+    "cheerio": "^1.0.0-rc.3",
+    "commander": "^2.20.0",
+    "fs-extra": "^8.0.1",
+    "handlebars": "^4.1.2",
+    "nanoid": "^2.0.3",
+    "svgo": "^1.2.2"
+  },
+  "devDependencies": {
+    "elasticdump": "^6.3.1"
+  }
+}
