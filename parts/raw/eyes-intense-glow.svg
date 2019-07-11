@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="eyes-intense-glow.svg"
+   class="face-scar"
+   data-z="1050"
+   data-slots="eyes"
+   data-tags="new+eyes">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="22.577651"
+     inkscape:cx="51.301353"
+     inkscape:cy="53.826922"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="in"
+     inkscape:window-width="3773"
+     inkscape:window-height="2105"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="in"
+       spacingx="1.344"
+       spacingy="1.344"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Face Scar</dc:title>
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Face Scar</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="glow"
+     class="glow"
+     opacity="0.5">
+    <path
+       style="opacity:1;vector-effect:none;fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 36.960938,13.392578 c -3.792391,0.76213 1.841413,6.05853 1.869674,1.731861 -0.179632,-0.880482 -0.940516,-1.684656 -1.869674,-1.731861 z m -5.896485,3.792969 c -2.905794,0.147956 -2.356226,4.375724 0.381742,4.065786 1.981901,2.099134 -0.27365,5.167557 -2.57352,5.80009 -2.900521,1.067521 -1.814985,-4.501764 -5.030977,-2.570475 -3.420337,2.202707 2.791004,3.585388 0.923285,6.194287 0.103999,3.294692 3.40295,5.184285 6.377141,5.345811 3.652444,0.427088 7.993124,-2.305702 7.602568,-6.336813 0.586805,-2.987432 -2.182238,-4.242598 -3.549088,-6.004717 0.360553,-2.679733 -0.01454,-5.982504 -3.310541,-6.468502 l -0.407451,-0.03957 z m -6.873047,0.238281 c -1.684734,1.752623 3.112733,0.878173 0,0 z"
+       id="path936"
+       inkscape:connector-curvature="0" />
+    <path
+       style="opacity:1;vector-effect:none;fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 52.855469,13.392578 c -3.552114,-0.206283 -0.585499,5.865511 1.015877,2.173655 0.540321,-0.817451 0.114295,-2.277096 -1.015877,-2.173655 z m 10.171875,3.632813 c -3.084447,1.032693 -7.650984,-0.886142 -8.706295,3.511986 -2.718889,1.423245 -3.738626,3.859285 -2.965948,6.655655 -0.841976,2.833385 -0.219546,6.246594 2.581287,7.739782 3.687229,2.370582 9.932884,1.023291 10.997693,-3.600446 2.085216,-2.43132 3.231068,-5.593038 0.691818,-8.147114 0.694076,-2.477809 1.663489,-6.288275 -2.598555,-6.159863 z M 59.71875,20.96875 c 2.859089,1.979801 -1.665417,6.9771 -2.12075,2.324397 -0.11363,-1.22295 0.839973,-2.434617 2.12075,-2.324397 z"
+       id="path936-5"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="FaceScar"
+     style="display:inline"
+     class="eyes"
+     sodipodi:insensitive="true">
+    <path
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 30.214225,33.838638 a 4.7354641,4.7354641 0 0 1 -1.733616,-6.469945 4.7354641,4.7354641 0 0 1 0.914696,-1.127271 9.4709282,9.4709282 0 0 1 4.476146,1.262714 9.4709282,9.4709282 0 0 1 3.331545,3.260845 4.7354641,4.7354641 0 0 1 -0.520518,1.339064 4.7354641,4.7354641 0 0 1 -6.468253,1.734593 z"
+       id="path878"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 59.871451,33.837661 a 4.7354641,4.7354641 0 0 1 -6.469944,-1.733616 4.7354641,4.7354641 0 0 1 -0.518897,-1.355786 9.4709282,9.4709282 0 0 1 3.331615,-3.2451 9.4709282,9.4709282 0 0 1 4.489747,-1.254779 4.7354641,4.7354641 0 0 1 0.899404,1.120313 4.7354641,4.7354641 0 0 1 -1.731925,6.468968 z"
+       id="path878-3"
+       inkscape:connector-curvature="0" />
+  </g>
+  <title
+     id="title9">Face Scar</title>
+</svg>

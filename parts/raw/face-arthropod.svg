@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 90 90"
+   class="bird-big-beak"
+   width="100%"
+   height="100%"
+   id="svg3336"
+   data-z="860"
+   data-slots="face"
+   data-tags="new+animals+face"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="face-arthropod.svg">
+  <defs
+     id="defs3348" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3773"
+     inkscape:window-height="2105"
+     id="namedview3346"
+     showgrid="false"
+     inkscape:zoom="40.844444"
+     inkscape:cx="49.087726"
+     inkscape:cy="42.817449"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:measure-start="0,0"
+     inkscape:measure-end="0,0" />
+  <metadata
+     title="Basic Body"
+     contributor="Douglas Richardson"
+     id="metadata3338">
+    <layers>
+      <layer
+         name="Primary"
+         data-layer="layer1" />
+    </layers>
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Basic Body</dc:title>
+      </cc:work>
+    </rdf:rdf>
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Basic Body</dc:title>
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Basic Body</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <title
+     id="title3344">Basic Body</title>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="chin"
+     class="chin">
+    <path
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 33.982313,41.671122 c -2.78473,5.49765 -3.38259,11.552073 -1.315299,16.388672 2.601325,6.062027 6.206174,8.283674 13.370628,6.78125 -3.11005,-1.36211 -3.786036,-2.956539 -6.436133,-4.552734 1.68374,-1.137362 1.626636,-1.233554 3.802381,-2.167969 -2.958091,-1.089582 -3.303284,-1.26507 -5.286429,-2.787109 1.512092,-0.340404 1.981595,-0.963449 3.499578,-2.619141 -2.00534,-0.742748 -2.976705,-1.197385 -4.926851,-2.451172 1.948444,-0.371948 2.367162,-0.897959 4.064179,-2.25 -2.091344,-0.739786 -1.696994,-0.809617 -3.039066,-2.027344 0.645331,-1.416776 1.726551,-2.837133 2.740995,-4.314453"
+       id="path843"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc" />
+    <path
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 50.360465,41.671122 c 1.014629,1.477656 2.097103,2.897378 2.742571,4.314453 -1.342072,1.217727 -0.947722,1.287558 -3.039066,2.027344 1.697016,1.352041 2.115735,1.878052 4.064179,2.25 -1.950146,1.253787 -2.923087,1.708424 -4.928428,2.451172 1.517984,1.655692 1.989063,2.278737 3.501155,2.619141 -1.983145,1.522039 -2.329915,1.697527 -5.288006,2.787109 2.175745,0.934415 2.120218,1.030607 3.803957,2.167969 -2.650096,1.596195 -3.32766,3.190624 -6.437709,4.552734 7.164454,1.502424 10.77088,-0.719223 13.372205,-6.78125 2.067217,-4.836427 1.469175,-10.891178 -1.315299,-16.388672"
+       id="path843-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc" />
+  </g>
+</svg>
