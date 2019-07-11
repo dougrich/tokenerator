@@ -36,11 +36,18 @@ program
     }
 
     const esclient = new es.Client({ node: esurl })
+    const seenUsers = {}
     firestore.collection('tokens')
-      .orderBy('modified', 'desc')
+      .orderBy('modified')
       .stream()
       .on('data', async (snapshot) => {
         const d = await snapshot.data()
+        const isReturning = !!d.user
+          ? !!seenUsers[d.user]
+          : undefined
+        const provider = !!d.user
+          ? d.user.split('/')[0]
+          : undefined
         const analyticsDocument = {
           created: new Date(d.modified).toISOString(),
           isLegacy: !!d.legacyid,
@@ -48,11 +55,14 @@ program
           isDescribed: !!d.description,
           isTitled: !!d.title,
           isAnonymous: !d.user,
+          isReturning,
           user: d.user,
+          provider,
           parts: d.parts.map(x => x.id),
           partCount: d.parts.length,
           id: d.id
         }
+        seenUsers[d.user] = true
         esqueue.push(analyticsDocument)
         await flushqueue()
       })

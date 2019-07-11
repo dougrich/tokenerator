@@ -1,3 +1,5 @@
+Last updated: July 11, 2019
+
 ## Privacy Information
 
 ### Terms
@@ -6,7 +8,7 @@ ___OAuth___ is a system that, when you want to sign in, redirects you to an auth
 
 ___OAuth Provider___ is the account provider that you signed in with: either Google or Microsoft.
 
-A ___user id___ is a unique, random id provided by your oauth provider. It contains no information beyond which provider you signed in with.
+A ___user id___ is a unique, random id provided by your oauth provider. It contains no personally identifiable information.
 
 ### Tracking/Data Usage
 I track as little as possible. No data is collected until you create a token.
@@ -18,31 +20,50 @@ When you create a token, I make note of:
 - what time it is on my servers
 - if you are signed in, your user id
 
+This is done to provide functionality for the browse page and token details pages.
+
 When you batch download tokens, I do not collect any information.
 
 This information is collected to:
 - provide the token details page (title, description)
 - enable the browse page to function (title, privacy choice, time submitted)
 - enable browsing your own tokens (user id)
-- anonymous site analytics, viewable [here](todo: get github link).
+- anonymous site analytics, viewable [here](https://github.com/dougrich/tokenerator/tree/master/reports).
 
-Site analytics are used to:
-- understand how the site is being used
-- estimate the amount of load on my servers
-- understand which features are being used
-- understand which parts are being used
-- understand how users are using the site - are there people using the site? how many per day? etc.
+To completely understand the analytics, I recommend looking at the reports linked above.
 
-To completely understand the analytics, I recommend looking at the monthly reports.
+The analytics are entirely anonymous. no personally identifiable information is collected.
+
+The following metrics are tracked:
+
+__# tokens created, avg. #parts per token, avg. #tokens created, #total unique parts used__
+
+This is used to get an idea of how active the site is without tracking anything personal and to estimate future capacity for infrastructure.
+
+__% of tokens created by users vs. anonymous, % of tokens with title or description, % of tokens that are hidden or browseable__
+
+This is used to get an idea of how often specific features are being used, like the title and description or sign in flow.
+
+__most popular parts__
+
+This is used to come up with ideas for new parts that will be liked.
+
+__# active users, # new users, # returning users__
+
+This is used to gauge how active the site is and if it is growing or shrinking.
+
+__# tokens per user, % sign in provider used__
+
+This is used to estimate capacity, plan features, and prioritize login provider support.
 
 ### Cookies / Signing In
 
 By default I do not use cookies.
 
 If you sign in, I create a cookie that contains:
-- your user id
-- your name, as provided by your oauth provider
-- your provider
+- your user id, an anonymous id, to enable the browse page for signed in users
+- your name, as provided by your oauth provider, to provide a good UX
+- your provider, to ensure if two providers give the same anonymous id there is no conflict
 
 I do not keep any additional account information.
 
