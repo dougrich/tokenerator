@@ -38,7 +38,7 @@ const SocialLink = styled.a({
   display: 'inline-block',
   '&:focus': {
     outline: '2px dashed #D00'
-  },
+  }
 })
 
 export default class extends React.PureComponent {
@@ -89,9 +89,9 @@ export default class extends React.PureComponent {
             </Navigation>
           </Collapsible>
           <Notice>
-            <SocialLink style={{ background: mark.email }} title='Email' href='mailto:contact@dougrich.net' target='_blank'/>
-            <SocialLink style={{ background: mark.github }} title='Github' href='https://github.com/dougrich/tokenerator' target='_blank'/>
-            <SocialLink style={{ background: mark.twitter }} title='Twitter' href='https://twitter.com/tokenerator' target='_blank'/>
+            <SocialLink style={{ background: mark.email }} title='Email' href='mailto:contact@dougrich.net' target='_blank' />
+            <SocialLink style={{ background: mark.github }} title='Github' href='https://github.com/dougrich/tokenerator' target='_blank' />
+            <SocialLink style={{ background: mark.twitter }} title='Twitter' href='https://twitter.com/tokenerator' target='_blank' />
           </Notice>
         </Container>
       </Header>
