@@ -24,12 +24,17 @@ const BatchItemRow = styled.div({
   marginBottom: '1em'
 })
 
-const BatchItemPreview = styled.img({
-  display: 'block',
+const BatchItemPreviewContainer = styled.div({
   flexShrink: '0',
   width: '8em',
+  marginRight: '1em',
+  textAlign: 'center'
+})
+
+const BatchItemPreview = styled.img({
+  display: 'block',
   height: '8em',
-  marginRight: '1em'
+  marginBottom: '1em'
 })
 
 const BatchItemFields = styled.div({
@@ -50,7 +55,10 @@ class BatchItem extends React.PureComponent {
     const max = constants.maxCount[label || 'none']
     return (
       <BatchItemRow>
-        <BatchItemPreview src={`/api/token/${id}.svg`}/>
+        <BatchItemPreviewContainer>
+          <BatchItemPreview src={`/api/token/${id}.svg`}/>
+          <Action as='a' href={`/token/${id}`} target='_blank'>View</Action>
+        </BatchItemPreviewContainer>
         <BatchItemFields>
           <TextField
             type='number'
