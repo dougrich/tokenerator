@@ -14,6 +14,7 @@ const { immutable } = require('../cache')
 const jwt = require('jsonwebtoken')
 const rsvg = require('librsvg').Rsvg
 const { tokenToSvg } = require('../token2svg')
+const Cache = require('@dougrich/read-cache')
 
 const TOKEN_COLLECTION = 'tokens/'
 
@@ -31,14 +32,20 @@ const userMiddleware = (secret) => (req, res, next) => {
 }
 
 function loadToken(firestore) {
+
+  // this debounces loading specific tokens
+  const fetch = new Cache(async (tokenid) => {
+    const tokenDoc = firestore.doc(TOKEN_COLLECTION + tokenid)
+    return tokenDoc.get()
+  }, 36000, Cache.concat)
+
   return async (req, res, next) => {
     if (!req.params.tokenid) {
       return next()
     }
 
     try {
-      const tokenDoc = firestore.doc(TOKEN_COLLECTION + req.params.tokenid)
-      const token = await tokenDoc.get()
+      const token = await fetch(req.params.tokenid)
       if (!token.exists) {
         // 404
         res.status(404).end()
@@ -83,6 +90,37 @@ async function setToken(firestore, token) {
 function tokenEndpoint(bucket, secret, canonical) {
   const router = express()
   const firestore = new Firestore()
+
+  const fetch = new Cache(async (user, next) => {
+    const size = 60
+    let query = firestore.collection('tokens')
+    
+    query = !!user
+      ? query.where('user', '==', user)
+      : query.where('private', '==', false)
+    
+    query = query.orderBy('modified', 'desc')
+    if (next) {
+      query = query.where('modified', '<=', next)
+    }
+    query = query
+        .limit(size + 1)
+        .select('title', 'id', 'modified')
+
+    const snapshots = await query.get()
+    const promises = []
+    snapshots.forEach(x => {
+      promises.push(x.data())
+    })
+    const documents  = await Promise.all(promises)
+    const hasMore = documents.length === (size + 1)
+    return ({
+      documents: documents.slice(0, size),
+      next: hasMore
+        ? documents[size].modified
+        : false
+    })
+  }, 36000, Cache.concat)
 
   router.post(
     '/',
@@ -135,40 +173,14 @@ function tokenEndpoint(bucket, secret, canonical) {
       next()
     },
     async (req, res, next) => {
-      const size = 60
-
+      const user = !!req.query.filter && !!req.params.user && !!req.params.user.sub
+        ? req.params.user.sub
+        : null
       
-      let query = !!req.query.filter && !!req.params.user && !!req.params.user.sub
-        ? firestore.collection('tokens')
-          .where('user', '==', req.params.user.sub)
-          .orderBy('modified', 'desc')
-        : firestore.collection('tokens')
-          .where('private', '==', false)
-          .orderBy('modified', 'desc')
-
-      if (req.params.next) {
-        query = query
-          .where('modified', '<=', req.params.next)
-      }
-
-      query = query
-        .limit(size + 1)
-        .select('title', 'id', 'modified')
 
       try {
-        const snapshots = await query.get()
-        const promises = []
-        snapshots.forEach(x => {
-          promises.push(x.data())
-        })
-        const documents  = await Promise.all(promises)
-        const hasMore = documents.length === (size + 1)
-        res.json({
-          documents: documents.slice(0, size),
-          next: hasMore
-            ? documents[size].modified
-            : false
-        })
+        const body = await fetch(user, req.params.next)
+        res.json(body)
       } catch (err) {
         next(err)
       }
