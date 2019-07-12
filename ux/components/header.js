@@ -35,7 +35,10 @@ const SocialLink = styled.a({
   width: '3em',
   height: '3em',
   margin: '0em 1em',
-  display: 'inline-block'
+  display: 'inline-block',
+  '&:focus': {
+    outline: '2px dashed #D00'
+  },
 })
 
 export default class extends React.PureComponent {
