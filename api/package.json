@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@dougrich/read-cache": "^0.1.1",
     "@google-cloud/firestore": "^2.0.0",
     "@google-cloud/pubsub": "^0.29.1",
     "@google-cloud/storage": "^2.5.0",
@@ -26,6 +27,6 @@
     "slug": "^1.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.1"
   }
 }
