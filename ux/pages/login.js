@@ -1,5 +1,6 @@
 import Microsoft from '@dougrich/react-signin-microsoft/dist/dark'
 import Google from '@dougrich/react-signin-google/dist/dark'
+import Reddit from '@dougrich/react-signin-reddit/dist/dark'
 import styled from '@emotion/styled'
 import { ModalContainer } from '../components/styled'
 import Page from '../components/page'
@@ -28,6 +29,9 @@ export default class extends React.PureComponent {
           </SignInProvider>
           <SignInProvider>
             <Microsoft as='a' href='/api/account/login/microsoft'/>
+          </SignInProvider>
+          <SignInProvider>
+            <Reddit as='a' href='/api/account/login/reddit'/>
           </SignInProvider>
         </ModalContainer>
       </Page>
