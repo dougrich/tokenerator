@@ -1,0 +1,29 @@
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" version="1.1" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="eyes-piscine.svg" class="face-scar" data-z="1050" data-slots="eyes" data-tags="new+eyes">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="22.577651" inkscape:cx="24.453354" inkscape:cy="45.814037" inkscape:document-units="in" inkscape:current-layer="layer1" showgrid="true" units="in" inkscape:window-width="3773" inkscape:window-height="2105" inkscape:window-x="67" inkscape:window-y="27" inkscape:window-maximized="1" gridtolerance="1"/>
+  <metadata id="metadata7">
+    <rdf:rdf>
+      <cc:work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title>Face Scar</dc:title>
+      </cc:work>
+    </rdf:rdf>
+    <rdf:rdf>
+      <cc:work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title>Face Scar</dc:title>
+      </cc:work>
+    </rdf:rdf>
+  </metadata>
+  <g inkscape:groupmode="layer" id="layer2" inkscape:label="FaceScar" style="display:inline" class="eyes">
+    <path style="display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.6875;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 65.695376,30.105213 a 6.2491199,6.2491199 0 0 1 -6.25026,6.25026 6.2491199,6.2491199 0 0 1 -1.89183,-0.301558 12.49824,12.49824 0 0 1 -1.510373,-5.948702 12.49824,12.49824 0 0 1 1.528414,-5.959011 6.2491199,6.2491199 0 0 1 1.873789,-0.288672 6.2491199,6.2491199 0 0 1 6.25026,6.247683 z" id="path878-3-3" inkscape:connector-curvature="0"/>
+    <path style="display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.6875;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 24.305184,30.106088 a 6.2811775,6.2811775 0 0 1 6.282324,-6.282323 6.2811775,6.2811775 0 0 1 1.901535,0.303103 12.562355,12.562355 0 0 1 1.51812,5.979218 12.562355,12.562355 0 0 1 -1.536253,5.989581 6.2811775,6.2811775 0 0 1 -1.883403,0.290152 6.2811775,6.2811775 0 0 1 -6.282323,-6.279731 z" id="path878-6" inkscape:connector-curvature="0"/>
+  </g>
+  <g inkscape:groupmode="layer" id="layer1" class="pupils" inkscape:label="pupils">
+    <path style="display:inline;opacity:1;vector-effect:none;fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:1.6875;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 28.008863,30.105525 a 3.5515981,3.5515981 0 0 1 3.552247,-3.552246 3.5515981,3.5515981 0 0 1 1.075194,0.171385 7.1031962,7.1031961 0 0 1 0.858399,3.38086 7.1031962,7.1031961 0 0 1 -0.868652,3.386719 3.5515981,3.5515981 0 0 1 -1.064942,0.164062 3.5515981,3.5515981 0 0 1 -3.552246,-3.55078 z" id="path878" inkscape:connector-curvature="0"/>
+    <path style="display:inline;opacity:1;vector-effect:none;fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:1.6875;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 62.008091,30.105769 a 3.5515981,3.5515981 0 0 1 -3.552246,3.552246 3.5515981,3.5515981 0 0 1 -1.075195,-0.171386 7.1031962,7.1031961 0 0 1 -0.858399,-3.38086 7.1031962,7.1031961 0 0 1 0.868653,-3.386719 3.5515981,3.5515981 0 0 1 1.064941,-0.164062 3.5515981,3.5515981 0 0 1 3.552246,3.550781 z" id="path878-3" inkscape:connector-curvature="0"/>
+  </g>
+  <title id="title9">Face Scar</title>
+</svg>
