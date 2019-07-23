@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The token builder has moved!</title>
+    <style>
+      body {
+        background: repeating-linear-gradient(
+          45deg,
+          #FFF,
+          #FFF 7px,
+          #F5F5F5 7px,
+          #F5F5F5 10px,
+          #FFF 10px
+        );
+        height: 100vh;
+        width: 100vw;
+        font-family: sans-serif;
+      }
+
+      html, body { padding: 0; margin: 0; }
+
+      .container {
+        width: 400px;
+        padding: 16px;
+        background-color: white;
+        border: 3px solid #F5F5F5;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .container:before, .container:after {
+        content: '';
+        width: 0px;
+        height: 0px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border: 50px solid #F5F5F5;
+        position: absolute;
+        left: 50%;
+        pointer-events: none;
+      }
+
+      .container:before {
+        top: 0px;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      .container:after {
+        top: 100%;
+        border-left-color: transparent;
+        border-top-color: transparent;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <h1>The token builder has moved!</h1>
+      <p>The new location is <a href="https://tokens.dougrich.net/">https://tokens.dougrich.net</a> and includes:</p>
+      <ul>
+        <li>more parts</li>
+        <li>much faster browse page</li>
+        <li>much more stable storage</li>
+      </ul>
+      <p>Feel free to reach out:</p>
+      <dl>
+        <dt>email</dt>
+        <dd><a href="mailto:contact@dougrich.net">contact@dougrich.net</a></dd>
+        <dt>github</dt>
+        <dd><a href="https://github.com/dougrich/tokenerator">https://github.com/dougrich/tokenerator</a></dd>
+        <dt>twitter</dt>
+        <dd><a href="https://twitter.com/tokenerator">https://twitter.com/tokenerator</a></dd>
+      </dl>
+    </section>
+  </body>
+</html>

@@ -43,11 +43,11 @@ const SocialLink = styled.a({
 
 export default class extends React.PureComponent {
   onSignIn = () => {
-    const newwindow = window.open('/login', 'Log In', 'height=600,width=800')
+    const newwindow = window.open('/api/account/', 'Sign In', 'height=600,width=800')
     if (window.focus) { newwindow.focus() }
   }
   onSignOut = () => {
-    const newwindow = window.open('/api/account/logout', 'Log Out', 'height=600,width=800')
+    const newwindow = window.open('/api/account/sign-out', 'Sign Out', 'height=600,width=800')
     if (window.focus) { newwindow.focus() }
   }
   render () {

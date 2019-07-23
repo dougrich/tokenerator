@@ -1,0 +1,7 @@
+version: '3'
+services:
+  root:
+    image: us.gcr.io/rpg-dougrich-net/legacy:latest
+    build: .
+    ports:
+    - 8080:80

@@ -21,6 +21,10 @@ services:
     - ./ux/static:/app/static
     - ./ux/next.config.js:/app/next.config.js
     entrypoint: ash -c "npm i -D && npm run dev"
+  account:
+    image: dougrich/oauth-aggregator
+    volumes:
+    - ./config.auth.json:/app/config.json
   gateway:
     build: ./gateway
     ports:

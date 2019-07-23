@@ -1,32 +1,5 @@
 {
   "account": {
-    "oauth": {
-      "microsoft": {
-        "id": "...msft oauth id...",
-        "secret": "...msft oauth secret...",
-        "href": {
-          "login": "https://login.live.com/oauth20_authorize.srf",
-          "exchange": "https://login.live.com/oauth20_token.srf ",
-          "certificates": "https://nexus.passport.com/public/partner/discovery/key"
-        },
-        "parameters": {
-          "scope": ["openid", "profile"]
-        }
-      },
-      "google": {
-        "id": "...google oauth application id...",
-        "secret": "...google oauth application secret...",
-        "href": {
-          "login": "https://accounts.google.com/o/oauth2/v2/auth",
-          "exchange": "https://www.googleapis.com/oauth2/v4/token",
-          "certificates": "https://www.googleapis.com/oauth2/v1/certs"
-        },
-        "parameters": {
-          "scope": "profile",
-          "access_type": "offline"
-        }
-      }
-    },
     "secret": "...some random string..."
   },
   "buckets": {
