@@ -1,6 +1,5 @@
 const express = require('express')
 const token = require('./endpoint/token')
-const account = require('./endpoint/account')
 const batch = require('./endpoint/batch')
 const legacy = require('./endpoint/legacy')
 const config = require('./config')
@@ -19,7 +18,6 @@ function app() {
   instance.get('/', (_, res) => res.status(200).end())
   
   instance.use('/api/token/', token(config.get('buckets:cache'), config.get('account:secret'), canonical))
-  instance.use('/api/account/', account(canonical))
   instance.use('/api/batch/', batch(config.get('buckets:batch'), config.get('topics:batch'), canonical))
   instance.use('/api/legacy/', legacy(canonical))
   return instance

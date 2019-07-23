@@ -1,4 +1,5 @@
 node_modules
 creds.json
 config.json
+config.auth.json
 TODO.md

@@ -1,1 +1,1 @@
-export const LOGGEDIN = 'logged-in'
+export const LOGGEDIN = 'account-state-change'
