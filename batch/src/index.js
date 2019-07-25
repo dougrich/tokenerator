@@ -1,37 +1,14 @@
 const { PubSub } = require('@google-cloud/pubsub')
 const { Storage } = require('@google-cloud/storage')
-const tmp = require('tmp')
+const handler = require('./handlerFactory')
 const config = require('./config')
 
 const renderPDF = require('./render')
 const packZIP = require('./pack')
-const arrange = require('./arrange')
 
 const pubsub = new PubSub()
 const subscription = pubsub.subscription(config.get('subscription:batch'))
 const storage = new Storage()
-
-
-function handler(config) {
-  return function (op) {
-    return function handle(request, output) {
-      return new Promise((resolve, reject) => {
-        tmp.dir(async (err, root, cleanup) => {
-          if (err) return reject(err)
-          try {
-            const details = await arrange(config, root, request.size || 500, request)
-            await op(details, output)
-            resolve()
-          } catch (err) {
-            reject(err)
-          } finally {
-            cleanup()
-          }
-        })
-      })
-    }
-  }
-}
 
 const handlerFactory = handler({
   canonical: {
