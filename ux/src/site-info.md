@@ -69,7 +69,7 @@ I do not keep any additional account information.
 
 ## Reporting Issues
 
-Please navigate here to open an issue on the Github Repository if you encounter an issue.
+Please navigate [here](https://github.com/dougrich/tokenerator/issues/new) to open an issue on the Github Repository if you encounter an issue.
 
 If you have a security issue, please reach out to [contact@dougrich.net](mailto:contact@dougrich.net) with information and reproduction steps.
 
