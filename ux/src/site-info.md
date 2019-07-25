@@ -6,7 +6,7 @@ Last updated: July 11, 2019
 
 ___OAuth___ is a system that, when you want to sign in, redirects you to an authority that then grants this application access to some of your information.
 
-___OAuth Provider___ is the account provider that you signed in with: either Google or Microsoft.
+___OAuth Provider___ is the account provider that you signed in with: either Google, Microsoft, or Reddit.
 
 A ___user id___ is a unique, random id provided by your oauth provider. It contains no personally identifiable information.
 
@@ -32,7 +32,7 @@ This information is collected to:
 
 To completely understand the analytics, I recommend looking at the reports linked above.
 
-The analytics are entirely anonymous. no personally identifiable information is collected.
+The analytics are entirely anonymous. No personally identifiable information is collected.
 
 The following metrics are tracked:
 
