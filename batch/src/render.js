@@ -34,7 +34,7 @@ function render({ page, name, images, friendly, options }, stream) {
     const { cx, cy } = style.pos(i)
     if (options.withLabels) {
       pdf
-        .text(friendly[i], cx - layout.size.outline / 2, cy - layout.size.outline / 2 - layout.weight.medium - layout.fontsize, { align: 'center', width: layout.size.outline })
+        .text(friendly[i].substring(0, 16), cx - layout.size.outline / 2, cy - layout.size.outline / 2 - layout.weight.medium - layout.fontsize, { align: 'center', width: layout.size.outline })
     }
 
     if (options.withOutline) {
