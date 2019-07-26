@@ -18,6 +18,12 @@ import Collapsible from '../components/collapsible'
 import KeyShortcuts from '../components/keyshortcuts'
 import * as parts from '../src/token-parts'
 
+const ParagraphNotice = styled.p({
+  padding: '1em',
+  lineHeight: '2em',
+  textAlign: 'center'
+})
+
 const EditorTools = styled.div({
   width: '100%',
   display: 'flex',
@@ -259,6 +265,7 @@ export default class extends React.Component {
           </DisplayColor>
         </EditorTools>
         <ConnectedPartGrid />
+        <ParagraphNotice>Can't find a part you're looking for? Sugget new parts!<br/><Action as='a' href='https://twitter.com/tokenerator'>twitter</Action></ParagraphNotice>
       </Page>
     )
   }
