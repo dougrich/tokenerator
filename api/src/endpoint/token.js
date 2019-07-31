@@ -6,13 +6,11 @@ const nanoid = require('nanoid')
 const bodyparser = require('body-parser')
 const slug = require('slug')
 const cookieParser = require('cookie-parser')
-const { contentMiddleware } = require('../middleware')
+const { imageNegotationMiddleware } = require('../middleware')
 const ajv = new Ajv()
 ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'))
 const validator = ajv.compile(parts.$schema)
-const { immutable } = require('../cache')
 const jwt = require('jsonwebtoken')
-const rsvg = require('librsvg').Rsvg
 const { tokenToSvg } = require('../token2svg')
 const Cache = require('@dougrich/read-cache')
 
@@ -188,69 +186,13 @@ function tokenEndpoint(bucket, secret, canonical) {
   )
 
   router.get(
-    '/:tokenid.json',
-    loadToken(firestore),
-    (req, res) => {
-      res.json(req.params.token)
-    }
-  )
-
-  router.get(
-    '/:tokenid.svg',
+    '/:tokenid.:format',
     loadToken(firestore),
     validateDecoration,
-    contentMiddleware('image/svg+xml'),
-    (req, res, next) => {
-      req.params.id = req.params.tokenid + '@' + (req.params.decor || 'default') + '.svg'
-      next()
-    },
-    (req, res) => {
-      // flatten it
-      res.setHeader('Cache-Control', immutable)
-      res.setHeader('Content-Type', 'image/svg+xml')
-      const svg = tokenToSvg(parts, req.params.token, req.params.decor)
-      res.end(svg)
-    }
-  )
-
-  router.get(
-    '/:tokenid.png',
-    (req, res, next) => {
-      if (!req.query.size) {
-        req.query.size = '180'
-      } else {
-        let number = parseInt(req.query.size)
-        if (!/^[1-9][0-9]*$/.test(req.query.size) || Number.isNaN(number) || number < 15 || number > 1800) {
-          res.status(400)
-          res.end()
-          return
-        }
-      }
-      next()
-    },
-    loadToken(firestore),
-    validateDecoration,
-    contentMiddleware('image/png'),
-    (req, res, next) => {
-      const svg = tokenToSvg(parts, req.params.token, req.params.decor)
-      const size = parseInt(req.query.size || '180')
-      res.setHeader('Cache-Control', immutable)
-      res.setHeader('Content-Disposition', `attachment; filename="${req.params.slug}@${size}.png"`)
-      const render = new rsvg()
-      render.on('finish', function () {
-        const { data } = render.render({
-          format: 'png',
-          width: size,
-          height: size
-        })
-        res.end(data)
-      })
-      render.on('error', function () {
-        res.status(500)
-        res.end()
-      })
-      render.end(svg)
-    }
+    imageNegotationMiddleware(
+      (req) => tokenToSvg(parts, req.params.token, req.params.decor),
+      (req) => req.params.token
+    )
   )
 
   return router
