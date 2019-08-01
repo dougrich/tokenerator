@@ -64,7 +64,16 @@ const validator = ajv.compile({
               { const: 'number' },
               { const: 'none' }
             ]
-          }
+          },
+          trim: { type: 'string', pattern: '^[0-9a-f]{3,6}$' },
+          placeholder: {
+            oneOf: [
+              'hatched',
+              'flat',
+              'direct'
+            ]
+          },
+          placeholderName: { type: 'string', maxLength: 10 }
         }
       }
     }

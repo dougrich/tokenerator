@@ -190,7 +190,16 @@ function tokenEndpoint(bucket, secret, canonical) {
     loadToken(firestore),
     validateDecoration,
     imageNegotationMiddleware(
-      (req) => tokenToSvg(parts, req.params.token, req.params.decor),
+      (req) => {
+        let svg = tokenToSvg(parts, req.params.token, req.params.decor)
+        if (req.query.trim) {
+          svg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+          <circle cx="45" cy="45" r="36.5" fill="transparent" stroke="#${req.query.trim}" stroke-width="17"/>
+          ${svg.replace('<?xml version="1.0" encoding="UTF-8" standalone="no"?>', '').replace('<svg', '<svg x="22.5" y="22.5" width="45" height="45"')}
+        </svg>`
+        }
+        return svg
+      },
       (req) => req.params.token
     )
   )

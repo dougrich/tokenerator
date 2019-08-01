@@ -3,7 +3,7 @@ const config = require('./config')
 
 const layout = require('./layout')
 
-function render({ page, name, images, friendly, options }, stream) {
+function render({ page, name, images, sizes, friendly, options }, stream) {
   
   options = {
     withOutline: true,
@@ -45,7 +45,9 @@ function render({ page, name, images, friendly, options }, stream) {
         .stroke()
     }
   
-    pdf.image(image, cx - layout.size.token / 2, cy - layout.size.token / 2, { width: layout.size.token, height: layout.size.token })
+    const size = sizes[i]
+
+    pdf.image(image, cx - size / 2, cy - size / 2, { width: size, height: size })
     let isPageBreak = (i % style.max) === 0 && i > 0
     if (isPageBreak) {
       pdf.addPage()

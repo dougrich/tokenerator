@@ -10,6 +10,14 @@ services:
     - ./config.json:/app/config.json
     - ./api/src:/app/src
     entrypoint: bash -c "npm i -D && npm run start"
+  batch:
+    build: ./batch
+    environment:
+    - GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json
+    volumes:
+    - ./creds.json:/gcp/creds.json
+    - ./config.json:/app/config.json
+    entrypoint: bash -c "npm i -g nodemon && nodemon ."
   ux:
     build: ./ux
     environment:

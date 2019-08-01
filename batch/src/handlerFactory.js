@@ -9,7 +9,7 @@ module.exports = function handler(
         tmp.dir(async (err, root, cleanup) => {
           if (err) return reject(err)
           try {
-            const details = await arrange(config, root, request.size || 500, request)
+            const details = await arrange(config, root, request.size || 1000, request)
             await op(details, output)
             resolve()
           } catch (err) {

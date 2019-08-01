@@ -25,9 +25,9 @@ const style = {
   <text x="45" y="48.5" text-anchor="middle" font-size="10" font-family="Roboto Slab" font-weight="900" fill="white">${label.substring(0, 10)}</text>
 </svg>`,
   'direct': (label, color) => `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
-  <circle cx="45" cy="45" r="34" fill="${color}"/>
+  <circle cx="45" cy="45" r="45" fill="${color}"/>
   <text x="45" y="55" text-anchor="middle" font-size="30" font-family="Roboto Slab" font-weight="900" fill="black" stroke-width="3.5" stroke="black">${label[0]}</text>
-  ${'69'.indexOf(label[0]) >= 0 ? '<rect x="40" y="57" width="10" height="2" fill="white" stroke="black" stroke-width="1.5"/>': ''}
+  ${'69'.indexOf(label[0]) >= 0 ? '<rect x="40" y="57" width="10" height="4" fill="white" stroke="black" stroke-width="1.5"/>': ''}
   <text x="45" y="55" text-anchor="middle" font-size="30" font-family="Roboto Slab" font-weight="900" fill="white">${label[0]}</text>
 </svg>`,
   'trim': (_, color) => `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
