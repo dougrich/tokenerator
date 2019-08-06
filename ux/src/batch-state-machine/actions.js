@@ -33,6 +33,10 @@ export const dispatchers = {
         meta
       } })
     const state = getState()
+    const options = {...state.options}
+    if (state.type === constants.FORMAT_PDF) {
+      delete options.size
+    }
     const tokens = []
     for (const k in state.tokens) {
       tokens.push({
@@ -44,7 +48,7 @@ export const dispatchers = {
     }
     const batch = {
       type: state.type,
-      params: state.options,
+      params: options,
       tokens
     }
     status(constants.STATE_POST)
