@@ -13,6 +13,7 @@ const storage = new Storage()
 const handlerFactory = handler({
   canonical: {
     token: id => `http://api/api/token/${id}.png`,
+    placeholder: id => `http://api/api/placeholder/${id}.png`
   }
 })
 
@@ -25,7 +26,6 @@ const bucket = config.get('buckets:batch')
 
 subscription.on('message', async message => {
   try {
-    console.log('RECEIVED MESSAGE')
     const id = message.data
     // go download the file from google storage
     const file = storage.bucket(bucket).file(id.toString())

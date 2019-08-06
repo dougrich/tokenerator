@@ -12,8 +12,8 @@ function tokenToSvg (parts, token, decor) {
     svg += template(part.channels)
   }
   if (decor != null) {
-    svg += '<text x="45" y="80" text-anchor="middle" stroke="black" stroke-width="4.5" fill="black" font-size="50" font-family="monospace">' + decor + '</text>'
-    svg += '<text x="45" y="80" text-anchor="middle" fill="white" font-size="50" font-family="monospace">' + decor + '</text>'
+    svg += '<text x="45" y="80" text-anchor="middle" stroke="black" stroke-width="4.5" fill="black" font-size="50" font-family="Roboto Slab">' + decor + '</text>'
+    svg += '<text x="45" y="80" text-anchor="middle" fill="white" font-size="50" font-family="Roboto Slab">' + decor + '</text>'
   }
   svg += '</g></svg>'
   return svg

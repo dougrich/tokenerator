@@ -1,11 +1,13 @@
 import Page from '../components/page'
 import AppHead from '../components/head'
 import Header from '../components/header'
+import { ColorSwatchButton } from '../components/color-swatch'
 import { connect, Provider } from 'react-redux'
 import styled from '@emotion/styled'
 import createStore, { dispatchers, constants } from '../src/batch-state-machine'
-import { TextField, SelectField, RangeField, PixelField } from '../components/field'
+import { TextField, SelectField, RadioSetField, PixelField } from '../components/field'
 import { Action } from '../components/styled'
+import { RadioOption } from '../components/radio'
 
 const ActionRow = styled.div({
   width: '100%',
@@ -42,25 +44,46 @@ const BatchItemFields = styled.div({
   width: '100%'
 })
 
+const TrimColors = [
+  'D33',
+  '3D3',
+  '33D',
+  '666',
+  '999',
+  'BBB',
+  'E8A410',
+  '10E89D',
+  'B910E8',
+  'CBE810',
+  '222'
+]
+
 class BatchItem extends React.PureComponent {
   render () {
     const {
       label,
       count,
       id,
+      trim,
+      placeholder,
+      placeholderName,
       disabled,
       onCountChange,
+      onPlaceholderChange,
+      onPlaceholderNameChange,
+      onTrimChange,
       onLabelChange
     } = this.props
     const max = constants.maxCount[label || 'none']
+    const isToken = !placeholder
     return (
       <BatchItemRow>
         <BatchItemPreviewContainer>
-          <BatchItemPreview src={`/api/token/${id}.svg`}/>
-          <Action as='a' href={`/token/${id}`} target='_blank'>View</Action>
+          <BatchItemPreview src={isToken ? `/api/token/${id}.svg` : `/api/placeholder/${placeholder}.svg?color=${trim || 'FFF'}&label=${encodeURIComponent(placeholderName || '')}`}/>
+          
         </BatchItemPreviewContainer>
         <BatchItemFields>
-          <TextField
+          {isToken && <TextField
             type='number'
             disabled={disabled}
             max={max}
@@ -69,19 +92,47 @@ class BatchItem extends React.PureComponent {
             label='Count'
             name={'count.' + id}
             onChange={onCountChange}
-          />
-          <SelectField label='Symbol Type' name={'symbol-type.' + id} value={label} onChange={onLabelChange} disabled={disabled} options={[
+          />}
+          {isToken && <SelectField label='Symbol Type' name={'symbol-type.' + id} value={label} onChange={onLabelChange} disabled={disabled} options={[
             { label: 'None', value: constants.LABEL_NONE },
             { label: 'Number', value: constants.LABEL_NUMBER },
             { label: 'Alphabet', value: constants.LABEL_ALPHABET },
-          ]}/>
+          ]}/>}
+          {!isToken && <SelectField label='Placeholder Type' name={'placeholder-type.' + id} value={placeholder} onChange={onPlaceholderChange} disabled={disabled} options={[
+            { label: 'Hatched', value: 'hatched' },
+            { label: 'Flat', value: 'flat' },
+            { label: 'Single', value: 'direct' },
+          ]}/>}
+          {!isToken && <TextField
+            disabled={disabled}
+            maxLength={10}
+            label='Placeholder'
+            name={'placeholder.' + id}
+            onChange={onPlaceholderNameChange}
+          />}
+          <RadioSetField
+            label='Trim'
+            name={'symbol-trim.' + id}
+            value={trim}
+            disabled={disabled}
+            onChange={onTrimChange}
+          >
+            <RadioOption>
+              <ColorSwatchButton style={{ background: '#FFF' }} as='span'/>
+            </RadioOption>
+            {TrimColors.map(value => (
+              <RadioOption value={value}  key={value}>
+                <ColorSwatchButton style={{ background: '#' + value }} as='span'/>
+              </RadioOption>
+            ))}
+          </RadioSetField>
         </BatchItemFields>
       </BatchItemRow>
     )
   }
 }
 
-class BatchOptionFrom extends React.PureComponent {
+class BatchOptionForm extends React.PureComponent {
   render () {
     const {
       type,
@@ -142,16 +193,37 @@ class BatchOptionFrom extends React.PureComponent {
   }
 }
 
+const ConnectedBatchItemList = connect(
+  ({ tokens, status }) => ({
+    ids: Object.keys(tokens),
+    disabled: status != null
+  }),
+  (dispatch) => ({
+    onAddPlaceholder: () => dispatch(dispatchers.ADD(Math.random().toString(), 'hatched'))
+  })
+)(({ ids, onAddPlaceholder, disabled }) => {
+  return (
+    <React.Fragment>
+      {ids.map(id => <ConnectedBatchItem id={id} key={id} />)}
+      <ActionRow>
+        <Action disabled={disabled} as='button' onClick={onAddPlaceholder}>Add Placeholder</Action>
+      </ActionRow>
+    </React.Fragment>
+  )
+})
+
 const ConnectedBatchItem = connect(
-  ({ labels, count, status }, { id }) => ({
+  ({ tokens, status }, { id }) => ({
     id,
     disabled: status != null,
-    label: labels[id] || '',
-    count: count[id] || 1
+    ...tokens[id]
   }),
   (dispatch, { id }) => ({
+    onTrimChange: (v) => dispatch(dispatchers.SET_TRIM(id, v)),
     onCountChange: (v) => dispatch(dispatchers.SET_COUNT(id, v)),
-    onLabelChange: (v) => dispatch(dispatchers.SET_LABEL(id, v))
+    onLabelChange: (v) => dispatch(dispatchers.SET_LABEL(id, v)),
+    onPlaceholderChange: (v) => dispatch(dispatchers.SET_PLACEHOLDER(id, v)),
+    onPlaceholderNameChange: (v) => dispatch(dispatchers.SET_PLACEHOLDER_NAME(id, v))
   })
 )(BatchItem)
 
@@ -165,7 +237,7 @@ const ConnectedForm = connect(
     onTypeChange: (v) => dispatch(dispatchers.SET_TYPE(v)),
     onChange: (key) => (v) => dispatch(dispatchers.SET_OPTION(key, v))
   })
-)(BatchOptionFrom)
+)(BatchOptionForm)
 
 const ConnectedDownload = connect(
   ({ status }) => ({ status }),
@@ -265,7 +337,7 @@ export default class Batch extends React.PureComponent {
   }
   constructor(props, context) {
     super(props, context)
-    this.store = createStore()
+    this.store = createStore(props.ids)
   }
   render () {
     const { ids, user } = this.props
@@ -277,7 +349,7 @@ export default class Batch extends React.PureComponent {
         canonical={'https://tokens.dougrich.net/batch?ids=' + ids.join('+')}
       >
         <BatchItemContainer>
-          {ids.map((id) => <ConnectedBatchItem id={id} key={id} />)}
+          <ConnectedBatchItemList/>
           <ConnectedForm/>
           <ActionRow>
             <ConnectedDownload ids={ids}>Download</ConnectedDownload>

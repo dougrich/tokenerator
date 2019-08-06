@@ -2,6 +2,7 @@ const express = require('express')
 const token = require('./endpoint/token')
 const batch = require('./endpoint/batch')
 const legacy = require('./endpoint/legacy')
+const placeholder = require('./endpoint/placeholder')
 const config = require('./config')
 
 const canonical = {
@@ -20,6 +21,7 @@ function app() {
   instance.use('/api/token/', token(config.get('buckets:cache'), config.get('account:secret'), canonical))
   instance.use('/api/batch/', batch(config.get('buckets:batch'), config.get('topics:batch'), canonical))
   instance.use('/api/legacy/', legacy(canonical))
+  instance.use('/api/placeholder/', placeholder())
   return instance
 }
 
