@@ -33,7 +33,7 @@ export const dispatchers = {
         meta
       } })
     const state = getState()
-    const options = {...state.options}
+    const options = { ...state.options }
     if (state.type === constants.FORMAT_PDF) {
       delete options.size
     }
