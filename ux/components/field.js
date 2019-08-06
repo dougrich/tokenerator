@@ -2,6 +2,7 @@ import HorizontalSlider from './slider-horizontal'
 import Toggle from './slider-toggle'
 import Select from './select'
 import styled from '@emotion/styled'
+import RadioSet from './radio'
 import { Label, TextContainer, TextInput, TextInputUnderline, TextAddon, TextMeasure, Row, TextAreaLines } from './styled'
 import withAttrs from '../src/with-attrs'
 
@@ -279,3 +280,5 @@ export const TextAreaField = withMaxLength(withEventUnwrap(withLabel(({ children
 export const ToggleField = withLabel(Toggle)
 
 export const SelectField = withEventUnwrap(withLabel(Select))
+
+export const RadioSetField = withLabel(RadioSet)

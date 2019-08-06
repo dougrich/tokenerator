@@ -1,24 +1,36 @@
 import { combineReducers } from 'redux'
 import createReducer from '../create-reducer'
-import { SET_LABEL, SET_COUNT, SET_TYPE, SET_OPTION, SET_STATUS } from './actions'
+import { SET_LABEL, SET_TRIM, SET_COUNT, SET_TYPE, SET_OPTION, SET_STATUS, ADD, REMOVE, SET_PLACEHOLDER, SET_PLACEHOLDER_NAME } from './actions'
 import valueReducer from '../reducer-value'
 import keyvalueReducer from '../reducer-keyvalue'
 import { constants } from './constants'
+import createDictionaryReducer from '../create-dictionary-reducer'
+import { filterActions } from 'redux-ignore'
 
-const labels = createReducer({}, { [SET_LABEL]: keyvalueReducer })
+const label = createReducer('none', { [SET_LABEL]: valueReducer })
+const trim = createReducer('', { [SET_TRIM]: valueReducer })
+const placeholder = createReducer('', { [SET_PLACEHOLDER]: valueReducer, [ADD]: (_, { value }) => value === 'hatched' ? 'hatched' : '' })
+const placeholderName = createReducer('', { [SET_PLACEHOLDER_NAME]: valueReducer })
 
-const count = createReducer({}, {
-  [SET_COUNT]: keyvalueReducer,
-  [SET_LABEL]: (current, { key, value }) => {
-    if (!current[key] || current[key] < constants.maxCount[value]) {
+const count = createReducer(1, {
+  [SET_COUNT]: valueReducer,
+  [SET_LABEL]: (current, { value }) => {
+    if (current < constants.maxCount[value]) {
       return current
     }
-    return {
-      ...current,
-      [key]: constants.maxCount[value]
-    }
+    return constants.maxCount[value]
   }
 })
+
+const tokens = filterActions(createDictionaryReducer(combineReducers({ label, trim, count, placeholder, placeholderName }), ADD, REMOVE), [
+  ADD,
+  REMOVE,
+  SET_LABEL,
+  SET_TRIM,
+  SET_PLACEHOLDER,
+  SET_PLACEHOLDER_NAME,
+  SET_COUNT
+])
 
 const type = createReducer(constants.FORMAT_ZIP, { [SET_TYPE]: valueReducer })
 
@@ -36,9 +48,8 @@ const options = createReducer(
 )
 
 export default combineReducers({
-  labels,
-  options,
-  count,
+  tokens,
   type,
+  options,
   status
 })

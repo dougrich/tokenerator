@@ -54,7 +54,6 @@ const validator = ajv.compile({
       items: {
         type: 'object',
         additionalProperties: false,
-        required: ['id'],
         properties: {
           id: { type: 'string', maxLength: 255 },
           count: { type: 'integer', minimum: 1, maximum: 30 },
@@ -65,12 +64,12 @@ const validator = ajv.compile({
               { const: 'none' }
             ]
           },
-          trim: { type: 'string', pattern: '^[0-9a-f]{3,6}$' },
+          trim: { type: 'string', pattern: '^[0-9a-fA-F]{3,6}$' },
           placeholder: {
             oneOf: [
-              'hatched',
-              'flat',
-              'direct'
+              { const: 'hatched' },
+              { const: 'flat' },
+              { const: 'direct' }
             ]
           },
           placeholderName: { type: 'string', maxLength: 10 }

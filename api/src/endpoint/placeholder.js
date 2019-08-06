@@ -16,7 +16,7 @@ const style = {
   <circle cx="45" cy="45" r="29" fill="white" stroke="black" stroke-width="1.1"/>
   ${placeholderImages.hatched}
   <rect x="0" y="39" width="90" height="12" fill="black"/>
-  <text x="45" y="48.5" text-anchor="middle" font-size="10" font-family="Roboto Slab" font-weight="900" fill="${color}">${label.substring(0, 10)}</text>
+  <text x="45" y="48.5" text-anchor="middle" font-size="10" font-family="Roboto Slab" font-weight="900" fill="#FFF">${label.substring(0, 10)}</text>
 </svg>`,
   'flat': (label, color) => `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
   <circle cx="45" cy="45" r="45" fill="black"/>
@@ -40,7 +40,7 @@ function placeholderEndpoint() {
   router.use(
     '/:style.:format',
     (req, res, next) => {
-      if (!req.query.label || !req.query.color) {
+      if (!req.query.color) {
         return res.status(400).end()
       }
       if (!/^[0-9a-f]{3,6}$/gi.test(req.query.color)) {
@@ -57,12 +57,12 @@ function placeholderEndpoint() {
     },
     imageNegotationMiddleware(
       (req) => {
-        return style[req.params.style](req.query.label, '#' + req.query.color)
+        return style[req.params.style](req.query.label || ' ', '#' + req.query.color)
       },
       (req) => {
         return {
           style: req.params.style,
-          label: req.query.label,
+          label: req.query.label || '',
           color: '#' + req.query.color
         }
       }

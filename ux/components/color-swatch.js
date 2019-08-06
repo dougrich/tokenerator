@@ -8,7 +8,7 @@ export const ColorSwatchButton = styled.button(props => ({
   margin: '0.5em',
   cursor: 'pointer',
   border: '1px solid gray',
-  outline: props.active ? '2px dashed black' : undefined,
+  outline: (props.active || props.theme.active) ? '2px dashed black' : undefined,
   '&:focus': {
     outline: `2px dashed ${props.theme.colors.accent}`
   }
