@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<svg
+   xmlns:tokenerator="http://dougrich.net/tokens"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 90 90"
+   id="crocodile-snout"
+   class="crocodile-snout"
+   version="1.1"
+   sodipodi:docname="snout-elephant.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   data-z="860"
+   data-slots="face"
+   data-tags="new+animals+face">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3773"
+     inkscape:window-height="2105"
+     id="namedview8"
+     showgrid="false"
+     inkscape:zoom="20.977778"
+     inkscape:cx="37.787388"
+     inkscape:cy="48.453343"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <metadata
+     id="metadata2">
+    <tokenerator:name>Crocodile Snout</tokenerator:name>
+    <tokenerator:author>Douglas Richardson</tokenerator:author>
+    <tokenerator:z>860</tokenerator:z>
+    <tokenerator:variants
+       collision="face" />
+    <tokenerator:availability
+       type="visible" />
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     class="crocodile-snout-teeth"
+     inkscape:label="teeth"
+     style="display:inline">
+    <path
+       style="display:inline;fill:#b4b4b4;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       d="m 35.819645,45.316955 c -6.299262,12.307854 -15.094048,15.826871 -15.094048,15.826871 0,0 14.081968,3.675099 19.910119,-8.560007"
+       id="path964"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="display:inline;fill:#b4b4b4;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       d="m 55.524762,45.316955 c 6.299262,12.307854 15.094048,15.826871 15.094048,15.826871 0,0 -14.081968,3.675099 -19.910119,-8.560007"
+       id="path964-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     class="crocodile-snout-body"
+     inkscape:label="snout"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <path
+       style="display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 33.260011,44 c 0,0 3.973019,6.540421 5.93085,12.931128 -4.211109,0.724986 -4.616223,2.943297 -4.619545,5.460042 2.1e-5,3.151449 1.985128,5.7062 7.491659,5.706212 5.506533,-1.2e-5 9.970454,-2.554763 9.970475,-5.706212 -0.0026,-0.295374 -0.04515,-0.590188 -0.127449,-0.881786 1.170734,-8.545925 6.904911,-17.540644 6.904911,-17.540644"
+       id="path839"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 36.991525,51.244703 c 3.67055,7.722458 2.431144,9.009534 2.431144,9.009534"
+       id="path876"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 41.13877,51.054025 c 1.859111,-1.668432 8.675848,-1.763771 9.867585,-0.143008"
+       id="path878"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 42.995762,56.869703 c 1.859111,-1.668432 4.675848,-1.763771 5.867585,-0.143008"
+       id="path878-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 38.757414,45.524364 c 1.859111,-1.668432 12.675848,-1.763771 13.867585,-0.143008"
+       id="path878-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
