@@ -9,11 +9,6 @@ export {
   Label
 }
 
-const colors = {
-  borderblack: '#333',
-  accent: '#D00'
-}
-
 const typography = {
   title: css`
     font-family: 'Oswald', sans-serif;
