@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 import * as Color from 'color'
-import Slider from './slider'
-import { TextField } from './field'
-import { Label, Row } from './styled'
+import { TextInputField, Label, Row, Slider } from '@dougrich/uxlib'
 import { ColorSwatchButton, ColorSwatchContainer } from './color-swatch'
 import withAttr from '../src/with-attrs'
 import React from 'react'
@@ -262,7 +260,7 @@ export default class ColorPicker extends React.Component {
             disabled={disabled}
           />
         </Row>
-        <TextField
+        <TextInputField
           type='text'
           name='color-picker-hex'
           value={currentHex}

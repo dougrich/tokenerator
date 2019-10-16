@@ -6,8 +6,7 @@ import { DefaultTokenTitle, DefaultTokenDescription } from '../src/constants'
 import styled from '@emotion/styled'
 import { Container, TokenTitle, DefaultText, Action, ActionLink } from '../components/styled'
 import Page from '../components/page'
-import HorizontalSlider from '../components/slider-horizontal';
-import { RangeField, PixelField } from '../components/field';
+import { PixelField } from '../components/field';
 
 const ActionSet = styled.div({
   textAlign: 'center',

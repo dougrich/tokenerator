@@ -1,13 +1,11 @@
 import Page from '../components/page'
-import AppHead from '../components/head'
-import Header from '../components/header'
 import { ColorSwatchButton } from '../components/color-swatch'
-import { connect, Provider } from 'react-redux'
+import { connect } from 'react-redux'
 import styled from '@emotion/styled'
 import createStore, { dispatchers, constants } from '../src/batch-state-machine'
-import { TextField, SelectField, RadioSetField, PixelField } from '../components/field'
+import { PixelField } from '../components/field'
+import { TextInputField, SelectField, RadioOption, RadioSetField } from '@dougrich/uxlib'
 import { Action } from '../components/styled'
-import { RadioOption } from '../components/radio'
 
 const ActionRow = styled.div({
   width: '100%',
@@ -83,7 +81,7 @@ class BatchItem extends React.PureComponent {
           
         </BatchItemPreviewContainer>
         <BatchItemFields>
-          {isToken && <TextField
+          {isToken && <TextInputField
             type='number'
             disabled={disabled}
             max={max}
@@ -94,16 +92,16 @@ class BatchItem extends React.PureComponent {
             onChange={onCountChange}
           />}
           {isToken && <SelectField label='Symbol Type' name={'symbol-type.' + id} value={label} onChange={onLabelChange} disabled={disabled} options={[
-            { label: 'None', value: constants.LABEL_NONE },
-            { label: 'Number', value: constants.LABEL_NUMBER },
-            { label: 'Alphabet', value: constants.LABEL_ALPHABET },
+            { label: 'None', value: constants.LABEL_NONE, disabled: false },
+            { label: 'Number', value: constants.LABEL_NUMBER, disabled: false },
+            { label: 'Alphabet', value: constants.LABEL_ALPHABET, disabled: false },
           ]}/>}
           {!isToken && <SelectField label='Placeholder Type' name={'placeholder-type.' + id} value={placeholder} onChange={onPlaceholderChange} disabled={disabled} options={[
-            { label: 'Hatched', value: 'hatched' },
-            { label: 'Flat', value: 'flat' },
-            { label: 'Single', value: 'direct' },
+            { label: 'Hatched', value: 'hatched', disabled: false },
+            { label: 'Flat', value: 'flat', disabled: false },
+            { label: 'Single', value: 'direct', disabled: false },
           ]}/>}
-          {!isToken && <TextField
+          {!isToken && <TextInputField
             disabled={disabled}
             maxLength={10}
             label='Placeholder'

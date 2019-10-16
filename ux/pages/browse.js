@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { SelectField } from '../components/field'
+import { SelectField } from '@dougrich/uxlib'
 import { Grid, Action, ActionLink, NotPrint } from '../components/styled'
 import { getCookieProps } from '../src/common'
 import api from '../src/api'

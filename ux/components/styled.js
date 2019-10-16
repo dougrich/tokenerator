@@ -2,6 +2,12 @@ import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 import withAttrs from '../src/with-attrs'
+import { Row, Label } from '@dougrich/uxlib'
+
+export {
+  Row,
+  Label
+}
 
 const colors = {
   borderblack: '#333',
@@ -19,14 +25,11 @@ const typography = {
   `
 }
 
-const RowStyles = props => css({
+export const Navigation = styled.nav(props => ({
   margin: 0,
   marginBottom: '1.5em',
   opacity: props.disabled ? 0.5 : 1,
-  pointerEvents: props.disabled ? 'none' : null
-})
-
-export const Navigation = styled.nav(RowStyles, {
+  pointerEvents: props.disabled ? 'none' : null,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -38,9 +41,7 @@ export const Navigation = styled.nav(RowStyles, {
   '@media (min-width: 600px)': {
     flexDirection: 'row'
   }
-})
-
-export const Row = styled.div(RowStyles)
+}))
 
 export const Title = styled.h1(props => [
   props.theme.typography.title,
@@ -132,103 +133,6 @@ export const DefaultText = styled.div`
 export const TokenTitle = styled.h2`
   ${typography.title}
 `
-
-export const Label = styled.label(props => [
-  props.theme.typography.subheader,
-  {
-    color: '#444',
-    display: 'block',
-    marginBottom: '0.25em',
-    marginRight: '1em'
-  }
-])
-
-export const TextInputUnderline = styled.div({
-  position: 'absolute',
-  bottom: -2,
-  left: 0,
-  right: 0,
-  height: 2,
-  backgroundColor: colors.borderblack,
-  pointerEvents: 'none',
-  transform: 'scale(0.5, 1)',
-  transformOrigin: 'bottom left',
-  transition: '200ms transform',
-  'input:hover+&,input:focus+&,textarea:hover+&,textarea:focus+&,select:hover+&,select:focus+&': {
-    transform: 'scale(1,1)',
-    backgroundColor: '#D00'
-  }
-})
-
-export const TextAreaLines = styled.div({
-  position: 'absolute',
-  left: -2,
-  bottom: -2,
-  top: 0,
-  right: 0,
-  width: 'auto',
-  height: 'auto',
-  borderColor: colors.borderblack,
-  borderTop: '0!important',
-  borderRight: '0!important',
-  borderWidth: '4px',
-  borderStyle: 'solid',
-  pointerEvents: 'none',
-  transform: 'scale(0.5, 0.5)',
-  transformOrigin: 'bottom left',
-  transition: '200ms transform, 200ms border-width',
-  'input:hover+&,input:focus+&,textarea:hover+&,textarea:focus+&': {
-    transform: 'scale(1,1)',
-    borderWidth: '2px',
-    borderColor: '#D00'
-  }
-})
-
-const TextInputPositioning = css({
-  padding: '0.5em',
-  textAlign: 'left',
-  width: '100%',
-  boxSizing: 'border-box',
-  maxHeight: '10em'
-})
-
-export const [TextInput, TextAddon] = [
-  ['input', () => ({
-    display: 'block',
-    background: 'transparent',
-    border: 0,
-    marginRight: 0,
-    position: 'relative',
-    outlineOffset: '0px',
-    '&:focus': {
-      outline: '2px dashed #D00'
-    },
-    'textarea&': {
-      height: '10em'
-    }
-  })],
-  ['div', ({ theme }) => ({
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    opacity: theme.focused ? 0 : 0.5,
-    pointerEvents: 'none',
-    whiteSpace: 'nowrap'
-  })]
-].map(([tag, styles]) => styled[tag](props => [
-  props.theme.typography.body,
-  TextInputPositioning,
-  styles(props)
-]))
-
-export const TextMeasure = styled.span({
-  opacity: 0
-})
-
-export const TextContainer = styled.div({
-  position: 'relative',
-  width: '100%'
-})
 
 export const HiddenSvg = styled.svg({
   height: '0',

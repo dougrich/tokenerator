@@ -7,7 +7,7 @@ import { HiddenSvg, Action, ActionRow } from '../components/styled'
 import Page from '../components/page'
 import * as Color from 'color'
 import TokenParts from '../components/token-part-list';
-import { TextField, TextAreaField, ToggleField } from '../components/field'
+import { TextInputField, TextAreaField, ToggleField } from '@dougrich/uxlib'
 import { bindActionCreators } from 'redux'
 import { connect, Provider } from 'react-redux'
 import store, { dispatchers } from '../src/editor-state-machine'
@@ -131,7 +131,7 @@ const ConnectedPartGrid = connect(
 const ConnectedTitle = connect(
   ({ present: { title, isSaving } }) => ({ value: title, disabled: isSaving }),
   dispatch => bindActionCreators({ onChange: dispatchers.SET_TITLE }, dispatch)
-)(TextField)
+)(TextInputField)
 
 const ConnectedDescription = connect(
   ({ present: { description, isSaving } }) => ({ value: description, disabled: isSaving }),
