@@ -17,10 +17,10 @@
    id="svg2"
    data-z="1000"
    data-slots="hat"
-   data-tags="clothing+hat"
+   data-tags="new+clothing+hat"
    version="1.1"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="beret.svg"
+   sodipodi:docname="beret-pompom.svg"
    class="beret">
   <defs
      id="defs4" />
@@ -31,9 +31,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="31.92962"
-     inkscape:cx="16.580428"
-     inkscape:cy="69.25261"
+     inkscape:zoom="22.577651"
+     inkscape:cx="20.185756"
+     inkscape:cy="69.647227"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -73,9 +73,23 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     class="pompom"
+     inkscape:label="pompom">
+    <ellipse
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path833"
+       cx="38.090763"
+       cy="8.1270018"
+       rx="8.193944"
+       ry="4.7613454" />
+  </g>
   <g
      inkscape:label="Body"
      inkscape:groupmode="layer"
@@ -84,8 +98,8 @@
      transform="translate(0,-962.35975)"
      style="display:inline">
     <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 14.030859,984.71096 c 19.942981,-4.2946 40.106574,-3.95636 60.382804,-1.25275 0,0 5.466711,-6.42857 0.626377,-13.65503 -4.840334,-7.22647 -22.095231,-2.00472 -33.573841,-0.37583 -11.47861,1.62889 -22.050478,1.21242 -26.934238,6.76488 -4.8837602,5.55246 -0.501102,8.51873 -0.501102,8.51873 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.208;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 13.997272,984.75049 c 19.964868,-4.02594 40.150591,-3.70886 60.449074,-1.17438 0,0 5.472711,-6.02641 0.627064,-12.8008 -4.845646,-6.7744 -22.11948,-1.87931 -33.610688,-0.35232 -11.491208,1.52699 -23.958589,3.51145 -26.963798,6.34168 -3.005209,2.83023 -2.727856,4.97682 -0.501652,7.98582 z"
        id="path2984"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cczzzc" />
