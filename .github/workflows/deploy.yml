@@ -28,6 +28,7 @@ jobs:
     - name: Build & Push
       run: |
         gcloud auth configure-docker
+        docker-compose pull
         docker-compose build
         docker-compose push
     - name: Deploy
