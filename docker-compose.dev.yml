@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  tokenerator_batch:
+    entrypoint: bash -c "npm i -g nodemon && nodemon ."
+  tokenerator_api:
+    environment:
+    - NODE_ENV=development
+    volumes:
+    - ./creds.json:/gcp/creds.json
+    - ./config.json:/app/config.json
+    - ./api/src:/app/src
+    entrypoint: bash -c "npm i -D && npm run start"
+  ux:
+    environment:
+    - NODE_ENV=development
+    volumes:
+    - ./ux/src:/app/src
+    - ./ux/pages:/app/pages
+    - ./ux/components:/app/components
+    - ./ux/static:/app/static
+    - ./ux/next.config.js:/app/next.config.js
+    entrypoint: ash -c "npm i -D && npm run dev"
+  tokenerator_gateway:
+    ports:
+    - 80:80
+
+secrets:
+  gcp_creds:
+    file: ./creds.json
+  tokenerator_config:
+    file: ./config.json
+  tokenerator_auth_config:
+    file: ./config.auth.json

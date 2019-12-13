@@ -7,7 +7,7 @@ if (IS_CLIENT) {
   apiclient = axios
 } else {
   apiclient = axios.create({
-    baseURL: 'http://api/'
+    baseURL: 'http://tokenerator_api/'
   })
 }
 

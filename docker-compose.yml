@@ -1,39 +1,54 @@
-version: '3'
+version: '3.7'
 services:
-  api:
-    build: ./api
-    environment:
-    - GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json
-    - NODE_ENV=development
-    volumes:
-    - ./creds.json:/gcp/creds.json
-    - ./config.json:/app/config.json
-    - ./api/src:/app/src
-    entrypoint: bash -c "npm i -D && npm run start"
-  batch:
+  tokenerator_batch:
     build: ./batch
+    image: us.gcr.io/rpg-dougrich-net/batchprocess
     environment:
-    - GOOGLE_APPLICATION_CREDENTIALS=/gcp/creds.json
-    volumes:
-    - ./creds.json:/gcp/creds.json
-    - ./config.json:/app/config.json
-    entrypoint: bash -c "npm i -g nodemon && nodemon ."
-  ux:
-    build: ./ux
+    - GOOGLE_APPLICATION_CREDENTIALS=/run/secrets/gcp_creds
+    secrets:
+    - gcp_creds
+    - tokenerator_config
+  tokenerator_api:
+    build: ./api
+    image: us.gcr.io/rpg-dougrich-net/tokenapi
     environment:
-    - NODE_ENV=development
-    volumes:
-    - ./ux/src:/app/src
-    - ./ux/pages:/app/pages
-    - ./ux/components:/app/components
-    - ./ux/static:/app/static
-    - ./ux/next.config.js:/app/next.config.js
-    entrypoint: ash -c "npm i -D && npm run dev"
-  account:
+    - GOOGLE_APPLICATION_CREDENTIALS=/run/secrets/gcp_creds
+    secrets:
+    - gcp_creds
+    - tokenerator_config
+    networks:
+    - shared
+  tokenerator_legacy:
+    image: us.gcr.io/rpg-dougrich-net/legacyredirect
+    build: ./legacy
+    networks:
+    - shared
+  tokenerator_account:
     image: dougrich/oauth-aggregator
-    volumes:
-    - ./config.auth.json:/app/config.json
-  gateway:
+    environment:
+    - AUTH_CONFIG=/run/secrets/tokenerator_auth_config
+    secrets:
+    - tokenerator_auth_config
+    networks:
+    - shared
+  tokenerator_ux:
+    build: ./ux
+    image: us.gcr.io/rpg-dougrich-net/tokenux
+    networks:
+    - shared
+  tokenerator_gateway:
     build: ./gateway
-    ports:
-    - 80:80
+    image: us.gcr.io/rpg-dougrich-net/gateway
+    networks:
+    - shared
+
+secrets:
+  gcp_creds:
+    external: true
+  tokenerator_config:
+    external: true
+  tokenerator_auth_config:
+    external: true
+networks:
+  shared:
+    external: true

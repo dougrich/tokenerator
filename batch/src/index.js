@@ -12,8 +12,8 @@ const storage = new Storage()
 
 const handlerFactory = handler({
   canonical: {
-    token: id => `http://api/api/token/${id}.png`,
-    placeholder: id => `http://api/api/placeholder/${id}.png`
+    token: id => `http://tokenerator_api/api/token/${id}.png`,
+    placeholder: id => `http://tokenerator_api/api/placeholder/${id}.png`
   }
 })
 

@@ -1,0 +1,46 @@
+name: deploy
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-push:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '270.0.0'
+        service_account_email: ${{ secrets.GCP_SA_EMAIL }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Build Tokens
+      run: |
+        cd ./tooling
+        npm i
+        npm start -- bundle
+    - name: Build & Push
+      run: |
+        gcloud auth configure-docker
+        docker-compose build
+        docker-compose push
+    - name: Deploy
+      env:
+        PROJECT: ${{ secrets.GCP_PROJECT }}
+        ZONE: ${{ secrets.GCP_ZONE }}
+        INSTANCE: ${{ secrets.GCP_INSTANCE }}
+        SSH_PUBLIC: ${{ secrets.GCP_SSH_PUB_KEY }}
+        SSH_PRIVATE: ${{ secrets.GCP_SSH_PRIVATE_KEY }}
+      run: |
+        mkdir $HOME/.ssh
+        echo "$SSH_PUBLIC" > $HOME/.ssh/google_compute_engine.pub
+        chmod 644 $HOME/.ssh/google_compute_engine.pub
+        echo "$SSH_PRIVATE" > $HOME/.ssh/google_compute_engine
+        chmod 600 $HOME/.ssh/google_compute_engine
+        cat docker-compose.yml | gcloud compute ssh --project=$PROJECT --zone=$ZONE douglas@$INSTANCE --command="docker stack deploy --compose-file - --with-registry-auth frontdoor"
