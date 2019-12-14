@@ -8,6 +8,8 @@ services:
     secrets:
     - gcp_creds
     - tokenerator_config
+    networks:
+    - shared
   api:
     build: ./api
     image: us.gcr.io/rpg-dougrich-net/tokenapi
