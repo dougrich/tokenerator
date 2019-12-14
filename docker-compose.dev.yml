@@ -1,8 +1,8 @@
 version: '3.7'
 services:
-  tokenerator_batch:
+  batch:
     entrypoint: bash -c "npm i -g nodemon && nodemon ."
-  tokenerator_api:
+  api:
     environment:
     - NODE_ENV=development
     volumes:
@@ -20,7 +20,7 @@ services:
     - ./ux/static:/app/static
     - ./ux/next.config.js:/app/next.config.js
     entrypoint: ash -c "npm i -D && npm run dev"
-  tokenerator_gateway:
+  gateway:
     ports:
     - 80:80
 

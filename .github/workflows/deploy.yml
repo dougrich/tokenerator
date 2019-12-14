@@ -44,4 +44,4 @@ jobs:
         chmod 644 $HOME/.ssh/google_compute_engine.pub
         echo "$SSH_PRIVATE" > $HOME/.ssh/google_compute_engine
         chmod 600 $HOME/.ssh/google_compute_engine
-        cat docker-compose.yml | gcloud compute ssh --project=$PROJECT --zone=$ZONE douglas@$INSTANCE --command="docker stack deploy --compose-file - --with-registry-auth frontdoor"
+        cat docker-compose.yml | gcloud compute ssh --project=$PROJECT --zone=$ZONE douglas@$INSTANCE --command="docker stack deploy --compose-file - --with-registry-auth tokenerator"

@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  tokenerator_batch:
+  batch:
     build: ./batch
     image: us.gcr.io/rpg-dougrich-net/batchprocess
     environment:
@@ -8,7 +8,7 @@ services:
     secrets:
     - gcp_creds
     - tokenerator_config
-  tokenerator_api:
+  api:
     build: ./api
     image: us.gcr.io/rpg-dougrich-net/tokenapi
     environment:
@@ -18,12 +18,12 @@ services:
     - tokenerator_config
     networks:
     - shared
-  tokenerator_legacy:
+  legacy:
     image: us.gcr.io/rpg-dougrich-net/legacyredirect
     build: ./legacy
     networks:
     - shared
-  tokenerator_account:
+  account:
     image: dougrich/oauth-aggregator
     environment:
     - AUTH_CONFIG=/run/secrets/tokenerator_auth_config
@@ -31,12 +31,12 @@ services:
     - tokenerator_auth_config
     networks:
     - shared
-  tokenerator_ux:
+  ux:
     build: ./ux
     image: us.gcr.io/rpg-dougrich-net/tokenux
     networks:
     - shared
-  tokenerator_gateway:
+  gateway:
     build: ./gateway
     image: us.gcr.io/rpg-dougrich-net/gateway
     networks:
