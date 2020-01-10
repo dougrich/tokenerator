@@ -1,4 +1,4 @@
-Last updated: July 11, 2019
+Privacy Information & Terms of Use last updated: January, 2020
 
 ## Privacy Information
 
@@ -90,7 +90,7 @@ This site operates under two licenses: one for the code, and one for the artwork
 The code and application are licensed to you under the MIT License, provided here and in the Github Repository.
 
 ```
-Copyright 2019 Douglas Richardson
+Copyright 2020 Douglas Richardson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

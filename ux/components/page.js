@@ -103,7 +103,7 @@ export default class Page extends React.PureComponent {
         {!simple && <Header user={user} />}
         {children}
         <Footer>
-          Copyright 2014 - 2019 Douglas Richardson.
+          Copyright 2014 - 2020 Douglas Richardson.
           <ActionLink href='/site'>Terms and Privacy</ActionLink>
         </Footer>
       </ThemeProvider>

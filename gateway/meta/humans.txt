@@ -7,7 +7,7 @@
   From: Canada
 
 /* SITE */
-  Last update: June 2019
+  Last update: January 2020
   Language: English
   Doctype: HTML5
-  IDE: Visual Studo Code, Inkscape, Chrome, Linux
+  IDE: Visual Studio Code, Inkscape, Chrome, Linux
