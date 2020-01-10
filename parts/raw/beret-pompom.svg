@@ -1,107 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
-
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100%"
-   height="100%"
-   viewBox="0 0 90 90"
-   id="svg2"
-   data-z="1000"
-   data-slots="hat"
-   data-tags="new+clothing+hat"
-   version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="beret-pompom.svg"
-   class="beret">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="22.577651"
-     inkscape:cx="20.185756"
-     inkscape:cy="69.647227"
-     inkscape:document-units="in"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     units="in"
-     inkscape:window-width="3773"
-     inkscape:window-height="2105"
-     inkscape:window-x="67"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2994"
-       empspacing="5"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true"
-       units="in"
-       spacingx="1.344"
-       spacingy="1.344"
-       originx="0"
-       originy="0" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" data-z="1000" data-slots="hat" data-tags="clothing+hat" version="1.1" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="beret-pompom.svg" class="beret">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="22.577651" inkscape:cx="20.185756" inkscape:cy="69.647227" inkscape:document-units="in" inkscape:current-layer="layer1" showgrid="false" units="in" inkscape:window-width="3773" inkscape:window-height="2105" inkscape:window-x="67" inkscape:window-y="27" inkscape:window-maximized="1">
+    <inkscape:grid type="xygrid" id="grid2994" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true" units="in" spacingx="1.344" spacingy="1.344" originx="0" originy="0"/>
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
+  <metadata id="metadata7">
     <rdf:rdf>
-      <cc:work
-         rdf:about="">
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
       </cc:work>
     </rdf:rdf>
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     class="pompom"
-     inkscape:label="pompom">
-    <ellipse
-       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path833"
-       cx="38.090763"
-       cy="8.1270018"
-       rx="8.193944"
-       ry="4.7613454" />
+  <g inkscape:groupmode="layer" id="layer2" class="pompom" inkscape:label="pompom">
+    <ellipse style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="path833" cx="38.090763" cy="8.1270018" rx="8.193944" ry="4.7613454"/>
   </g>
-  <g
-     inkscape:label="Body"
-     inkscape:groupmode="layer"
-     id="layer1"
-     class="hat"
-     transform="translate(0,-962.35975)"
-     style="display:inline">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.208;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 13.997272,984.75049 c 19.964868,-4.02594 40.150591,-3.70886 60.449074,-1.17438 0,0 5.472711,-6.02641 0.627064,-12.8008 -4.845646,-6.7744 -22.11948,-1.87931 -33.610688,-0.35232 -11.491208,1.52699 -23.958589,3.51145 -26.963798,6.34168 -3.005209,2.83023 -2.727856,4.97682 -0.501652,7.98582 z"
-       id="path2984"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cczzzc" />
+  <g inkscape:label="Body" inkscape:groupmode="layer" id="layer1" class="hat" transform="translate(0,-962.35975)" style="display:inline">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.208;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 13.997272,984.75049 c 19.964868,-4.02594 40.150591,-3.70886 60.449074,-1.17438 0,0 5.472711,-6.02641 0.627064,-12.8008 -4.845646,-6.7744 -22.11948,-1.87931 -33.610688,-0.35232 -11.491208,1.52699 -23.958589,3.51145 -26.963798,6.34168 -3.005209,2.83023 -2.727856,4.97682 -0.501652,7.98582 z" id="path2984" inkscape:connector-curvature="0" sodipodi:nodetypes="cczzzc"/>
   </g>
 </svg>
