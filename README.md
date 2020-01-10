@@ -25,3 +25,26 @@ __deploy__ which contains deployment scripts and utilities
 __misc__ which contains related pictures and similar that don't fit under a specific group
 
 __token-parts__ which contains the raw token parts
+
+## Common Developer Operations
+
+### Reset new parts:
+
+```
+cd tooling
+npm start -- remove tag new
+```
+
+### Run locally
+
+```
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+```
+
+After starting the containers, the part volumes should be mounted so it auto refreshes when making changes.
+
+### Part Development Checklist
+
+- [ ] Create artwork
+- [ ] Ensure layers are separate
+- [ ] Ensure each layer can be colored independently
