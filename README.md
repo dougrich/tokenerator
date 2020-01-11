@@ -43,8 +43,18 @@ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
 
 After starting the containers, the part volumes should be mounted so it auto refreshes when making changes.
 
+Run
+
+```
+cd tooling
+npm start -- bundle
+```
+
+to update the token parts visible
+
 ### Part Development Checklist
 
 - [ ] Create artwork
 - [ ] Ensure layers are separate
 - [ ] Ensure each layer can be colored independently
+- [ ] Each layer needs a unique class attribute
