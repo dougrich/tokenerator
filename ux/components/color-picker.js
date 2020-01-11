@@ -108,6 +108,22 @@ const Swatches = [
       { name: 'Silver', color: '#C0C0C0' },
       { name: 'Bright Silver', color: '#E5E5E8' }
     ]
+  },
+  {
+    name: 'Fabrics',
+    set: [
+      { name: 'Military Green', color: '#31542d' },
+      { name: 'Military Red', color: '#54372d' },
+      { name: 'Military Blue', color: '#2d4554' },
+      { name: 'Military Grey', color: '#5c5c5c' },
+      { name: 'Cerulean', color: '#007BA7' },
+      { name: 'Byzantium', color: '#702963' },
+      { name: 'Lavender', color: '#E6E6FA' },
+      { name: 'Carmine', color: '#960018' },
+      { name: 'Orange', color: '#FF7F00' },
+      { name: 'Amber', color: '#FFBF00' },
+      { name: 'Khaki', color: '#F0E68C' }
+    ]
   }
 ]
 
