@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="modern-pistol-left.svg"
+   class="light-pistol"
+   data-z="1200"
+   data-slots="left-weapon"
+   data-tags="new+left-hand+weapon">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="22.038379"
+     inkscape:cx="42.884355"
+     inkscape:cy="47.482527"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     units="in"
+     inkscape:window-width="3773"
+     inkscape:window-height="2105"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="in"
+       spacingx="1.344"
+       spacingy="1.344"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     class="gun"
+     inkscape:label="Gun">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 11.760117,11.014006 -5.195502,3.733943 11.918947,16.913473 -9.319887,12.435988 6.365667,6.556861 6.074715,-9.638076 c 0,0 1.763833,-1.749141 4.020321,1.045406 l 1.23914,-1.155272 c 0,0 0.159255,-1.50266 0.321468,-2.45145 0.162214,-0.948791 0.424484,-0.829936 0.973991,-2.079483 l 1.065096,-2.421967 -2.602235,-2.10499 z"
+       id="path887"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccssccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 11.377741,16.677573 26.976558,39.10281"
+       id="path889"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 15.452943,27.302296 c 0,0 -2.82046,0.884924 -2.672633,2.114577 0.147827,1.229653 1.483376,3.50869 3.232516,5.272524"
+       id="path893"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     class="grip"
+     inkscape:label="Grip"
+     style="display:inline">
+    <path
+       style="fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 21.664867,31.521765 -10.573109,14.43518 4.43758,4.697329 9.286429,-14.524954 z"
+       id="path891"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>
