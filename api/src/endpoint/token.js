@@ -46,7 +46,9 @@ function loadToken(firestore) {
       const token = await fetch(req.params.tokenid)
       if (!token.exists) {
         // 404
-        res.status(404).end()
+        res.status(404)
+        res.setHeader('x-error', 'token not found')
+        res.end()
         return
       }
       const data = req.params.token = token.data()

@@ -14,7 +14,13 @@ function ImageNegotiationMiddleware(
     'svg': compileMiddleware(
       contentMiddleware('image/svg+xml'),
       async (req, res, next) => {
-        const svg = await getSVG(req)
+        let svg;
+        try {
+          svg = await getSVG(req)
+        } catch (error) {
+          next(error)
+          return;
+        }
         res.setHeader('Cache-Control', immutable)
         res.setHeader('Content-Type', 'image/svg+xml')
         res.end(svg)
@@ -23,19 +29,25 @@ function ImageNegotiationMiddleware(
       (req, res, next) => {
         if (!req.query.size) {
           req.query.size = '180'
-        } else {
-          let number = parseInt(req.query.size)
-          if (!/^[1-9][0-9]*$/.test(req.query.size) || Number.isNaN(number) || number < 15 || number > 1800) {
-            res.status(400)
-            res.end()
-            return
-          }
+        }
+        let number = parseInt(req.query.size)
+        if (!/^[1-9][0-9]*$/.test(req.query.size) || Number.isNaN(number) || number < 15 || number > 1800) {
+          res.status(400)
+          res.setHeader('x-error', 'bad size request')
+          res.end()
+          return
         }
         next()
       },
       contentMiddleware('image/png'),
       async (req, res, next) => {
-        const svg = await getSVG(req)
+        let svg;
+        try {
+          svg = await getSVG(req)
+        } catch (error) {
+          next(error)
+          return;
+        }
         const size = parseInt(req.query.size || '180')
         res.setHeader('Cache-Control', immutable)
         res.setHeader('Content-Disposition', `attachment; filename="${req.params.slug}@${size}.png"`)
@@ -50,6 +62,7 @@ function ImageNegotiationMiddleware(
         })
         render.on('error', function () {
           res.status(500)
+          res.setHeader('x-error', 'renderer error')
           res.end()
         })
         render.end(svg)
@@ -57,6 +70,11 @@ function ImageNegotiationMiddleware(
   }
   return (req, res, next) => {
     const format = req.params.format || 'json'
+    if (!formatter[format]) {
+      res.status(404)
+      res.setHeader('x-error', 'invalid formatter')
+      res.end()
+    }
     formatter[format](req, res, next)
   }
   const router = express()
