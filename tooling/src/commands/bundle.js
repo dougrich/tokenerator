@@ -36,7 +36,8 @@ function parseSlots(slots) {
     'right-weapon': 1 << 11,
     'collar': 1 << 12,
     'pauldron': 1 << 13,
-    'eyes': 1 << 14
+    'eyes': 1 << 14,
+    'glasses': 1 << 15
   }[x] || 0)).reduce((a, b) => a | b, 0)
 }
 
