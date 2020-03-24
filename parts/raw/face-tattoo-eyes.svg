@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="face-tattoo-eyes.svg"
+   class="face-tattoo"
+   data-z="400"
+   data-slots="face"
+   data-tags="new+face">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="22.577651"
+     inkscape:cx="43.175111"
+     inkscape:cy="54.658067"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer2"
+     showgrid="true"
+     units="in"
+     inkscape:window-width="2493"
+     inkscape:window-height="1385"
+     inkscape:window-x="67"
+     inkscape:window-y="54"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Face Scar</dc:title>
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Face Scar</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="FaceScar"
+     style="display:inline"
+     class="scar">
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#b4b4b4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.20799994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 56.90625,36.23306 -3.871094,4.669921 1.185547,0.638672 c 0,0 0.874473,0.473575 1.845703,1.03125 0.971231,0.557676 2.12834,1.298212 2.289063,1.439454 0.613938,0.539521 0.869128,0.994328 0.935547,1.34375 0.06588,0.346573 0.002,0.692769 -0.359375,1.222656 -0.336739,0.463553 -0.706427,0.674304 -1.033203,0.714844 -0.327798,0.04067 -0.696781,-0.045 -1.179688,-0.511719 -0.278126,-0.291559 -0.404445,-0.505274 -0.439453,-0.603516 -0.03605,-0.101171 -0.03286,-0.09586 -0.002,-0.197265 0.06181,-0.202814 0.47831,-0.770632 1.132812,-1.560547 l -1.699218,-1.410157 c -0.629955,0.76029 -1.254353,1.366331 -1.546876,2.326172 -0.146261,0.479921 -0.150249,1.063689 0.03516,1.583985 0.185406,0.520295 0.514971,0.970561 0.949219,1.417968 l 0.0098,0.0098 0.01172,0.01172 c 0.862235,0.839984 1.959575,1.254075 3,1.125 1.040425,-0.129075 1.940346,-0.756559 2.564453,-1.626953 l 0.0078,-0.0098 0.0059,-0.0078 c 0.604997,-0.879996 0.899195,-1.906085 0.710937,-2.896484 -0.188257,-0.990399 -0.796846,-1.844909 -1.644531,-2.589844 -0.632897,-0.556182 -1.647785,-1.120742 -2.648437,-1.695312 -0.382124,-0.219414 -0.416878,-0.233124 -0.72461,-0.404297 l 2.164063,-2.611328 z"
+       id="path842"
+       inkscape:connector-curvature="0" />
+  </g>
+  <title
+     id="title9">Face Scar</title>
+  <ellipse
+     style="opacity:1;vector-effect:none;fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+     id="path815"
+     cx="56.550751"
+     cy="23.114071"
+     rx="1.8063507"
+     ry="1.9431986" />
+</svg>

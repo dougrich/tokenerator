@@ -1,129 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
-
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100%"
-   height="100%"
-   viewBox="0 0 90 90"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="modern-revolver-right.svg"
-   class="light-pistol"
-   data-z="1200"
-   data-slots="right-weapon"
-   data-tags="new+right-hand+weapon">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="15.583487"
-     inkscape:cx="63.63858"
-     inkscape:cy="56.924303"
-     inkscape:document-units="in"
-     inkscape:current-layer="layer2"
-     showgrid="false"
-     units="in"
-     inkscape:window-width="3773"
-     inkscape:window-height="2105"
-     inkscape:window-x="67"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2994"
-       empspacing="5"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true"
-       units="in"
-       spacingx="1.344"
-       spacingy="1.344"
-       originx="0"
-       originy="0" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" version="1.1" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="modern-revolver-right.svg" class="light-pistol" data-z="1200" data-slots="right-weapon" data-tags="right-hand+weapon">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="15.583487" inkscape:cx="63.63858" inkscape:cy="56.924303" inkscape:document-units="in" inkscape:current-layer="layer2" showgrid="false" units="in" inkscape:window-width="3773" inkscape:window-height="2105" inkscape:window-x="67" inkscape:window-y="27" inkscape:window-maximized="1">
+    <inkscape:grid type="xygrid" id="grid2994" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true" units="in" spacingx="1.344" spacingy="1.344" originx="0" originy="0"/>
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
+  <metadata id="metadata7">
     <rdf:rdf>
-      <cc:work
-         rdf:about="">
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
       </cc:work>
     </rdf:rdf>
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     class="gun"
-     inkscape:label="Gun">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 67.723749,36.469733 -0.911391,-5.282594 13.103486,-17.511099 2.792616,2.552843 -7.242392,9.712291 1.757817,2.796853 -0.555792,2.250074 -2.824337,2.020967 -0.948464,4.73626 -4.592728,0.748717 z"
-       id="path852"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 70.420985,26.898062 2.729531,2.108099 -3.008158,4.380307"
-       id="path854"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 72.368054,24.004522 3.110287,2.507781"
-       id="path856"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 67.146048,33.311036 -3.18618,0.840851"
-       id="path860"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 79.316101,14.474054 76.940519,12.34815"
-       id="path862"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 76.668093,30.988101 c 0,0 2.257975,1.753706 0.958015,4.012128 -1.299957,2.258417 -1.799222,2.39405 -3.849902,2.101633"
-       id="path864"
-       inkscape:connector-curvature="0" />
+  <g inkscape:groupmode="layer" id="layer2" class="gun" inkscape:label="Gun">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 67.723749,36.469733 -0.911391,-5.282594 13.103486,-17.511099 2.792616,2.552843 -7.242392,9.712291 1.757817,2.796853 -0.555792,2.250074 -2.824337,2.020967 -0.948464,4.73626 -4.592728,0.748717 z" id="path852" inkscape:connector-curvature="0"/>
+    <path style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 70.420985,26.898062 2.729531,2.108099 -3.008158,4.380307" id="path854" inkscape:connector-curvature="0"/>
+    <path style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 72.368054,24.004522 3.110287,2.507781" id="path856" inkscape:connector-curvature="0"/>
+    <path style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 67.146048,33.311036 -3.18618,0.840851" id="path860" inkscape:connector-curvature="0"/>
+    <path style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 79.316101,14.474054 76.940519,12.34815" id="path862" inkscape:connector-curvature="0"/>
+    <path style="fill:none;stroke:#000000;stroke-width:1.15199995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 76.668093,30.988101 c 0,0 2.257975,1.753706 0.958015,4.012128 -1.299957,2.258417 -1.799222,2.39405 -3.849902,2.101633" id="path864" inkscape:connector-curvature="0"/>
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="Hilt"
-     class="grip"
-     style="display:inline">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 67.723749,36.469733 -1.418013,2.339977 c 0,0 1.195019,2.941501 3.678975,5.602942 2.483957,2.661441 3.435412,4.114389 3.989196,3.906207 0.553785,-0.208183 2.879974,-3.227899 3.125768,-4.008114 0.245794,-0.780216 -4.052954,-3.670317 -3.979069,-4.977057 0.07388,-1.306739 0.6556,-2.231826 0.6556,-2.231826 0.599071,-0.117386 -1.323872,-1.10846 -2.495199,-0.456206 -1.171327,0.652254 -1.879441,0.914736 -3.557258,-0.175923 z"
-       id="path850"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccsscscsc" />
+  <g inkscape:groupmode="layer" id="layer1" inkscape:label="Hilt" class="grip" style="display:inline">
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 67.723749,36.469733 -1.418013,2.339977 c 0,0 1.195019,2.941501 3.678975,5.602942 2.483957,2.661441 3.435412,4.114389 3.989196,3.906207 0.553785,-0.208183 2.879974,-3.227899 3.125768,-4.008114 0.245794,-0.780216 -4.052954,-3.670317 -3.979069,-4.977057 0.07388,-1.306739 0.6556,-2.231826 0.6556,-2.231826 0.599071,-0.117386 -1.323872,-1.10846 -2.495199,-0.456206 -1.171327,0.652254 -1.879441,0.914736 -3.557258,-0.175923 z" id="path850" inkscape:connector-curvature="0" sodipodi:nodetypes="ccsscscsc"/>
   </g>
 </svg>
