@@ -1,81 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
-
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100%"
-   height="100%"
-   viewBox="0 0 90 90"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="face-tattoo-circle.svg"
-   class="face-tattoo"
-   data-z="400"
-   data-slots="face"
-   data-tags="new+face">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="90.310604"
-     inkscape:cx="58.71463"
-     inkscape:cy="46.002609"
-     inkscape:document-units="in"
-     inkscape:current-layer="svg2"
-     showgrid="true"
-     units="in"
-     inkscape:window-width="2493"
-     inkscape:window-height="1385"
-     inkscape:window-x="67"
-     inkscape:window-y="54"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata7">
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" version="1.1" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="face-tattoo-circle.svg" class="face-tattoo" data-z="400" data-slots="face" data-tags="face">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="90.310604" inkscape:cx="58.71463" inkscape:cy="46.002609" inkscape:document-units="in" inkscape:current-layer="svg2" showgrid="true" units="in" inkscape:window-width="2493" inkscape:window-height="1385" inkscape:window-x="67" inkscape:window-y="54" inkscape:window-maximized="1"/>
+  <metadata id="metadata7">
     <rdf:rdf>
-      <cc:work
-         rdf:about="">
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
         <dc:title>Face Scar</dc:title>
       </cc:work>
     </rdf:rdf>
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
         <dc:title>Face Scar</dc:title>
-      </cc:Work>
-    </rdf:RDF>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="FaceScar"
-     style="display:inline"
-     class="tattoo">
-  <path
-     style="fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:0.60515362px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 56.543338,37.574961 c -1.473607,-0.03756 -2.995237,0.643499 -3.484715,1.651056 -0.570248,1.173821 -1.038777,3.156157 -0.373807,4.815505 -0.08878,0.07914 -0.185989,0.159925 -0.268642,0.238049 -0.744229,0.703451 -1.261523,1.306356 -1.444556,2.030599 l 1.424479,0.359467 c 0.03398,-0.134471 0.382495,-0.712357 1.028684,-1.32314 0.01974,-0.01866 0.04476,-0.0395 0.06501,-0.05832 0.14095,0.145972 0.291729,0.287735 0.464628,0.41874 3.03539,2.299883 5.453173,-0.02104 5.453173,-0.02104 l -1.551628,-2.407261 c -0.617029,0.230738 -1.251483,0.281509 -1.790637,0.115674 0.0149,-0.009 0.02806,-0.01778 0.04302,-0.02677 0.777437,-0.466839 1.655763,-0.918903 2.602302,-1.328877 0.233621,0.702495 0.506088,1.621939 1.253351,2.901539 1.68172,2.879749 5.080323,2.621424 5.080323,2.621424 L 64.55675,44.564464 c 0,0 -1.55092,0.511036 -2.757179,-1.103254 -0.529185,-0.708186 -0.832204,-1.429928 -1.146276,-2.156795 1.260659,-0.413558 2.602421,-0.736058 3.99619,-0.898665 l -0.170174,-1.457938 c -1.574638,0.183706 -3.075256,0.551297 -4.474201,1.022947 -0.276187,-0.489654 -0.611975,-0.979792 -1.094651,-1.468456 -0.61609,-0.623736 -1.482955,-0.904809 -2.36712,-0.927346 z m -0.262907,2.5067 c 0.269061,-0.01325 0.572071,0.03513 0.909181,0.164437 0.368781,0.141459 0.629505,0.302856 0.82983,0.492353 -0.965358,0.424278 -1.865241,0.888356 -2.667312,1.369985 -0.147282,0.08843 -0.281469,0.178455 -0.422563,0.267687 -0.04128,-0.09206 -0.07949,-0.188022 -0.110899,-0.292543 -0.221235,-0.736321 0.295834,-1.944584 1.461763,-2.001919 z"
-     id="path849"
-     inkscape:connector-curvature="0" />
+  <g inkscape:groupmode="layer" id="layer2" inkscape:label="FaceScar" style="display:inline" class="tattoo">
+  <path style="fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:0.60515362px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 56.543338,37.574961 c -1.473607,-0.03756 -2.995237,0.643499 -3.484715,1.651056 -0.570248,1.173821 -1.038777,3.156157 -0.373807,4.815505 -0.08878,0.07914 -0.185989,0.159925 -0.268642,0.238049 -0.744229,0.703451 -1.261523,1.306356 -1.444556,2.030599 l 1.424479,0.359467 c 0.03398,-0.134471 0.382495,-0.712357 1.028684,-1.32314 0.01974,-0.01866 0.04476,-0.0395 0.06501,-0.05832 0.14095,0.145972 0.291729,0.287735 0.464628,0.41874 3.03539,2.299883 5.453173,-0.02104 5.453173,-0.02104 l -1.551628,-2.407261 c -0.617029,0.230738 -1.251483,0.281509 -1.790637,0.115674 0.0149,-0.009 0.02806,-0.01778 0.04302,-0.02677 0.777437,-0.466839 1.655763,-0.918903 2.602302,-1.328877 0.233621,0.702495 0.506088,1.621939 1.253351,2.901539 1.68172,2.879749 5.080323,2.621424 5.080323,2.621424 L 64.55675,44.564464 c 0,0 -1.55092,0.511036 -2.757179,-1.103254 -0.529185,-0.708186 -0.832204,-1.429928 -1.146276,-2.156795 1.260659,-0.413558 2.602421,-0.736058 3.99619,-0.898665 l -0.170174,-1.457938 c -1.574638,0.183706 -3.075256,0.551297 -4.474201,1.022947 -0.276187,-0.489654 -0.611975,-0.979792 -1.094651,-1.468456 -0.61609,-0.623736 -1.482955,-0.904809 -2.36712,-0.927346 z m -0.262907,2.5067 c 0.269061,-0.01325 0.572071,0.03513 0.909181,0.164437 0.368781,0.141459 0.629505,0.302856 0.82983,0.492353 -0.965358,0.424278 -1.865241,0.888356 -2.667312,1.369985 -0.147282,0.08843 -0.281469,0.178455 -0.422563,0.267687 -0.04128,-0.09206 -0.07949,-0.188022 -0.110899,-0.292543 -0.221235,-0.736321 0.295834,-1.944584 1.461763,-2.001919 z" id="path849" inkscape:connector-curvature="0"/>
    </g>
-  <title
-     id="title9">Face Scar</title>
+  <title id="title9">Face Scar</title>
 </svg>

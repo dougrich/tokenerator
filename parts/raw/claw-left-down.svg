@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   data-z="1200"
+   data-slots="left-weapon"
+   data-tags="new+left-hand+animals+weapon"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="claw-left-down.svg"
+   class="bear-paw-left">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.96481"
+     inkscape:cx="27.986321"
+     inkscape:cy="23.755872"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="in"
+     inkscape:window-width="2493"
+     inkscape:window-height="1385"
+     inkscape:window-x="67"
+     inkscape:window-y="54"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="in"
+       spacingx="1.344"
+       spacingy="1.344"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     class="claw-inner"
+     inkscape:label="claw-inner"
+     style="display:inline">
+    <path
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.87539697;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+       d="m 38.397226,77.262043 a 20.996965,9.9441117 25.613755 0 0 -23.23236,-0.109104 20.996965,9.9441117 25.613755 0 0 -0.302044,0.924228 19.154099,11.256929 25.613755 0 0 4.883104,2.899525 19.154099,11.256929 25.613755 0 0 22.120329,-1.842818 20.996965,9.9441117 25.613755 0 0 -3.469021,-1.87183 z"
+       id="path843-3"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-16.113168"
+       inkscape:transform-center-y="10.914988" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     class="claw-top"
+     inkscape:label="claw-top"
+     style="display:inline">
+    <path
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.87539697;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+       d="M 29.452062,58.27192 A 22.554342,13.255264 11.620644 0 0 4.6889996,66.710943 22.554342,13.255264 11.620644 0 0 19.608731,83.017145 20.996965,9.9441117 11.620644 0 1 19.14497,79.678485 20.996965,9.9441117 11.620644 0 1 41.714287,74.166646 20.996965,9.9441117 11.620644 0 1 48.736882,76.257396 22.554342,13.255264 11.620644 0 0 48.873064,75.79722 22.554342,13.255264 11.620644 0 0 29.452062,58.27192 Z"
+       id="path843"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-14.529855"
+       inkscape:transform-center-y="2.4765386" />
+  </g>
+</svg>
