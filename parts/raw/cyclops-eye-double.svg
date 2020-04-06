@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="cyclops-eye-double.svg"
+   class="cyclops-eye"
+   data-z="400"
+   data-slots="face+eyes"
+   data-tags="new+face">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.96481"
+     inkscape:cx="38.622491"
+     inkscape:cy="41.647681"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer3"
+     showgrid="false"
+     units="in"
+     inkscape:window-width="2493"
+     inkscape:window-height="1385"
+     inkscape:window-x="67"
+     inkscape:window-y="54"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="in"
+       spacingx="1.344"
+       spacingy="1.344"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Outer Eye"
+     inkscape:groupmode="layer"
+     id="layer1"
+     class="outer-eye"
+     transform="translate(0,-962.35975)"
+     style="display:inline">
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;fill-opacity:1"
+       d="m 23.4,1003.7598 c 13.95341,12.1322 28.92547,12.6121 45,0 -16.43317,-18.6007 -31.46904,-19.487 -45,0 z"
+       id="path6628"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     class="iris"
+     inkscape:label="Inner Eye">
+    <ellipse
+       style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.5075109;stroke-opacity:1;marker:none;enable-background:accumulate"
+       id="path6630"
+       cx="45.049988"
+       cy="39.011532"
+       rx="10.030044"
+       ry="11.033047" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     class="pupil"
+     inkscape:label="Pupil"
+     style="display:inline">
+    <path
+       style="color:#000000;overflow:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.5229044;stroke-miterlimit:4;stroke-dasharray:none;marker:none;enable-background:accumulate"
+       d="m 50.383655,39.332482 c 0.1042,-1.973754 -2.288704,-3.547252 -4.057554,-2.756687 -0.851048,0.648638 -1.9075,0.228456 -2.808202,-0.03674 -1.403602,-0.54835 -2.969046,0.264983 -3.432577,1.674047 -0.789518,1.75096 0.649491,4.201166 2.649669,4.025252 1.369815,-0.312847 2.894637,-0.752346 4.228434,-0.06541 1.691305,0.501574 3.493355,-1.144859 3.42023,-2.840473 z"
+       id="path6632"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
