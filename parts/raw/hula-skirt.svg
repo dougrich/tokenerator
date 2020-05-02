@@ -1,197 +1,41 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
-
-<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
-
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xlink="http://www.w3.org/1999/xlink"
-   width="100%"
-   height="100%"
-   viewBox="0 0 90 90"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="hula-skirt.svg"
-   class="leaf-garment"
-   data-z="500"
-   data-slots="clothing"
-   data-tags="new+clothing">
-  <defs
-     id="defs4">
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5121-4"
-       is_visible="true"
-       nbiter_approxstrokes="3"
-       strokelength="1"
-       strokelength_rdm="0;1"
-       strokeoverlap="0.1"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0.9;1"
-       parallel_offset="0.9;1"
-       tremble_size="1.5;1"
-       tremble_frequency="0.01"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10.5"
-       tgtlength="100"
-       tgtlength_rdm="0.1;1" />
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5121-7"
-       is_visible="true"
-       nbiter_approxstrokes="3"
-       strokelength="1"
-       strokelength_rdm="0;1"
-       strokeoverlap="0.1"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0.9;1"
-       parallel_offset="0.9;1"
-       tremble_size="1.5;1"
-       tremble_frequency="0.01"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10.5"
-       tgtlength="100"
-       tgtlength_rdm="0.1;1" />
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect5257"
-       is_visible="true"
-       nbiter_approxstrokes="2"
-       strokelength="1"
-       strokelength_rdm="0.1;1"
-       strokeoverlap="0"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0;1"
-       parallel_offset="0.8;1"
-       tremble_size="0.7;1"
-       tremble_frequency="1"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10"
-       tgtlength="100"
-       tgtlength_rdm="0.3;1" />
-    <linearGradient
-       inkscape:collect="always"
-       href="#linearGradient5728-3"
-       id="linearGradient5483"
-       gradientUnits="userSpaceOnUse"
-       x1="945"
-       y1="310.2579"
-       x2="945"
-       y2="388.79999"
-       gradientTransform="translate(-1170,962.35973)" />
-    <linearGradient
-       id="linearGradient5728-3">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop5730-7" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop5732-3" />
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 90 90" id="svg2" version="1.1" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="hula-skirt.svg" class="leaf-garment" data-z="500" data-slots="clothing" data-tags="clothing">
+  <defs id="defs4">
+    <inkscape:path-effect effect="sketch" id="path-effect5121-4" is_visible="true" nbiter_approxstrokes="3" strokelength="1" strokelength_rdm="0;1" strokeoverlap="0.1" strokeoverlap_rdm="0;1" ends_tolerance="0.9;1" parallel_offset="0.9;1" tremble_size="1.5;1" tremble_frequency="0.01" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10.5" tgtlength="100" tgtlength_rdm="0.1;1"/>
+    <inkscape:path-effect effect="sketch" id="path-effect5121-7" is_visible="true" nbiter_approxstrokes="3" strokelength="1" strokelength_rdm="0;1" strokeoverlap="0.1" strokeoverlap_rdm="0;1" ends_tolerance="0.9;1" parallel_offset="0.9;1" tremble_size="1.5;1" tremble_frequency="0.01" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10.5" tgtlength="100" tgtlength_rdm="0.1;1"/>
+    <inkscape:path-effect effect="sketch" id="path-effect5257" is_visible="true" nbiter_approxstrokes="2" strokelength="1" strokelength_rdm="0.1;1" strokeoverlap="0" strokeoverlap_rdm="0;1" ends_tolerance="0;1" parallel_offset="0.8;1" tremble_size="0.7;1" tremble_frequency="1" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10" tgtlength="100" tgtlength_rdm="0.3;1"/>
+    <linearGradient inkscape:collect="always" href="#linearGradient5728-3" id="linearGradient5483" gradientUnits="userSpaceOnUse" x1="945" y1="310.2579" x2="945" y2="388.79999" gradientTransform="translate(-1170,962.35973)"/>
+    <linearGradient id="linearGradient5728-3">
+      <stop style="stop-color:#000000;stop-opacity:1;" offset="0" id="stop5730-7"/>
+      <stop style="stop-color:#000000;stop-opacity:0;" offset="1" id="stop5732-3"/>
     </linearGradient>
-    <inkscape:path-effect
-       effect="sketch"
-       id="path-effect6957"
-       is_visible="true"
-       nbiter_approxstrokes="1"
-       strokelength="2"
-       strokelength_rdm="0.2;1"
-       strokeoverlap="0"
-       strokeoverlap_rdm="0;1"
-       ends_tolerance="0;1"
-       parallel_offset="0.1;1"
-       tremble_size="0.6;1"
-       tremble_frequency="2.51"
-       nbtangents="0"
-       tgt_places_rdmness="1;1"
-       tgtscale="10"
-       tgtlength="100"
-       tgtlength_rdm="0.3;1" />
+    <inkscape:path-effect effect="sketch" id="path-effect6957" is_visible="true" nbiter_approxstrokes="1" strokelength="2" strokelength_rdm="0.2;1" strokeoverlap="0" strokeoverlap_rdm="0;1" ends_tolerance="0;1" parallel_offset="0.1;1" tremble_size="0.6;1" tremble_frequency="2.51" nbtangents="0" tgt_places_rdmness="1;1" tgtscale="10" tgtlength="100" tgtlength_rdm="0.3;1"/>
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="16.000001"
-     inkscape:cx="56.503335"
-     inkscape:cy="35.90857"
-     inkscape:document-units="in"
-     inkscape:current-layer="layer6"
-     showgrid="false"
-     units="in"
-     inkscape:window-width="2493"
-     inkscape:window-height="1385"
-     inkscape:window-x="67"
-     inkscape:window-y="54"
-     inkscape:window-maximized="1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2994"
-       empspacing="5"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true"
-       units="in"
-       spacingx="1.344"
-       spacingy="1.344"
-       originx="0"
-       originy="0" />
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="16.000001" inkscape:cx="56.503335" inkscape:cy="35.90857" inkscape:document-units="in" inkscape:current-layer="layer6" showgrid="false" units="in" inkscape:window-width="2493" inkscape:window-height="1385" inkscape:window-x="67" inkscape:window-y="54" inkscape:window-maximized="1">
+    <inkscape:grid type="xygrid" id="grid2994" empspacing="5" visible="true" enabled="true" snapvisiblegridlinesonly="true" units="in" spacingx="1.344" spacingy="1.344" originx="0" originy="0"/>
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
+  <metadata id="metadata7">
     <rdf:rdf>
-      <cc:work
-         rdf:about="">
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
       </cc:work>
     </rdf:rdf>
     <rdf:rdf>
-      <cc:work
-         rdf:about="">
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
       </cc:work>
     </rdf:rdf>
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+    <rdf:rdf>
+      <cc:work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:work>
+    </rdf:rdf>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer6"
-     class="skirt"
-     inkscape:label="skirt">
-    <path
-       style="fill:#FFFFFF;stroke:#000000;stroke-width:2.16918802;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 9.7167969,49.013672 9.7164412,83.925344 H 14.855788 V 66.512028 85.07414 h 4.292866 V 70.260728 82.232382 h 4.957958 V 67.660824 83.804418 h 4.051014 V 65.30277 79.027849 h 3.809163 V 68.507304 81.990531 h 3.990553 V 66.088787 80.599885 h 3.930087 v -6.288142 8.162491 h 4.292867 v -16.86915 18.199334 h 3.869626 V 66.632954 81.688217 h 4.051015 V 66.874806 82.292845 h 4.595179 V 69.293322 83.018401 h 4.957959 V 68.507303 79.209238 h 3.325459 V 69.535173 80.29757 h 3.446386 v -9.976379 11.66934 h 3.990551 v -12.153044 9.250824 h 3.93009 v -8.948509 12.213507 h 3.809163 l 5.26e-4,-32.593543 c 0,0 -9.604819,4.189453 -35.032227,4.189453 -25.427408,0 -35.4072261,-4.935547 -35.4072261,-4.935547 z"
-       id="path1040"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccczc" />
+  <g inkscape:groupmode="layer" id="layer6" class="skirt" inkscape:label="skirt">
+    <path style="fill:#FFFFFF;stroke:#000000;stroke-width:2.16918802;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 9.7167969,49.013672 9.7164412,83.925344 H 14.855788 V 66.512028 85.07414 h 4.292866 V 70.260728 82.232382 h 4.957958 V 67.660824 83.804418 h 4.051014 V 65.30277 79.027849 h 3.809163 V 68.507304 81.990531 h 3.990553 V 66.088787 80.599885 h 3.930087 v -6.288142 8.162491 h 4.292867 v -16.86915 18.199334 h 3.869626 V 66.632954 81.688217 h 4.051015 V 66.874806 82.292845 h 4.595179 V 69.293322 83.018401 h 4.957959 V 68.507303 79.209238 h 3.325459 V 69.535173 80.29757 h 3.446386 v -9.976379 11.66934 h 3.990551 v -12.153044 9.250824 h 3.93009 v -8.948509 12.213507 h 3.809163 l 5.26e-4,-32.593543 c 0,0 -9.604819,4.189453 -35.032227,4.189453 -25.427408,0 -35.4072261,-4.935547 -35.4072261,-4.935547 z" id="path1040" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccczc"/>
   </g>
 </svg>

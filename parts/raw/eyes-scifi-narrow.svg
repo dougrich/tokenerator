@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="eyes-scifi-narrow.svg"
+   class="face-scar"
+   data-z="1050"
+   data-slots="eyes"
+   data-tags="new+eyes">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="22.577651"
+     inkscape:cx="43.483888"
+     inkscape:cy="53.649756"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer2"
+     showgrid="true"
+     units="in"
+     inkscape:window-width="3768"
+     inkscape:window-height="2096"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="in"
+       spacingx="1.344"
+       spacingy="1.344"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Face Scar</dc:title>
+      </cc:work>
+    </rdf:rdf>
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Face Scar</dc:title>
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Face Scar</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="FaceScar"
+     style="display:inline"
+     class="eyes">
+    <path
+       inkscape:connector-curvature="0"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 28.273625,29.087891 a 9.107004,7.764901 12.253491 0 0 -1.021484,0.789062 9.107004,7.764901 12.253491 0 0 8.822265,6.212891 9.107004,7.764901 12.253491 0 0 6.626953,-2.228516 9.107004,7.764901 12.253491 0 0 -0.02344,-0.0625 C 38.505861,31.717444 33.296058,29.826157 28.273625,29.087891 Z"
+       id="path921" />
+    <path
+       inkscape:connector-curvature="0"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:2.20799994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 25.166202,28.779297 c 6.869343,0.299961 14.64338,3.286959 19.859376,6.263672 5.166346,-2.948455 12.844815,-5.910079 19.666016,-6.257813"
+       id="path945"
+       sodipodi:nodetypes="ccc" />
+    <path
+       inkscape:connector-curvature="0"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 61.87098,29.087891 a 7.764901,9.107004 77.746509 0 1 1.021484,0.789062 7.764901,9.107004 77.746509 0 1 -8.822265,6.212891 7.764901,9.107004 77.746509 0 1 -6.626953,-2.228516 7.764901,9.107004 77.746509 0 1 0.02344,-0.0625 c 4.172058,-2.081384 9.381861,-3.972671 14.404294,-4.710937 z"
+       id="path921-2" />
+  </g>
+  <title
+     id="title9">Face Scar</title>
+</svg>

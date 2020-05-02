@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 90 90"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="chainsaw-right.svg"
+   class="machete-right"
+   data-z="1200"
+   data-slots="right-weapon"
+   data-tags="new+right-hand+weapon">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.96481"
+     inkscape:cx="2.4361619"
+     inkscape:cy="33.755309"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer3"
+     showgrid="false"
+     units="in"
+     inkscape:window-width="3840"
+     inkscape:window-height="2123"
+     inkscape:window-x="3840"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2994"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="in"
+       spacingx="1.344"
+       spacingy="1.344"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:rdf>
+      <cc:work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:work>
+    </rdf:rdf>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="teeth"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-962.35975)"
+     class="teeth">
+    <path
+       style="display:inline;fill:#b4b4b4;fill-opacity:1;stroke:#000000;stroke-width:2.38260698;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 82.475618,981.00496 -4.659784,0.41535 -1.400005,0.90228 -0.733193,-1.13765 -4.071673,-2.305 -7.333942,4.72494 0.417264,4.6602 0.734689,1.13997 -3.103309,0.85975 -1.843165,8.5257 3.589277,3.002 16.2496,3.513 4.508797,-1.2513 1.843166,-8.52569 -2.880607,-2.40719 1.105145,-0.71224 2.305003,-4.07167 z m -18.671701,21.58294 -4.508384,1.2493 -1.843166,8.5257 3.589691,3.0001 16.249599,3.513 4.508384,-1.2493 1.843166,-8.5257 -3.58969,-3.0002 z"
+       id="rect987-2-7-0"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="blade"
+     style="display:inline"
+     class="blade">
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect838"
+       width="18.603416"
+       height="47.542065"
+       x="70.061691"
+       y="4.0510416"
+       ry="9.3017082"
+       transform="rotate(12.199006)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     class="handle"
+     inkscape:label="handle">
+    <path
+       style="display:inline;fill:#4b4b4b;fill-opacity:1;stroke:#000000;stroke-width:2.20799994;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 58.049046,54.951216 21.439346,4.384379 -2.99053,12.684629 -5.746591,6.546128 -16.509213,-6.27936 z"
+       id="rect984"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc" />
+  </g>
+</svg>
