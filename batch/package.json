@@ -12,7 +12,7 @@
     "@google-cloud/pubsub": "^0.29.1",
     "@google-cloud/storage": "^2.5.0",
     "archiver": "^3.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "nconf": "^0.10.0",
     "pdfkit": "^0.9.1",
     "tmp": "^0.1.0"
