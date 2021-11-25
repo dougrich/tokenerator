@@ -37,25 +37,38 @@ npm start -- remove tag new
 
 ### Run locally
 
+#### Do Once
+
+1. Create a `config.json` based on `config.example.json` & give access to google compute by providing a `creds.json` which contains a google account code. You'll need to create the firebase account in google compute.
+2. Create a `config.auth.json` based on `config.auth.example.json`. Each provider will need to be setup with their own credentials.
+
+#### Developer Loop
+
+1. Start the containers with
+
 ```
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
 ```
 
-After starting the containers, the part volumes should be mounted so it auto refreshes when making changes.
-
-Run
+2. Bundle the token parts
 
 ```
 cd tooling
 npm start -- bundle
 ```
 
-to update the token parts visible
+3. Make changes to either code (re-run docker-compose commands) or token parts (re-run bundling commands)
+
+#### Troubleshooting
+
+**Missing `ux/src/token-parts` or `api/src/token-parts`** - you're missing the output from the token parts bundle. Check that you ran step 2 of the developer loop.
 
 ### Part Development Checklist
 
+If you're adding a new part, run through this checklist:
+
 - [ ] Create artwork
-- [ ] Ensure layers are separate
-- [ ] Ensure each layer can be colored independently
-- [ ] Each layer needs a unique class attribute
+- [ ] Ensure layers are separate. Each layer needs to be a root level `g` tag in the SVG
+- [ ] Ensure each layer can be colored independently. Each layer will have the `fill` style element replaced with a new value.
+- [ ] Each layer needs a unique class attribute. This determines their name in the code & should be on the `g` element. It is saved as part of the token.
 
