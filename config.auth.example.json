@@ -1,0 +1,24 @@
+{
+  "brand": "Token Builder",
+  "display": [
+    "google",
+    "microsoft",
+    "reddit"
+  ],
+  "privacy": "https://tokens.dougrich.net/site",
+  "base": "/api/account/",
+  "jwt-secret": "...secret for JWT tokens to be signed with...",
+  "microsoft": {
+    "id": "...information for the microsoft provider...",
+    "secret": ""
+  },
+  "google": {
+    "id": "...information for the google provider...",
+    "secret": ""
+  },
+  "reddit": {
+    "id": "...information for the reddit provider...",
+    "secret": "",
+    "useragent": ""
+  }
+}
