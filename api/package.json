@@ -22,7 +22,7 @@
     "jsonwebtoken": "^8.5.1",
     "librsvg": "^0.7.0",
     "nanoid": "^2.0.3",
-    "nconf": "^0.10.0",
+    "nconf": "^0.11.4",
     "query-string": "^6.5.0",
     "slug": "^1.1.0"
   },
